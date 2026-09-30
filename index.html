@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Leben in Deutschland - Trainer</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-active: #1d4ed8;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --correct: #16a34a;
+      --correct-bg: #dcfce7;
+      --wrong: #dc2626;
+      --wrong-bg: #fee2e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      /* Підтримка динамічної висоти мобільних браузерів */
+    }
+
+    /* Адаптивна шапка без переповнення */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .state-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 5px 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .state-btn img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .counter {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .jump-box {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+
+    .jump-input {
+      width: 44px;
+      padding: 5px 2px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-align: center;
+      outline: none;
+      text-transform: uppercase;
+    }
+
+    .jump-input:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-jump {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Контейнер картки */
+    main {
+      flex: 1;
+      padding: 12px;
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      /* Прибираємо flex: 1, щоб картка не розтягувалася пустотою */
+      margin-bottom: auto;
+    }
+
+    /* Зображення завдання або герба */
+    .image-wrapper {
+      text-align: center;
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      max-height: 190px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .question-title {
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    /* Варіанти відповідей */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .option-btn:active {
+      transform: scale(0.99);
+    }
+
+    .option-key {
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #f1f5f9;
+      border-radius: 5px;
+      min-width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* Стани відповідей */
+    .option-btn.correct {
+      background: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: #14532d !important;
+      font-weight: 600;
+    }
+
+    .option-btn.correct .option-key {
+      background: var(--correct);
+      color: white;
+    }
+
+    .option-btn.wrong {
+      background: var(--wrong-bg) !important;
+      border-color: var(--wrong) !important;
+      color: #7f1d1d !important;
+    }
+
+    .option-btn.wrong .option-key {
+      background: var(--wrong);
+      color: white;
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+      transform: none;
+    }
+
+    /* Нижня панель навігації із Safe Area */
+    footer {
+      position: sticky;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: flex;
+      gap: 10px;
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-btn.primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Модальне вікно вибору землі */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background: #ffffff;
+      width: 100%;
+      max-width: 580px;
+      border-radius: 18px 18px 0 0;
+      padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      animation: slideUp 0.2s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      overflow-y: auto;
+    }
+
+    .state-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .state-card:hover,
+    .state-card.active {
+      border-color: var(--primary);
+      background: #eff6ff;
+    }
+
+    .state-card img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .state-name-box {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .state-code {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    .state-name {
+      font-size: 0.75rem;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Компактна шапка -->
+  <header>
+    <button class="state-btn" id="openStateModalBtn">
+      <img id="headerStateCoat" src="Assets/coats/NW.png" alt="Wappen">
+      <span id="headerStateCode">NW</span>
+      <span style="font-size:0.6rem; color:var(--text-muted)">▼</span>
+    </button>
+
+    <!-- Скорочений лічильник без зайвих слів -->
+    <div class="counter" id="counter">1 / 310</div>
+
+    <div class="jump-box">
+      <input type="text" id="jumpInput" class="jump-input" placeholder="№">
+      <button class="btn-jump" id="jumpBtn">Go</button>
+    </div>
+  </header>
+
+  <!-- Картка без зайвої висоти -->
+  <main>
+    <div class="card">
+      <div class="image-wrapper" id="imageWrapper">
+        <img id="questionImage" src="" alt="Abbildung">
+      </div>
+
+      <div class="question-title" id="questionText">Завантаження...</div>
+
+      <div class="options" id="optionsContainer"></div>
+    </div>
+  </main>
+
+  <!-- Нижня панель -->
+  <footer>
+    <button class="nav-btn" id="prevBtn">← Zurück</button>
+    <button class="nav-btn primary" id="nextBtn">Weiter →</button>
+  </footer>
+
+  <!-- Модальне вікно -->
+  <div class="modal-overlay" id="stateModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title">Bundesland wählen</div>
+        <button class="modal-close" id="closeStateModalBtn">&times;</button>
+      </div>
+      <div class="states-grid" id="statesGrid"></div>
+    </div>
+  </div>
+
+  <script>
+    const BUNDESLAENDER = [
+      { code: "BW", name: "Baden-Württemberg" },
+      { code: "BY", name: "Bayern" },
+      { code: "BE", name: "Berlin" },
+      { code: "BB", name: "Brandenburg" },
+      { code: "HB", name: "Bremen" },
+      { code: "HH", name: "Hamburg" },
+      { code: "HE", name: "Hessen" },
+      { code: "MV", name: "Meckl.-Vorpommern" },
+      { code: "NI", name: "Niedersachsen" },
+      { code: "NW", name: "Nordrhein-Westfalen" },
+      { code: "RP", name: "Rheinland-Pfalz" },
+      { code: "SL", name: "Saarland" },
+      { code: "SN", name: "Sachsen" },
+      { code: "ST", name: "Sachsen-Anhalt" },
+      { code: "SH", name: "Schleswig-Holstein" },
+      { code: "TH", name: "Thüringen" }
+    ];
+
+    let rawData = null;
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let selectedState = localStorage.getItem('lid_selected_state') || 'NW';
+    const userAnswers = {};
+
+    function initStatesGrid() {
+      const container = document.getElementById('statesGrid');
+      container.innerHTML = '';
+
+      BUNDESLAENDER.forEach(land => {
+        const item = document.createElement('div');
+        item.className = `state-card ${land.code === selectedState ? 'active' : ''}`;
+        item.innerHTML = `
+          <img src="Assets/coats/${land.code}.png" alt="${land.code}" onerror="this.style.opacity='0.2'">
+          <div class="state-name-box">
+            <span class="state-code">${land.code}</span>
+            <span class="state-name">${land.name}</span>
+          </div>
+        `;
+        item.onclick = () => {
+          selectBundesland(land.code);
+          closeModal();
+        };
+        container.appendChild(item);
+      });
+    }
+
+    function selectBundesland(code) {
+      selectedState = code;
+      localStorage.setItem('lid_selected_state', code);
+      updateHeaderState();
+      buildActiveQuestionsList();
+      currentIndex = 0;
+      renderQuestion(currentIndex);
+      initStatesGrid();
+    }
+
+    function updateHeaderState() {
+      document.getElementById('headerStateCode').innerText = selectedState;
+      document.getElementById('headerStateCoat').src = `Assets/coats/${selectedState}.png`;
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch('questions.json');
+        rawData = await response.json();
+        updateHeaderState();
+        initStatesGrid();
+        buildActiveQuestionsList();
+        renderQuestion(currentIndex);
+      } catch (err) {
+        document.getElementById('questionText').innerText =
+          'Помилка завантаження questions.json. Будь ласка, запустіть через локальний сервер.';
+        console.error(err);
+      }
+    }
+
+    function buildActiveQuestionsList() {
+      if (!rawData) return;
+
+      let generalQuestions = [];
+      let stateQuestions = [];
+
+      // 1. Загальні
+      if (Array.isArray(rawData.general)) {
+        generalQuestions = [...rawData.general];
+      } else if (Array.isArray(rawData)) {
+        generalQuestions = rawData.filter(q => /^\d+$/.test(String(q.num || '').trim()));
+      }
+
+      // 2. Регіональні
+      const targetCode = selectedState.toUpperCase();
+
+      if (rawData.states && typeof rawData.states === 'object') {
+        const key = Object.keys(rawData.states).find(k => k.toUpperCase() === targetCode);
+        if (key && Array.isArray(rawData.states[key])) {
+          stateQuestions = [...rawData.states[key]];
+        }
+      }
+
+      if (stateQuestions.length === 0) {
+        const rootKey = Object.keys(rawData).find(k => k.toUpperCase() === targetCode);
+        if (rootKey && Array.isArray(rawData[rootKey])) {
+          stateQuestions = [...rawData[rootKey]];
+        }
+      }
+
+      generalQuestions.sort((a, b) => parseInt(a.num, 10) - parseInt(b.num, 10));
+
+      stateQuestions.sort((a, b) => {
+        const getSubNum = (item) => {
+          const parts = String(item.num || '').split('-');
+          return parts.length > 1 ? parseInt(parts[1], 10) : (parseInt(item.num, 10) || 0);
+        };
+        return getSubNum(a) - getSubNum(b);
+      });
+
+      currentQuestions = [...generalQuestions, ...stateQuestions];
+    }
+
+    function renderQuestion(index) {
+      const q = currentQuestions[index];
+      if (!q) return;
+
+      const qKey = q.id || q.num;
+
+      // Компактний лічильник: якщо регіональне "NW-1 (301/310)", якщо загальне "123 / 310"
+      const isRegional = String(q.num).includes('-');
+      document.getElementById('counter').innerText = isRegional
+        ? `${q.num} (${index + 1}/${currentQuestions.length})`
+        : `${q.num} / ${currentQuestions.length}`;
+
+      document.getElementById('prevBtn').disabled = (index === 0);
+      document.getElementById('nextBtn').disabled = (index === currentQuestions.length - 1);
+      document.getElementById('jumpInput').value = '';
+
+      // Текст питання (за замовчуванням німецька)
+      document.getElementById('questionText').innerText = q.question;
+
+      // Зображення
+      const imageWrapper = document.getElementById('imageWrapper');
+      const questionImage = document.getElementById('questionImage');
+      const imgRaw = (q.image && q.image !== '-') ? q.image.trim() : '';
+
+      if (imgRaw) {
+        if (imgRaw.startsWith('http://') || imgRaw.startsWith('https://')) {
+          questionImage.src = imgRaw;
+        } else {
+          let fileName = imgRaw;
+          if (!fileName.includes('.')) fileName += '.png';
+          questionImage.src = `Assets/coats/${fileName}`;
+        }
+        imageWrapper.style.display = 'block';
+      } else {
+        imageWrapper.style.display = 'none';
+        questionImage.src = '';
+      }
+
+      // Варіанти відповідей
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = '';
+
+      const letters = ['a', 'b', 'c', 'd'];
+      const hasAnswered = userAnswers[qKey] !== undefined;
+      const selected = userAnswers[qKey];
+      const solution = q.solution.toLowerCase().trim();
+
+      letters.forEach(letter => {
+        if (!q[letter]) return;
+
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-key">${letter}</span> <span>${q[letter]}</span>`;
+
+        if (hasAnswered) {
+          btn.disabled = true;
+          if (letter === solution) {
+            btn.classList.add('correct');
+          } else if (letter === selected) {
+            btn.classList.add('wrong');
+          }
+        } else {
+          btn.onclick = () => {
+            userAnswers[qKey] = letter;
+            renderQuestion(index);
+          };
+        }
+
+        container.appendChild(btn);
+      });
+
+      // Скрол до гори картки при зміні питання
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function jumpToQuestion() {
+      const rawInput = document.getElementById('jumpInput').value.trim();
+      if (!rawInput) return;
+
+      const clean = str => String(str).toLowerCase().replace(/[^a-z0-9]/g, '');
+      const searchClean = clean(rawInput);
+
+      let targetIdx = currentQuestions.findIndex(q => clean(q.num) === searchClean);
+
+      if (targetIdx === -1 && /^\d+$/.test(rawInput)) {
+        const numVal = parseInt(rawInput, 10);
+        if (numVal >= 1 && numVal <= currentQuestions.length) {
+          targetIdx = numVal - 1;
+        }
+      }
+
+      if (targetIdx !== -1) {
+        currentIndex = targetIdx;
+        renderQuestion(currentIndex);
+      } else {
+        alert(`Питання "${rawInput}" не знайдено!`);
+      }
+    }
+
+    const modal = document.getElementById('stateModal');
+    const openModal = () => modal.classList.add('open');
+    const closeModal = () => modal.classList.remove('open');
+
+    document.getElementById('openStateModalBtn').onclick = openModal;
+    document.getElementById('closeStateModalBtn').onclick = closeModal;
+    modal.onclick = (e) => {
+      if (e.target === modal) closeModal();
+    };
+
+    document.getElementById('prevBtn').onclick = () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion(currentIndex);
+      }
+    };
+
+    document.getElementById('nextBtn').onclick = () => {
+      if (currentIndex < currentQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion(currentIndex);
+      }
+    };
+
+    document.getElementById('jumpBtn').onclick = jumpToQuestion;
+    document.getElementById('jumpInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') jumpToQuestion();
+    });
+
+    loadData();
+  </script>
+</body>
+
+</html>
