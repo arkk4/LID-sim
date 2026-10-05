@@ -109,11 +109,19 @@ def show_question_image(url: str, url_map: dict) -> None:
     if not local or not os.path.exists(local):
         console.print(f"  [dim][image not cached][/dim]")
         return
-    cols  = term_cols()
-    w_px  = max(120, int(cols * 8 * 0.40))   # ~40% of terminal width
-    h_px  = int(w_px * 0.65)
-    b64   = _b64(local)
-    sys.stdout.write(_iterm2(b64, os.path.basename(local), f"{w_px}px", f"{h_px}px") + "\n")
+
+    size = shutil.get_terminal_size((80, 24))
+    cols, lines = size.columns, size.lines
+
+    # Dynamic scaling based on terminal window dimensions:
+    # Use character cells instead of low-DPI fixed pixels so images
+    # scale sharply on Retina displays and adapt to window resize.
+    # Leave room for header, question panel, options, and prompt (~14 lines).
+    max_w = max(40, min(cols - 4, int(cols * 0.85)))
+    max_h = max(8, min(int(lines * 0.48), max(8, lines - 14)))
+
+    b64 = _b64(local)
+    sys.stdout.write(_iterm2(b64, os.path.basename(local), max_w, max_h) + "\n")
     sys.stdout.flush()
 
 
