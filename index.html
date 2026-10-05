@@ -453,6 +453,51 @@
       { code: "TH", name: "Thüringen" }
     ];
 
+    const LOCAL_IMAGE_CACHE = {
+      "https://foreignvasi.com/q148.197dc41c.png": "Assets/cache/q148.197dc41c_45564593.png",
+      "https://foreignvasi.com/q160.5e16bedb.png": "Assets/cache/q160.5e16bedb_d37855ef.png",
+      "https://foreignvasi.com/q212.75bffc4d.png": "Assets/cache/q212.75bffc4d_445d1c5c.png",
+      "https://foreignvasi.com/q26.48d9065a.png": "Assets/cache/q26.48d9065a_8ee72f39.png",
+      "https://foreignvasi.com/q279.1a549501.png": "Assets/cache/q279.1a549501_98e31742.png",
+      "https://foreignvasi.com/q287.838640b1.png": "Assets/cache/q287.838640b1_b6b2faac.png",
+      "https://foreignvasi.com/q29.31824d77.png": "Assets/cache/q29.31824d77_b7a12172.png",
+      "https://foreignvasi.com/q35.e7713f5f.png": "Assets/cache/q35.e7713f5f_b8d41ec2.png",
+      "https://foreignvasi.com/q56-q99.42b88c95.png": "Assets/cache/q56-q99.42b88c95_cf274881.png",
+      "https://foreignvasi.com/q62.28bca79d.png": "Assets/cache/q62.28bca79d_3e205fa2.png",
+      "https://foreignvasi.com/qbb1.706c4d3c.jpeg": "Assets/cache/qbb1.706c4d3c_8a564f22.jpeg",
+      "https://foreignvasi.com/qbb10.7926742d.jpeg": "Assets/cache/qbb10.7926742d_62588638.jpeg",
+      "https://foreignvasi.com/qbl1.83065446.jpeg": "Assets/cache/qbl1.83065446_04e52625.jpeg",
+      "https://foreignvasi.com/qbl10.70634ae6.jpeg": "Assets/cache/qbl10.70634ae6_f19876a9.jpeg",
+      "https://foreignvasi.com/qbm1.9033f1b7.jpeg": "Assets/cache/qbm1.9033f1b7_d2c1ffc8.jpeg",
+      "https://foreignvasi.com/qbm10.9f45074b.jpeg": "Assets/cache/qbm10.9f45074b_93c84dac.jpeg",
+      "https://foreignvasi.com/qbw1.18061c05.jpeg": "Assets/cache/qbw1.18061c05_1fa9a987.jpeg",
+      "https://foreignvasi.com/qbw8.27ed57e1.jpeg": "Assets/cache/qbw8.27ed57e1_2e27e839.jpeg",
+      "https://foreignvasi.com/qby1.378f8193.jpeg": "Assets/cache/qby1.378f8193_50574801.jpeg",
+      "https://foreignvasi.com/qby10.eaddc2be.jpeg": "Assets/cache/qby10.eaddc2be_d5a1ef6c.jpeg",
+      "https://foreignvasi.com/qhb1.ec3ac9e3.jpeg": "Assets/cache/qhb1.ec3ac9e3_171cb0f4.jpeg",
+      "https://foreignvasi.com/qhb10.4c2c3aab.jpeg": "Assets/cache/qhb10.4c2c3aab_7bc94689.jpeg",
+      "https://foreignvasi.com/qhs1.a1d732b7.jpeg": "Assets/cache/qhs1.a1d732b7_bf2b842b.jpeg",
+      "https://foreignvasi.com/qhs10.da672a59.jpeg": "Assets/cache/qhs10.da672a59_fcc2e569.jpeg",
+      "https://foreignvasi.com/qmv1.a2812830.jpeg": "Assets/cache/qmv1.a2812830_8d04b022.jpeg",
+      "https://foreignvasi.com/qmv10.bc891748.jpeg": "Assets/cache/qmv10.bc891748_620d812e.jpeg",
+      "https://foreignvasi.com/qns1.fc718c6e.jpeg": "Assets/cache/qns1.fc718c6e_a57e85bc.jpeg",
+      "https://foreignvasi.com/qns8.81db6464.jpeg": "Assets/cache/qns8.81db6464_0faf3411.jpeg",
+      "https://foreignvasi.com/qnw1.78baa273.jpeg": "Assets/cache/qnw1.78baa273_0ad61019.jpeg",
+      "https://foreignvasi.com/qnw8.f555cf6b.jpeg": "Assets/cache/qnw8.f555cf6b_84aabd71.jpeg",
+      "https://foreignvasi.com/qrp1.5a74c5da.jpeg": "Assets/cache/qrp1.5a74c5da_8838e716.jpeg",
+      "https://foreignvasi.com/qrp8.528dcff5.jpeg": "Assets/cache/qrp8.528dcff5_03af2bff.jpeg",
+      "https://foreignvasi.com/qsa1.1e4245dd.jpeg": "Assets/cache/qsa1.1e4245dd_ed965317.jpeg",
+      "https://foreignvasi.com/qsa8.fd6b5f78.jpeg": "Assets/cache/qsa8.fd6b5f78_1b422ab8.jpeg",
+      "https://foreignvasi.com/qsh1.c4be2a60.jpeg": "Assets/cache/qsh1.c4be2a60_e876ee99.jpeg",
+      "https://foreignvasi.com/qsh8.442d7ed7.jpeg": "Assets/cache/qsh8.442d7ed7_3ab52e41.jpeg",
+      "https://foreignvasi.com/qsl1.5d22fa5a.jpeg": "Assets/cache/qsl1.5d22fa5a_ebe8f28a.jpeg",
+      "https://foreignvasi.com/qsl8.e724ee61.jpeg": "Assets/cache/qsl8.e724ee61_14574367.jpeg",
+      "https://foreignvasi.com/qss1.71aaeb78.jpeg": "Assets/cache/qss1.71aaeb78_2f962ad8.jpeg",
+      "https://foreignvasi.com/qss8.6922b0bb.jpeg": "Assets/cache/qss8.6922b0bb_8dbc0c84.jpeg",
+      "https://foreignvasi.com/qtg1.aca82959.jpeg": "Assets/cache/qtg1.aca82959_6e014456.jpeg",
+      "https://foreignvasi.com/qtg8.56380392.jpeg": "Assets/cache/qtg8.56380392_137308b1.jpeg"
+    };
+
     let rawData = null;
     let currentQuestions = [];
     let currentIndex = 0;
@@ -579,11 +624,20 @@
       const imgRaw = (q.image && q.image !== '-') ? q.image.trim() : '';
 
       if (imgRaw) {
-        if (imgRaw.startsWith('http://') || imgRaw.startsWith('https://')) {
+        if (LOCAL_IMAGE_CACHE[imgRaw]) {
+          questionImage.src = LOCAL_IMAGE_CACHE[imgRaw];
+          questionImage.onerror = () => {
+            // Fallback to original remote URL if local cache file is not found
+            questionImage.onerror = null;
+            questionImage.src = imgRaw;
+          };
+        } else if (imgRaw.startsWith('http://') || imgRaw.startsWith('https://')) {
+          questionImage.onerror = null;
           questionImage.src = imgRaw;
         } else {
           let fileName = imgRaw;
           if (!fileName.includes('.')) fileName += '.png';
+          questionImage.onerror = null;
           questionImage.src = `Assets/coats/${fileName}`;
         }
         imageWrapper.style.display = 'block';
