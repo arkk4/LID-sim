@@ -502,7 +502,7 @@
     let currentQuestions = [];
     let currentIndex = 0;
     let selectedState = localStorage.getItem('lid_selected_state') || 'NW';
-    const userAnswers = {};
+    let currentAnswer = null;
 
     function initStatesGrid() {
       const container = document.getElementById('statesGrid');
@@ -531,8 +531,7 @@
       localStorage.setItem('lid_selected_state', code);
       updateHeaderState();
       buildActiveQuestionsList();
-      currentIndex = 0;
-      renderQuestion(currentIndex);
+      goToQuestion(0);
       initStatesGrid();
     }
 
@@ -651,8 +650,8 @@
       container.innerHTML = '';
 
       const letters = ['a', 'b', 'c', 'd'];
-      const hasAnswered = userAnswers[qKey] !== undefined;
-      const selected = userAnswers[qKey];
+      const hasAnswered = currentAnswer !== null;
+      const selected = currentAnswer;
       const solution = q.solution.toLowerCase().trim();
 
       letters.forEach(letter => {
@@ -671,7 +670,7 @@
           }
         } else {
           btn.onclick = () => {
-            userAnswers[qKey] = letter;
+            currentAnswer = letter;
             renderQuestion(index);
           };
         }
@@ -681,6 +680,13 @@
 
       // Скрол до гори картки при зміні питання
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToQuestion(idx) {
+      if (idx < 0 || idx >= currentQuestions.length) return;
+      currentIndex = idx;
+      currentAnswer = null;
+      renderQuestion(currentIndex);
     }
 
     function jumpToQuestion() {
@@ -700,8 +706,7 @@
       }
 
       if (targetIdx !== -1) {
-        currentIndex = targetIdx;
-        renderQuestion(currentIndex);
+        goToQuestion(targetIdx);
       } else {
         alert(`Питання "${rawInput}" не знайдено!`);
       }
@@ -718,18 +723,22 @@
     };
 
     document.getElementById('prevBtn').onclick = () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        renderQuestion(currentIndex);
-      }
+      if (currentIndex > 0) goToQuestion(currentIndex - 1);
     };
 
     document.getElementById('nextBtn').onclick = () => {
-      if (currentIndex < currentQuestions.length - 1) {
-        currentIndex++;
-        renderQuestion(currentIndex);
-      }
+      if (currentIndex < currentQuestions.length - 1) goToQuestion(currentIndex + 1);
     };
+
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement === document.getElementById('jumpInput')) return;
+      if (modal.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') {
+        if (currentIndex > 0) goToQuestion(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        if (currentIndex < currentQuestions.length - 1) goToQuestion(currentIndex + 1);
+      }
+    });
 
     document.getElementById('jumpBtn').onclick = jumpToQuestion;
     document.getElementById('jumpInput').addEventListener('keydown', (e) => {
