@@ -189,7 +189,7 @@ def show_sets(sets: list, current_set_id: str = None) -> None:
         table.add_row(str(i), Text(sid, style=sid_style), stitle, count)
 
     console.print(Panel(table, title="[bold]Verfügbare Fragensets (Themen & Lehrbuchseiten)[/bold]", border_style="blue"))
-    console.print("[dim]Aktivieren mit: 'set <id>' oder 'set <#>' (z. B. 'set 1' oder 'set topic-politics')[/dim]\n")
+    console.print("[dim]Aktivieren mit: 'set <Seite>' (z. B. 'set 14'), 'set <id>' oder 'set <#>'[/dim]\n")
 
 
 # ── Question renderer ─────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@ def show_help(is_exam: bool = False) -> None:
             ("g <num>",        "Same: jump to question"),
             ("s <CODE>",       "Switch Bundesland (e.g. s BY, s NW)"),
             ("set",            "List all question sets (thematic / textbook pages)"),
-            ("set <id|num>",   "Switch to question set (e.g. 'set 1', 'set book-p10-25')"),
+            ("set <Seite|id>", "Switch to question set (e.g. 'set 14', 'set book-p14')"),
             ("set all",        "Reset to full catalog"),
             ("exam",           "Start official 33-question simulation exam"),
             ("r",              "Reset current answer"),
@@ -413,6 +413,55 @@ def find_q(questions: list, target: str) -> int:
         if 1 <= n <= len(questions):
             idx = n - 1
     return idx
+
+
+def find_set(available_sets: list, target: str) -> dict:
+    """
+    Find a question set by:
+    1. Exact or sanitized ID match (e.g. 'book-p14')
+    2. Page number (e.g. '14', 'p14', 's14' -> matching book-p14 or S.14)
+    3. 1-based index in sets list (fallback if no page match)
+    """
+    if not target or not available_sets:
+        return None
+    raw = target.strip()
+    clean = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
+    target_clean = clean(raw)
+
+    # 1. Direct ID match
+    for s in available_sets:
+        if clean(s.get("id", "")) == target_clean:
+            return s
+
+    # 2. Number input (page number or index)
+    if re.match(r"^\d+$", raw):
+        page_num = int(raw)
+        # Search for page number in ID, title, or description
+        for s in available_sets:
+            if re.search(rf"(?:book-p|lernseite-p){page_num}(?:$|-)", s.get("id", "")):
+                return s
+            if re.search(rf"S\.?\s*{page_num}(?:$|\D)", s.get("title", "")):
+                return s
+            if re.search(rf"S\.?\s*{page_num}(?:$|\D)", s.get("description", "")):
+                return s
+        # Fallback to 1-based index if page not found
+        s_idx = page_num - 1
+        if 0 <= s_idx < len(available_sets):
+            return available_sets[s_idx]
+
+    # 3. 'p<num>' or 's<num>' prefix (e.g. 'p14', 's14')
+    m = re.match(r"^[ps](\d+)$", raw.lower())
+    if m:
+        page_num = int(m.group(1))
+        for s in available_sets:
+            if re.search(rf"(?:book-p|lernseite-p){page_num}(?:$|-)", s.get("id", "")):
+                return s
+            if re.search(rf"S\.?\s*{page_num}(?:$|\D)", s.get("title", "")):
+                return s
+            if re.search(rf"S\.?\s*{page_num}(?:$|\D)", s.get("description", "")):
+                return s
+
+    return None
 
 
 # ── Exam Simulation ───────────────────────────────────────────────────────────
@@ -654,7 +703,7 @@ def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set
     available_sets = load_sets()
     active_set     = None
     if initial_set_id:
-        active_set = next((s for s in available_sets if s.get("id") == initial_set_id), None)
+        active_set = find_set(available_sets, str(initial_set_id))
 
     all_questions  = build_question_list(raw, state)
     questions      = filter_by_set(all_questions, active_set)
@@ -727,14 +776,7 @@ def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set
                 set_title  = None
                 console.print("[green]Alle Fragen aktiviert (Gesamtkatalog).[/green]")
             else:
-                found_set = None
-                if re.match(r"^\d+$", target_set):
-                    s_idx = int(target_set) - 1
-                    if 0 <= s_idx < len(available_sets):
-                        found_set = available_sets[s_idx]
-                if not found_set:
-                    clean = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
-                    found_set = next((s for s in available_sets if clean(s.get("id","")) == clean(target_set)), None)
+                found_set = find_set(available_sets, target_set)
 
                 if found_set:
                     active_set = found_set
