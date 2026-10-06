@@ -49,6 +49,8 @@ export default function App() {
   const [navigatorTab, setNavigatorTab] = useState<'questions' | 'sets'>('questions');
   const [jumpQuery, setJumpQuery] = useState('');
   const [jumpError, setJumpError] = useState<string | null>(null);
+  const [pageJumpQuery, setPageJumpQuery] = useState('');
+  const [pageJumpError, setPageJumpError] = useState<string | null>(null);
 
   // Bundesland Modal
   const [isStateModalOpen, setIsStateModalOpen] = useState(false);
@@ -264,6 +266,42 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setJumpError(`Frage "${raw}" im aktuellen Set nicht gefunden.`);
+    }
+  };
+
+  // Jump to Set by page number
+  const handleSetJumpSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setPageJumpError(null);
+    const raw = pageJumpQuery.trim();
+    if (!raw) return;
+
+    const pageNum = parseInt(raw.replace(/\D/g, ''), 10);
+    if (isNaN(pageNum)) {
+      setPageJumpError(`Bitte eine gültige Seitenzahl eingeben.`);
+      return;
+    }
+
+    // Match set by page number:
+    // 1. Explicit ID matches like book-p14 or lernseite-p14
+    // 2. Title matching "S.14" or "S. 14"
+    // 3. Description matching "S.14"
+    const matched = availableSets.find((s) => {
+      const idMatch = s.id.match(new RegExp(`(?:book-p|lernseite-p)${pageNum}(?:$|-)`));
+      if (idMatch) return true;
+      const titleMatch = s.title.match(new RegExp(`S\\.?\\s*${pageNum}(?:$|\\D)`));
+      if (titleMatch) return true;
+      const descMatch = (s.description || '').match(new RegExp(`S\\.?\\s*${pageNum}(?:$|\\D)`));
+      if (descMatch) return true;
+      return false;
+    });
+
+    if (matched) {
+      handleSelectSet(matched);
+      setPageJumpQuery('');
+      setPageJumpError(null);
+    } else {
+      setPageJumpError(`Kein Fragenset für Seite ${pageNum} gefunden.`);
     }
   };
 
@@ -895,30 +933,6 @@ export default function App() {
                     );
                   })}
                 </div>
-
-                {/* Instant Feedback Banner */}
-                {currentAnswer !== null && (
-                  <div
-                    className={`mt-4 p-3 rounded-xl border text-xs flex items-center justify-between animate-in fade-in duration-150 ${
-                      currentAnswer === currentQuestion.solution
-                        ? 'bg-emerald-50 dark:bg-emerald-950/50 border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200'
-                        : 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      {currentAnswer === currentQuestion.solution ? (
-                        <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                      ) : (
-                        <X className="w-4 h-4 text-rose-600 dark:text-rose-400" />
-                      )}
-                      <span className="font-semibold">
-                        {currentAnswer === currentQuestion.solution
-                          ? 'Richtig! Richtige Antwort.'
-                          : `Falsch! Richtige Antwort: (${currentQuestion.solution.toUpperCase()})`}
-                      </span>
-                    </div>
-                  </div>
-                )}
               </article>
             )}
           </div>
@@ -1072,8 +1086,45 @@ export default function App() {
               </div>
             ) : (
               /* TAB 2: QUESTION SETS LIST */
-              <div className="p-3.5 overflow-y-auto max-h-[60vh] space-y-2">
-                {/* Complete Catalog Button */}
+              <div className="flex flex-col flex-1 overflow-hidden">
+                {/* Jump to Set by Page Number */}
+                <div className="p-3 border-b border-zinc-100 dark:border-zinc-800 flex-shrink-0">
+                  <form onSubmit={handleSetJumpSubmit} className="flex gap-2">
+                    <div className="relative flex-1">
+                      <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        autoCapitalize="none"
+                        autoCorrect="off"
+                        placeholder="Zu Set nach Seitenzahl springen (z. B. 14, 23)..."
+                        value={pageJumpQuery}
+                        onChange={(e) => {
+                          setPageJumpQuery(e.target.value);
+                          setPageJumpError(null);
+                        }}
+                        className="w-full pl-9 pr-3 py-2 text-base rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:focus:ring-white"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-semibold text-xs flex items-center gap-1 cursor-pointer active:scale-95 transition-transform"
+                    >
+                      <span>Los</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </form>
+
+                  {pageJumpError && (
+                    <p className="text-xs text-rose-600 dark:text-rose-400 mt-2 font-medium">
+                      {pageJumpError}
+                    </p>
+                  )}
+                </div>
+
+                <div className="p-3.5 overflow-y-auto flex-1 max-h-[50vh] space-y-2">
+                  {/* Complete Catalog Button */}
                 <button
                   onClick={() => handleSelectSet(null)}
                   className={`w-full p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
@@ -1116,6 +1167,7 @@ export default function App() {
                     </button>
                   );
                 })}
+                </div>
               </div>
             )}
           </div>
