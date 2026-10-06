@@ -84,6 +84,48 @@ Once inside the interactive REPL, navigate and answer using quick single-key or 
 
 ---
 
+## Generating / Updating Question Sets (`parse_pdf_sets.py`)
+
+The `parse_pdf_sets.py` script extracts question sets from the **Hueber *Mein Leben in Deutschland – Orientierungskurs* PDF** (not included in this repo — you need your own purchased copy) and converts them into the `sets.json` format.
+
+### Requirements
+
+```bash
+pip install pymupdf
+```
+
+### Usage
+
+```bash
+# Preview generated sets as JSON (stdout)
+python3 parse_pdf_sets.py
+
+# Merge new sets into sets.json (skips IDs already present)
+python3 parse_pdf_sets.py --merge
+
+# Only Lernseite summary sets (one per chapter)
+python3 parse_pdf_sets.py --lernseite-only
+
+# Only per-content-page sets
+python3 parse_pdf_sets.py --content-only
+
+# Use a different PDF path
+python3 parse_pdf_sets.py --pdf /path/to/orientierungskurs.pdf
+```
+
+The PDF must be named `Mein_Leben_in_Deutschland_Orientierungskurs.pdf` in the repo root, or passed via `--pdf`.
+
+### How it works
+
+Two extraction passes:
+
+1. **Lernseite pages** — each chapter summary page contains a `Prüfungsaufgaben` block listing all relevant question numbers for that module. One set per Lernseite.
+2. **Content pages** — question numbers appear as left-margin sidebar annotations (printed at `x < 45 pt` from the page edge). Extracted spatially — no brittle regex on prose text. One set per book page.
+
+After extraction, `--merge` adds only sets whose `id` is not already present in `sets.json`, so hand-crafted entries are never overwritten.
+
+---
+
 ## Web Application (`src/` / `index.html`)
 
 A modern web application built with React, Vite, Tailwind CSS, and Lucide icons.
@@ -118,6 +160,7 @@ The output is generated in `dist/` with all assets, questions, and sets ready to
 │   ├── cache/          # Pre-cached question illustrations (42 images)
 │   └── coats/          # PNG coats of arms for all 16 Bundesländer
 ├── cli.py              # Interactive Python terminal REPL & exam simulator
+├── parse_pdf_sets.py   # PDF parser: extracts question sets → sets.json
 ├── index.html          # Web application HTML entry point
 ├── package.json        # Node.js project & Vite build scripts
 ├── questions.json      # Official question database (general + 16 states)
