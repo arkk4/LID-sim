@@ -2,3 +2,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
+.agents/
+
+# Personal reference files
+questions_source_report.txt
+gesamtfragenkatalog-lebenindeutschland.pdf
+
+# Node & Build artifacts
+node_modules/
+dist/
+index.old.html
+.env.local
+.env

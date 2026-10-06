@@ -12,8 +12,10 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 ## Features
 
 - **Dual Interfaces**:
-  - **Terminal REPL (`cli.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring iTerm2 inline graphics for coats of arms and question illustrations.
-  - **Web Application (`index.html`)**: Sleek, responsive browser app with state switcher modal, quick jump, and real-time answer validation.
+  - **Terminal REPL (`cli.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, and iTerm2 inline graphics for coats of arms and question illustrations.
+  - **Modern Web Application (`index.html` / `src/`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive design.
+- **Question Sets (Fragensets)**: Group questions by textbook chapters (e.g. *Lehrbuch: Seiten 10–25*) or thematic blocks (*Politik*, *Geschichte*, *Gesellschaft*).
+- **Official Exam Simulation (Prüfungssimulation)**: Realistic test mode with 33 randomized questions (30 general + 3 state), 60-minute countdown, passing thresholds (≥15 for integration courses, ≥17 for citizenship), and wrong-answer review.
 - **Complete Offline Support**: Pre-cached illustrations (`Assets/cache/`) and coats of arms (`Assets/coats/`) with automatic fallback to remote mirrors.
 - **Verified Official Questions**: Curated and verified against the official *Bundesamt für Migration und Flüchtlinge* (BAMF) catalog.
 - **State Selection**: Seamlessly switch between all 16 federal states with state-specific question IDs (`NW-1`, `BY-10`, etc.).
@@ -32,7 +34,11 @@ For the CLI:
   ```
 
 For the Web App:
-- Any modern web browser (Chrome, Firefox, Safari, Edge).
+- Node.js 18+ (for development & building):
+  ```bash
+  npm install
+  npm run dev
+  ```
 
 ---
 
@@ -50,6 +56,8 @@ python3 cli.py
 |---|---|---|---|
 | `-s`, `--state` | `CODE` | Set active Bundesland (default: `NW`) | `python3 cli.py -s BY` |
 | `-g`, `--goto` | `N` | Jump directly to question on start | `python3 cli.py -g 42` or `python3 cli.py -g NW-1` |
+| `--set` | `SET_ID` | Activate a specific question set on start | `python3 cli.py --set book-p10-25` |
+| `--exam` | | Launch directly into 33-question exam simulation | `python3 cli.py --exam` |
 
 ### REPL Commands
 
@@ -59,9 +67,13 @@ Once inside the interactive REPL, navigate and answer using quick single-key or 
 |---|---|
 | `<Enter>` / `→` | Next question |
 | `←` / `p` | Previous question |
-| `a` / `b` / `c` / `d` | Select an answer option (shows immediate green/red feedback) |
+| `a` / `b` / `c` / `d` | Select an answer option (shows immediate green/red feedback in practice) |
 | `<number>` or `g <num>` | Jump to question by number (e.g. `42`, `150`, or `NW-3`) |
 | `s <CODE>` | Switch active Bundesland (e.g. `s BY`, `s BE`, `s SN`) |
+| `set` | List all available question sets (textbook chapters & themes) |
+| `set <id\|num>` | Activate a question set (e.g. `set 1` or `set book-p10-25`) |
+| `set all` | Return to full catalog (all 310 questions) |
+| `exam` | Start official 33-question simulation exam with 60-min timer and grading |
 | `lands` or `list` | Display table of all 16 Bundesländer with coats of arms |
 | `r` | Reset selected answer for current question |
 | `?` or `help` | Show command reference |
@@ -72,28 +84,30 @@ Once inside the interactive REPL, navigate and answer using quick single-key or 
 
 ---
 
-## Web Application (`index.html`)
+## Web Application (`src/` / `index.html`)
 
-The web simulator requires no build step and runs directly in any browser.
+A modern web application built with React, Vite, Tailwind CSS, and Lucide icons.
 
-### Running Locally
+### Development & Running Locally
 
-You can open `index.html` directly in your browser:
 ```bash
-open index.html
+npm install
+npm run dev
 ```
 
-Or serve it with Python's built-in HTTP server:
+Build for static hosting (e.g., GitHub Pages or static web servers):
 ```bash
-python3 -m http.server 8000
+npm run build
 ```
-Then navigate to `http://localhost:8000`.
+The output is generated in `dist/` with all assets, questions, and sets ready to serve.
 
 ### Key Features
-- **Header State Coat**: Displays the official coat of arms of the selected Bundesland. Clicking the coat or state name opens the selection modal.
-- **Quick Jump**: Enter any question number or state question code (e.g. `25` or `NW-2`) and press `Enter` or click `Go`.
-- **Offline Asset Loading**: Automatically loads illustrations from `Assets/cache/` for zero-latency offline use, with transparent fallback to remote sources if needed.
-- **Keyboard Navigation**: Use standard browser navigation or dedicated forward/backward buttons.
+- **Header State Coat & Selector**: Modal to select from all 16 federal states with coats of arms.
+- **Question Sets (Fragensets)**: Group questions by textbook pages or topic modules.
+- **Navigator Bottom Sheet**: Quick jump by number or interactive 310-question grid.
+- **Exam Simulation (Prüfung)**: 33 randomized questions with timer, early submission, and detailed results breakdown.
+- **Dark Mode**: Supports light, dark, and system themes.
+- **Keyboard Navigation**: Arrow keys (`←` / `→`) and numbers `1`–`4` for fast practice.
 
 ---
 
@@ -103,9 +117,12 @@ Then navigate to `http://localhost:8000`.
 ├── Assets/
 │   ├── cache/          # Pre-cached question illustrations (42 images)
 │   └── coats/          # PNG coats of arms for all 16 Bundesländer
-├── cli.py              # Interactive Python terminal REPL application
-├── index.html          # Standalone responsive web application
+├── cli.py              # Interactive Python terminal REPL & exam simulator
+├── index.html          # Web application HTML entry point
+├── package.json        # Node.js project & Vite build scripts
 ├── questions.json      # Official question database (general + 16 states)
+├── sets.json           # Curated question sets (textbook pages & topics)
+├── src/                # Modern React web app source code
 ├── LICENSE             # Software and content license information
 └── README.md           # Documentation
 ```
