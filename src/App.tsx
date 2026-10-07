@@ -2,7 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Sun, Moon, GraduationCap, ChevronLeft, ChevronRight, 
   X, RotateCcw, Check, Award, XCircle, MapPin, 
-  ListFilter, Search, ArrowRight, Clock, HelpCircle, Layers
+  ListFilter, Search, ArrowRight, Clock, HelpCircle, Layers,
+  Menu, Settings
 } from 'lucide-react';
 import { BundeslandCode, Question, QuestionSet, ThemeMode } from './types';
 import { BUNDESLAENDER, STATE_COAT_FALLBACKS } from './data/bundeslaender';
@@ -12,6 +13,7 @@ import {
   BUILTIN_STATE_QUESTIONS, 
   resolveQuestionImageSrc 
 } from './data/questionsData';
+import { APP_VERSION_CONFIG } from './version';
 
 export default function App() {
   // Theme State
@@ -51,6 +53,13 @@ export default function App() {
   const [jumpError, setJumpError] = useState<string | null>(null);
   const [pageJumpQuery, setPageJumpQuery] = useState('');
   const [pageJumpError, setPageJumpError] = useState<string | null>(null);
+
+  // Quick Jump Input in top header (question / page jump)
+  const [quickJumpInput, setQuickJumpInput] = useState('');
+  const [quickJumpError, setQuickJumpError] = useState<string | null>(null);
+
+  // Sidebar Menu Modal
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Bundesland Modal
   const [isStateModalOpen, setIsStateModalOpen] = useState(false);
@@ -269,6 +278,96 @@ export default function App() {
     }
   };
 
+  // Quick Jump from Top Header (Question number or page like p14 / S.14)
+  const handleQuickJumpSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setQuickJumpError(null);
+    const raw = quickJumpInput.trim();
+    if (!raw) return;
+
+    const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const searchClean = clean(raw);
+
+    // 1. Try matching page number if prefixed with p/s or if user entered "p14", "s14", "seite 14"
+    const pageMatch = raw.match(/^(?:p|s|seite)\.?\s*(\d+)$/i);
+    if (pageMatch) {
+      const pageNum = parseInt(pageMatch[1], 10);
+      const matchedSet = availableSets.find((s) => {
+        const idMatch = s.id.match(new RegExp(`(?:book-p|lernseite-p)${pageNum}(?:$|-)`));
+        if (idMatch) return true;
+        const titleMatch = s.title.match(new RegExp(`S\\.?\\s*${pageNum}(?:$|\\D)`));
+        if (titleMatch) return true;
+        const descMatch = (s.description || '').match(new RegExp(`S\\.?\\s*${pageNum}(?:$|\\D)`));
+        return !!descMatch;
+      });
+
+      if (matchedSet) {
+        handleSelectSet(matchedSet);
+        setQuickJumpInput('');
+        setQuickJumpError(null);
+        return;
+      }
+    }
+
+    // 2. Try direct question match in currently displayed set
+    let targetIdx = displayedQuestions.findIndex((q) => clean(q.num) === searchClean);
+
+    if (targetIdx === -1 && /^\d+$/.test(raw)) {
+      const numVal = parseInt(raw, 10);
+      // First try matching q.num == numVal (e.g. question number 42)
+      targetIdx = displayedQuestions.findIndex((q) => clean(q.num) === String(numVal));
+      if (targetIdx === -1 && numVal >= 1 && numVal <= displayedQuestions.length) {
+        targetIdx = numVal - 1;
+      }
+    }
+
+    if (targetIdx !== -1) {
+      setCurrentIndex(targetIdx);
+      setCurrentAnswer(null);
+      setQuickJumpInput('');
+      setQuickJumpError(null);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // 3. If in activeSet and not found, check if question exists in general/state catalog
+    const allQuestions = [...catalog.general, ...(catalog.states[selectedState.toUpperCase()] || [])];
+    const inCatalog = allQuestions.find((q) => clean(q.num) === searchClean || clean(q.num) === clean(raw));
+    if (inCatalog && activeSet !== null) {
+      // Switch to complete catalog and jump to that question
+      setActiveSet(null);
+      const newIdx = allQuestions.findIndex((q) => clean(q.num) === clean(inCatalog.num));
+      if (newIdx !== -1) {
+        setCurrentIndex(newIdx);
+        setCurrentAnswer(null);
+        setQuickJumpInput('');
+        setQuickJumpError(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+    }
+
+    // 4. Try matching as set/page number if pure number
+    if (/^\d+$/.test(raw)) {
+      const pageNum = parseInt(raw, 10);
+      const matchedSet = availableSets.find((s) => {
+        const idMatch = s.id.match(new RegExp(`(?:book-p|lernseite-p)${pageNum}(?:$|-)`));
+        if (idMatch) return true;
+        const titleMatch = s.title.match(new RegExp(`S\\.?\\s*${pageNum}(?:$|\\D)`));
+        return !!titleMatch;
+      });
+      if (matchedSet) {
+        handleSelectSet(matchedSet);
+        setQuickJumpInput('');
+        setQuickJumpError(null);
+        return;
+      }
+    }
+
+    setQuickJumpError(`"${raw}" не знайдено`);
+    setTimeout(() => setQuickJumpError(null), 3000);
+  };
+
   // Jump to Set by page number
   const handleSetJumpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -403,7 +502,7 @@ export default function App() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
-      if (isStateModalOpen || isNavigatorOpen || isExamExitPromptOpen) return;
+      if (isMenuOpen || isStateModalOpen || isNavigatorOpen || isExamExitPromptOpen) return;
 
       if (e.key === 'ArrowLeft') {
         if (!isExamMode) handlePrev();
@@ -419,7 +518,7 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, isExamMode, currentAnswer, displayedQuestions.length, examQuestions.length, isStateModalOpen, isNavigatorOpen, isExamExitPromptOpen]);
+  }, [currentIndex, isExamMode, currentAnswer, displayedQuestions.length, examQuestions.length, isMenuOpen, isStateModalOpen, isNavigatorOpen, isExamExitPromptOpen]);
 
   // Format time MM:SS
   const formatTimer = (totalSecs: number) => {
@@ -450,67 +549,74 @@ export default function App() {
           </div>
         )}
 
-        <div className="max-w-2xl mx-auto px-3 py-2.5 flex items-center justify-between gap-2">
-          {/* Bundesland Selector Button */}
+        <div className="max-w-2xl mx-auto px-3 py-2 flex items-center justify-between gap-2">
+          {/* Left: Sidebar Menu Button (Replacing state indicator button) */}
           <button
-            onClick={() => setIsStateModalOpen(true)}
+            onClick={() => setIsMenuOpen(true)}
             disabled={isExamMode}
             className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-95 transition-all cursor-pointer flex-shrink-0 disabled:opacity-50"
-            title="Bundesland auswählen"
+            title="Menü & Einstellungen öffnen"
           >
+            <Menu className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
             <img
               src={`Assets/coats/${selectedState}.png`}
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = STATE_COAT_FALLBACKS[selectedState] || '';
               }}
               alt={selectedState}
-              className="w-5 h-5 object-contain flex-shrink-0"
+              className="w-4 h-4 object-contain flex-shrink-0"
             />
-            <span className="font-bold text-xs tracking-wider text-zinc-900 dark:text-zinc-100">
+            <span className="font-bold text-xs tracking-wider text-zinc-900 dark:text-zinc-100 hidden xs:inline sm:inline">
               {selectedState}
             </span>
-            <span className="text-[10px] text-zinc-400 dark:text-zinc-500 leading-none">▼</span>
           </button>
 
-          {/* Counter Button: Tapping it opens the Navigator */}
-          <button
-            onClick={() => {
-              if (!isExamMode) setIsNavigatorOpen(true);
-            }}
-            disabled={isExamMode}
-            className="flex-1 text-center font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors cursor-pointer group"
-          >
-            {!isExamMode ? (
-              <span className="inline-flex items-center gap-1">
-                <span>
-                  {activeSet
-                    ? `${currentIndex + 1} / ${displayedQuestions.length}`
-                    : currentQuestion?.num.includes('-')
-                    ? `${currentQuestion.num} (${currentIndex + 1}/${displayedQuestions.length})`
-                    : `${currentQuestion?.num || currentIndex + 1} / ${displayedQuestions.length}`}
-                </span>
-                <span className="text-[10px] text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
-                  ▼
-                </span>
-              </span>
-            ) : (
-              <span>
-                {isExamSubmitted ? 'Prüfungsergebnis' : `Frage ${currentIndex + 1} / 33`}
-              </span>
-            )}
-          </button>
+          {/* Center Counter (Non-clickable, clean) */}
+          {!isExamMode ? (
+            <div 
+              className="flex-1 text-center font-bold text-sm tracking-tight text-zinc-800 dark:text-zinc-200 truncate select-none px-1"
+              title="Aktuelle Frage / Gesamtzahl"
+            >
+              {activeSet
+                ? `${currentIndex + 1} / ${displayedQuestions.length}`
+                : currentQuestion?.num.includes('-')
+                ? `${currentQuestion.num} (${currentIndex + 1}/${displayedQuestions.length})`
+                : `${currentQuestion?.num || currentIndex + 1} / ${displayedQuestions.length}`}
+            </div>
+          ) : (
+            <div className="flex-1 text-center font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100 px-1 truncate">
+              {isExamSubmitted ? 'Prüfungsergebnis' : `Frage ${currentIndex + 1} / 33`}
+            </div>
+          )}
 
-          {/* Header Controls: Exam / Exit & Theme */}
+          {/* Right: Quick Jump Input in practice mode (where theme toggle used to be), or Exam controls in exam mode */}
           <div className="flex items-center gap-1.5 flex-shrink-0">
             {!isExamMode ? (
-              <button
-                onClick={handleStartExam}
-                className="px-2.5 py-1.5 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-semibold text-xs flex items-center gap-1.5 shadow-xs active:scale-95 transition-all cursor-pointer"
-                title="Offizielle Prüfungssimulation starten (33 Fragen)"
-              >
-                <GraduationCap className="w-4 h-4" />
-                <span>Prüfung</span>
-              </button>
+              <form onSubmit={handleQuickJumpSubmit} className="flex items-center gap-1 relative">
+                <input
+                  type="text"
+                  value={quickJumpInput}
+                  onChange={(e) => {
+                    setQuickJumpInput(e.target.value);
+                    if (quickJumpError) setQuickJumpError(null);
+                  }}
+                  placeholder="№ / S."
+                  title="Nummer (z. B. 42, NW-1) oder Seite (z. B. 14, S.14) eingeben"
+                  className="w-14 sm:w-16 h-8 px-1 text-center font-mono text-base uppercase rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:focus:ring-white transition-all"
+                />
+                <button
+                  type="submit"
+                  className="h-8 px-2.5 rounded-lg bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-white text-white dark:text-zinc-900 font-bold text-xs flex items-center justify-center cursor-pointer active:scale-95 transition-all shadow-xs"
+                  title="Zu Frage oder Seite springen"
+                >
+                  Go
+                </button>
+                {quickJumpError && (
+                  <span className="absolute -bottom-5 right-0 whitespace-nowrap text-[10px] text-rose-500 font-semibold bg-white dark:bg-zinc-900 px-1.5 py-0.5 rounded shadow-xs border border-rose-200 dark:border-rose-900/60 z-30">
+                    {quickJumpError}
+                  </span>
+                )}
+              </form>
             ) : !isExamSubmitted ? (
               <button
                 onClick={() => setIsExamExitPromptOpen(true)}
@@ -527,22 +633,6 @@ export default function App() {
                 Übungsmodus
               </button>
             )}
-
-            {/* Theme Toggle Button */}
-            <button
-              onClick={() => {
-                const next: ThemeMode = theme === 'dark' ? 'light' : 'dark';
-                setTheme(next);
-              }}
-              className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 active:scale-95 transition-all cursor-pointer"
-              title={theme === 'dark' ? 'Heller Modus' : 'Dunkler Modus'}
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-zinc-200" />
-              ) : (
-                <Moon className="w-4 h-4 text-zinc-700" />
-              )}
-            </button>
           </div>
         </div>
       </header>
@@ -939,41 +1029,44 @@ export default function App() {
         )}
       </main>
 
-      {/* 3. UNIFIED BOTTOM FOOTER NAVIGATION (Practice Mode) */}
+      {/* 3. UNIFIED BOTTOM FOOTER NAVIGATION (Practice Mode - Fixed / Sticky at bottom on mobile) */}
       {!isExamMode && (
-        <footer className="sticky bottom-0 z-20 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 transition-colors">
-          <div className="max-w-2xl mx-auto px-4 py-2.5 pb-[calc(0.75rem+env(safe-area-inset-bottom))] flex items-center justify-between gap-2.5">
-            {/* Zurück */}
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="flex-1 min-h-[46px] px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold text-sm flex items-center justify-center gap-1 shadow-xs disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all cursor-pointer"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span>Zurück</span>
-            </button>
+        <footer className="sticky bottom-0 z-20 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 transition-colors shadow-[0_-4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
+          <div className="max-w-2xl mx-auto px-4 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] flex flex-col gap-1.5">
+            <div className="flex items-center justify-between gap-2.5">
+              {/* Zurück */}
+              <button
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="flex-1 min-h-[46px] px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold text-sm flex items-center justify-center gap-1 shadow-xs disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>Zurück</span>
+              </button>
 
-            {/* UNIFIED CENTER PICKER */}
-            <button
-              onClick={() => setIsNavigatorOpen(true)}
-              className="min-h-[46px] px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.98] transition-all cursor-pointer"
-              title="Fragenliste, Nummernsprung & Sets öffnen"
-            >
-              <ListFilter className="w-4 h-4 text-zinc-500" />
-              <span className="font-mono">
-                {currentQuestion?.num || currentIndex + 1}
-              </span>
-            </button>
+              {/* UNIFIED CENTER PICKER */}
+              <button
+                onClick={() => setIsNavigatorOpen(true)}
+                className="min-h-[46px] px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.98] transition-all cursor-pointer"
+                title="Fragenliste, Nummernsprung & Sets öffnen"
+              >
+                <ListFilter className="w-4 h-4 text-zinc-500" />
+                <span className="font-mono">
+                  {currentQuestion?.num || currentIndex + 1}
+                </span>
+              </button>
 
-            {/* Weiter */}
-            <button
-              onClick={handleNext}
-              disabled={currentIndex >= displayedQuestions.length - 1}
-              className="flex-1 min-h-[46px] px-3 rounded-xl bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-white text-white dark:text-zinc-900 font-semibold text-sm flex items-center justify-center gap-1 shadow-xs disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all cursor-pointer"
-            >
-              <span>Weiter</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
+              {/* Weiter */}
+              <button
+                onClick={handleNext}
+                disabled={currentIndex >= displayedQuestions.length - 1}
+                className="flex-1 min-h-[46px] px-3 rounded-xl bg-zinc-900 dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-white text-white dark:text-zinc-900 font-semibold text-sm flex items-center justify-center gap-1 shadow-xs disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] transition-all cursor-pointer"
+              >
+                <span>Weiter</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
           </div>
         </footer>
       )}
@@ -1170,6 +1263,134 @@ export default function App() {
                 </div>
               </div>
             )}
+
+            {/* Bottom Sheet Footer: Codename Essen & Version */}
+            <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500 bg-zinc-50/50 dark:bg-zinc-900/50">
+              <div className="flex items-center gap-1.5">
+                <img
+                  src="Assets/coats/essen.svg"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = 'essen.svg';
+                  }}
+                  alt="Essen"
+                  className="w-3.5 h-3.5 object-contain"
+                />
+                <span className="font-medium text-zinc-600 dark:text-zinc-400">Codename: Essen</span>
+              </div>
+              <span className="font-mono text-[10px]">v2026.10.07</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* SIDEBAR MENU OVERLAY */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 flex"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150" />
+
+          {/* Drawer panel */}
+          <div
+            className="relative w-72 max-w-[85vw] h-full bg-white dark:bg-zinc-950 border-r border-zinc-200 dark:border-zinc-800 shadow-2xl flex flex-col animate-in slide-in-from-left duration-200 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="px-4 pt-[calc(1rem+env(safe-area-inset-top))] pb-3 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between flex-shrink-0">
+              <span className="font-bold text-sm text-zinc-900 dark:text-white flex items-center gap-2">
+                <Settings className="w-4 h-4 text-zinc-500" />
+                Einstellungen
+              </span>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="p-1 rounded-lg text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 p-4 space-y-6">
+
+              {/* Bundesland */}
+              <section>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2">Bundesland</p>
+                <button
+                  onClick={() => { setIsMenuOpen(false); setIsStateModalOpen(true); }}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+                >
+                  <img
+                    src={`Assets/coats/${selectedState}.png`}
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = STATE_COAT_FALLBACKS[selectedState] || ''; }}
+                    alt={selectedState}
+                    className="w-7 h-7 object-contain flex-shrink-0"
+                  />
+                  <div className="flex-1 text-left min-w-0">
+                    <div className="font-bold text-xs text-zinc-900 dark:text-white">{selectedState}</div>
+                    <div className="text-[11px] text-zinc-500 truncate">
+                      {BUNDESLAENDER.find(l => l.code === selectedState)?.name || selectedState}
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-zinc-400 flex-shrink-0" />
+                </button>
+              </section>
+
+              {/* Exam Mode */}
+              <section>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2">Modus</p>
+                <button
+                  onClick={() => { setIsMenuOpen(false); handleStartExam(); }}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
+                >
+                  <GraduationCap className="w-5 h-5 text-zinc-500 flex-shrink-0" />
+                  <div className="flex-1">
+                    <div className="font-semibold text-xs text-zinc-900 dark:text-white">Prüfungssimulation starten</div>
+                    <div className="text-[11px] text-zinc-500">33 Fragen, 60 Minuten</div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-zinc-400 flex-shrink-0" />
+                </button>
+              </section>
+
+              {/* Theme */}
+              <section>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2">Erscheinungsbild</p>
+                <div className="flex gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+                  {([
+                    { value: 'light', icon: <Sun className="w-3.5 h-3.5" />, label: 'Hell' },
+                    { value: 'dark',  icon: <Moon className="w-3.5 h-3.5" />, label: 'Dunkel' },
+                    { value: 'system',icon: null,                              label: 'System' },
+                  ] as const).map(({ value, icon, label }) => (
+                    <button
+                      key={value}
+                      onClick={() => setTheme(value)}
+                      className={`flex-1 flex flex-col items-center gap-0.5 py-2 rounded-lg text-[11px] font-semibold cursor-pointer transition-all ${
+                        theme === value
+                          ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs'
+                          : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
+                      }`}
+                    >
+                      {icon}
+                      <span>{label}</span>
+                    </button>
+                  ))}
+                </div>
+              </section>
+            </div>
+
+            {/* Footer: version */}
+            <div className="px-4 py-3 border-t border-zinc-100 dark:border-zinc-800 flex items-center gap-2 text-[11px] text-zinc-400 dark:text-zinc-500 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+              <img
+                src={APP_VERSION_CONFIG.coatOfArmsSrc}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = APP_VERSION_CONFIG.coatOfArmsFallback; }}
+                alt="Essen"
+                className="w-4 h-4 object-contain flex-shrink-0"
+              />
+              <span className="font-medium text-zinc-500 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
+              <span>·</span>
+              <span className="font-mono">{APP_VERSION_CONFIG.version}</span>
+            </div>
           </div>
         </div>
       )}
