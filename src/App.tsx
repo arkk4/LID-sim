@@ -21,6 +21,11 @@ export default function App() {
     return (localStorage.getItem('lid_theme') as ThemeMode) || 'dark';
   });
 
+  // Sort set questions numerically (vs. book order)
+  const [sortNumerically, setSortNumerically] = useState(() =>
+    localStorage.getItem('lid_sort_numerically') === 'true'
+  );
+
   // Selected Federal State
   const [selectedState, setSelectedState] = useState<BundeslandCode>(() => {
     return (localStorage.getItem('lid_selected_state') as BundeslandCode) || 'NW';
@@ -202,8 +207,12 @@ export default function App() {
       }
     });
 
+    if (sortNumerically) {
+      result.sort((a, b) => parseInt(a.num, 10) - parseInt(b.num, 10));
+    }
+
     return result.length > 0 ? result : allCurrentQuestions;
-  }, [allCurrentQuestions, activeSet]);
+  }, [allCurrentQuestions, activeSet, sortNumerically]);
 
   const currentQuestion = displayedQuestions[currentIndex] || displayedQuestions[0];
 
@@ -1376,6 +1385,31 @@ export default function App() {
                     </button>
                   ))}
                 </div>
+              </section>
+
+              {/* Set question order */}
+              <section>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2">Reihenfolge im Set</p>
+                <button
+                  onClick={() => {
+                    const next = !sortNumerically;
+                    setSortNumerically(next);
+                    localStorage.setItem('lid_sort_numerically', String(next));
+                  }}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
+                >
+                  <div className="flex-1">
+                    <div className="font-semibold text-xs text-zinc-900 dark:text-white">Numerisch sortieren</div>
+                    <div className="text-[11px] text-zinc-500">{sortNumerically ? 'Aufsteigend nach Nummer' : 'Wie im Buch (Seitenreihenfolge)'}</div>
+                  </div>
+                  <div className={`w-10 h-6 rounded-full transition-colors flex-shrink-0 flex items-center px-1 ${
+                    sortNumerically ? 'bg-blue-500' : 'bg-zinc-300 dark:bg-zinc-700'
+                  }`}>
+                    <div className={`w-4 h-4 rounded-full bg-white shadow transition-transform ${
+                      sortNumerically ? 'translate-x-4' : 'translate-x-0'
+                    }`} />
+                  </div>
+                </button>
               </section>
             </div>
 

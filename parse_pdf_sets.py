@@ -66,8 +66,9 @@ def get_chapter_title(page):
 
 
 def get_sidebar_questions(page):
-    """Return question numbers from left-margin sidebar annotations."""
-    qs = set()
+    """Return question numbers from left-margin sidebar annotations, in top-to-bottom page order."""
+    seen = set()
+    qs = []  # list of (y0, question_str)
     for b in page.get_text("dict")["blocks"]:
         if b.get("type") != 0:
             continue
@@ -79,9 +80,11 @@ def get_sidebar_questions(page):
                     if re.match(r'^[\d,\s]+$', text) and text.strip():
                         for tok in re.findall(r'\d+', text):
                             n = int(tok)
-                            if Q_MIN <= n <= Q_MAX:
-                                qs.add(str(n))
-    return sorted(qs, key=int)
+                            if Q_MIN <= n <= Q_MAX and str(n) not in seen:
+                                seen.add(str(n))
+                                qs.append((y0, str(n)))
+    qs.sort(key=lambda t: t[0])
+    return [q for _, q in qs]
 
 
 def extract_lernseite_sets(doc):
@@ -154,12 +157,28 @@ def merge_into_existing(new_sets, existing_path):
     return existing + added, len(added)
 
 
+def reorder_questions_in_existing(new_sets, existing_path):
+    """Update only the `questions` list of existing sets whose questions changed."""
+    with open(existing_path) as f:
+        existing = json.load(f)
+    new_by_id = {s["id"]: s["questions"] for s in new_sets}
+    changed = 0
+    for s in existing:
+        new_qs = new_by_id.get(s["id"])
+        if new_qs is not None and new_qs != s["questions"]:
+            s["questions"] = new_qs
+            changed += 1
+    return existing, changed
+
+
 def main():
     parser = argparse.ArgumentParser(description="Parse Hueber PDF into sets.json format")
     parser.add_argument("--lernseite-only", action="store_true")
     parser.add_argument("--content-only", action="store_true")
     parser.add_argument("--merge", action="store_true",
                         help="Merge new entries into sets.json (skips existing IDs)")
+    parser.add_argument("--reorder-questions", action="store_true",
+                        help="Update only the questions list of existing sets (preserves everything else)")
     parser.add_argument("--pdf", default=str(PDF_PATH))
     args = parser.parse_args()
 
@@ -177,7 +196,12 @@ def main():
         print(f"# Content-page sets: {len(cs)}", file=sys.stderr)
         result.extend(cs)
 
-    if args.merge:
+    if args.reorder_questions:
+        updated, changed = reorder_questions_in_existing(result, SETS_PATH)
+        with open(SETS_PATH, "w") as f:
+            json.dump(updated, f, ensure_ascii=False, indent=2)
+        print(f"# Updated questions in {changed} sets → {SETS_PATH}", file=sys.stderr)
+    elif args.merge:
         merged, added = merge_into_existing(result, SETS_PATH)
         with open(SETS_PATH, "w") as f:
             json.dump(merged, f, ensure_ascii=False, indent=2)
