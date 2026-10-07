@@ -1284,9 +1284,9 @@ export default function App() {
                   alt="Essen"
                   className="w-3.5 h-3.5 object-contain"
                 />
-                <span className="font-medium text-zinc-600 dark:text-zinc-400">Codename: Essen</span>
+                <span className="font-medium text-zinc-600 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
               </div>
-              <span className="font-mono text-[10px]">v2026.10.07</span>
+              <span className="font-mono text-[10px]">{APP_VERSION_CONFIG.version}</span>
             </div>
           </div>
         </div>

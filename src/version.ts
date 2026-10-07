@@ -7,7 +7,7 @@ export interface AppVersionInfo {
 }
 
 export const APP_VERSION_CONFIG: AppVersionInfo = {
-  version: 'v2026.10.07-3',
+  version: 'v2026.10.07-4',
   codename: 'Essen',
   releaseDate: '2026-10-07',
   coatOfArmsSrc: 'Assets/coats/essen.svg',
