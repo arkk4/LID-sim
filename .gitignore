@@ -8,6 +8,8 @@ __pycache__/
 questions_source_report.txt
 gesamtfragenkatalog-lebenindeutschland.pdf
 Mein_Leben_in_Deutschland_Orientierungskurs.pdf
+questions.json.bak
+
 
 # Node & Build artifacts
 node_modules/
