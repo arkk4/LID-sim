@@ -7,9 +7,9 @@ export interface AppVersionInfo {
 }
 
 export const APP_VERSION_CONFIG: AppVersionInfo = {
-  version: 'v2026.10.08',
+  version: 'v2026.10.08-1',
   codename: 'Dortmund',
   releaseDate: '2026-10-08',
-  coatOfArmsSrc: 'Assets/badges/Dortmund.svg',
+  coatOfArmsSrc: '/badge.svg',
   coatOfArmsFallback: '',
 };
