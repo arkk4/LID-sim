@@ -4,6 +4,9 @@ __pycache__/
 .DS_Store
 .agents/
 
+verbagen-venv/
+cache/
+
 # Personal reference files
 questions_source_report.txt
 gesamtfragenkatalog-lebenindeutschland.pdf

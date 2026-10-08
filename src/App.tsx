@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { 
-  Sun, Moon, GraduationCap, ChevronLeft, ChevronRight, 
-  X, RotateCcw, Check, Award, XCircle, MapPin, 
+import {
+  Sun, Moon, GraduationCap, ChevronLeft, ChevronRight,
+  X, RotateCcw, Check, Award, XCircle, MapPin,
   ListFilter, Search, ArrowRight, Clock, HelpCircle, Layers,
   Menu, Settings
 } from 'lucide-react';
 import { BundeslandCode, Question, QuestionSet, ThemeMode } from './types';
 import { BUNDESLAENDER, STATE_COAT_FALLBACKS } from './data/bundeslaender';
 import { PRESET_QUESTION_SETS } from './data/presetSets';
-import { 
-  BUILTIN_GENERAL_QUESTIONS, 
-  BUILTIN_STATE_QUESTIONS, 
-  resolveQuestionImageSrc 
+import {
+  BUILTIN_GENERAL_QUESTIONS,
+  BUILTIN_STATE_QUESTIONS,
+  resolveQuestionImageSrc
 } from './data/questionsData';
 import { APP_VERSION_CONFIG } from './version';
 
@@ -582,15 +582,15 @@ export default function App() {
 
           {/* Center Counter (Non-clickable, clean) */}
           {!isExamMode ? (
-            <div 
+            <div
               className="flex-1 text-center font-bold text-sm tracking-tight text-zinc-800 dark:text-zinc-200 truncate select-none px-1"
               title="Aktuelle Frage / Gesamtzahl"
             >
               {activeSet
                 ? `${currentIndex + 1} / ${displayedQuestions.length}`
                 : currentQuestion?.num.includes('-')
-                ? `${currentQuestion.num} (${currentIndex + 1}/${displayedQuestions.length})`
-                : `${currentQuestion?.num || currentIndex + 1} / ${displayedQuestions.length}`}
+                  ? `${currentQuestion.num} (${currentIndex + 1}/${displayedQuestions.length})`
+                  : `${currentQuestion?.num || currentIndex + 1} / ${displayedQuestions.length}`}
             </div>
           ) : (
             <div className="flex-1 text-center font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100 px-1 truncate">
@@ -712,18 +712,16 @@ export default function App() {
                               [examQuestions[currentIndex].num]: letter
                             }));
                           }}
-                          className={`w-full min-h-[48px] p-3 rounded-xl border text-left transition-all active:scale-[0.99] flex items-start gap-3 cursor-pointer ${
-                            isSelected
-                              ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white ring-1 ring-zinc-900 dark:ring-white font-medium'
-                              : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800'
-                          }`}
+                          className={`w-full min-h-[48px] p-3 rounded-xl border text-left transition-all active:scale-[0.99] flex items-start gap-3 cursor-pointer ${isSelected
+                            ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white ring-1 ring-zinc-900 dark:ring-white font-medium'
+                            : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800'
+                            }`}
                         >
                           <span
-                            className={`w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs uppercase flex-shrink-0 ${
-                              isSelected
-                                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900'
-                                : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'
-                            }`}
+                            className={`w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs uppercase flex-shrink-0 ${isSelected
+                              ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900'
+                              : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'
+                              }`}
                           >
                             {letter}
                           </span>
@@ -776,13 +774,12 @@ export default function App() {
             <div className="space-y-4 animate-in fade-in duration-200">
               <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 text-center shadow-xs">
                 <div
-                  className={`w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-3 ${
-                    examScore.correct >= 17
-                      ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400'
-                      : examScore.correct >= 15
+                  className={`w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-3 ${examScore.correct >= 17
+                    ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400'
+                    : examScore.correct >= 15
                       ? 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200'
                       : 'bg-rose-100 text-rose-600 dark:bg-rose-950/60 dark:text-rose-400'
-                  }`}
+                    }`}
                 >
                   {examScore.correct >= 15 ? <Award className="w-7 h-7" /> : <XCircle className="w-7 h-7" />}
                 </div>
@@ -807,8 +804,8 @@ export default function App() {
                   {examScore.correct >= 17
                     ? 'Herzlichen Glückwunsch! Sie haben mindestens 17 Punkte erreicht und damit die Voraussetzung für die deutsche Einbürgerung erfüllt.'
                     : examScore.correct >= 15
-                    ? 'Sie haben das Niveau des Integrationskurses bestanden. Für die Einbürgerung sind mindestens 17 Punkte erforderlich.'
-                    : 'Für das Bestehen des Tests sind mindestens 15 richtige Antworten von 33 erforderlich.'}
+                      ? 'Sie haben das Niveau des Integrationskurses bestanden. Für die Einbürgerung sind mindestens 17 Punkte erforderlich.'
+                      : 'Für das Bestehen des Tests sind mindestens 15 richtige Antworten von 33 erforderlich.'}
                 </p>
 
                 {/* Score Stats */}
@@ -864,21 +861,19 @@ export default function App() {
                 <div className="flex gap-1 p-0.5 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg">
                   <button
                     onClick={() => setFilterExamReview('all')}
-                    className={`px-2.5 py-1 rounded font-semibold cursor-pointer ${
-                      filterExamReview === 'all'
-                        ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs'
-                        : 'text-zinc-500'
-                    }`}
+                    className={`px-2.5 py-1 rounded font-semibold cursor-pointer ${filterExamReview === 'all'
+                      ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs'
+                      : 'text-zinc-500'
+                      }`}
                   >
                     Alle (33)
                   </button>
                   <button
                     onClick={() => setFilterExamReview('wrong')}
-                    className={`px-2.5 py-1 rounded font-semibold cursor-pointer ${
-                      filterExamReview === 'wrong'
-                        ? 'bg-white dark:bg-zinc-800 text-rose-600 dark:text-rose-400 shadow-xs'
-                        : 'text-zinc-500'
-                    }`}
+                    className={`px-2.5 py-1 rounded font-semibold cursor-pointer ${filterExamReview === 'wrong'
+                      ? 'bg-white dark:bg-zinc-800 text-rose-600 dark:text-rose-400 shadow-xs'
+                      : 'text-zinc-500'
+                      }`}
                   >
                     Nur Fehler ({examScore.wrongList.length})
                   </button>
@@ -896,11 +891,10 @@ export default function App() {
                     return (
                       <div
                         key={q.num}
-                        className={`p-4 rounded-xl border bg-white dark:bg-zinc-900 ${
-                          isCorrect
-                            ? 'border-emerald-300 dark:border-emerald-800/80'
-                            : 'border-rose-300 dark:border-rose-800/80'
-                        }`}
+                        className={`p-4 rounded-xl border bg-white dark:bg-zinc-900 ${isCorrect
+                          ? 'border-emerald-300 dark:border-emerald-800/80'
+                          : 'border-rose-300 dark:border-rose-800/80'
+                          }`}
                       >
                         <div className="flex items-center justify-between text-xs mb-2">
                           <span className="font-bold text-zinc-500">
@@ -1097,21 +1091,19 @@ export default function App() {
               <div className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-800 p-0.5 rounded-lg text-xs font-semibold">
                 <button
                   onClick={() => setNavigatorTab('questions')}
-                  className={`px-3 py-1.5 rounded-md cursor-pointer transition-colors ${
-                    navigatorTab === 'questions'
-                      ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs'
-                      : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-white'
-                  }`}
+                  className={`px-3 py-1.5 rounded-md cursor-pointer transition-colors ${navigatorTab === 'questions'
+                    ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs'
+                    : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-white'
+                    }`}
                 >
                   Fragen ({displayedQuestions.length})
                 </button>
                 <button
                   onClick={() => setNavigatorTab('sets')}
-                  className={`px-3 py-1.5 rounded-md cursor-pointer transition-colors ${
-                    navigatorTab === 'sets'
-                      ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs'
-                      : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-white'
-                  }`}
+                  className={`px-3 py-1.5 rounded-md cursor-pointer transition-colors ${navigatorTab === 'sets'
+                    ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs'
+                    : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-white'
+                    }`}
                 >
                   Fragensets ({availableSets.length})
                 </button>
@@ -1173,11 +1165,10 @@ export default function App() {
                         <button
                           key={q.num}
                           onClick={() => handleSelectQuestionIndex(idx)}
-                          className={`h-9 rounded-lg border text-xs flex items-center justify-center p-0.5 transition-all active:scale-95 cursor-pointer font-mono ${
-                            isCurrent
-                              ? 'border-zinc-900 dark:border-white bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold'
-                              : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 hover:border-zinc-400'
-                          }`}
+                          className={`h-9 rounded-lg border text-xs flex items-center justify-center p-0.5 transition-all active:scale-95 cursor-pointer font-mono ${isCurrent
+                            ? 'border-zinc-900 dark:border-white bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold'
+                            : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 hover:border-zinc-400'
+                            }`}
                         >
                           <span className="truncate">{q.num}</span>
                         </button>
@@ -1227,48 +1218,46 @@ export default function App() {
 
                 <div className="p-3.5 overflow-y-auto flex-1 max-h-[50vh] space-y-2">
                   {/* Complete Catalog Button */}
-                <button
-                  onClick={() => handleSelectSet(null)}
-                  className={`w-full p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                    activeSet === null
+                  <button
+                    onClick={() => handleSelectSet(null)}
+                    className={`w-full p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${activeSet === null
                       ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white font-medium ring-1 ring-zinc-900 dark:ring-white'
                       : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800'
-                  }`}
-                >
-                  <div>
-                    <div className="font-semibold text-xs">Alle Fragen (Gesamtkatalog)</div>
-                    <div className="text-[11px] text-zinc-500">
-                      300 Bundesfragen + 10 Landesfragen ({selectedState})
+                      }`}
+                  >
+                    <div>
+                      <div className="font-semibold text-xs">Alle Fragen (Gesamtkatalog)</div>
+                      <div className="text-[11px] text-zinc-500">
+                        300 Bundesfragen + 10 Landesfragen ({selectedState})
+                      </div>
                     </div>
-                  </div>
-                  <span className="text-xs font-bold text-zinc-500">310</span>
-                </button>
+                    <span className="text-xs font-bold text-zinc-500">310</span>
+                  </button>
 
-                {/* Available Sets */}
-                {availableSets.map((s) => {
-                  const isSelected = activeSet?.id === s.id;
-                  return (
-                    <button
-                      key={s.id}
-                      onClick={() => handleSelectSet(s)}
-                      className={`w-full p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${
-                        isSelected
+                  {/* Available Sets */}
+                  {availableSets.map((s) => {
+                    const isSelected = activeSet?.id === s.id;
+                    return (
+                      <button
+                        key={s.id}
+                        onClick={() => handleSelectSet(s)}
+                        className={`w-full p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between ${isSelected
                           ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white font-medium ring-1 ring-zinc-900 dark:ring-white'
                           : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800'
-                      }`}
-                    >
-                      <div className="min-w-0 pr-2">
-                        <div className="font-semibold text-xs truncate">{s.title}</div>
-                        {s.description && (
-                          <div className="text-[11px] text-zinc-500 truncate">{s.description}</div>
-                        )}
-                      </div>
-                      <span className="text-xs font-bold text-zinc-400">
-                        {s.questionNumbers.length}
-                      </span>
-                    </button>
-                  );
-                })}
+                          }`}
+                      >
+                        <div className="min-w-0 pr-2">
+                          <div className="font-semibold text-xs truncate">{s.title}</div>
+                          {s.description && (
+                            <div className="text-[11px] text-zinc-500 truncate">{s.description}</div>
+                          )}
+                        </div>
+                        <span className="text-xs font-bold text-zinc-400">
+                          {s.questionNumbers.length}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -1277,9 +1266,9 @@ export default function App() {
             <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500 bg-zinc-50/50 dark:bg-zinc-900/50">
               <div className="flex items-center gap-1.5">
                 <img
-                  src="Assets/coats/essen.svg"
+                  src={APP_VERSION_CONFIG.coatOfArmsSrc}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = 'essen.svg';
+                    (e.currentTarget as HTMLImageElement).src = '';
                   }}
                   alt="Essen"
                   className="w-3.5 h-3.5 object-contain"
@@ -1368,17 +1357,16 @@ export default function App() {
                 <div className="flex gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl">
                   {([
                     { value: 'light', icon: <Sun className="w-3.5 h-3.5" />, label: 'Hell' },
-                    { value: 'dark',  icon: <Moon className="w-3.5 h-3.5" />, label: 'Dunkel' },
-                    { value: 'system',icon: null,                              label: 'System' },
+                    { value: 'dark', icon: <Moon className="w-3.5 h-3.5" />, label: 'Dunkel' },
+                    { value: 'system', icon: null, label: 'System' },
                   ] as const).map(({ value, icon, label }) => (
                     <button
                       key={value}
                       onClick={() => setTheme(value)}
-                      className={`flex-1 flex flex-col items-center gap-0.5 py-2 rounded-lg text-[11px] font-semibold cursor-pointer transition-all ${
-                        theme === value
-                          ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs'
-                          : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
-                      }`}
+                      className={`flex-1 flex flex-col items-center gap-0.5 py-2 rounded-lg text-[11px] font-semibold cursor-pointer transition-all ${theme === value
+                        ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-xs'
+                        : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
+                        }`}
                     >
                       {icon}
                       <span>{label}</span>
@@ -1402,12 +1390,10 @@ export default function App() {
                     <div className="font-semibold text-xs text-zinc-900 dark:text-white">Numerisch sortieren</div>
                     <div className="text-[11px] text-zinc-500">{sortNumerically ? 'Aufsteigend nach Nummer' : 'Wie im Buch (Seitenreihenfolge)'}</div>
                   </div>
-                  <div className={`w-10 h-6 rounded-full transition-colors flex-shrink-0 flex items-center px-1 ${
-                    sortNumerically ? 'bg-blue-500' : 'bg-zinc-300 dark:bg-zinc-700'
-                  }`}>
-                    <div className={`w-4 h-4 rounded-full bg-white shadow transition-transform ${
-                      sortNumerically ? 'translate-x-4' : 'translate-x-0'
-                    }`} />
+                  <div className={`w-10 h-6 rounded-full transition-colors flex-shrink-0 flex items-center px-1 ${sortNumerically ? 'bg-blue-500' : 'bg-zinc-300 dark:bg-zinc-700'
+                    }`}>
+                    <div className={`w-4 h-4 rounded-full bg-white shadow transition-transform ${sortNumerically ? 'translate-x-4' : 'translate-x-0'
+                      }`} />
                   </div>
                 </button>
               </section>
@@ -1513,11 +1499,10 @@ export default function App() {
                   <button
                     key={land.code}
                     onClick={() => handleSelectState(land.code)}
-                    className={`flex items-center gap-2 p-2 rounded-xl border text-left transition-all active:scale-[0.98] cursor-pointer ${
-                      isSelected
-                        ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white ring-1 ring-zinc-900 dark:ring-white font-medium'
-                        : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
-                    }`}
+                    className={`flex items-center gap-2 p-2 rounded-xl border text-left transition-all active:scale-[0.98] cursor-pointer ${isSelected
+                      ? 'border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white ring-1 ring-zinc-900 dark:ring-white font-medium'
+                      : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
+                      }`}
                   >
                     <img
                       src={`Assets/coats/${land.code}.png`}
