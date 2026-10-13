@@ -79,6 +79,54 @@ def _iterm2(b64: str, name: str, w, h) -> str:
     nb = base64.b64encode(name.encode()).decode()
     return f"\033]1337;File=name={nb};width={w};height={h};preserveAspectRatio=1;inline=1:{b64}\a"
 
+_logo_png_b64_cache: str | None = None
+
+def _logo_png_b64() -> str | None:
+    """Rasterize public/logo.svg → PNG on the fly (in-memory, no disk write).
+    Returns base64-encoded PNG, or None if no rasterizer is available.
+    Priority: @resvg/resvg-js (via node) → rsvg-convert (brew install librsvg).
+    """
+    global _logo_png_b64_cache
+    if _logo_png_b64_cache is not None:
+        return _logo_png_b64_cache
+    if not os.path.exists(LOGO_PATH):
+        return None
+
+    import subprocess as _sp
+    svg_bytes = open(LOGO_PATH, "rb").read()
+
+    # Try rsvg-convert (librsvg) — most reliable on macOS via Homebrew
+    try:
+        r = _sp.run(
+            ["rsvg-convert", "-w", "128", "-f", "png"],
+            input=svg_bytes, capture_output=True, timeout=5
+        )
+        if r.returncode == 0 and r.stdout:
+            _logo_png_b64_cache = base64.b64encode(r.stdout).decode("ascii")
+            return _logo_png_b64_cache
+    except (FileNotFoundError, _sp.TimeoutExpired):
+        pass
+
+    # Fallback: @resvg/resvg-js via node (if installed)
+    _JS = """import('@resvg/resvg-js').then(({Resvg})=>{
+  const png=new Resvg(process.stdin.read(),{fitTo:{mode:'width',value:128}}).render().asPng();
+  process.stdout.write(png);
+}).catch(()=>process.exit(1));"""
+    try:
+        r = _sp.run(
+            ["node", "--input-type=module", "-e", _JS],
+            input=svg_bytes, capture_output=True, timeout=10
+        )
+        if r.returncode == 0 and r.stdout:
+            _logo_png_b64_cache = base64.b64encode(r.stdout).decode("ascii")
+            return _logo_png_b64_cache
+    except (FileNotFoundError, _sp.TimeoutExpired):
+        pass
+
+    # No rasterizer available — fall back to raw SVG (may render poorly)
+    _logo_png_b64_cache = _b64(LOGO_PATH)
+    return _logo_png_b64_cache
+
 
 # ── Header ────────────────────────────────────────────────────────────────────
 
@@ -105,8 +153,9 @@ def render_header(state: str, num_str: str, set_title: str = None, exam_info: st
         seq = []
 
         # ── Line 1: Logo + Version ──
-        if has_logo:
-            seq.append(_iterm2(_b64(LOGO_PATH), "logo.svg", img_w, img_h))
+        logo_b64 = _logo_png_b64() if has_logo else None
+        if logo_b64:
+            seq.append(_iterm2(logo_b64, "logo", img_w, img_h))
             seq.append("\033[1A")
             seq.append(f"  \033[1mLID-sim\033[0m \033[2mv{VERSION}\033[0m\n\n")
         else:
