@@ -3,7 +3,7 @@
 <defs><clipPath id="b1ugrxstc"><rect width="109" height="20" rx="3"/></clipPath><clipPath id="b1ugrxstv"><rect x="61" width="48" height="20"/></clipPath></defs>
 <g clip-path="url(#b1ugrxstc)">
 <rect width="61" height="20" fill="#555555"/>
-<g clip-path="url(#b1ugrxstv)"><g transform="translate(61 -14) scale(0.48)"><rect width="100" height="100" fill="#f4a261"/><circle cx="75.99" cy="2.86" r="35.05" fill="#264653"/><circle cx="83.32" cy="82.18" r="42.15" fill="#2a9d8f"/><circle cx="6.44" cy="14.04" r="42.39" fill="#e76f51"/></g></g>
+<g clip-path="url(#b1ugrxstv)"><g transform="translate(61 -14) scale(0.48)"><rect width="100" height="100" fill="#a1a1aa"/><circle cx="51.48" cy="34.57" r="72" fill="#52525b"/><circle cx="51.48" cy="34.57" r="55" fill="#fafafa"/><circle cx="51.48" cy="34.57" r="38" fill="#27272a"/><circle cx="51.48" cy="34.57" r="21" fill="#09090b"/></g></g>
 </g>
 <g text-anchor="middle" font-size="11" text-rendering="geometricPrecision">
 <g font-family="Verdana, Geneva, 'DejaVu Sans', sans-serif">

@@ -36,9 +36,11 @@ fi
 if [ -f "$LOGOGEN" ]; then
   node "$LOGOGEN" \
     --name "LID-sim" --version "v$VERSION" \
+    --pattern rings --palette "#09090b,#27272a,#52525b,#a1a1aa,#fafafa" \
     --out public/logo.svg
   node "$LOGOGEN" \
     --badge --name "LID-sim" --version "v$VERSION" \
+    --pattern rings --palette "#09090b,#27272a,#52525b,#a1a1aa,#fafafa" \
     --out public/badge.svg
   git add public/logo.svg public/badge.svg
   echo "✓ logo.svg і badge.svg оновлені (v$VERSION)"

@@ -1,59 +1,59 @@
-# LID-sim CLI — Термінальний тренажер тесту «Leben in Deutschland»
+# LID-sim CLI — Terminal Quiz & Exam Simulator (`cli/`)
 
-Повнофункціональний консольний клієнт для підготовки до тесту «Leben in Deutschland» та «Einbürgerungstest».
+A feature-rich command-line trainer for the German naturalization test (**"Leben in Deutschland"** / **"Einbürgerungstest"**).
 
-## Особливості
+## Highlights
 
-- **Інтерактивний REPL-інтерфейс** з підсвічуванням варіантів відповідей (бібліотека `rich`).
-- **Підтримка iTerm2 inline images** — автоматичний вивід гербів федеральних земель та логотипу в терміналі.
-- **Офіційна симуляція іспиту** — 33 питання (30 загальних + 3 земельних), таймер на 60 хв, оцінювання за офіційними критеріями (≥15 балів для курсу, ≥17 для громадянства).
-- **Робота з тематичними та посторінковими сетами**.
-- **Перемикання сортування**: за номерами сторінок підручника або за порядковими номерами питань.
+- **Interactive REPL Interface**: Colorized question presentation and multiple-choice interaction using `rich`.
+- **iTerm2 Inline Graphics**: Automatic display of federal state coats of arms and application logo.
+- **Official Exam Simulation**: 33 randomized questions (30 general + 3 state), 60-minute countdown, and scoring evaluation (≥15 points for integration course, ≥17 for naturalization).
+- **Question Sets**: Practice specific textbook pages or thematic modules.
+- **Flexible Ordering**: Toggle between textbook page order and ascending numerical order.
 
-## Встановлення
+## Installation
 
 ```bash
 pip install -r cli/requirements.txt
 ```
 
-## Запуск
+## Running the CLI
 
 ```bash
-# Стандартний запуск (земля за замовчуванням — Nordrhein-Westfalen)
+# Standard launch (default state: Nordrhein-Westfalen)
 python3 cli/lid-quiz.py
 
-# Вибір іншої федеральної землі
+# Select a different Bundesland
 python3 cli/lid-quiz.py -s BY     # Bayern
 python3 cli/lid-quiz.py -s BE     # Berlin
 
-# Почати з конкретного номера питання
+# Jump directly to a question number
 python3 cli/lid-quiz.py -g 42
 
-# Запустити з активним сетом сторінок підручника
+# Start with a specific question set active
 python3 cli/lid-quiz.py --set book-p14
 
-# Увімкнути чисельне сортування питань у сеті замість порядку підручника
+# Sort questions within a set numerically instead of textbook page order
 python3 cli/lid-quiz.py --set book-p14 --sort
 
-# Запустити одразу режим симуляції екзамену
+# Launch directly into the 33-question exam simulation mode
 python3 cli/lid-quiz.py --exam -s BY
 ```
 
-## Команди інтерактивного режиму (REPL)
+## Interactive REPL Commands
 
-| Команда | Опис |
+| Command | Action |
 |---|---|
-| `<Enter>` / `→` | Наступне питання |
-| `p` / `←` | Попереднє питання |
-| `a` / `b` / `c` / `d` | Вибір варіанта відповіді |
-| `<число>` / `g <число>` | Швидкий перехід до питання за номером (наприклад `142` або `BY-5`) |
-| `s <CODE>` | Зміна федеральної землі (наприклад `s BY`, `s HH`) |
-| `set` | Список усіх доступних сетів |
-| `set <номер\|id>` | Перемикання на сет (наприклад `set 14` або `set book-p14`) |
-| `set all` | Скинути фільтр сету (показати весь каталог) |
-| `sort` | Перемикання порядку питань у сеті (чисельний ↔ за підручником) |
-| `exam` | Запуск офіційної 33-хвилинної симуляції іспиту |
-| `r` | Скинути відповідь на поточному питанні |
-| `lands` | Показати таблицю всіх 16 земель з кодами та гербами |
-| `?` / `help` | Довідка по командах |
-| `q` / `exit` | Вихід з програми |
+| `<Enter>` / `→` | Next question |
+| `p` / `←` | Previous question |
+| `a` / `b` / `c` / `d` | Select answer choice |
+| `<number>` / `g <num>` | Jump to question number (e.g. `142` or `BY-5`) |
+| `s <CODE>` | Switch active federal state (e.g. `s BY`, `s HH`) |
+| `set` | List all available question sets |
+| `set <page\|id>` | Switch to a set (e.g. `set 14` or `set book-p14`) |
+| `set all` | Reset set filter (show all questions) |
+| `sort` | Toggle question order in set (numerical ↔ book order) |
+| `exam` | Start official 33-question exam simulation |
+| `r` | Reset selected answer for current question |
+| `lands` | Display table of all 16 federal states with coats of arms |
+| `?` / `help` | Show command reference |
+| `q` / `exit` | Quit simulator |

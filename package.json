@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "install-hooks": "cp .github/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push",
-    "badge": "node ${HOME}/git-repos/logogen/logogen.mjs --name LID-sim --version v$(node -e \"console.log(require(\"./version.json\").version)\") --out public/logo.svg && node ${HOME}/git-repos/logogen/logogen.mjs --badge --name LID-sim --version v$(node -e \"console.log(require(\"./version.json\").version)\") --out public/badge.svg"
+    "badge": "node ${HOME}/git-repos/logogen/logogen.mjs --name LID-sim --version v$(node -e \"console.log(require('./version.json').version)\") --pattern rings --palette '#09090b,#27272a,#52525b,#a1a1aa,#fafafa' --out public/logo.svg && node ${HOME}/git-repos/logogen/logogen.mjs --badge --name LID-sim --version v$(node -e \"console.log(require('./version.json').version)\") --pattern rings --palette '#09090b,#27272a,#52525b,#a1a1aa,#fafafa' --out public/badge.svg"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

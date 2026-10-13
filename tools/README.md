@@ -1,49 +1,50 @@
-# Інструменти обслуговування (Tools)
+# Maintenance Utilities (`tools/`)
 
-Утиліти для парсингу офіційних PDF-матеріалів BAMF та синхронізації бази питань і сетів.
+Python developer tools for parsing official BAMF PDFs and synchronizing questions and question sets.
 
-## Встановлення залежностей
+## Installation
 
+Install Python dependencies:
 ```bash
 pip install -r tools/requirements.txt
 ```
-Основна бібліотека — `pymupdf` (PyMuPDF) для вилучення тексту та координат блоків у PDF.
+Primary dependency: `pymupdf` (PyMuPDF) for PDF layout extraction and spatial text analysis.
 
-## Утиліти
+## Utilities
 
 ### 1. `parse_pdf_sets.py`
-Вилучає маргінальні номери запитань зі сторінок підручника *«Mein Leben in Deutschland – Der Orientierungskurs»* і формує набори `QuestionSet` у `data/sets/sets.json`.
+Extracts sidebar question numbers from the textbook *«Mein Leben in Deutschland – Der Orientierungskurs»* and formats them into `QuestionSet` entries in `data/sets/sets.json`.
 
-**Використання:**
+**Usage:**
 ```bash
-# Попередній перегляд у форматі JSON (stdout)
+# Preview extracted sets as JSON (stdout)
 python3 tools/parse_pdf_sets.py
 
-# Об'єднати знайдені сети з існуючим data/sets/sets.json
+# Merge newly extracted sets into data/sets/sets.json (skips existing IDs)
 python3 tools/parse_pdf_sets.py --merge
 
-# Тільки узагальнюючі блоки розділів (Lernseite)
+# Only extract chapter summary pages (Lernseite)
 python3 tools/parse_pdf_sets.py --lernseite-only
 
-# Тільки посторінкові сети основного матеріалу
+# Only extract regular content pages
 python3 tools/parse_pdf_sets.py --content-only
 
-# Вказати інший шлях до PDF
+# Specify a custom PDF path
 python3 tools/parse_pdf_sets.py --pdf /path/to/custom.pdf
 ```
 
 ### 2. `sync_from_pdf.py`
-Синхронізує текст питань і варіантів відповідей з офіційним каталогом *«Gesamtfragenkatalog zum Test Leben in Deutschland»* (BAMF).
-Коригує порядок відповідей та поле `solution` так, щоб літери вказували на правильний текст варіанта.
+Synchronizes question text and canonical answer ordering with the official BAMF *«Gesamtfragenkatalog zum Test Leben in Deutschland»* PDF.
+Remaps answer choices while adjusting the `solution` letter to ensure it continually points to the correct text.
 
-**Використання:**
+**Usage:**
 ```bash
-# Dry run (перевірка розбіжностей без запису)
+# Dry run (prints diff without writing changes)
 python3 tools/sync_from_pdf.py
 
-# Застосувати зміни до data/questions/questions.json (створює backup .bak)
+# Apply changes to data/questions/questions.json (creates a .bak backup)
 python3 tools/sync_from_pdf.py --apply
 
-# Застосувати зміни та додати запис у звіт data/questions/sync_report.txt
+# Apply changes and append an entry to data/questions/sync_report.txt
 python3 tools/sync_from_pdf.py --apply --report
 ```

@@ -22,9 +22,13 @@ install-hooks:
 badge:
 	@VERSION=$$(node -e "console.log(require('./version.json').version)") && \
 	node $$HOME/git-repos/logogen/logogen.mjs \
-	  --name "LID-sim" --version "v$$VERSION" --out public/logo.svg && \
+	  --name "LID-sim" --version "v$$VERSION" \
+	  --pattern rings --palette "#09090b,#27272a,#52525b,#a1a1aa,#fafafa" \
+	  --out public/logo.svg && \
 	node $$HOME/git-repos/logogen/logogen.mjs \
-	  --badge --name "LID-sim" --version "v$$VERSION" --out public/badge.svg && \
+	  --badge --name "LID-sim" --version "v$$VERSION" \
+	  --pattern rings --palette "#09090b,#27272a,#52525b,#a1a1aa,#fafafa" \
+	  --out public/badge.svg && \
 	echo "✓ logo.svg & badge.svg updated (v$$VERSION)"
 
 dev:

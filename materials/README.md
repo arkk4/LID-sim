@@ -1,17 +1,17 @@
-# Офіційні навчальні матеріали (Materials)
+# Official Learning Materials (`materials/`)
 
-Ця тека призначена для збереження офіційних брошур та підручників у форматі PDF, що використовуються інструментами автоматизації з `tools/`.
+This directory is designated for storing official PDF brochures and textbooks used by the automation utilities in `tools/`.
 
-## Файли в цій теці
+## Files in this Directory
 
-- `gesamtfragenkatalog-lebenindeutschland.pdf` — офіційний каталог усіх 310 питань від Федерального відомства з питань міграції та біженців (BAMF).
-- `Mein_Leben_in_Deutschland_Orientierungskurs.pdf` — підручник орієнтаційного курсу «Mein Leben in Deutschland».
+- `gesamtfragenkatalog-lebenindeutschland.pdf` — Official question catalog of all 310 questions published by the Federal Office for Migration and Refugees (*Bundesamt für Migration und Flüchtlinge* - BAMF).
+- `Mein_Leben_in_Deutschland_Orientierungskurs.pdf` — Orientation course textbook (*Mein Leben in Deutschland – Der Orientierungskurs*).
 
-## Чому тека додана до `.gitignore`?
+## Why is this directory in `.gitignore`?
 
-Офіційні PDF-файли мають значний розмір та захищені авторськими правами відповідних видавництв і відомств, тому вони не включаються до публічного репозиторію Git.
+Official PDF documents are large binary files and are subject to the distribution terms and copyrights of their respective publishers and federal authorities. As such, they are not committed to the public Git repository.
 
-## Офіційні джерела
+## Official Sources
 
-- Офіційний каталог питань BAMF: [BAMF — Leben in Deutschland Test](https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/OnlineVorberetiungTestLiD/onlinevorberetiungtestlid-node.html)
-- Каталог запитань для завантаження: [BAMF Gesamtfragenkatalog (PDF)](https://www.bamf.de/)
+- BAMF Test Information: [BAMF — Leben in Deutschland Test](https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/OnlineVorberetiungTestLiD/onlinevorberetiungtestlid-node.html)
+- Official Question Catalog Download: [BAMF Gesamtfragenkatalog (PDF)](https://www.bamf.de/)

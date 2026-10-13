@@ -1,15 +1,15 @@
-# Питання тесту «Leben in Deutschland» (BAMF)
+# Test Questions Database (`data/questions/`)
 
-У цій теці зберігається основна база питань тесту «Leben in Deutschland» (LID) та «Einbürgerungstest» Федерального відомства з питань міграції та біженців (BAMF).
+This directory houses the primary question database for the "Leben in Deutschland" (LiD) test and "Einbürgerungstest" administered by BAMF.
 
-## Файли
+## Files
 
-- `questions.json` — канонічна база питань (300 загальнонаціональних + 160 регіональних по 16 землях).
-- `sync_report.txt` — журнал змін при синхронізації з офіційними PDF.
+- `questions.json` — Canonical question database (300 nationwide general questions + 160 regional questions across all 16 federal states).
+- `sync_report.txt` — Audit log of text and answer ordering synchronizations with official BAMF PDFs.
 
-## Структура `questions.json`
+## Structure of `questions.json`
 
-JSON складається з двох основних розділів:
+The JSON file contains two main sections:
 
 ```json
 {
@@ -41,24 +41,24 @@ JSON складається з двох основних розділів:
 }
 ```
 
-### Специфікація полів
+### Field Specification
 
-| Поле | Тип | Обов'язкове | Опис |
+| Field | Type | Required | Description |
 |---|---|---|---|
-| `num` | string | Так | Номер питання (`"1"`..`"300"` для федеральних, `"NW-1"`..`"NW-10"` для земель) |
-| `question` | string | Так | Текст німецького питання |
-| `a`, `b`, `c`, `d` | string | Так | Варіанти відповідей |
-| `solution` | string | Так | Правильна літера відповіді (`"a"`, `"b"`, `"c"` або `"d"`) |
-| `image` | string | Ні | Посилання на локальне зображення або URL карти/герба (відсутнє, якщо зображення немає) |
-| `translationUk` | object | Ні | Опціональний український переклад питання та відповідей |
+| `num` | string | Yes | Question number (`"1"`..`"300"` for federal, `"NW-1"`..`"NW-10"` for state questions) |
+| `question` | string | Yes | German question text |
+| `a`, `b`, `c`, `d` | string | Yes | Multiple-choice options |
+| `solution` | string | Yes | Correct choice key (`"a"`, `"b"`, `"c"`, or `"d"`) |
+| `image` | string | No | Optional reference to a local asset or URL for map/coat of arms (omitted if no image exists) |
+| `translationUk` | object | No | Optional Ukrainian translations for civic study |
 
 > [!NOTE]
-> Застарілі технічні поля `id` та `category` видалено для оптимізації розміру та підтримки єдиного формату.
+> Deprecated technical fields `id` and `category` as well as placeholder values (`image: "-"`) have been removed for clean schema consistency.
 
-## Синхронізація з офіційним каталогом BAMF
+## Synchronizing with BAMF Catalog
 
-Оновлення та перевірка питань виконується інструментом:
+To synchronize question texts and answer keys against the official BAMF PDF:
 ```bash
 python3 tools/sync_from_pdf.py --apply --report
 ```
-Офіційні матеріали PDF завантажуються в теку `materials/`.
+The official PDF must be present in `materials/` (see [materials/README.md](../../materials/README.md)).

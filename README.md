@@ -16,14 +16,14 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 ## Features
 
 - **Dual Interfaces**:
-  - **Terminal REPL (`cli/lid-quiz.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, ordering toggle (numerical vs. textbook page order), and iTerm2 inline graphics for coats of arms and question illustrations.
-  - **Modern Web Application (`src/` / `index.html`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive design.
+  - **Terminal REPL (`cli/lid-quiz.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, question ordering toggle (numerical vs. textbook page order), and iTerm2 inline graphics for coats of arms and illustrations.
+  - **Modern Web Application (`src/` / `index.html`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive layout.
 - **Unified Semantic Versioning**: Single source of truth (`VERSION` and `version.json`), starting from `1.0.0`.
-- **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) through Git pre-push hook.
-- **Question Sets (Fragensets)**: Group questions by textbook chapters (*Lehrbuch: Seiten 10–25*) or thematic blocks (*Politik*, *Geschichte*, *Gesellschaft*).
+- **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) through Git pre-push hook using the app's zinc palette and concentric rings pattern.
+- **Question Sets (Fragensets)**: Group questions by textbook chapters (*Lehrbuch: Seiten 10–25*) or thematic modules (*Politik*, *Geschichte*, *Gesellschaft*).
 - **Official Exam Simulation (Prüfungssimulation)**: Realistic test mode with 33 randomized questions (30 general + 3 state), 60-minute countdown, passing thresholds (≥15 for integration courses, ≥17 for citizenship), and wrong-answer review.
 - **Complete Offline Support**: Pre-cached illustrations (`assets/cache/`) and coats of arms (`assets/coats/`) with automatic fallback to remote mirrors.
-- **Verified Official Questions**: Curated and cleaned database (without redundant technical IDs or categories) synchronized with official *Bundesamt für Migration und Flüchtlinge* (BAMF) catalog.
+- **Verified Official Questions**: Clean database without redundant technical IDs or categories, synchronized with official *Bundesamt für Migration und Flüchtlinge* (BAMF) catalog.
 - **State Selection**: Seamlessly switch between all 16 federal states with state-specific question IDs (`NW-1`, `BY-10`, etc.).
 
 ---
@@ -32,33 +32,33 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 
 ```
 LID-sim/
-├── VERSION                         ← єдина семантична версія ("1.0.0")
+├── VERSION                         ← Single semantic version ("1.0.0")
 ├── version.json                    ← { "version": "1.0.0", "date": "2026-10-13" }
 │
-├── assets/                         ← статичні медіа-ресурси
-│   ├── coats/                      ← PNG гербів 16 федеральних земель (BE.png, BY.png…)
-│   ├── cache/                      ← кешовані зображення до питань (у .gitignore)
+├── assets/                         ← Static media resources
+│   ├── coats/                      ← PNG coats of arms for 16 federal states (BE.png, BY.png…)
+│   ├── cache/                      ← Cached question diagrams and maps (in .gitignore)
 │   └── README.md
 │
 ├── data/
 │   ├── questions/
-│   │   ├── questions.json          ← очищена база питань (300 загальних + 160 регіональних)
+│   │   ├── questions.json          ← Cleaned question database (300 general + 160 regional)
 │   │   └── README.md
 │   └── sets/
-│       ├── sets.json               ← тематичні та посторінкові сети питань
+│       ├── sets.json               ← Thematic and textbook question sets
 │       └── README.md
 │
-├── tools/                          ← утиліти обслуговування (Python)
-│   ├── parse_pdf_sets.py           ← вилучення сетів з PDF підручника
-│   ├── sync_from_pdf.py            ← синхронізація questions.json з офіційним PDF BAMF
+├── tools/                          ← Maintenance utilities (Python)
+│   ├── parse_pdf_sets.py           ← Question set parser from textbook PDF
+│   ├── sync_from_pdf.py            ← Synchronization with official BAMF PDF catalog
 │   ├── requirements.txt            ← pymupdf
 │   └── README.md
 │
-├── materials/                      ← офіційні PDF BAMF та підручники (у .gitignore)
+├── materials/                      ← Official PDFs and textbooks (in .gitignore)
 │   └── README.md
 │
-├── cli/                            ← консольний тренажер
-│   ├── lid-quiz.py                 ← інтерактивний CLI REPL
+├── cli/                            ← Terminal simulator
+│   ├── lid-quiz.py                 ← Interactive CLI REPL
 │   ├── requirements.txt            ← rich>=13.0
 │   └── README.md
 │
@@ -66,25 +66,25 @@ LID-sim/
 │   ├── App.tsx
 │   ├── data/
 │   ├── types.ts
-│   ├── version.ts                  ← імпортує єдину версію з version.json
+│   ├── version.ts                  ← Reads version from version.json
 │   └── ...
 │
-├── public/                         ← статичні файли веб-додатку
-│   ├── questions.json              ← symlink → ../data/questions/questions.json
-│   ├── sets.json                   ← symlink → ../data/sets/sets.json
-│   ├── logo.svg                    ← логотип (генерований logogen)
-│   └── badge.svg                   ← бейдж версії (генерований logogen)
+├── public/                         ← Static assets served by web app
+│   ├── questions.json              ← Symlink → ../data/questions/questions.json
+│   ├── sets.json                   ← Symlink → ../data/sets/sets.json
+│   ├── logo.svg                    ← Logo generated by logogen
+│   └── badge.svg                   ← Version badge generated by logogen
 │
 ├── .github/
 │   ├── hooks/
-│   │   └── pre-push                ← шаблон git-хука бампу версії та генерації лого
+│   │   └── pre-push                ← Git hook template for version bumping and logogen
 │   └── workflows/
 │       └── deploy.yml              ← GitHub Pages deploy
 │
 ├── Makefile                        ← setup, install-hooks, badge, dev, build
-├── package.json                    ← версія 1.0.0, скрипти збірки
-├── LICENSE                         ← ліцензія MIT
-└── README.md                       ← головна документація
+├── package.json                    ← Version 1.0.0, scripts, dependencies
+├── LICENSE                         ← MIT License
+└── README.md                       ← Main documentation
 ```
 
 ---
@@ -94,45 +94,45 @@ LID-sim/
 ### 1. Setup Environment
 
 ```bash
-# Клонування репозиторію
+# Clone repository
 git clone https://github.com/arkk4/LID-sim.git
 cd LID-sim
 
-# Налаштування symlink у public/ та встановлення pre-push хука
+# Setup public/ symlinks and install pre-push hook
 make setup
 ```
 
 ### 2. Terminal CLI (`cli/lid-quiz.py`)
 
-Встановлення залежностей:
+Install Python dependencies:
 ```bash
 pip install -r cli/requirements.txt
 ```
 
-Запуск тренажера:
+Launch the simulator:
 ```bash
 python3 cli/lid-quiz.py -s BY
 ```
 
-Ключові параметри:
-- `-s CODE` — вибір федеральної землі (наприклад `-s NW`, `-s BY`, `-s BE`).
-- `-g N` — швидкий старт з питання номер `N`.
-- `--set SET_ID` — активація конкретного сету (наприклад `--set book-p14`).
-- `--sort` — сортування питань у сеті чисельно (за замовчуванням — порядок підручника).
-- `--exam` — прямий запуск офіційної 33-хвилинної симуляції екзамену.
+Key arguments:
+- `-s CODE` — Set active federal state (e.g. `-s NW`, `-s BY`, `-s BE`).
+- `-g N` — Jump directly to question `N` on launch.
+- `--set SET_ID` — Start with a specific question set active (e.g. `--set book-p14`).
+- `--sort` — Sort questions in set numerically instead of book page order.
+- `--exam` — Start directly in official 33-question simulation mode.
 
-Детальніше у [cli/README.md](cli/README.md).
+For details, refer to [cli/README.md](cli/README.md).
 
 ### 3. Web Application (`src/`)
 
 ```bash
-# Встановлення npm-пакетів
+# Install npm dependencies
 npm install
 
-# Запуск dev-сервера
+# Start development server
 npm run dev
 
-# Збірка продакшн версії
+# Build production bundle
 npm run build
 ```
 
@@ -140,29 +140,29 @@ npm run build
 
 ## Maintenance & Tools
 
-Усі інструменти парсингу та синхронізації знаходяться у теці `tools/`:
+All parsing and synchronization scripts are organized under `tools/`:
 
-- **Синхронізація питань з PDF BAMF**:
+- **Synchronize questions with BAMF PDF**:
   ```bash
   python3 tools/sync_from_pdf.py --apply --report
   ```
-- **Парсинг сетів з підручника**:
+- **Parse question sets from textbook PDF**:
   ```bash
   python3 tools/parse_pdf_sets.py --merge
   ```
 
-Детальніше у [tools/README.md](tools/README.md).
+For details, refer to [tools/README.md](tools/README.md).
 
 ---
 
 ## Versioning & Git Hooks
 
-У репозиторії налаштовано pre-push хук (`.github/hooks/pre-push`):
-- При кожному `git push` у гілку `main` хук запитує нову версію (або залишає поточну).
-- Автоматично оновлює `VERSION`, `version.json` та `package.json`.
-- Запускає `logogen` для синхронної регенерації `public/logo.svg` та `public/badge.svg`.
+The repository uses a pre-push hook (`.github/hooks/pre-push`):
+- When pushing to `main`, the hook interactively prompts for a new semantic version (or keeps current).
+- Synchronizes `VERSION`, `version.json`, and `package.json`.
+- Invokes `logogen` to generate fresh `public/logo.svg` and `public/badge.svg` using the app's zinc palette and rings layout.
 
-Вручну згенерувати бейджі можна через:
+To regenerate the logo and badge manually:
 ```bash
 make badge
 ```
