@@ -5,7 +5,7 @@
   "codename": "",
   "logo": {
     "pattern": "rings",
-    "palette": "#09090b,#27272a,#52525b,#a1a1aa,#fafafa",
+    "palette": "#171c27,#52708b,#508aaa,#6ab0a3,#add3cc",
     "shape": "squircle",
     "font": "sans"
   }
