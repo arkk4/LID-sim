@@ -12,11 +12,15 @@ import { execFileSync } from 'node:child_process';
 
 const repoRoot = resolve(import.meta.dirname, '..');
 const versionFile = resolve(repoRoot, 'version.json');
-const defaultLogogenPath = resolve(homedir(), 'git-repos/logogen/logogen.mjs');
-const logogenPath = process.env.LOGOGEN_PATH || defaultLogogenPath;
+// Prefer vendor/logogen submodule; fall back to LOGOGEN_PATH env
+const submodulePath = resolve(repoRoot, 'vendor', 'logogen', 'cli', 'logogen.mjs');
+const envPath       = process.env.LOGOGEN_PATH;
+const logogenPath   = existsSync(submodulePath) ? submodulePath
+                    : envPath && existsSync(envPath) ? envPath
+                    : null;
 
-if (!existsSync(logogenPath)) {
-  console.warn(`[generate_logo] logogen not found at ${logogenPath}. Skipping logo generation.`);
+if (!logogenPath) {
+  console.warn('[generate_logo] logogen not found. Run: git submodule update --init');
   process.exit(0);
 }
 

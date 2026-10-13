@@ -10,6 +10,7 @@ help:
 	@echo "  make build          - Build production assets"
 
 setup:
+	git -c protocol.file.allow=always submodule update --init
 	ln -sf ../data/questions/questions.json public/questions.json
 	ln -sf ../data/sets/sets.json public/sets.json
 	$(MAKE) install-hooks
