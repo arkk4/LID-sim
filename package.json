@@ -1,7 +1,7 @@
 {
   "name": "lid-sim",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,8 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "install-hooks": "cp .github/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push",
-    "badge": "node tools/generate_logo.mjs"
+    "badge": "node tools/generate_logo.mjs",
+    "bump": "node tools/bump.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

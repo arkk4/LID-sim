@@ -1,36 +1,28 @@
 #!/bin/sh
-# Запустити після клону: make install-hooks
 set -e
 
-LOGOGEN="$HOME/git-repos/logogen/logogen.mjs"
-VERSION_FILE="version.json"
-
-# 1. Зчитати поточну версію
-VERSION=$(node -e "console.log(require('./$VERSION_FILE').version)")
-
-# 2. Запитати чи бампити (тільки якщо таргет — main)
+# Guard hook: ensure version and branding assets are committed and in sync before pushing to main
 TARGET_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
 if [ "$TARGET_BRANCH" = "main" ]; then
-  echo "Поточна версія: $VERSION"
-  printf "Новий патч? (Enter — залишити, або введи нову версію, наприклад 1.0.1): "
-  read NEW_VERSION < /dev/tty || true
-  if [ -n "$NEW_VERSION" ]; then
-    node -e "
-      const fs = require('fs');
-      const v = JSON.parse(fs.readFileSync('$VERSION_FILE'));
-      v.version = '$NEW_VERSION';
-      v.date = new Date().toISOString().slice(0,10);
-      fs.writeFileSync('$VERSION_FILE', JSON.stringify(v, null, 2) + '\n');
-      const p = JSON.parse(fs.readFileSync('package.json'));
-      p.version = '$NEW_VERSION';
-      fs.writeFileSync('package.json', JSON.stringify(p, null, 2) + '\n');
-    "
-    VERSION="$NEW_VERSION"
-    git add version.json package.json
-    echo "✓ Версію оновлено до $VERSION"
+  # 1. Verify version.json and package.json versions match
+  V_VER=$(node -e "console.log(require('./version.json').version)")
+  P_VER=$(node -e "console.log(require('./package.json').version)")
+
+  if [ "$V_VER" != "$P_VER" ]; then
+    echo "❌ [pre-push] version.json ($V_VER) and package.json ($P_VER) are out of sync."
+    echo "   Run 'make bump' to synchronize and commit versions."
+    exit 1
+  fi
+
+  # 2. Check if version files or branding assets have uncommitted changes
+  DIRTY=$(git status --porcelain version.json package.json public/logo.svg public/badge.svg)
+  if [ -n "$DIRTY" ]; then
+    echo "❌ [pre-push] Detected uncommitted version or asset changes:"
+    echo "$DIRTY"
+    echo "   Please commit these changes before pushing (or run 'make bump')."
+    exit 1
   fi
 fi
 
-# 3. Generate logo + badge
-node tools/generate_logo.mjs
-git add public/logo.svg public/badge.svg
+exit 0

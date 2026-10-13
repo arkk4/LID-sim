@@ -19,7 +19,7 @@ Includes the complete official catalog of **300 general questions** plus **10 st
   - **Terminal REPL (`cli/lid-quiz.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, question ordering toggle (numerical vs. textbook page order), and iTerm2 inline graphics for coats of arms and illustrations.
   - **Modern Web Application (`src/` / `index.html`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive layout.
 - **Unified Semantic Versioning**: Single source of truth ([`version.json`](version.json)), starting from `1.0.0`.
-- **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) through Git pre-push hook using the app's zinc palette and concentric rings pattern.
+- **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) using the app's zinc palette and concentric rings pattern.
 - **Question Sets (Fragensets)**: Group questions by textbook chapters (*Lehrbuch: Seiten 10–25*) or thematic modules (*Politik*, *Geschichte*, *Gesellschaft*).
 - **Official Exam Simulation (Prüfungssimulation)**: Realistic test mode with 33 randomized questions (30 general + 3 state), 60-minute countdown, passing thresholds (≥15 for integration courses, ≥17 for citizenship), and wrong-answer review.
 - **Complete Offline Support**: Pre-cached illustrations (`assets/cache/`) and coats of arms (`assets/coats/`) with automatic fallback to remote mirrors.
@@ -182,10 +182,21 @@ To eliminate duplication and maintain clear boundaries, each component has a dis
 | **`version.json`** | **Configuration** (Source of Truth) | Defines app name, version, date, and logo styling parameters (`pattern`, `palette`, `shape`, `font`). |
 | **`tools/generate_logo.mjs`** | **Worker Script** | The single script that reads `version.json` and runs `logogen` to generate `public/logo.svg` and `public/badge.svg`. |
 | **`package.json`** | **Node.js Interface** | Exposes `npm run badge` (delegating to `tools/generate_logo.mjs`) alongside `dev` and `build`. |
-| **`Makefile`** | **Universal CLI Interface** | Language-agnostic shortcuts (`make setup`, `make badge`, `make dev`, `make build`) for developers and CI. |
-| **`.github/hooks/pre-push`** | **Event Trigger** | Git hook that runs on `git push origin main`, interactively prompts for version bump, and executes `generate_logo.mjs`. |
+| **`Makefile`** | **Universal CLI Interface** | Language-agnostic shortcuts (`make setup`, `make badge`, `make bump`, `make dev`, `make build`) for developers and CI. |
+| **`tools/bump.mjs`** | **Release Automation** | Interactive or scripted semver bumping: updates `version.json`, `package.json`, generates logos, and creates the release commit. |
+| **`.github/hooks/pre-push`** | **Safety Guard** | Git hook that verifies versions and logo assets are in sync and committed before allowing pushes to `main`. |
 
-To manually regenerate the logo and badge:
+### Release / Version Bumping
+To bump the version, regenerate branding assets, and create a release commit:
+```bash
+make bump
+# or specify version directly:
+make bump V=1.0.2
+# or via npm:
+npm run bump
+```
+
+To manually regenerate logo and badge without bumping:
 ```bash
 make badge
 # or:
