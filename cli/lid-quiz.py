@@ -35,7 +35,9 @@ QUESTIONS_FILE = os.path.join(REPO_ROOT, "data", "questions", "questions.json")
 SETS_FILE      = os.path.join(REPO_ROOT, "data", "sets", "sets.json")
 COATS_DIR      = os.path.join(REPO_ROOT, "assets", "coats")
 CACHE_DIR      = os.path.join(REPO_ROOT, "assets", "cache")
-LOGO_PATH      = os.path.join(REPO_ROOT, "public", "logo.svg")
+LOGO_PNG       = os.path.join(REPO_ROOT, "public", "logo.png")
+LOGO_SVG       = os.path.join(REPO_ROOT, "public", "logo.svg")
+LOGO_FILE      = LOGO_PNG if os.path.exists(LOGO_PNG) else LOGO_SVG
 
 # Read version from version.json
 _version_file = os.path.join(REPO_ROOT, "version.json")
@@ -80,47 +82,60 @@ def _iterm2(b64: str, name: str, w, h) -> str:
     return f"\033]1337;File=name={nb};width={w};height={h};preserveAspectRatio=1;inline=1:{b64}\a"
 
 
-def show_logo_banner() -> None:
-    if is_iterm2() and os.path.exists(LOGO_PATH):
-        try:
-            b64 = _b64(LOGO_PATH)
-            sys.stdout.write(_iterm2(b64, "lid-quiz", 10, 4))
-            sys.stdout.write("\n")
-            sys.stdout.flush()
-        except Exception:
-            pass
-
-
 # ── Header ────────────────────────────────────────────────────────────────────
 
 def render_header(state: str, num_str: str, set_title: str = None, exam_info: str = None) -> None:
     """
-    Renders top header with coat of arms and state / set / exam badge.
+    Renders top header with:
+    [Logo] v{VERSION}  [Coat of arms] [{state}]  {num_str}  [Set/Exam info]
     """
-    title = f"Leben in Deutschland  v{VERSION}"
+    extra = ""
     if exam_info:
-        label = f"  {title}   {num_str}   [{state}]  [EXAM: {exam_info}]"
+        extra = f"  [EXAM: {exam_info}]"
     elif set_title:
-        label = f"  {title}   {num_str}   [{state}]  [Set: {set_title}]"
-    else:
-        label = f"  {title}   {num_str}   [{state}]"
+        extra = f"  [Set: {set_title}]"
 
     png = os.path.join(COATS_DIR, f"{state}.png")
-    if is_iterm2() and os.path.exists(png):
-        b64   = _b64(png)
+    has_coat = os.path.exists(png)
+    has_logo = os.path.exists(LOGO_FILE)
+
+    if is_iterm2() and (has_logo or has_coat):
         img_w = 3   # character cells wide
         img_h = 2   # character cells tall
-        sys.stdout.write(_iterm2(b64, state, img_w, img_h))
-        sys.stdout.write("\033[1A")
+        seq = []
+        visual_len = 0
+
+        # 1. Logo
+        if has_logo:
+            seq.append(_iterm2(_b64(LOGO_FILE), "logo", img_w, img_h))
+            seq.append("\033[1A")
+            visual_len += img_w
+
+        # 2. Version
+        v_tag = f" v{VERSION}  "
+        seq.append(f"\033[1m\033[97m{v_tag}\033[0m")
+        visual_len += len(v_tag)
+
+        # 3. Coat of arms
+        if has_coat:
+            seq.append(_iterm2(_b64(png), state, img_w, img_h))
+            seq.append("\033[1A")
+            visual_len += img_w
+
+        # 4. State & question details
+        state_info = f" [{state}]   {num_str}{extra}"
+        visual_len += len(state_info)
         cols = term_cols()
-        pad  = max(0, cols - img_w - len(label) - 1)
-        sys.stdout.write(f"\033[1m\033[93m{label}{' ' * pad}\033[0m")
-        sys.stdout.write("\n\n")
+        pad = max(0, cols - visual_len - 1)
+        seq.append(f"\033[1m\033[93m{state_info}{' ' * pad}\033[0m\n\n")
+
+        sys.stdout.write("".join(seq))
         sys.stdout.flush()
     else:
+        label = f"  LID-sim v{VERSION}   [{state}]   {num_str}{extra}"
         cols = term_cols()
         pad  = max(0, cols - len(label) - 1)
-        sys.stdout.write(f"\033[1m\033[93m{label}{' ' * pad}\033[0m\n")
+        sys.stdout.write(f"\033[1m\033[93m{label}{' ' * pad}\033[0m\n\n")
         sys.stdout.flush()
 
 
@@ -739,7 +754,6 @@ def prompt_line(state: str, idx: int, total: int, custom_prompt: str = None) -> 
 
 
 def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set_id=None, sort_numerically: bool = False) -> None:
-    show_logo_banner()
     available_sets = load_sets()
     active_set     = None
     if initial_set_id:

@@ -57,4 +57,12 @@ execFileSync('node', [
   '--out', badgeOut,
 ], { stdio: 'inherit' });
 
-console.log(`✓ Generated public/logo.svg and public/badge.svg (${name} ${version})`);
+// 3. Generate logo.png (for terminals and high-compatibility rendering)
+const logoPngOut = resolve(repoRoot, 'public/logo.png');
+try {
+  execFileSync('rsvg-convert', ['-w', '128', '-h', '128', logoOut, '-o', logoPngOut]);
+} catch {
+  // Optional fallback
+}
+
+console.log(`✓ Generated public/logo.svg, badge.svg, and logo.png (${name} ${version})`);

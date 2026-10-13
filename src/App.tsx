@@ -1266,7 +1266,7 @@ export default function App() {
             <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500 bg-zinc-50/50 dark:bg-zinc-900/50">
               <div className="flex items-center gap-1.5">
                 <img
-                  src={APP_VERSION_CONFIG.badgeSrc}
+                  src={APP_VERSION_CONFIG.logoSrc}
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = '';
                   }}
@@ -1404,7 +1404,7 @@ export default function App() {
             {/* Footer: version */}
             <div className="px-4 py-3 border-t border-zinc-100 dark:border-zinc-800 flex items-center gap-2 text-[11px] text-zinc-400 dark:text-zinc-500 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
               <img
-                src={APP_VERSION_CONFIG.badgeSrc}
+                src={APP_VERSION_CONFIG.logoSrc}
                 onError={(e) => { (e.currentTarget as HTMLImageElement).src = ''; }}
                 alt="LID-sim"
                 className="w-4 h-4 object-contain flex-shrink-0"

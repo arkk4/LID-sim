@@ -19,6 +19,6 @@ export const APP_VERSION_CONFIG: AppVersionInfo = {
   releaseDate: versionData.date,
   logoSrc: `${baseUrl}logo.svg`,
   badgeSrc: `${baseUrl}badge.svg`,
-  coatOfArmsSrc: `${baseUrl}badge.svg`,
+  coatOfArmsSrc: `${baseUrl}logo.svg`,
   coatOfArmsFallback: '',
 };
