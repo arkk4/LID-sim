@@ -10,7 +10,6 @@ export interface Bundesland {
 }
 
 export interface Question {
-  id?: string;
   num: string; // "1", "2", ... "300" or "NW-1", "BY-8", etc.
   question: string;
   a: string;
@@ -19,7 +18,6 @@ export interface Question {
   d: string;
   solution: 'a' | 'b' | 'c' | 'd';
   image?: string;
-  category?: string;
   translationUk?: {
     question?: string;
     a?: string;

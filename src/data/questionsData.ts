@@ -1028,11 +1028,11 @@ export function resolveQuestionImageSrc(imageRaw?: string): string | null {
   }
 
   // 3. Local asset reference
-  if (trimmed.startsWith('Assets/') || trimmed.startsWith('/Assets/')) {
+  if (trimmed.startsWith('assets/') || trimmed.startsWith('/assets/')) {
     return trimmed;
   }
 
   let fileName = trimmed;
   if (!fileName.includes('.')) fileName += '.png';
-  return `Assets/coats/${fileName}`;
+  return `assets/coats/${fileName}`;
 }

@@ -568,7 +568,7 @@ export default function App() {
           >
             <Menu className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
             <img
-              src={`Assets/coats/${selectedState}.png`}
+              src={`assets/coats/${selectedState}.png`}
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = STATE_COAT_FALLBACKS[selectedState] || '';
               }}
@@ -1262,18 +1262,20 @@ export default function App() {
               </div>
             )}
 
-            {/* Bottom Sheet Footer: Codename Essen & Version */}
+            {/* Bottom Sheet Footer: Codename & Version */}
             <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500 bg-zinc-50/50 dark:bg-zinc-900/50">
               <div className="flex items-center gap-1.5">
                 <img
-                  src={APP_VERSION_CONFIG.coatOfArmsSrc}
+                  src={APP_VERSION_CONFIG.badgeSrc}
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = '';
                   }}
-                  alt="Essen"
+                  alt="LID-sim"
                   className="w-3.5 h-3.5 object-contain"
                 />
-                <span className="font-medium text-zinc-600 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
+                {APP_VERSION_CONFIG.codename && (
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
+                )}
               </div>
               <span className="font-mono text-[10px]">{APP_VERSION_CONFIG.version}</span>
             </div>
@@ -1320,7 +1322,7 @@ export default function App() {
                   className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
                 >
                   <img
-                    src={`Assets/coats/${selectedState}.png`}
+                    src={`assets/coats/${selectedState}.png`}
                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = STATE_COAT_FALLBACKS[selectedState] || ''; }}
                     alt={selectedState}
                     className="w-7 h-7 object-contain flex-shrink-0"
@@ -1402,13 +1404,17 @@ export default function App() {
             {/* Footer: version */}
             <div className="px-4 py-3 border-t border-zinc-100 dark:border-zinc-800 flex items-center gap-2 text-[11px] text-zinc-400 dark:text-zinc-500 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
               <img
-                src={APP_VERSION_CONFIG.coatOfArmsSrc}
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = APP_VERSION_CONFIG.coatOfArmsFallback; }}
-                alt="Essen"
+                src={APP_VERSION_CONFIG.badgeSrc}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = ''; }}
+                alt="LID-sim"
                 className="w-4 h-4 object-contain flex-shrink-0"
               />
-              <span className="font-medium text-zinc-500 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
-              <span>·</span>
+              {APP_VERSION_CONFIG.codename && (
+                <>
+                  <span className="font-medium text-zinc-500 dark:text-zinc-400">{APP_VERSION_CONFIG.codename}</span>
+                  <span>·</span>
+                </>
+              )}
               <span className="font-mono">{APP_VERSION_CONFIG.version}</span>
             </div>
           </div>
@@ -1505,7 +1511,7 @@ export default function App() {
                       }`}
                   >
                     <img
-                      src={`Assets/coats/${land.code}.png`}
+                      src={`assets/coats/${land.code}.png`}
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src = STATE_COAT_FALLBACKS[land.code] || '';
                       }}

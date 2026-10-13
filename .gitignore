@@ -1,22 +1,28 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+verbagen-venv/
+
+# System
 .DS_Store
 .agents/
-
-verbagen-venv/
-cache/
-
-# Personal reference files
-questions_source_report.txt
-gesamtfragenkatalog-lebenindeutschland.pdf
-Mein_Leben_in_Deutschland_Orientierungskurs.pdf
-questions.json.bak
-
 
 # Node & Build artifacts
 node_modules/
 dist/
-index.old.html
-.env.local
 .env
+.env.local
+
+# Офіційні матеріали (PDF занадто важкі для git)
+materials/*.pdf
+materials/*.PDF
+
+# Кешовані зображення питань
+assets/cache/
+
+# Службові файли та бекапи
+*.bak
+data/questions/sync_report.txt
+questions_source_report.txt
+index.old.html

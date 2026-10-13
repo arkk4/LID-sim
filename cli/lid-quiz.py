@@ -30,10 +30,22 @@ except ImportError:
     print("pip install rich"); sys.exit(1)
 
 SCRIPT_DIR     = os.path.dirname(os.path.abspath(__file__))
-QUESTIONS_FILE = os.path.join(SCRIPT_DIR, "questions.json")
-SETS_FILE      = os.path.join(SCRIPT_DIR, "sets.json")
-COATS_DIR      = os.path.join(SCRIPT_DIR, "Assets", "coats")
-CACHE_DIR      = os.path.join(SCRIPT_DIR, "Assets", "cache")
+REPO_ROOT      = os.path.dirname(SCRIPT_DIR)
+QUESTIONS_FILE = os.path.join(REPO_ROOT, "data", "questions", "questions.json")
+SETS_FILE      = os.path.join(REPO_ROOT, "data", "sets", "sets.json")
+COATS_DIR      = os.path.join(REPO_ROOT, "assets", "coats")
+CACHE_DIR      = os.path.join(REPO_ROOT, "assets", "cache")
+LOGO_PATH      = os.path.join(REPO_ROOT, "public", "logo.svg")
+
+# Read version from version.json
+_version_file = os.path.join(REPO_ROOT, "version.json")
+try:
+    import json as _json
+    with open(_version_file, "r", encoding="utf-8") as _vf:
+        _vdata = _json.load(_vf)
+    VERSION = _vdata.get("version", "1.0.0")
+except Exception:
+    VERSION = "1.0.0"
 
 BUNDESLAENDER = [
     ("BW","Baden-Württemberg"), ("BY","Bayern"),       ("BE","Berlin"),
@@ -68,13 +80,24 @@ def _iterm2(b64: str, name: str, w, h) -> str:
     return f"\033]1337;File=name={nb};width={w};height={h};preserveAspectRatio=1;inline=1:{b64}\a"
 
 
+def show_logo_banner() -> None:
+    if is_iterm2() and os.path.exists(LOGO_PATH):
+        try:
+            b64 = _b64(LOGO_PATH)
+            sys.stdout.write(_iterm2(b64, "lid-quiz", 10, 4))
+            sys.stdout.write("\n")
+            sys.stdout.flush()
+        except Exception:
+            pass
+
+
 # ── Header ────────────────────────────────────────────────────────────────────
 
 def render_header(state: str, num_str: str, set_title: str = None, exam_info: str = None) -> None:
     """
     Renders top header with coat of arms and state / set / exam badge.
     """
-    title = "Leben in Deutschland"
+    title = f"Leben in Deutschland  v{VERSION}"
     if exam_info:
         label = f"  {title}   {num_str}   [{state}]  [EXAM: {exam_info}]"
     elif set_title:
@@ -259,6 +282,7 @@ def show_help(is_exam: bool = False) -> None:
             ("set all",        "Reset to full catalog"),
             ("exam",           "Start official 33-question simulation exam"),
             ("r",              "Reset current answer"),
+            ("sort",           "Toggle numerical / book-order in active set"),
             ("lands",          "List all Bundesländer"),
             ("? / help",       "This help"),
             ("q / exit",       "Quit"),
@@ -380,25 +404,40 @@ def build_question_list(raw: dict, state: str) -> list:
     return general + state_qs
 
 
-def filter_by_set(all_questions: list, q_set: dict) -> list:
+def filter_by_set(all_questions: list, q_set: dict, sort_numerically: bool = False) -> list:
     if not q_set:
         return all_questions
     nums = [str(n).strip() for n in q_set.get("questions", [])]
     clean = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
-    clean_nums = set(clean(n) for n in nums)
 
     # Special handling for regional set: only match the state questions
     if q_set.get("id") == "state-regional-10":
         return [q for q in all_questions if "-" in str(q.get("num", ""))]
 
+    q_map = {clean(str(q.get("num", ""))): q for q in all_questions}
     result = []
-    for q in all_questions:
-        q_num = str(q.get("num", "")).strip()
-        # General questions match clean numbers
-        if "-" not in q_num and clean(q_num) in clean_nums:
-            result.append(q)
-        elif "-" in q_num and clean(q_num) in clean_nums:
-            result.append(q)
+    seen = set()
+
+    for n in nums:
+        key = clean(n)
+        if key in q_map and key not in seen:
+            result.append(q_map[key])
+            seen.add(key)
+        elif re.match(r"^\d+$", n):
+            idx = int(n) - 1
+            if 0 <= idx < len(all_questions):
+                q_obj = all_questions[idx]
+                k = clean(str(q_obj.get("num", "")))
+                if k not in seen:
+                    result.append(q_obj)
+                    seen.add(k)
+
+    if sort_numerically:
+        def _sort_key(q):
+            n = str(q.get("num", ""))
+            return int(n) if re.match(r"^\d+$", n) else 9999
+        result.sort(key=_sort_key)
+
     return result if result else all_questions
 
 
@@ -699,14 +738,15 @@ def prompt_line(state: str, idx: int, total: int, custom_prompt: str = None) -> 
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 
-def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set_id=None) -> None:
+def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set_id=None, sort_numerically: bool = False) -> None:
+    show_logo_banner()
     available_sets = load_sets()
     active_set     = None
     if initial_set_id:
         active_set = find_set(available_sets, str(initial_set_id))
 
     all_questions  = build_question_list(raw, state)
-    questions      = filter_by_set(all_questions, active_set)
+    questions      = filter_by_set(all_questions, active_set, sort_numerically=sort_numerically)
     index          = 0
     current_answer = None
 
@@ -761,6 +801,19 @@ def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set
         elif cmd_lower == "r":
             current_answer = None
 
+        # ── Toggle sort order ─────────────────────────────────────────────────
+        elif cmd_lower in ("sort", "order"):
+            sort_numerically = not sort_numerically
+            curr_q = questions[index] if questions else None
+            questions = filter_by_set(all_questions, active_set, sort_numerically=sort_numerically)
+            if curr_q:
+                new_idx = find_q(questions, str(curr_q.get("num", "")))
+                if new_idx != -1:
+                    index = new_idx
+            mode_str = "Numerisch sortiert" if sort_numerically else "Buchreihenfolge (Seiten)"
+            console.print(f"[cyan]Reihenfolge geändert: {mode_str}[/cyan]")
+            refresh = True
+
         # ── Question Sets ─────────────────────────────────────────────────────
         elif cmd_lower == "set" or cmd_lower == "sets":
             show_sets(available_sets, active_set.get("id") if active_set else None)
@@ -780,7 +833,7 @@ def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set
 
                 if found_set:
                     active_set = found_set
-                    questions  = filter_by_set(all_questions, active_set)
+                    questions  = filter_by_set(all_questions, active_set, sort_numerically=sort_numerically)
                     index      = 0
                     current_answer = None
                     set_title  = active_set.get("title")
@@ -811,7 +864,7 @@ def run_repl(raw: dict, url_map: dict, state: str = "NW", goto=None, initial_set
             if code in STATE_NAMES:
                 state          = code
                 all_questions  = build_question_list(raw, state)
-                questions      = filter_by_set(all_questions, active_set)
+                questions      = filter_by_set(all_questions, active_set, sort_numerically=sort_numerically)
                 index          = 0
                 current_answer = None
             else:
@@ -854,6 +907,8 @@ def main():
                         help="Jump to question N on start")
     parser.add_argument("--set", dest="set_id", metavar="SET_ID",
                         help="Start with a specific question set active (e.g. book-p10-25)")
+    parser.add_argument("--sort", dest="sort_numerically", action="store_true",
+                        help="Sort set questions numerically instead of book page order")
     parser.add_argument("--exam", action="store_true",
                         help="Start directly in exam simulation mode")
     args  = parser.parse_args()
@@ -877,7 +932,7 @@ def main():
     if args.exam:
         run_exam_simulation(raw, url_map, state)
     else:
-        run_repl(raw, url_map, state=state, goto=args.goto, initial_set_id=args.set_id)
+        run_repl(raw, url_map, state=state, goto=args.goto, initial_set_id=args.set_id, sort_numerically=args.sort_numerically)
 
 
 if __name__ == "__main__":

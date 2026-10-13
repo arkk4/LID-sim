@@ -7,10 +7,7 @@
       "b": "die Menschen Steuern zahlen.",
       "c": "die Menschen das Wahlrecht haben.",
       "d": "hier Meinungsfreiheit gilt.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "9de8c0812c9a4642e03e8b7f65d30af94d0854182378ff05969837ba0ebc8e16"
+      "solution": "d"
     },
     {
       "num": "2",
@@ -19,10 +16,7 @@
       "b": "Religionsunterricht teilnimmt",
       "c": "Politikunterricht teilnimmt.",
       "d": "Sprachunterricht teilnimmt.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "ade1ecc6e5f4b047972b49b141a466b4b5c62dc034808f91a0a576ac49aa18c4"
+      "solution": "b"
     },
     {
       "num": "3",
@@ -31,10 +25,7 @@
       "b": "Der Staat muss sich nicht an die Gesetze halten.",
       "c": "Nur Deutsche müssen die Gesetze befolgen.",
       "d": "Die Gerichte machen die Gesetze.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "87198862ad19bafee1e258cc44f4d6336fa183ff28898d4ebc06e2b498166d4f"
+      "solution": "a"
     },
     {
       "num": "4",
@@ -43,10 +34,7 @@
       "b": "Faustrecht",
       "c": "Meinungsfreiheit",
       "d": "Selbstjustiz.",
-      "solution": "c",
-      "image": "-",
-      "category": "Rights & Freedoms",
-      "id": "07d8f6dcc520b80da4f925d95b10d9737707a8e9d3171d79ff7aa9fe29e9f499"
+      "solution": "c"
     },
     {
       "num": "5",
@@ -55,10 +43,7 @@
       "b": "Nur Personen, die noch nie im Gefängnis waren, dürfen wählen.",
       "c": "Der Wähler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
       "d": "Alle wahlberechtigten Personen müssen wählen.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "32a046eb52f23c1aacef2b8426360355bd646aeb12b2dc1da847935f551ba24f"
+      "solution": "c"
     },
     {
       "num": "6",
@@ -67,10 +52,7 @@
       "b": "Bundesgesetz",
       "c": "Deutsches Gesetz",
       "d": "Grundgesetz",
-      "solution": "d",
-      "image": "-",
-      "category": "Constitution",
-      "id": "cd44e1fc8befc96f0ef640170bcf1aedfdebe7d2838fb3021bb71116d3adca4d"
+      "solution": "d"
     },
     {
       "num": "7",
@@ -79,10 +61,7 @@
       "b": "Unterhaltung",
       "c": "Arbeit",
       "d": "Wohnung",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "95adf6d277adb776ee9c65aba8573a924e41c8458ec9f80192b8121ff577d889"
+      "solution": "a"
     },
     {
       "num": "8",
@@ -91,10 +70,7 @@
       "b": "Alle sollen gleich viel Geld haben",
       "c": "Jeder Mensch darf seine Meinung sagen.",
       "d": "Alle sind vor dem Gesetz gleich.",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "98001619cacc137e305aa9384a37336805d39716a19df1f72f6c0ca4229f354c"
+      "solution": "b"
     },
     {
       "num": "9",
@@ -103,10 +79,7 @@
       "b": "Menschenwürde",
       "c": "Asyl",
       "d": "Meinungsfreiheit",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "137c97d971b0b503ba60a8159c12d8e45696c2d383827bc3ffeb2eccad25174f"
+      "solution": "c"
     },
     {
       "num": "10",
@@ -115,10 +88,7 @@
       "b": "die Folter",
       "c": "die Todesstrafe",
       "d": "die Geldstrafe",
-      "solution": "d",
-      "image": "-",
-      "category": "Constitution",
-      "id": "c49677fea99001122416dff64315894b367e4f701701e892b9575fee441ec963"
+      "solution": "d"
     },
     {
       "num": "11",
@@ -127,10 +97,7 @@
       "b": "Bundesverfassung",
       "c": "Gesetzbuch",
       "d": "Verfassungsvertrag",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "88ce339e51288f59ab4bf02262ec39f0ce3320c9da0b3cf9d230b0d8809fad1d"
+      "solution": "a"
     },
     {
       "num": "12",
@@ -139,10 +106,7 @@
       "b": "Ja, aber dazu müssen zwei Drittel der Abgeordneten im Bundestag dafür sein",
       "c": "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden",
       "d": "Nein, denn nur der Bundesrat kann die Pressefreiheit abschaffen.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "eee60a4791f5150bea2fdd90d1364b5db92d6a8943fd8afde0c682f7c6b12e18"
+      "solution": "c"
     },
     {
       "num": "13",
@@ -151,10 +115,7 @@
       "b": "die Fraktion mit den meisten Abgeordneten.",
       "c": "alle Parteien, die bei der letzten Wahl die 5%-Hürde erreichen konnten.",
       "d": "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "b2d7d0fe771640192f6a1d4b9cc85f9d82ce17def43b18d67c7e0c4f2bef701d"
+      "solution": "d"
     },
     {
       "num": "14",
@@ -163,10 +124,7 @@
       "b": "Passanten auf der Straße beschimpfen darf.",
       "c": "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche.",
       "d": "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "e2db45135b48074f3ee975cdf9dc410496cc690694fda81943da19bfc410c229"
+      "solution": "a"
     },
     {
       "num": "15",
@@ -175,10 +133,7 @@
       "b": "Zwangsarbeit",
       "c": "freie Berufswahl",
       "d": "Arbeit im Ausland",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "b3e49f6f15bb7fa5aada8694c00e4a33eaf93736ac957fbfbb63ce7aab939e2e"
+      "solution": "b"
     },
     {
       "num": "16",
@@ -187,10 +142,7 @@
       "b": "bei Meinungsäusserungen über die Bundesregierung",
       "c": "bei Diskussionen über Religionen",
       "d": "bei Kritik am Staat",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "630313c18960a186288cf732b346efe590bf68c744a4b23102c4605cc615c171"
+      "solution": "a"
     },
     {
       "num": "17",
@@ -199,10 +151,7 @@
       "b": "Petitionen der Bürger und Bürgerinnen.",
       "c": "Versammlungsfreiheit der Einwohner und Einwohnerinnen.",
       "d": "Ungleichbehandlung der Bürger und Bürgerinnen durch den Staat.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "3597c379015c8b0d3724ced017bd2125bb2206885c5b3508f4cbdb5675bc1056"
+      "solution": "d"
     },
     {
       "num": "18",
@@ -211,10 +160,7 @@
       "b": "das Recht auf Leben",
       "c": "Religionsfreiheit",
       "d": "Meinungsfreiheit",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "afe30ea90538ec26180537013a3c2af8c3e55e00d7653f96bdcd212466021ee8"
+      "solution": "a"
     },
     {
       "num": "19",
@@ -223,10 +169,7 @@
       "b": "Man kann seinen Beruf wechseln.",
       "c": "Man darf sich für eine andere Religion entscheiden.",
       "d": "Man darf sich in der Offentlichkeit nur leicht bekleidet bewegen.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "e2af84b57db7b1a59707283b8a747831b2a07a251e46d4bcd93dae583b36c0b1"
+      "solution": "a"
     },
     {
       "num": "20",
@@ -235,10 +178,7 @@
       "b": "rechtsstaatlich orientiert.",
       "c": "gesetzestreu.",
       "d": "verfassungswidrig.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "a1eab5ddd04d556e5996e220f35499541128a72e0e28e7af9a3bb89167d35337"
+      "solution": "d"
     },
     {
       "num": "21",
@@ -248,9 +188,7 @@
       "c": "Bild 3",
       "d": "Bild 4",
       "solution": "a",
-      "image": "https://foreignvasi.com/q56-q99.42b88c95.png",
-      "category": "History & Geography",
-      "id": "dd14b40ebeed29aa022566c138d168c6ac4f63c447824366c33d42370609d7bf"
+      "image": "https://foreignvasi.com/q56-q99.42b88c95.png"
     },
     {
       "num": "22",
@@ -259,10 +197,7 @@
       "b": "Diktatur",
       "c": "Republik",
       "d": "Fürstentum",
-      "solution": "c",
-      "image": "-",
-      "category": "Constitution",
-      "id": "2a736db47d8aa0e21d563fcb7562f30f70aa1348c4ef468983bacf95a34f237c"
+      "solution": "c"
     },
     {
       "num": "23",
@@ -271,10 +206,7 @@
       "b": "ehrenamtlich für ein Bundesland tätig.",
       "c": "selbständig mit einer eigenen Firma tätig.",
       "d": "bei einer Firma oder Behörde beschäftigt.",
-      "solution": "d",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "013e889f16b8a5ab1de64d2191a8dfc9118cc7e45075305f1d39935a979fbe1a"
+      "solution": "d"
     },
     {
       "num": "24",
@@ -283,10 +215,7 @@
       "b": "15",
       "c": "16",
       "d": "17",
-      "solution": "c",
-      "image": "-",
-      "category": "Federal System",
-      "id": "0397bd9626b06ca79badf515e29df0512fc6f35c24a513d93ed23ed8443f6c80"
+      "solution": "c"
     },
     {
       "num": "25",
@@ -295,10 +224,7 @@
       "b": "Nordrhein-Westfalen",
       "c": "Mecklenburg-Vorpommern",
       "d": "Sachsen-Anhalt",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "7437135123f0eafaa78b229169c0de496ac26fef588a4af2d8a26e92671b861c"
+      "solution": "a"
     },
     {
       "num": "26",
@@ -307,10 +233,7 @@
       "b": "ein demokratischer und sozialer Bundesstaat.",
       "c": "eine kapitalistische und soziale Monarchie.",
       "d": "ein sozialer und sozialistischer Bundesstaat.",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "0df1fae2e99513d77373cec913d34e3aa138d01c2e88ec2329681335a2f1982e"
+      "solution": "b"
     },
     {
       "num": "27",
@@ -319,10 +242,7 @@
       "b": "ein Bundesstaat.",
       "c": "eine Diktatur.",
       "d": "eine Monarchie.",
-      "solution": "b",
-      "image": "-",
-      "category": "Federal System",
-      "id": "58679e07fc2416f7b402d9e1d4fa0fd7ccc091ae213edbddea131989bd53128c"
+      "solution": "b"
     },
     {
       "num": "28",
@@ -331,10 +251,7 @@
       "b": "die Wirtschaft",
       "c": "das wahlberechtigte Volk",
       "d": "die Verwaltung",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "d954cc604180eb24d2121a36800c46366296dc58725c11c8eae3bef4a33f2762"
+      "solution": "c"
     },
     {
       "num": "29",
@@ -343,10 +260,7 @@
       "b": "Adler",
       "c": "Bär",
       "d": "Pferd",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "70df8c1853fc631cd9c815a3972b1cd819efcde341b78cb228f4599bef6d0f9e"
+      "solution": "b"
     },
     {
       "num": "30",
@@ -355,10 +269,7 @@
       "b": "Pressezensur",
       "c": "Meinungsfreiheit",
       "d": "verschiedene Parteien",
-      "solution": "b",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "88d69a1c7bbd628dd591faccd264aba9d6d624a4ff45e5d6c6a963fc90b4a7c0"
+      "solution": "b"
     },
     {
       "num": "31",
@@ -367,10 +278,7 @@
       "b": "Koalition.",
       "c": "Ministerium.",
       "d": "Fraktion.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "91835a3524b9a24a48723f56f8cb8d57636e91f8e2454ea9d18639c79208a830"
+      "solution": "b"
     },
     {
       "num": "32",
@@ -379,10 +287,7 @@
       "b": "Regierung",
       "c": "Presse",
       "d": "Rechtsprechung",
-      "solution": "c",
-      "image": "-",
-      "category": "Constitution",
-      "id": "2a72989e4bf6719cac3fdc914db13223b6eced28d276fbcdeb9618574b79a142"
+      "solution": "c"
     },
     {
       "num": "33",
@@ -391,10 +296,7 @@
       "b": "bilden die Religionsgemeinschaften den Staat.",
       "c": "ist der Staat abhängig von den Religionsgemeinschaften.",
       "d": "bilden Staat und Religionsgemeinschaften eine Einheit.",
-      "solution": "a",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "df23465a14d21139d8c0f74531ddbfffcd6b02ed1b8b645418c9c9a2cf3aade3"
+      "solution": "a"
     },
     {
       "num": "34",
@@ -403,10 +305,7 @@
       "b": "ein Rechtsstaat",
       "c": "eine Monarchie",
       "d": "ein Sozialstaat",
-      "solution": "c",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "850488b61a0e309b5caa5864145237bb96a85fb93ec6fc382b51dd5cfafd102e"
+      "solution": "c"
     },
     {
       "num": "35",
@@ -415,10 +314,7 @@
       "b": "Sozialabgaben",
       "c": "Spendengeldern",
       "d": "Vereinsbeiträgen",
-      "solution": "b",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "4824b551535ccfc6ee3d950e4446a220207858e35195230ed79cf399d34a24b5"
+      "solution": "b"
     },
     {
       "num": "36",
@@ -427,10 +323,7 @@
       "b": "die Autoversicherung",
       "c": "die Gebäudeversicherung",
       "d": "die Haftpflichtversicherung",
-      "solution": "a",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "384cb06db349fdd87ecaca5527afa14a8ee804526b3fa4e4fed33bff72a276c1"
+      "solution": "a"
     },
     {
       "num": "37",
@@ -439,10 +332,7 @@
       "b": "Premierminister/Premierministerin",
       "c": "Senator/Senatorin",
       "d": "Ministerpräsident/Ministerpräsidentin",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "4b70921f095f789eb67466e0f75cd9a4660a42dfb8831d59914760c06bba2e1b"
+      "solution": "d"
     },
     {
       "num": "38",
@@ -451,10 +341,7 @@
       "b": "Bundesstaat.",
       "c": "Staatenbund.",
       "d": "Zentralstaat.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "3dd854c5bb4b24570599b8c1e19606673320b48261642bdd572e2e6ef2f56517"
+      "solution": "b"
     },
     {
       "num": "39",
@@ -463,10 +350,7 @@
       "b": "eine eigene Währung",
       "c": "eine eigene Armee",
       "d": "eine eigene Regierung",
-      "solution": "d",
-      "image": "-",
-      "category": "Federal System",
-      "id": "e3b66ad9ad5d4fbb69a8572d3b274cfa0acff8cb535ff9b267fba77f4f7db02d"
+      "solution": "d"
     },
     {
       "num": "40",
@@ -475,10 +359,7 @@
       "b": "Einigkeit und Recht und Freiheit...",
       "c": "Freude schöner Götterfunken...",
       "d": "Deutschland einig Vaterland...",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "0cbea63e07181a24950846df4935e8fea5a1a5a6f3ef8769bfe7e5e3bfee9568"
+      "solution": "b"
     },
     {
       "num": "41",
@@ -487,10 +368,7 @@
       "b": "damit Bestechung in der Politik begrenzt wird",
       "c": "um politische Demonstrationen zu verhindern",
       "d": "um wirtschaftlichen Wettbewerb anzuregen",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "edda09e206e0c35026a7aa39e7b388867dd1779aa9e6c8a9a64b7992f0ade7d1"
+      "solution": "a"
     },
     {
       "num": "42",
@@ -499,10 +377,7 @@
       "b": "das Parlament",
       "c": "die Gerichte",
       "d": "die Polizei",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "589980ba58033456d9149d558ffc90b35ef64396241bfd70b7e0a73a193d2f5d"
+      "solution": "b"
     },
     {
       "num": "43",
@@ -511,10 +386,7 @@
       "b": "wenn sie gegen die Verfassung kämpft",
       "c": "wenn sie Kritik am Staatsoberhaupt äußert",
       "d": "wenn ihr Programm eine neue Richtung vorschlägt",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "36cc559e883f286e6489abc1127989fd5dc66b58451b067116a29d65ec8d0760"
+      "solution": "b"
     },
     {
       "num": "44",
@@ -523,10 +395,7 @@
       "b": "den Bundespräsidenten/die Bundespräsidentin",
       "c": "Landtagsabgeordnete",
       "d": "Bundestagsabgeordnete",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "0e140ab21e59e0a1b1b6bcb4acf5b109155d0e60a0f38d8a33d77f21f1409c7e"
+      "solution": "b"
     },
     {
       "num": "45",
@@ -535,10 +404,7 @@
       "b": "Unfallversicherung",
       "c": "Hausratsversicherung",
       "d": "Haftpflicht- und Feuerversicherung",
-      "solution": "a",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "f51a19adcc1be293bcd98d3a2d50657ca1b45a6e930505d1f56a5dfdb5484ccb"
+      "solution": "a"
     },
     {
       "num": "46",
@@ -547,10 +413,7 @@
       "b": "Er verkauft Lebensmittel und Kleidung.",
       "c": "Er versorgt alle Einwohner und Einwohnerinnen kostenlos mit Zeitungen.",
       "d": "Er produziert Autos und Busse.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "24da146eaf8df47d48fcdf0de26e20839e51bc8d1f67d6edf3a1df313d0f9b41"
+      "solution": "a"
     },
     {
       "num": "47",
@@ -559,10 +422,7 @@
       "b": "Er zahlt Kindergeld.",
       "c": "Er unterstützt Museen.",
       "d": "Er fördert Sportler und Sportlerinnen.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "12fbf38fa48bad7f8fd2eb92b41ff83a1343d00a35284e1e7c9127fd7d4f817d"
+      "solution": "a"
     },
     {
       "num": "48",
@@ -571,10 +431,7 @@
       "b": "die Bundespraesidentin/der Bundespräsident",
       "c": "die Bürgerversammlung",
       "d": "die Regierung",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "3e04b1e2ccec649fece15bea99e7f524caca7264e468f0e1076e230a92935680"
+      "solution": "c"
     },
     {
       "num": "49",
@@ -583,10 +440,7 @@
       "b": "die Bundesländer",
       "c": "das Familienministerium",
       "d": "die Universitäten",
-      "solution": "b",
-      "image": "-",
-      "category": "Federal System",
-      "id": "f087b3ea5502eefe1c7e454462d6de192b82a3fd263b695e4fce86c500f388cc"
+      "solution": "b"
     },
     {
       "num": "50",
@@ -595,10 +449,7 @@
       "b": "soziale Marktwirtschaft.",
       "c": "gelenkte Zentralwirtschaft.",
       "d": "Planwirtschaft.",
-      "solution": "b",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "c2f7ab32ce61faa1fd7897423ca561ac92f0d43845fca901bc20337f171f19d8"
+      "solution": "b"
     },
     {
       "num": "51",
@@ -607,10 +458,7 @@
       "b": "Bürger friedlich demonstrieren gehen dürfen.",
       "c": "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
       "d": "jemand ein Verbrechen begeht und deshalb verhaftet wird.",
-      "solution": "c",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "d7086b653f0b7587408e12c5249974a3ac5750239aabf354d349a14fffb26b83"
+      "solution": "c"
     },
     {
       "num": "52",
@@ -619,10 +467,7 @@
       "b": "Bundestag aus.",
       "c": "preußischen König aus.",
       "d": "Bundesverfassungsgericht aus.",
-      "solution": "a",
-      "image": "-",
-      "category": "Constitution",
-      "id": "8d0edd12d11c8aa80f01f4de407bd39a477c2d9738c3ee5128b2c949cc8b40c6"
+      "solution": "a"
     },
     {
       "num": "53",
@@ -631,10 +476,7 @@
       "b": "Es gibt nur rechte Parteien.",
       "c": "Die Bürger und Bürgerinnen entscheiden über Gesetze.",
       "d": "Der Staat muss die Gesetze einhalten.",
-      "solution": "d",
-      "image": "-",
-      "category": "Constitution",
-      "id": "f0a43c225d8c754cfab346630a267073ab9a8ff316592320c9de929af797f166"
+      "solution": "d"
     },
     {
       "num": "54",
@@ -643,10 +485,7 @@
       "b": "Judikative",
       "c": "Exekutive",
       "d": "Direktive",
-      "solution": "d",
-      "image": "-",
-      "category": "Constitution",
-      "id": "ec9727748b522296f29103379b8ff9ac70e687d56e16d71fc163c14058740cb6"
+      "solution": "d"
     },
     {
       "num": "55",
@@ -656,9 +495,7 @@
       "c": "das Bundesratsgebäude in Berlin",
       "d": "das Bundeskanzleramt in Berlin",
       "solution": "a",
-      "image": "https://foreignvasi.com/q148.197dc41c.png",
-      "category": "Law & Governance",
-      "id": "57a5c32d83644fc05a46d13b98eb47d2a3e4cc710f8eb14307b4b47fba538e26"
+      "image": "https://foreignvasi.com/q148.197dc41c.png"
     },
     {
       "num": "56",
@@ -667,10 +504,7 @@
       "b": "Ordnungsamt",
       "c": "Finanzamt",
       "d": "Auswärtiges Amt",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "8c157aa9ae2236930570c77add48462ad8fa1716d3701f13034b50be82e10ed0"
+      "solution": "b"
     },
     {
       "num": "57",
@@ -679,10 +513,7 @@
       "b": "der Ministerpräsident/die Ministerpräsidentin des größten   Bundeslandes",
       "c": "ein ehemaliger Bundeskanzler/eine ehemalige Bundeskanzlerin",
       "d": "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "2f027f8e0e252902ca9d9a2c80b5ee65d86db89503b4840c9de02dc9a05129f7"
+      "solution": "d"
     },
     {
       "num": "58",
@@ -691,10 +522,7 @@
       "b": "der Bundespräsident/die Bundespräsidentin",
       "c": "der Bundesratspräsident/die Bundesratspräsidentin",
       "d": "die Bundestagspräsidentin/der Bundestagspräsident",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "36e3759b5e8920e552cb5542784320686d6497b866a1d89d57b37f8699bf8fd7"
+      "solution": "b"
     },
     {
       "num": "59",
@@ -703,10 +531,7 @@
       "b": "vor etwa 700 Jahren",
       "c": "vor etwa 1150 Jahren",
       "d": "vor etwa 1700 Jahren",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "43f2afb8e62fc8253c30b2ec72333436f3d01ae4cc2c49b425542afdcbed76cf"
+      "solution": "d"
     },
     {
       "num": "60",
@@ -715,10 +540,7 @@
       "b": "Legislative.",
       "c": "Direktive.",
       "d": "Judikative.",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "7b34f5fb473a88eba239c495ae1c47cd19aa9ea9edd603774b3b0a715fa4dcd7"
+      "solution": "b"
     },
     {
       "num": "61",
@@ -727,10 +549,7 @@
       "b": "Das Bundesverfassungsgericht steht über der Verfassung.",
       "c": "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.",
       "d": "Die Staatsgewalt geht vom Volke aus.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "a771e2089a64e43c3d10181b2122f9ae2778ef14a1100ba61b692891eb076bfd"
+      "solution": "d"
     },
     {
       "num": "62",
@@ -739,10 +558,7 @@
       "b": "Landtagswahl.",
       "c": "Europawahl.",
       "d": "Bundestagswahl.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "aef11ca0cdf01f0b9145e2dc9d6f393f6688c7595c39c1966d63d23ea8c64548"
+      "solution": "b"
     },
     {
       "num": "63",
@@ -751,10 +567,7 @@
       "b": "die Gerichte",
       "c": "das Finanzamt",
       "d": "die Ministerien",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "f6c8291dc37cd7a0e17ec7d868c8babbc367e07945d517bfa4f180e26fbcbe32"
+      "solution": "b"
     },
     {
       "num": "64",
@@ -763,10 +576,7 @@
       "b": "einen Oststaat und einen Weststaat.",
       "c": "16 Kantone.",
       "d": "Bund, Länder und Kommunen.",
-      "solution": "d",
-      "image": "-",
-      "category": "Federal System",
-      "id": "2395fe58e39bfe77f7cb56dcc520a17771c6fac470b01b0bc342872efd3beea6"
+      "solution": "d"
     },
     {
       "num": "65",
@@ -775,10 +585,7 @@
       "b": "die Bundesregierung zu kontrollieren.",
       "c": "den Bundeskanzler/die Bundeskanzlerin zu wählen.",
       "d": "das Bundeskabinett zu bilden.",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "6f54000834f9d624b617cf9c745a1ba0bcdf2d2c43160b29f67adb35287f93ce"
+      "solution": "d"
     },
     {
       "num": "66",
@@ -787,10 +594,7 @@
       "b": "Hamburg und Essen",
       "c": "Nürnberg und Stuttgart",
       "d": "Worms und Speyer",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "55377ab16be6da40b9a3da4251b897ac7ff1c7af265ffb83749d3848902f2cc3"
+      "solution": "a"
     },
     {
       "num": "67",
@@ -799,10 +603,7 @@
       "b": "Außenpolitik",
       "c": "Wirtschaftspolitik",
       "d": "Schulpolitik",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "1d045aced7f74d22bbd8ff92e9634e8dd9630e437c87f987030399ceafb7ed05"
+      "solution": "d"
     },
     {
       "num": "68",
@@ -811,10 +612,7 @@
       "b": "weil alle Schüler und Schülerinnen einen Schulabschluss   haben müssen",
       "c": "weil es in den Bundesländern verschiedene Schulen gibt",
       "d": "weil es nach dem Grundgesetz seine Aufgabe ist",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "49a0e3a34e0cf3b23ea7b647d6547fb29f72a5f16b790e86b7bfc6db0d9d736f"
+      "solution": "d"
     },
     {
       "num": "69",
@@ -823,10 +621,7 @@
       "b": "Landräte",
       "c": "Gemeinden",
       "d": "Bezirksämter",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "d04db5af56d353e579bb02da87c92ae769eae4f5200e21bf5cc76ffc6e168061"
+      "solution": "c"
     },
     {
       "num": "70",
@@ -836,9 +631,7 @@
       "c": "Er/Sie wählt die Minister/Ministerinnen aus.",
       "d": "Er/Sie schlägt den Kanzler/die Kanzlerin zur Wahl vor.",
       "solution": "d",
-      "image": "https://foreignvasi.com/q160.5e16bedb.png",
-      "category": "General",
-      "id": "6ed0358ea170cd5bb40b488e1a76e2256d2e01436fc978507be4b67598b41a48"
+      "image": "https://foreignvasi.com/q160.5e16bedb.png"
     },
     {
       "num": "71",
@@ -847,10 +640,7 @@
       "b": "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um   Staatsgäste zu empfangen.",
       "c": "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des   Bundespräsidenten, um Staatsgäste zu empfangen.",
       "d": "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "f616032fffbf4a5fc48b90d3a882c1ffe5b17fc56033def220ff8713b33f986b"
+      "solution": "d"
     },
     {
       "num": "72",
@@ -859,10 +649,7 @@
       "b": "Angela Merkel",
       "c": "Ursula von der Leyen",
       "d": "Friedrich Merz",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "21b7137eec02d56579755f542224b56a07fa9bfc84cb79b2ea4e3100d3af0796"
+      "solution": "d"
     },
     {
       "num": "73",
@@ -871,10 +658,7 @@
       "b": "Die Linke und Bündnis 90/Die Grünen.",
       "c": "Bündnis 90/Die Grünen und SPD.",
       "d": "Die Linke und CDU/CSU.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "9641cea7ea74a365d1d91a193367465018e9bfbf972c9c6e9ccfe29f3c7e998f"
+      "solution": "a"
     },
     {
       "num": "74",
@@ -883,10 +667,7 @@
       "b": "Volkskammer",
       "c": "Bundestag",
       "d": "Bundesgerichtshof",
-      "solution": "c",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "24d95e0917fc8a16ed3f5ca3e21b2f962dbfe80dacccf2f18f5272e0df894a32"
+      "solution": "c"
     },
     {
       "num": "75",
@@ -895,10 +676,7 @@
       "b": "Bärbel Bas",
       "c": "Bodo Ramelow",
       "d": "Joachim Gauck",
-      "solution": "a",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "33e0af601e374ac899caa41beaeaa723c88a8f1cc3ba148fb85e804bf24232c6"
+      "solution": "a"
     },
     {
       "num": "76",
@@ -907,10 +685,7 @@
       "b": "Club Deutscher Unternehmer",
       "c": "Christlicher Deutscher Umweltschutz",
       "d": "Christlich Demokratische Union",
-      "solution": "d",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "fa0bbbf5d08d29c807d0bc4c95c7e1decb3255a663611b0125c91da44b8d6d43"
+      "solution": "d"
     },
     {
       "num": "77",
@@ -919,10 +694,7 @@
       "b": "ein deutscher Hafen",
       "c": "eine deutsche Bürgerinitiative",
       "d": "die deutsche Armee",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "1cbdfe160afa6eae62d424c5b82b9c78295c6bb563ea7c27ecf59a7461dad774"
+      "solution": "d"
     },
     {
       "num": "78",
@@ -931,10 +703,7 @@
       "b": "Sozialpolitische Partei Deutschlands",
       "c": "Sozialdemokratische Partei Deutschlands",
       "d": "Sozialgerechte Partei Deutschlands",
-      "solution": "c",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "9816fc8ae50dd2e976db58a62a0843c86cd49a035b5a18deddcc22d9bdabf4b4"
+      "solution": "c"
     },
     {
       "num": "79",
@@ -943,10 +712,7 @@
       "b": "Freie Deutschland Partei",
       "c": "Führende Demokratische Partei",
       "d": "Freie Demokratische Partei",
-      "solution": "d",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "e7422bb6fe5c79b6492a5cfba694b41c767cb46fcbee28ac193765847da71649"
+      "solution": "d"
     },
     {
       "num": "80",
@@ -955,10 +721,7 @@
       "b": "Amtsgericht",
       "c": "Bundesverfassungsgericht",
       "d": "Verwaltungsgericht",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "09fd73ed8bce32f154e0e407511d806c2efbfe7fbdda8c6a3ead13128ce3468a"
+      "solution": "c"
     },
     {
       "num": "81",
@@ -967,10 +730,7 @@
       "b": "die Bundesversammlung",
       "c": "das Volk",
       "d": "der Bundestag",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "700ead396f56d5d106fb5132f782e82d0f7d5c9db53f79cb88b83d6f8b251fbb"
+      "solution": "d"
     },
     {
       "num": "82",
@@ -979,10 +739,7 @@
       "b": "der Bundespräsident/die Bundespräsidentin",
       "c": "der Bundesratspräsident/die Bundesratspräsidentin",
       "d": "der Bundeskanzler/die Bundeskanzlerin",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "ff32ae1a1157e4dc637b4580e0e16ec197ec13ebee431c90a6b929e6e371680c"
+      "solution": "d"
     },
     {
       "num": "83",
@@ -991,10 +748,7 @@
       "b": "die Bundesversammlung",
       "c": "der Bundestag",
       "d": "die Bundesregierung",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "dd1936e366f62df78456b6a3e284319b01b267a7fbd513065b36e6080fe7758b"
+      "solution": "c"
     },
     {
       "num": "84",
@@ -1003,10 +757,7 @@
       "b": "entwirft die Gesetze",
       "c": "repräsentiert das Land.",
       "d": "überwacht die Einhaltung der Gesetze.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "b0a644eeb4f619ae0ff1e2056a4b1d69fbc0eb0a9751a0e3b058c8c450d0f64f"
+      "solution": "c"
     },
     {
       "num": "85",
@@ -1015,10 +766,7 @@
       "b": "die Minister und Ministerinnen der Bundesregierung",
       "c": "die Regierungsvertreter der Bundesländer",
       "d": "die Parteimitglieder",
-      "solution": "c",
-      "image": "-",
-      "category": "Federal System",
-      "id": "7cc9d89c0c8cf68983e97252c4a123628e6f1348cef348dd4caab3472c33f042"
+      "solution": "c"
     },
     {
       "num": "86",
@@ -1027,10 +775,7 @@
       "b": "der Bundesrat",
       "c": "das Bundesparlament",
       "d": "das Bundesverfassungsgericht",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "b7b994b66043f2ce85f9035a02656138c19f30b8c876ca71c9efeeaa5d5af018"
+      "solution": "a"
     },
     {
       "num": "87",
@@ -1039,10 +784,7 @@
       "b": "der Bundespräsident/die Bundespräsidentin",
       "c": "der Bundesratspräsident/die Bundesratspräsidentin",
       "d": "der Bundestagspräsident/die Bundestagspräsidentin",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "cf6e08f8a5c1014b04aa29337fd3426f1cc52a364d432e832783012c6ff759c8"
+      "solution": "b"
     },
     {
       "num": "88",
@@ -1051,10 +793,7 @@
       "b": "entscheidet, wer Bundesminister/Bundesministerin wird.",
       "c": "bestimmt, wer im Bundesrat sitzt.",
       "d": "schlägt die Regierungschefs/Regierungschefinnen der Länder vor.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "5d8600e7cf030d26e1d00114e8c16292ce0c390313ad2b442c19d5d929e9b0a5"
+      "solution": "a"
     },
     {
       "num": "89",
@@ -1063,10 +802,7 @@
       "b": "Ältestenrat",
       "c": "Fraktion",
       "d": "Opposition",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "4c87a8cf2708e8c63daa9361266c0ca5072a25ac0289758862bc840e11f2667c"
+      "solution": "c"
     },
     {
       "num": "90",
@@ -1075,10 +811,7 @@
       "b": "die Bundesversammlung.",
       "c": "den Bundestag.",
       "d": "die Bundesregierung.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "6dbfb45d443ba6a3e5244e6fbf5e047af8e3461b54ef3895dae4ea35249eafb0"
+      "solution": "a"
     },
     {
       "num": "91",
@@ -1087,10 +820,7 @@
       "b": "leichter, wenn dadurch neue Parteien in den Bundesrat kommen.",
       "c": "schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.",
       "d": "leichter, wenn es sich um ein reiches Bundesland handelt.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "857dac52dbbf66264a87ca6ad52c83da49703d86757c1abb9cb0413294a4966f"
+      "solution": "c"
     },
     {
       "num": "92",
@@ -1099,10 +829,7 @@
       "b": "Christlich Süddeutsche Union",
       "c": "Christlich Sozialer Unternehmerverband",
       "d": "Christlich Soziale Union",
-      "solution": "d",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "023c5a63c3dd0d043523339f597d7e0eb38a28a7f5591aefe6d8abfc52b9c40e"
+      "solution": "d"
     },
     {
       "num": "93",
@@ -1111,10 +838,7 @@
       "b": "mehr Direktkandidaten der Partei ziehen ins Parlament ein.",
       "c": "größer ist das Risiko, eine Koalition bilden zu müssen.",
       "d": "mehr Sitze erhält die Partei im Parlament.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "7b79a5a000fb3c8a89dd289d67200a5e131686fe3baf6192100a485142fede79"
+      "solution": "d"
     },
     {
       "num": "94",
@@ -1123,10 +847,7 @@
       "b": "18",
       "c": "21",
       "d": "23",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "319a7cac236b88e9b1b3815af839a90240076200861af89e75a81699a96cb1b8"
+      "solution": "b"
     },
     {
       "num": "95",
@@ -1135,10 +856,7 @@
       "b": "Schulpflicht",
       "c": "Schweigepflicht",
       "d": "Religionspflicht",
-      "solution": "b",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "54da6d254ce255e97bb01ef33ddc2cf20d2d271f2ca66e99e542ea06ec4a8364"
+      "solution": "b"
     },
     {
       "num": "96",
@@ -1147,10 +865,7 @@
       "b": "bis zu 100 Sozialstunden",
       "c": "gar nicht, Holocaustleugnung ist erlaubt",
       "d": "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "cd8405b714acc31004209131283d108ab0b49c8919313ffd439873ad0b4e243b"
+      "solution": "d"
     },
     {
       "num": "97",
@@ -1159,10 +874,7 @@
       "b": "Sozialhilfe",
       "c": "Kindergeld",
       "d": "Wohngeld",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "02350287d8f31aedbfb479ac67f921750592d68ffc296e713306aa418bd44ddb"
+      "solution": "a"
     },
     {
       "num": "98",
@@ -1171,10 +883,7 @@
       "b": "kann die Regierung ihre Mehrheit verlieren.",
       "c": "muss der Bundespräsident/die Bundespräsidentin zuvor sein/ihr Einverständnis geben.",
       "d": "dürfen die Wähler/Wählerinnen dieser Abgeordneten noch einmal wählen.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "62780b0571b326d914c643271a52cb76f48befb14027cfd07f38f2d7067bd65f"
+      "solution": "b"
     },
     {
       "num": "99",
@@ -1183,10 +892,7 @@
       "b": "nur Arbeitnehmerinnen/Arbeitnehmer",
       "c": "alle Staatsangehörigen",
       "d": "nur Arbeitgeberinnen/Arbeitgeber",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "8429072c9163eb05edb0682048c0ee0774e8e4aead76d663c3534d45d1b51478"
+      "solution": "a"
     },
     {
       "num": "100",
@@ -1195,10 +901,7 @@
       "b": "die gesetzliche Rentenversicherung",
       "c": "die Arbeitslosenversicherung",
       "d": "die Pflegeversicherung",
-      "solution": "a",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "ac47b812f922075b6b6b07081d1acd5261a513bfe2a8a6d4c9295cd30b4028a5"
+      "solution": "a"
     },
     {
       "num": "101",
@@ -1207,10 +910,7 @@
       "b": "Arbeitnehmerinnen und Arbeitnehmer.",
       "c": "Renterinnen und Rentner.",
       "d": "Arbeitgeberinnen und Arbeitgeber.",
-      "solution": "b",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "d55f636181cffcaf169e453aded9c0318eca7ec23d728e1304da6f372bbd5f3e"
+      "solution": "b"
     },
     {
       "num": "102",
@@ -1219,10 +919,7 @@
       "b": "Bundesadler",
       "c": "Vaterländischen Verdienstorden",
       "d": "Ehrentitel \"Held der Deutschen Demokratischen Republik\"",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "205a30aa901f0f7c0db1db4152a26f220bdf2f1c941fb1e5d21cb9deb378462f"
+      "solution": "a"
     },
     {
       "num": "103",
@@ -1231,10 +928,7 @@
       "b": "von SPD, FDP und Bündnis 90/Die Grünen in einer Regierung",
       "c": "von CSU, Die LINKE und Bündnis 90/Die Grünen in einer Regierung",
       "d": "der Bundestagsfraktionen von CDU und SPD",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "0fb71676c80ea3e708f1106001ac7f7427692f7a923c6107c7b7938927bfcfc4"
+      "solution": "b"
     },
     {
       "num": "104",
@@ -1243,10 +937,7 @@
       "b": "Die Frau kam oft zu spät zur Arbeit.",
       "c": "Die Frau erledigt private Sachen während der Arbeitszeit.",
       "d": "Die Frau bekommt ein Kind und ihr Chef weiß das.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "7fea32782cc3734fa24642d9d30341c58c9b264d495902df0da90676b14b0fb7"
+      "solution": "d"
     },
     {
       "num": "105",
@@ -1255,10 +946,7 @@
       "b": "Sie schreiben die Wahlbenachrichtigungen vor der Wahl.",
       "c": "Sie geben Zwischenergebnisse an die Medien weiter.",
       "d": "Sie zählen die Stimmen nach dem Ende der Wahl.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "6018976cf2d2f0f2cbd5d492f6dea15e5744f6e4fb10c14455d62cd94af86e2f"
+      "solution": "d"
     },
     {
       "num": "106",
@@ -1267,10 +955,7 @@
       "b": "Sie schreiben Karten und Briefe mit der Angabe des Wahllokals.",
       "c": "Sie geben Zwischenergebnisse an Journalisten weiter.",
       "d": "Sie zählen die Stimmen nach dem Ende der Wahl.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "92c46e5eda03065b8dcef0be2692d287594b830abea822a5fd8f00c4f0359677"
+      "solution": "d"
     },
     {
       "num": "107",
@@ -1279,10 +964,7 @@
       "b": "4 Jahre",
       "c": "6 Jahre",
       "d": "8 Jahre",
-      "solution": "b",
-      "image": "-",
-      "category": "Elections",
-      "id": "5d0e3cc307961e3a022ade58ec8ec7fa76e0eac2aa2729eb4d612e4621d27912"
+      "solution": "b"
     },
     {
       "num": "108",
@@ -1291,10 +973,7 @@
       "b": "Bürger/Bürgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
       "c": "seit mindestens 3 Jahren in der Bundesrepublik Deutschland lebt.",
       "d": "Bürger/Bürgerin der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "61961be19be5d25145903afea7383029076880284394fbdb6468879b22a98d73"
+      "solution": "b"
     },
     {
       "num": "109",
@@ -1303,10 +982,7 @@
       "b": "alle vier Jahre",
       "c": "alle fünf Jahre",
       "d": "alle sechs Jahre",
-      "solution": "b",
-      "image": "-",
-      "category": "Elections",
-      "id": "3cdec170bcfd834e08d3c7ed510e90ce721ca8e61cf85dffc968630280dbb8fe"
+      "solution": "b"
     },
     {
       "num": "110",
@@ -1315,10 +991,7 @@
       "b": "3 Jahre",
       "c": "4 Jahre",
       "d": "5 Jahre",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "93220fa1cb872d9f0bf775dfe8aa4d06a5cb00f7d1d2f3c0cbd93c20382e8281"
+      "solution": "c"
     },
     {
       "num": "111",
@@ -1327,10 +1000,7 @@
       "b": "das Aufhängen einer israelischen Flagge auf dem Privatgrundstück",
       "c": "eine Diskussion über die Politik Israels",
       "d": "der öffentliche Aufruf zur Vernichtung Israels",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "d757f1439bff8b86ad19b550fc5e926ea1e7a7511173c630531837c186f3ed35"
+      "solution": "d"
     },
     {
       "num": "112",
@@ -1339,10 +1009,7 @@
       "b": "geheim.",
       "c": "berufsbezogen.",
       "d": "geschlechtsabhängig.",
-      "solution": "b",
-      "image": "-",
-      "category": "Elections",
-      "id": "55e9e98b19c99b98a2f2e5c4e530f331b08d85d6ffdca78afece9f5d015a4bc8"
+      "solution": "b"
     },
     {
       "num": "113",
@@ -1351,10 +1018,7 @@
       "b": "die meisten Männer mehrheitlich gewählt haben.",
       "c": "die meisten Stimmen bei den Arbeitern/Arbeiterinnen bekommen hat.",
       "d": "die meisten Erststimmen für ihren Kanzlerkandidaten /ihre Kanzlerkandidatin erhalten hat.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "0568d3d7e31004acaab15d730f76f86a143370acce8cebce21ef98d602aa542a"
+      "solution": "a"
     },
     {
       "num": "114",
@@ -1363,10 +1027,7 @@
       "b": "ein Recht.",
       "c": "ein Zwang.",
       "d": "eine Last.",
-      "solution": "b",
-      "image": "-",
-      "category": "Elections",
-      "id": "1bc72910390fdda2b717db3120f0312ede2a0a9c2bc171afdedb6b31d4ce70e2"
+      "solution": "b"
     },
     {
       "num": "115",
@@ -1375,10 +1036,7 @@
       "b": "Man muss wählen gehen.",
       "c": "Man kann wählen.",
       "d": "Man muss zur Auszählung der Stimmen gehen.",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "0de79a704e255850c2b169de5349eae61d5e9575f14788d13e6a49933da70faf"
+      "solution": "c"
     },
     {
       "num": "116",
@@ -1387,10 +1045,7 @@
       "b": "aktives Wahlverfahren.",
       "c": "aktiver Wahlkampf.",
       "d": "aktives Wahlrecht.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "10d05a741b78b972a1f24fe5c4384798cc6d5f2f5065770e95ebf9ce4ad03e6b"
+      "solution": "d"
     },
     {
       "num": "117",
@@ -1399,10 +1054,7 @@
       "b": "4%",
       "c": "5%",
       "d": "6%",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "9929ca8f667b9359ed2d68c1df5e264653c28f11f4264aca0be7ba1f79144162"
+      "solution": "c"
     },
     {
       "num": "118",
@@ -1411,10 +1063,7 @@
       "b": "nur Israelis",
       "c": "nur religiöse Menschen",
       "d": "alle Menschen",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "b7a3bfcf0e843d1444f0bf71bc6ddf47db8a417383606d90eca1721c0478a686"
+      "solution": "d"
     },
     {
       "num": "119",
@@ -1423,10 +1072,7 @@
       "b": "Wenn ich wählen gehen möchte, muss mein Arbeitgeber/meine Arbeitgeberin mir frei geben",
       "c": "Jede Person kann ohne Zwang entscheiden, ob sie wählen möchte und wen sie wählen möchte.",
       "d": "Ich kann frei entscheiden, wo ich wählen gehen möchte.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "172dcbb8873bdafedb4cf440e71bdd11aa5689ca215ba3646afc0c3bea2f9f0e"
+      "solution": "c"
     },
     {
       "num": "120",
@@ -1435,10 +1081,7 @@
       "b": "Dreiklassenwahlrecht.",
       "c": "Mehrheits- und Verhältniswahlrecht.",
       "d": "allgemeines Männerwahlrecht.",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "83835db26c8667ea7deb68025a0660ed92916e265719379540a3525df9acc4be"
+      "solution": "c"
     },
     {
       "num": "121",
@@ -1447,10 +1090,7 @@
       "b": "Zulassungsgrenze.",
       "c": "Basiswert.",
       "d": "Richtlinie.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "d3b08841d3e15cce8ca6d5f320420cdadad70ea8a5a33d69cf7cfb357758e43c"
+      "solution": "a"
     },
     {
       "num": "122",
@@ -1459,10 +1099,7 @@
       "b": "offen, sicher, frei.",
       "c": "geschlossen, gleich, sicher.",
       "d": "sicher, offen, freiwillig.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "ade030b8d9f7879fb120fd655ad825edb59ecc7135834e21198f68c2a285a2c4"
+      "solution": "a"
     },
     {
       "num": "123",
@@ -1471,10 +1108,7 @@
       "b": "Anwesenheitskontrolle im Bundestag für Abstimmungen",
       "c": "Mindestanteil an Wählerstimmen, um ins Parlament zu kommen",
       "d": "Anwesenheitskontrolle im Bundesrat für Abstimmungen",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "32cd6be94aae2bb7d5a6e04d1f53e31fdd1c022a2face42468aeed30192f26c3"
+      "solution": "c"
     },
     {
       "num": "124",
@@ -1483,10 +1117,7 @@
       "b": "der Parlamente der Länder.",
       "c": "des Parlaments für Deutschland.",
       "d": "des Bundespräsidenten/der Bundespräsidentin.",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "1b36b2aad3bd731937c690b6c7c2bb6462b06b1552a9f520bae50066718f358d"
+      "solution": "c"
     },
     {
       "num": "125",
@@ -1495,10 +1126,7 @@
       "b": "nach dem Willen der Wählermehrheit den Wechsel der Regierung zu ermöglichen.",
       "c": "im Land bestehende Gesetze beizubehalten.",
       "d": "den Armen mehr Macht zu geben.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "902c753c92c7da582cb10ffddb96db0c310d74ea34a9064f85f2d3e478c0d6f5"
+      "solution": "b"
     },
     {
       "num": "126",
@@ -1507,10 +1135,7 @@
       "b": "eine Wahlerlaubnis vom Bundespräsidenten/von der Bundespräsidentin",
       "c": "eine Benachrichtigung von der Bundesversammlung",
       "d": "eine Benachrichtigung vom Pfarramt",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "6f7c6dd15465fb7f9f2af37195eb500d2072e50482bb85cc3221597002fc556c"
+      "solution": "a"
     },
     {
       "num": "127",
@@ -1519,10 +1144,7 @@
       "b": "die Bürgerinnen und Bürger bei vielen kleinen Parteien die Orientierung verlieren können.",
       "c": "viele kleine Parteien die Regierungsbildung erschweren.",
       "d": "die kleinen Parteien nicht so viel Geld haben, um die Politiker und Politikerinnen zu bezahlen.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "dd0c788d2965710838b5b011ae53e33e9b23a1e6909262475b64f9b1748fda6c"
+      "solution": "c"
     },
     {
       "num": "128",
@@ -1531,10 +1153,7 @@
       "b": "Kanzler/Kanzlerinnen.",
       "c": "Botschafter/Botschafterinnen.",
       "d": "Ministerpräsidenten/Ministerpräsidentinnen.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "c3becbe3e5693a98bbaeb68deae7c8e9961a3d6574d067c20edd1b40b88b5b81"
+      "solution": "a"
     },
     {
       "num": "129",
@@ -1543,10 +1162,7 @@
       "b": "der Ministerpräsident/die Ministerpräsidentin eines Bundeslandes.",
       "c": "der Bundestag.",
       "d": "der Bundespräsident/die Bundespräsidentin.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "3788461a6ef3f163addd0f05529840e4a0420fb4d5a34e1ab0715b7b6a0ce383"
+      "solution": "c"
     },
     {
       "num": "130",
@@ -1556,9 +1172,7 @@
       "c": "3",
       "d": "4",
       "solution": "a",
-      "image": "https://foreignvasi.com/q212.75bffc4d.png",
-      "category": "Elections",
-      "id": "bade6dbc99441c8507daea27dec24f4c429f8fe063960735620fb55fdb4e20bd"
+      "image": "https://foreignvasi.com/q212.75bffc4d.png"
     },
     {
       "num": "131",
@@ -1567,10 +1181,7 @@
       "b": "der Chef/die Chefin einer Bank",
       "c": "das Oberhaupt einer Gemeinde",
       "d": "der/die Vorsitzende einer Partei",
-      "solution": "c",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "86044c2fb1b9491cb72083ff6e7f28190889cee8f6d341a098b56d707b852401"
+      "solution": "c"
     },
     {
       "num": "132",
@@ -1579,10 +1190,7 @@
       "b": "Sie arbeiten freiwillig und unbezahlt in Vereinen und Verbänden.",
       "c": "Sie arbeiten in der Bundesregierung.",
       "d": "Sie arbeiten in einem Krankenhaus und verdienen dabei Geld.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "432dcb45e1b6868603ad60789ff84348a72fc230fa7903423fe395ddedb55350"
+      "solution": "b"
     },
     {
       "num": "133",
@@ -1591,10 +1199,7 @@
       "b": "Man kann durch Briefwahl seine Stimme abgeben.",
       "c": "Man kann am Wahltag telefonisch seine Stimme abgeben.",
       "d": "Kinder ab dem Alter von 14 Jahren dürfen wählen.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "a96c49d6cca1f87042401a29b969777875b052604eafc31715f75a9a266cfef1"
+      "solution": "b"
     },
     {
       "num": "134",
@@ -1603,10 +1208,7 @@
       "b": "Ich werde Mitglied in einem Sportverein und trainiere Rad fahren.",
       "c": "Ich wende mich an das Finanzamt, weil ich als Steuerzahler / Steuerzahlerin ein Recht auf die Buslinie habe.",
       "d": "Ich schreibe einen Brief an das Forstamt der Gemeinde.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "cf0eb2a94114fbac4168f047f32213c3ba4ab64f9fa35c9e8357ede86f2ae4cb"
+      "solution": "a"
     },
     {
       "num": "135",
@@ -1615,10 +1217,7 @@
       "b": "grosse Unternehmen",
       "c": "Selbstständige",
       "d": "Arbeitnehmerinnen und Arbeitnehmer",
-      "solution": "d",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "178f31e2c2d1e5793a74e3f539cd4aea3cfa9b24dfd91591ede5176368142249"
+      "solution": "d"
     },
     {
       "num": "136",
@@ -1627,10 +1226,7 @@
       "b": "ungerechtfertigter Kündigung durch Ihren Chef/Ihre Chefin.",
       "c": "Problemen mit den Nachbarn/Nachbarinnen.",
       "d": "Schwierigkeiten nach einem Verkehrsunfall.",
-      "solution": "b",
-      "image": "-",
-      "category": "Economy & Employment",
-      "id": "9e580cc4886efd2b203f4e17afe0de7ca5751ffcc7b173e335da875803031663"
+      "solution": "b"
     },
     {
       "num": "137",
@@ -1639,10 +1235,7 @@
       "b": "das Strafgericht",
       "c": "das Arbeitsgericht",
       "d": "das Amtsgericht",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "de476e0ae0713d23785e67b1f03e588a17c5e4dc817d51805a18b2cb428e5ad5"
+      "solution": "c"
     },
     {
       "num": "138",
@@ -1651,10 +1244,7 @@
       "b": "ein Mahnverfahren gegen den Arbeitgeber/die Arbeitgeberin führen",
       "c": "Kündigungsschutzklage erheben",
       "d": "die Arbeitgeberin/den Arbeitgeber bei der Polizei anzeigen",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "33754a23f4ae59837f6b87761c47449953c408913743ee981d78d19ff302eedc"
+      "solution": "c"
     },
     {
       "num": "139",
@@ -1663,10 +1253,7 @@
       "b": "eine Straftat begangen hat und angeklagt wird",
       "c": "eine andere Meinung als die der Regierung vertritt",
       "d": "sein Auto falsch geparkt hat und es abgeschleppt wird",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "62777c0995812e9dfb7811caddcaa06f413ea890b33bf8ea98da032772715f32"
+      "solution": "b"
     },
     {
       "num": "140",
@@ -1675,10 +1262,7 @@
       "b": "gibt Bürgern/Bürgerinnen rechtlichen Rat",
       "c": "stellt Urkunden aus",
       "d": "verteidigt den Angeklagten/die Angeklagte",
-      "solution": "a",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "39daeb543e9bb31171bab1754ad28300bb847d992107f69690ac37f7c2c51026"
+      "solution": "a"
     },
     {
       "num": "141",
@@ -1687,10 +1271,7 @@
       "b": "eine Richterin/ein Richter",
       "c": "eine Schöffin/ein Schöffe",
       "d": "eine Staatsanwältin/ein Staatsanwalt",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "2c4beb90a620920e47658b089ff210bca7ec6dd894373b211fa67647e195c156"
+      "solution": "a"
     },
     {
       "num": "142",
@@ -1699,10 +1280,7 @@
       "b": "arbeitet an einem Gericht und spricht Urteile",
       "c": "ändert Gesetze",
       "d": "betreut Jugendliche vor Gericht",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "e31051067e3b660704ff4b570b0b120983eb96033415cef9595fac2526c700a1"
+      "solution": "b"
     },
     {
       "num": "143",
@@ -1711,10 +1289,7 @@
       "b": "Exekutive.",
       "c": "Operative",
       "d": "Legislative",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "088bcc25c21c3de53778182dad46f12bc794fc3e29cdafcc6ebafaed0ed04ba6"
+      "solution": "a"
     },
     {
       "num": "144",
@@ -1723,10 +1298,7 @@
       "b": "rechtsprechenden Gewalt.",
       "c": "planenden Gewalt.",
       "d": "gesetzgebenden Gewalt.",
-      "solution": "b",
-      "image": "-",
-      "category": "Constitution",
-      "id": "65b22d6caf0d5562b25b8fe91cc2bd0f96864a94415dc49f1342c8aae09268e0"
+      "solution": "b"
     },
     {
       "num": "145",
@@ -1735,10 +1307,7 @@
       "b": "Exekutive",
       "c": "Presse",
       "d": "Legislative",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "6e4732e802e13c2731785873f649a019848fcff67b661cd46b6da74bb00a1d2f"
+      "solution": "a"
     },
     {
       "num": "146",
@@ -1747,10 +1316,7 @@
       "b": "Prozedur",
       "c": "Protokoll",
       "d": "Prozess",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "b52108b0c008fc628a7e3a19b24474fc0ace40a4790f9d39f471790d8105bc88"
+      "solution": "d"
     },
     {
       "num": "147",
@@ -1759,10 +1325,7 @@
       "b": "Recht sprechen",
       "c": "Pläne erstellen",
       "d": "Gesetze erlassen",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "a916a355781eb80916ae1a7f64d1e1ee3764869c9a42354afad3c4f1262a7a48"
+      "solution": "b"
     },
     {
       "num": "148",
@@ -1771,10 +1334,7 @@
       "b": "die Bürgerinnen und Bürger abzuhören",
       "c": "die Gesetze zu beschließen",
       "d": "die Einhaltung von Gesetzen zu überwachen",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "2f28a873f519724066f563b4fdf5d696cff992a568347067a1f06848b4197faa"
+      "solution": "d"
     },
     {
       "num": "149",
@@ -1783,10 +1343,7 @@
       "b": "die israelische Regierung kritisieren",
       "c": "den Holocaust leugnen",
       "d": "gegen Juden Fußball spielen",
-      "solution": "c",
-      "image": "-",
-      "category": "Rights & Freedoms",
-      "id": "cc3b5c10ecd1c6a2573a9104eb792e766604500783995d3c264d1a6462b57d70"
+      "solution": "c"
     },
     {
       "num": "150",
@@ -1795,10 +1352,7 @@
       "b": "ein ehrenamtlicher Richter/eine ehrenamtliche Richterin",
       "c": "ein Mitglied eines Gemeinderats.",
       "d": "eine Person, die Jura studiert hat",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "5cbc3c5f74e9eb7ac2db529a68fe1a8d8c4bf94da5267e414d27b16a703b53a9"
+      "solution": "b"
     },
     {
       "num": "151",
@@ -1807,10 +1361,7 @@
       "b": "die DDR",
       "c": "die Bundesrepublik Deutschland",
       "d": "die USA",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "906b9f320a6c93b2e7a4ca2af3dd729f79a6cd3a7ba1aff84699c35a0bc72d4a"
+      "solution": "b"
     },
     {
       "num": "152",
@@ -1819,10 +1370,7 @@
       "b": "1932 bis 1950",
       "c": "1933 bis 1945",
       "d": "1945 bis 1989",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "c1c186c3a8ea65dfaa0b174d1a13edbe1a3641b8367f44aa3b51af686cd0e622"
+      "solution": "c"
     },
     {
       "num": "153",
@@ -1831,10 +1379,7 @@
       "b": "Beginn des Berliner Mauerbaus",
       "c": "Wahl von Konrad Adenauer zum Bundeskanzler",
       "d": "Ende des Zweiten Weltkriegs in Europa",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "4adcd4d5d6726a5099ee1d0dc75b079efd7af7e54191cc79889acd8e0dbc164f"
+      "solution": "d"
     },
     {
       "num": "154",
@@ -1843,10 +1388,7 @@
       "b": "1945",
       "c": "1949",
       "d": "1961",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "df7946746b89727ea247183f65eb51153cb6d84f3908e0d4650a75ab3fb06599"
+      "solution": "b"
     },
     {
       "num": "155",
@@ -1855,10 +1397,7 @@
       "b": "1921 bis 1934",
       "c": "1933 bis 1945",
       "d": "1949 bis 1963",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "077da1dba10f6f33400a985ab1a16cdb7debd6bc7c8339ee9b3afb782f518f6a"
+      "solution": "c"
     },
     {
       "num": "156",
@@ -1867,10 +1406,7 @@
       "b": "1927",
       "c": "1933",
       "d": "1936",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "838daadedc9fd1d0f03a2610e73e9f500eca3e580fe344cf7d44b56a1e49ab18"
+      "solution": "c"
     },
     {
       "num": "157",
@@ -1879,10 +1415,7 @@
       "b": "einen demokratischen Staat.",
       "c": "eine Monarchie.",
       "d": "ein Fürstentum.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "ea414e54b7fd370913a0715d38edaec46d7859aad678ed670994881d0e09b96a"
+      "solution": "a"
     },
     {
       "num": "158",
@@ -1891,10 +1424,7 @@
       "b": "Demokratie.",
       "c": "Monarchie.",
       "d": "Räterepublik.",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "a2cea69ff584af05ae25ed3f0cb8dd99e39f552a717414956f0410083780bb10"
+      "solution": "a"
     },
     {
       "num": "159",
@@ -1903,10 +1433,7 @@
       "b": "Pressezensur",
       "c": "willkürliche Verhaftungen",
       "d": "Verfolgung der Juden",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "4cc85a161eb92955800fe711873f4d6ea2d09a15a582c5d37721789dbd7604de"
+      "solution": "a"
     },
     {
       "num": "160",
@@ -1915,10 +1442,7 @@
       "b": "der Zweite Weltkrieg",
       "c": "der Vietnamkrieg",
       "d": "der Golfkrieg",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "081eb390a21e84a98a77cc183b9ce2c1e8df625536c1b720153bfeb9ed1bf65d"
+      "solution": "b"
     },
     {
       "num": "161",
@@ -1927,10 +1451,7 @@
       "b": "der Meinungsfreiheit",
       "c": "der allgemeinen Religionsfreiheit",
       "d": "der Entwicklung der Demokratie",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "c5f56e89b0f2380d96778ea3b8ae3f9ae7c11399be7a1f9fcd8c91416ef06f97"
+      "solution": "a"
     },
     {
       "num": "162",
@@ -1939,10 +1460,7 @@
       "b": "den Bau des Reichstagsgebäudes.",
       "c": "den Aufbau der Wehrmacht.",
       "d": "das Attentat auf Hitler am 20. Juli 1944.",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "689afc5bb2a43baca7f854d46e7700f105973c61173f6501841f1270215d3689"
+      "solution": "d"
     },
     {
       "num": "163",
@@ -1951,10 +1469,7 @@
       "b": "1930",
       "c": "1938",
       "d": "1945",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "8e6d5ab2c9ca2213129e449ed3b2f36ca83889a5594c2a46930608641619c336"
+      "solution": "c"
     },
     {
       "num": "164",
@@ -1963,10 +1478,7 @@
       "b": "Die Nationalsozialisten verlieren eine Wahl und lösen den Reichstag auf",
       "c": "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört",
       "d": "Hitler wird Reichspräsident und lässt alle Parteien verbieten",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "e94a43933d595fc2e70812003e6d02882a4496a3c4f8abef4c800318ac56e92b"
+      "solution": "c"
     },
     {
       "num": "165",
@@ -1975,10 +1487,7 @@
       "b": "Kurt Georg Kiesinger",
       "c": "Helmut Schmidt",
       "d": "Willy Brandt",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "de60a8856aaf856f789cb2e811e2eacfe53aa2321b09b99563cc3189b98633fd"
+      "solution": "a"
     },
     {
       "num": "166",
@@ -1987,10 +1496,7 @@
       "b": "bei den Demonstrationen 1968 in der Bundesrepublik Deutschland",
       "c": "bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland",
       "d": "bei den Montagsdemonstrationen 1989 in der DDR",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "1d0807d26d1a66fd0c84f39453a4cefea6d87ebe5214dcf153f84e14d50c8070"
+      "solution": "d"
     },
     {
       "num": "167",
@@ -1999,10 +1505,7 @@
       "b": "Frankreich, Sowjetunion, Italien, Japan",
       "c": "USA, Sowjetunion, Spanien, Portugal",
       "d": "USA, Sowjetunion, Großbritannien, Frankreich",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "f9ce43cbadafadbad1fa48431e73cd11217e09e6c8902e0f5f34b889ea2c256d"
+      "solution": "d"
     },
     {
       "num": "168",
@@ -2011,10 +1514,7 @@
       "b": "Sowjetunion",
       "c": "Frankreich",
       "d": "Japan",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "0630099842508538ef66f36601b4e0299177670f5cfd23caf11b6bd75f8978df"
+      "solution": "d"
     },
     {
       "num": "169",
@@ -2023,10 +1523,7 @@
       "b": "1945",
       "c": "1949",
       "d": "1951",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "893aed0064bd8fabf431f9f699aaf5df5eec7750c48ae29b9dafc68c1c96099e"
+      "solution": "c"
     },
     {
       "num": "170",
@@ -2035,10 +1532,7 @@
       "b": "das Recht zur freien Entfaltung der Persönlichkeit",
       "c": "Pressefreiheit",
       "d": "den Schutz der Menschenwürde",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "c49f5071d33e224263f9479206d122e348ec677b3526f723511e4380f47f0bce"
+      "solution": "a"
     },
     {
       "num": "171",
@@ -2047,10 +1541,7 @@
       "b": "wird vom Staat geplant und gesteuert, Angebot und Nachfrage werden nicht berücksichtigt.",
       "c": "richtet sich nach der Nachfrage im Ausland.",
       "d": "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "5036acd79f0023edab7a36a04392a6d776404394c2b38fac6b2f403a87ad87e6"
+      "solution": "d"
     },
     {
       "num": "172",
@@ -2059,10 +1550,7 @@
       "b": "französischen Besatzungszone",
       "c": "britischen Besatzungszone",
       "d": "sowjetischen Besatzungszone",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "cbb552feb936aab9f0850f2f9534cebc923915f6eb7bb6e01a8b93c505be4b83"
+      "solution": "d"
     },
     {
       "num": "173",
@@ -2071,10 +1559,7 @@
       "b": "der Vereinten Nationen (VN)",
       "c": "der Europäischen Union (EU)",
       "d": "des Warschauer Pakts",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "ea8ebf75e08ac2bdef5d0da806fb6afe9bce064fff86bf1de596be1531c52033"
+      "solution": "c"
     },
     {
       "num": "174",
@@ -2083,10 +1568,7 @@
       "b": "1949",
       "c": "1953",
       "d": "1956",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "7721053c847ac4578af16494c05870d850b7e210157ee207dc08c13a98834fb9"
+      "solution": "b"
     },
     {
       "num": "175",
@@ -2095,10 +1577,7 @@
       "b": "4",
       "c": "5",
       "d": "6",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "836c90cb5f1234a0941b609d01f146034561e7d6e281f1fcb1f068f73edcfa2b"
+      "solution": "b"
     },
     {
       "num": "176",
@@ -2108,9 +1587,7 @@
       "c": "1 = Großbritannien, 2 = Sowjetunion, 3 = USA, 4 = Frankreich",
       "d": "1 = Großbritannien, 2 = USA, 3 = Sowjetunion, 4 = Frankreich",
       "solution": "c",
-      "image": "https://foreignvasi.com/q26.48d9065a.png",
-      "category": "History & Geography",
-      "id": "faa0b40945fe73d6375892c12df51e8b32d4cc0508b0056795b7f350c590226c"
+      "image": "https://foreignvasi.com/q26.48d9065a.png"
     },
     {
       "num": "177",
@@ -2119,10 +1596,7 @@
       "b": "Berlin",
       "c": "Dresden",
       "d": "Frankfurt/Oder",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "c062b2ee0ef2627ad62f07e3e1f76641cdba43e1a0bc4606855654579042ed0f"
+      "solution": "b"
     },
     {
       "num": "178",
@@ -2131,10 +1605,7 @@
       "b": "Die amerikanischen Soldaten/Soldatinnen hatten beim Landtransport Angst vor Überfällen.",
       "c": "Für Großbritannien war die Versorgung über die Luftbrücke schneller.",
       "d": "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "c9af3895964cdc25edb2b71a301fabda75709fb20d69c0a43d7061ca222c0488"
+      "solution": "d"
     },
     {
       "num": "179",
@@ -2143,10 +1614,7 @@
       "b": "durch die bedingungslose Kapitulation Deutschlands",
       "c": "mit dem Rückzug der Deutschen aus den besetzten Gebieten",
       "d": "durch eine Revolution in Deutschland",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "e106212d8c6b69727da2a09afdf4cd70066b0eedd112bcf405e113b540c04e08"
+      "solution": "b"
     },
     {
       "num": "180",
@@ -2155,10 +1623,7 @@
       "b": "Willy Brandt.",
       "c": "Konrad Adenauer.",
       "d": "Gerhard Schröder.",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "edf0e83e0c8e5dbc42ed55852fe02f90b89200e7a9e49ff3a8a8c380d4e4bf8d"
+      "solution": "c"
     },
     {
       "num": "181",
@@ -2168,9 +1633,7 @@
       "c": "Er zeigte seine Demut vor dem Warschauer Pakt",
       "d": "Er sprach ein Gebet am Grab des Unbekannten Soldaten",
       "solution": "b",
-      "image": "https://foreignvasi.com/q29.31824d77.png",
-      "category": "General",
-      "id": "c3adb6f0da26b4031721c95ba4fee7ec87184730407cbbd76f515b867ca86991"
+      "image": "https://foreignvasi.com/q29.31824d77.png"
     },
     {
       "num": "182",
@@ -2179,10 +1642,7 @@
       "b": "Moschee",
       "c": "Synagoge",
       "d": "Kirche",
-      "solution": "c",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "638083e8db0afdbbaaa526697e1fa4e7d0f848e139dc31a72924ee35b8e45b30"
+      "solution": "c"
     },
     {
       "num": "183",
@@ -2191,10 +1651,7 @@
       "b": "50er Jahre",
       "c": "70er Jahre",
       "d": "80er Jahre",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "4f9c51ecd9e488bd486879472dacdb55e15691f22a3e5a8383711520466e28b3"
+      "solution": "b"
     },
     {
       "num": "184",
@@ -2203,10 +1660,7 @@
       "b": "ein Beschluss des Zionistenkongresses",
       "c": "ein Vorschlag der Bundesregierung",
       "d": "ein Vorschlag der UdSSR",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "89619c54e1f26ba00cbed4b667035be5590ac53786d3b33691dc85dbb5c45721"
+      "solution": "a"
     },
     {
       "num": "185",
@@ -2215,10 +1669,7 @@
       "b": "Norddeutschlands gegen Süddeutschland",
       "c": "Nazi-Deutschlands gegen die Alliierten",
       "d": "Europas gegen die USA",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "962603cf4d7b17f3986ac248112f6af61e84dfa7ff549105504b6ee2922c4465"
+      "solution": "a"
     },
     {
       "num": "186",
@@ -2227,10 +1678,7 @@
       "b": "17. Juni",
       "c": "20. Juli",
       "d": "9. November",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "97b7994131d600afb9b8e71f665366cc28d75b7ad027557accf9347107d1a573"
+      "solution": "b"
     },
     {
       "num": "187",
@@ -2240,9 +1688,7 @@
       "c": "Drittes Reich",
       "d": "DDR",
       "solution": "d",
-      "image": "https://foreignvasi.com/q35.e7713f5f.png",
-      "category": "General",
-      "id": "11aa6e3bd4d563c6aa430b1780107af17005a23041881d0209be0cd6b3c1c368"
+      "image": "https://foreignvasi.com/q35.e7713f5f.png"
     },
     {
       "num": "188",
@@ -2251,10 +1697,7 @@
       "b": "1956",
       "c": "1959",
       "d": "1961",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "da5ac95c5046d18b666dbbb0539f138b4bb638aeb6460de8c911218c4e2e7651"
+      "solution": "d"
     },
     {
       "num": "189",
@@ -2263,10 +1706,7 @@
       "b": "1933",
       "c": "1961",
       "d": "1990",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "c4b9ebba649f7d5453739bf97c3a4116054702533b152e7e2f17ee63ef0d5a31"
+      "solution": "c"
     },
     {
       "num": "190",
@@ -2275,10 +1715,7 @@
       "b": "Die Deutsche Republik",
       "c": "Dritte Deutsche Republik",
       "d": "Deutsche Demokratische Republik",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "0970e82e2429791f5ac1aababa03293a2be904a7f85ec87b86180cc7ba6ce7f2"
+      "solution": "d"
     },
     {
       "num": "191",
@@ -2287,10 +1724,7 @@
       "b": "1989",
       "c": "1992",
       "d": "1995",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "50810c9a3b12795af885f3b76240aac344c14eeac338f1009f1e2589fb752031"
+      "solution": "b"
     },
     {
       "num": "192",
@@ -2299,10 +1733,7 @@
       "b": "Bayern",
       "c": "Saarland",
       "d": "Hessen",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "6aa39ba8cad7934011ba6193d0c50d1c4b28ca49cb0c17566107bf388d1990d8"
+      "solution": "a"
     },
     {
       "num": "193",
@@ -2311,10 +1742,7 @@
       "b": "ein eigener Staat.",
       "c": "durch eine Mauer geteilt.",
       "d": "nur mit dem Flugzeug erreichbar.",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "556c26321724616a3d3d602cc41f08c31a12ce9ea05989513b713fedca76334b"
+      "solution": "c"
     },
     {
       "num": "194",
@@ -2323,10 +1751,7 @@
       "b": "Nation.",
       "c": "Bundesländer.",
       "d": "Städte.",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "d8fda127fd012365c06014a6991ba43fc7e73f9e7854ccc9fb273ec164909e88"
+      "solution": "a"
     },
     {
       "num": "195",
@@ -2335,10 +1760,7 @@
       "b": "Sachsen-Anhalt",
       "c": "Nordrhein-Westfalen",
       "d": "Saarland",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "248c870d576ca2b37f549684b6fed72dadab5adb822b275a01655caf1b99f9b6"
+      "solution": "b"
     },
     {
       "num": "196",
@@ -2347,10 +1769,7 @@
       "b": "von einer liberalen Marktwirtschaft zum Sozialismus.",
       "c": "von einer Monarchie zur Sozialdemokratie",
       "d": "von einem religiösen Staat zu einem kommunistischen Staat.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "dfb873c576967166b75fb12ec396f6d31a34cbad12bb49532d3863cb9f97b283"
+      "solution": "a"
     },
     {
       "num": "197",
@@ -2359,10 +1778,7 @@
       "b": "Hessen",
       "c": "Bayern",
       "d": "Bremen",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "42298fdeb2f453c07e83c5786522848c00c47fb9d2feeaa121e047b3036e5ba3"
+      "solution": "a"
     },
     {
       "num": "198",
@@ -2371,10 +1787,7 @@
       "b": "Niedersachsen",
       "c": "Sachsen",
       "d": "Baden-Württemberg",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "61ff764d11201b44fa889e2461361cbc3d3e18c5c72c647abce3386c4ab34041"
+      "solution": "c"
     },
     {
       "num": "199",
@@ -2383,10 +1796,7 @@
       "b": "das Ministerium für Staatssicherheit.",
       "c": "eine regierende Partei.",
       "d": "das Ministerium für Volksbildung.",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "97a6768d36348d3bcf736b7f3bf274cf79192dc85bba8b5578ecc591b474010c"
+      "solution": "b"
     },
     {
       "num": "200",
@@ -2395,10 +1805,7 @@
       "b": "Schleswig-Holstein",
       "c": "Mecklenburg-Vorpommern",
       "d": "Saarland",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "e04b25fcd5ad9075dccc7fa48b78936d6d15616290d5de92fefe9bc6f9e3bc17"
+      "solution": "c"
     },
     {
       "num": "201",
@@ -2407,10 +1814,7 @@
       "b": "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen",
       "c": "Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen",
       "d": "Sachsen, Thüringen, Hessen, Niedersachsen, Brandenburg",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "1924c9e008c05267cd210b35bc7d4c897b8f7517ed5885d0021ef3f92ded6dc7"
+      "solution": "b"
     },
     {
       "num": "202",
@@ -2419,10 +1823,7 @@
       "b": "zum Warschauer Pakt",
       "c": "zur NATO",
       "d": "zu den blockfreien Staaten",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "8ea0c0c2b4990de8d612808d45a09981be2cad2d65342c01e975af7e985e83c5"
+      "solution": "b"
     },
     {
       "num": "203",
@@ -2431,10 +1832,7 @@
       "b": "Planwirtschaft",
       "c": "Angebot und Nachfrage",
       "d": "Kapitalismus",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "21b3f6b7da8ac6081cf977a4e00cf0361b6f10adaabe16b3d540ed20493c3d14"
+      "solution": "b"
     },
     {
       "num": "204",
@@ -2443,10 +1841,7 @@
       "b": "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.",
       "c": "Die westlichen Bundesländer sind der DDR beigetreten.",
       "d": "Die Bundesrepublik Deutschland hat die DDR besetzt.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "82896aaf01afda28a3d4b1cc8e3e81a945137aea5ae528aa8cda25dadb39dab0"
+      "solution": "b"
     },
     {
       "num": "205",
@@ -2455,10 +1850,7 @@
       "b": "zum Warschauer Pakt.",
       "c": "zur OPEC.",
       "d": "zur Europäischen Verteidigungsgemeinschaft.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "3e6dff6e9e4d61d47514b34112fd90c84bb8b50365dba0f2e4bebf46f6e9492f"
+      "solution": "a"
     },
     {
       "num": "206",
@@ -2467,10 +1859,7 @@
       "b": "an die Opfer des Nationalsozialismus",
       "c": "an Verkehrstote",
       "d": "an bekannte jüdische Musiker",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "523dc51929c0670c53aadf17d7e899ce0c5e1cc921d4bd6076bd73d9320517c0"
+      "solution": "b"
     },
     {
       "num": "207",
@@ -2479,10 +1868,7 @@
       "b": "im Rheinbund",
       "c": "im Warschauer Pakt",
       "d": "im Europabündnis",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "edaebae08cad7236a4d958a3c635e45cb334ba5a0a23536d283b6fc66fb09834"
+      "solution": "c"
     },
     {
       "num": "208",
@@ -2491,10 +1877,7 @@
       "b": "eine berühmte deutsche Gedenkstätte",
       "c": "der Geheimdienst der DDR",
       "d": "ein deutscher Sportverein während des Zweiten Weltkrieges",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "d3606f0a47ddbfed0f109ec624f35d6d74f9a3884863a3ad666627a8144331de"
+      "solution": "c"
     },
     {
       "num": "209",
@@ -2504,9 +1887,7 @@
       "c": "Bild 3",
       "d": "Bild 4",
       "solution": "d",
-      "image": "https://foreignvasi.com/q56-q99.42b88c95.png",
-      "category": "History & Geography",
-      "id": "20681161fb5f98fb8e866db919a73e0c17ce87c86abd678d879d194a6137f301"
+      "image": "https://foreignvasi.com/q56-q99.42b88c95.png"
     },
     {
       "num": "210",
@@ -2515,10 +1896,7 @@
       "b": "landesweite Streiks und ein Volksaufstand",
       "c": "der 1. SED-Parteitag",
       "d": "der erste Besuch Fidel Castros",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "6a0900bf14af19f192528a6b6ed3003c7073acfa36afe2bf09ea6dd3b5c91f52"
+      "solution": "b"
     },
     {
       "num": "211",
@@ -2527,10 +1905,7 @@
       "b": "Willy Brandt",
       "c": "Michail Gorbatschow",
       "d": "Ludwig Erhard",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "492fa60200f407237ca396210a886520fd963dbf4fc9bc2aa7e4b08db51fb3ac"
+      "solution": "b"
     },
     {
       "num": "212",
@@ -2539,10 +1914,7 @@
       "b": "Bundesländer Deutschland",
       "c": "Bundesrepublik Deutschland",
       "d": "Bundesbezirk Deutschland",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "383259219c6270cefb8d0fe236facf93d0da6e12e44be36c53f0c7e19aa8aef9"
+      "solution": "c"
     },
     {
       "num": "213",
@@ -2551,10 +1923,7 @@
       "b": "78 Millionen",
       "c": "84 Millionen",
       "d": "90 Millionen",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "5d246f8107295613fd20c0ef7ae4ca984c641ba32f19a7326cf95210b04786c2"
+      "solution": "c"
     },
     {
       "num": "214",
@@ -2563,10 +1932,7 @@
       "b": "rot-weiß-schwarz",
       "c": "schwarz-rot-grün",
       "d": "schwarz-gelb-rot",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "1c3daab42e2870a5f796064fbe04d96c56f5adcc3a9aaecbcf764d03c2679e68"
+      "solution": "a"
     },
     {
       "num": "215",
@@ -2575,10 +1941,7 @@
       "b": "Helmut Kohl",
       "c": "Konrad Adenauer",
       "d": "Helmut Schmidt",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "b49781a05ae48c21c50025e6f8580ec2f5c44ad578d4dbac0cba81e01eafd626"
+      "solution": "b"
     },
     {
       "num": "216",
@@ -2588,9 +1951,7 @@
       "c": "der Reichsadler",
       "d": "die Reichskrone",
       "solution": "a",
-      "image": "https://foreignvasi.com/q62.28bca79d.png",
-      "category": "General",
-      "id": "76d347e6237ebfeab40ebd1c7e01be2c5590a6fc3968db1a931e2f04b7b61c15"
+      "image": "https://foreignvasi.com/q62.28bca79d.png"
     },
     {
       "num": "217",
@@ -2599,10 +1960,7 @@
       "b": "1933 bis 1945",
       "c": "1945 bis 1961",
       "d": "1949 bis 1990",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "8d267e0af3172a8a149f759d8e23c2664553d8378c8e6b2b32b9a124efc2d44a"
+      "solution": "d"
     },
     {
       "num": "218",
@@ -2611,10 +1969,7 @@
       "b": "5",
       "c": "6",
       "d": "7",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "f0dd1f85b75a2bd760a0c5aac27a109f36c26c072b04ec687839db95effd6d9e"
+      "solution": "b"
     },
     {
       "num": "219",
@@ -2623,10 +1978,7 @@
       "b": "1949",
       "c": "1971",
       "d": "1990",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "88fec05e3d67cbb323339c29032a487c4f3094515c1b99e4f8cae01f1b90e667"
+      "solution": "d"
     },
     {
       "num": "220",
@@ -2635,10 +1987,7 @@
       "b": "an die Verabschiedung des Grundgesetzes",
       "c": "an die Wiedervereinigung Deutschlands",
       "d": "an die Opfer des Nationalsozialismus",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "0d7b373519152df7e5b7ca8a18536a1297bc9ad646516a622ccb2ff2d3dfba7b"
+      "solution": "d"
     },
     {
       "num": "221",
@@ -2647,10 +1996,7 @@
       "b": "Alle Menschen können ohne Personenkontrolle in Deutschland einreisen",
       "c": "Deutsche können ohne Passkontrolle in jedes Land reisen",
       "d": "Deutsche können in jedem Land mit dem Euro bezahlen",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "1a021702bf0865221516c47102fd3c903a330f6da78d8bdf05cc7580c9b84c84"
+      "solution": "a"
     },
     {
       "num": "222",
@@ -2659,10 +2005,7 @@
       "b": "Portugal",
       "c": "Spanien",
       "d": "Schweiz",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "19364e67b92d0751ad65b4d11f5d261f377d31de2754e89ae5de876cb3f022bc"
+      "solution": "d"
     },
     {
       "num": "223",
@@ -2671,10 +2014,7 @@
       "b": "Bulgarien",
       "c": "Polen",
       "d": "Griechenland",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "d57888cebba9c39485c9619d374952d096ced6592347c0fa6340417823f30196"
+      "solution": "c"
     },
     {
       "num": "224",
@@ -2683,10 +2023,7 @@
       "b": "Europäische Union",
       "c": "Einheitliche Union",
       "d": "Euro Union",
-      "solution": "b",
-      "image": "-",
-      "category": "Democracy & Politics",
-      "id": "463103876e2844a109afdd1a27f310e1903e346620a46a4632619b53147de909"
+      "solution": "b"
     },
     {
       "num": "225",
@@ -2695,10 +2032,7 @@
       "b": "Norwegen",
       "c": "Spanien",
       "d": "Österreich",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "772048456df538820ae0f3aa24a9e062be66455237f67a97ffbdd1d4ba6af63a"
+      "solution": "d"
     },
     {
       "num": "226",
@@ -2708,9 +2042,7 @@
       "c": "Bild 3",
       "d": "Bild 4",
       "solution": "b",
-      "image": "https://foreignvasi.com/q279.1a549501.png",
-      "category": "History & Geography",
-      "id": "a2ce72ed8054667425b91b81b12e53c058674f0ec1873157a9c36215d0db21d3"
+      "image": "https://foreignvasi.com/q279.1a549501.png"
     },
     {
       "num": "227",
@@ -2719,10 +2051,7 @@
       "b": "Dänemark",
       "c": "Norwegen",
       "d": "Schweden",
-      "solution": "b",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "a6584effe6000b7da10f9a235a2c2de972ed0f3a1b0e6361ddb72a4d023a115b"
+      "solution": "b"
     },
     {
       "num": "228",
@@ -2731,10 +2060,7 @@
       "b": "EU-Osterweiterung",
       "c": "Deutsche Wiedervereinigung",
       "d": "Europäische Gemeinschaft",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "3e4542899ff84f6ef61975ddcfe79e937aaeb926c93cc9238779bc5e480a26f2"
+      "solution": "c"
     },
     {
       "num": "229",
@@ -2743,10 +2069,7 @@
       "b": "Bulgarien",
       "c": "Norwegen",
       "d": "Luxemburg",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "8893a04a6f0163b692594373e58401df7e8c9eb03cb840822054e91ccbd21d2a"
+      "solution": "d"
     },
     {
       "num": "230",
@@ -2755,10 +2078,7 @@
       "b": "6 Jahre",
       "c": "7 Jahre",
       "d": "8 Jahre",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "476cecbf41aa41f9bb7ac3e24b820aee1955c67ae6f8de55bfc52af894194e13"
+      "solution": "a"
     },
     {
       "num": "231",
@@ -2767,10 +2087,7 @@
       "b": "Der Begriff meint den Einwanderungsstopp nach Europa",
       "c": "Damit sind europäische Auswanderer in den USA gemeint",
       "d": "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "f749164b14ce558d6325d8fa3e3666b7e719403893e484dbc976b7c62611be69"
+      "solution": "d"
     },
     {
       "num": "232",
@@ -2779,10 +2096,7 @@
       "b": "die Länder, die in die EU eintreten dürfen",
       "c": "die Abgeordneten des Europäischen Parlaments",
       "d": "die europäische Verfassung",
-      "solution": "c",
-      "image": "-",
-      "category": "Elections",
-      "id": "b22f7ac1628fa96aba4ce4d13df5a2c0859dfdbbe3ef89c529b61a880ddcd08e"
+      "solution": "c"
     },
     {
       "num": "233",
@@ -2791,10 +2105,7 @@
       "b": "Bulgarien",
       "c": "Griechenland",
       "d": "Portugal",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "9376ab0ca9c8e3cc20a709b740918520fe9b587e2db2d03381bb1923d203a851"
+      "solution": "a"
     },
     {
       "num": "234",
@@ -2803,10 +2114,7 @@
       "b": "Paris",
       "c": "Berlin",
       "d": "Straßburg",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "15157c42e426e7b534ee1730a424c593cdc23b5d7b6b887e3a096da357fc86bc"
+      "solution": "d"
     },
     {
       "num": "235",
@@ -2816,9 +2124,7 @@
       "c": "Frieden und Sicherheit in den Ländern der EU",
       "d": "einheitliche Feiertage in den Ländern der EU",
       "solution": "c",
-      "image": "https://foreignvasi.com/q287.838640b1.png",
-      "category": "General",
-      "id": "ade768fd8382d2aae4a5bc2cd2f14590727db01774eeb6790c78b5640a396fb6"
+      "image": "https://foreignvasi.com/q287.838640b1.png"
     },
     {
       "num": "236",
@@ -2827,10 +2133,7 @@
       "b": "23",
       "c": "25",
       "d": "27",
-      "solution": "d",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "c6a36fc3efa015339e4ee902757521fa07774bd9fa5ffa4fa278c0f766b5c3ff"
+      "solution": "d"
     },
     {
       "num": "237",
@@ -2839,10 +2142,7 @@
       "b": "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
       "c": "Verpflichtung Deutschlands zu Reparationsleistungen",
       "d": "Festlegung der Oder-Neiße-Linie als Ostgrenze",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "42fadf992690d101432ecd09d29095b85972393ad3753a569446187c8c0f55d9"
+      "solution": "b"
     },
     {
       "num": "238",
@@ -2851,10 +2151,7 @@
       "b": "Straßburg, Luxemburg und Brüssel",
       "c": "Rom, Bern und Wien",
       "d": "Bonn, Zürich und Mailand",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "1b1cd8797e48c1b286571fdce754fd4ca624c517099ba3a55d2eb51845933188"
+      "solution": "b"
     },
     {
       "num": "239",
@@ -2863,10 +2160,7 @@
       "b": "durch die \"Römischen Verträge\"",
       "c": "durch die \"Pariser Verträge\"",
       "d": "durch die \"Londoner Verträge\"",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "54d899dea08ac2bd227b98f4044ba1e6bf65884ff33c8fd3915211d606008269"
+      "solution": "b"
     },
     {
       "num": "240",
@@ -2875,10 +2169,7 @@
       "b": "1998",
       "c": "2002",
       "d": "2005",
-      "solution": "c",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "9e040ea206476ee1245f1c016ba3936dcd80cc738c7d64f35c33e68a2dc7e92f"
+      "solution": "c"
     },
     {
       "num": "241",
@@ -2887,10 +2178,7 @@
       "b": "Sie muss einen Antrag bei der Elterngeldstelle stellen",
       "c": "Sie muss nichts tun, denn sie bekommt automatisch Elterngeld",
       "d": "Sie muss das Arbeitsamt um Erlaubnis bitten",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "9d4a1f962c36e81d94e1217a4bb776e14b1fe07097a7a8babc3e1dd2eb848972"
+      "solution": "b"
     },
     {
       "num": "242",
@@ -2899,10 +2187,7 @@
       "b": "die Bundesländer",
       "c": "die Eltern/die Erziehungsberechtigten",
       "d": "die Schulen",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "4d6050504148bcf798dcbb4b5098fac7a3eff67e4d385b76fe47ef91ec4d03c8"
+      "solution": "c"
     },
     {
       "num": "243",
@@ -2911,10 +2196,7 @@
       "b": "Sie müssen nichts tun. Man darf in Deutschland jederzeit überall demonstrieren.",
       "c": "Sie können gar nichts tun, denn Demonstrationen sind in Deutschland grundsätzlich verboten",
       "d": "Maik und Sybille müssen einen neuen Verein gründen, weil nur Vereine demonstrieren dürfen",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "6acc01a00efd91b06de058099676b8533ebfde7212e6e6c6c9683c4c7cf0d66f"
+      "solution": "a"
     },
     {
       "num": "244",
@@ -2923,10 +2205,7 @@
       "b": "ein Diplom",
       "c": "die Prokura",
       "d": "eine Gesellenprüfung",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "1af15fc4fbbf20ede95b87624c3199782edd277367539e32f843981998bea73d"
+      "solution": "a"
     },
     {
       "num": "245",
@@ -2935,10 +2214,7 @@
       "b": "Tom (20 Jahre) und Klaus (45 Jahre)",
       "c": "Sofie (35 Jahre) und Lisa (40 Jahre)",
       "d": "Anne (13 Jahre) und Tim (25 Jahre)",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "b7123f80c109f00911b92719dbaf9158c069d25839b60957435e8c6171908321"
+      "solution": "d"
     },
     {
       "num": "246",
@@ -2947,10 +2223,7 @@
       "b": "18",
       "c": "19",
       "d": "21",
-      "solution": "b",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "f71488b2e2ce49fd02dfa295a4abb9027196b5fb6fa81ea89da614b4f421afae"
+      "solution": "b"
     },
     {
       "num": "247",
@@ -2959,10 +2232,7 @@
       "b": "Mutterschutz",
       "c": "Geburtsvorbereitung",
       "d": "Wochenbett",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "0843a056546c92c512e7ded84e93bfa566304d2f01b785196853ae72cf5e36a0"
+      "solution": "b"
     },
     {
       "num": "248",
@@ -2971,10 +2241,7 @@
       "b": "der Eltern",
       "c": "der Großeltern",
       "d": "der Schulen",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "7e7e68daba7ee45f4a302c4e608e9e7035ece748ccf451f6c5d75614223a5a60"
+      "solution": "b"
     },
     {
       "num": "249",
@@ -2983,10 +2250,7 @@
       "b": "die Eltern",
       "c": "die Verwandten",
       "d": "die Schulen",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "1da01e705b8bbf4b747baa68335800d69a3cf2e1798aaef994963b7711f8cbd2"
+      "solution": "b"
     },
     {
       "num": "250",
@@ -2995,10 +2259,7 @@
       "b": "gut ausgebildet ist.",
       "c": "eine Frau ist.",
       "d": "Mitglied einer Partei ist.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "3ad83b4b60b6e3d16d6d38178882382fd4548266e807b1f30fd1e0409aaa7a3e"
+      "solution": "b"
     },
     {
       "num": "251",
@@ -3007,10 +2268,7 @@
       "b": "geht das nur die Familie etwas an",
       "c": "kann man dafür nicht bestraft werden",
       "d": "kann man dafür bestraft werden",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "6dce7e3a6d7be3d132c87ebff0a20039ec37470978254136ea577a721e097b98"
+      "solution": "d"
     },
     {
       "num": "252",
@@ -3019,10 +2277,7 @@
       "b": "kann man mehrere Ehepartnerinnen/Ehepartner gleichzeitig haben.",
       "c": "darf man nicht wieder heiraten, wenn man einmal verheiratet war.",
       "d": "darf eine Frau nicht wieder heiraten, wenn ihr Mann gestorben ist.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "2a05e7b396ee3e16c18f6c523f996d86100352a853cea8d872ae37e89cd0617b"
+      "solution": "a"
     },
     {
       "num": "253",
@@ -3031,10 +2286,7 @@
       "b": "beim Standesamt",
       "c": "beim Ordnungsamt",
       "d": "beim Gewerbeamt",
-      "solution": "a",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "9f8047722a31b32224f911657daba3147c5ebdac4a1a61021861f8fc9ddba616"
+      "solution": "a"
     },
     {
       "num": "254",
@@ -3043,10 +2295,7 @@
       "b": "Die Ehegatten sind ein Jahr verheiratet, dann ist die Scheidung möglich.",
       "c": "Das Besuchsrecht für die Kinder gilt ein Jahr.",
       "d": "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "ff8ff7a83773f9bfefe4e89a0b26aac89f40e3a6af647305cd2573f70a04e6f7"
+      "solution": "d"
     },
     {
       "num": "255",
@@ -3055,10 +2304,7 @@
       "b": "Schulamt.",
       "c": "Jugendamt.",
       "d": "Gesundheitsamt.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "1417f80e324d475526e0c06309b0427743e511d49a0d13f81ac82210d298c394"
+      "solution": "c"
     },
     {
       "num": "256",
@@ -3067,10 +2313,7 @@
       "b": "eine Genehmigung einer Partei",
       "c": "eine Genehmigung des Einwohnermeldeamts",
       "d": "eine Gaststättenerlaubnis von der zuständigen Behörde",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "6f3ada29b08542900ce65a3b70564bcb8623c46dc053dd0246cc36906cd37b00"
+      "solution": "d"
     },
     {
       "num": "257",
@@ -3079,10 +2322,7 @@
       "b": "einem Abendgymnasium",
       "c": "einer Hauptschule",
       "d": "einer Privatuniversität",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "4d9ca4a0cc57a3d400a3c86f17a3c42c0663b05b278531fd9160e57573c9a912"
+      "solution": "b"
     },
     {
       "num": "258",
@@ -3091,10 +2331,7 @@
       "b": "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.",
       "c": "Es bezahlt das Kindergeld an die Eltern.",
       "d": "Es kontrolliert, ob das Kind einen Kindergarten besucht.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "f322d2b6e5a255acbd33ba002432f9adbf9af0a77b1adbd22d12b91d46bc3fc3"
+      "solution": "b"
     },
     {
       "num": "259",
@@ -3103,10 +2340,7 @@
       "b": "Lehrstellensuche",
       "c": "Steuererklärung",
       "d": "Krankenversicherung",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "05d337328970b1c388239cbf3878d17c8f62608fc0d7eef656acffef0d250f56"
+      "solution": "b"
     },
     {
       "num": "260",
@@ -3115,10 +2349,7 @@
       "b": "Wahlfreiheit für alle Fächer.",
       "c": "Anspruch auf Schulgeld.",
       "d": "Anwesenheitspflicht.",
-      "solution": "d",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "99a6809950c9433905b4379ab1aa6f1e753fb11fb839229dca7f42ceee981b61"
+      "solution": "d"
     },
     {
       "num": "261",
@@ -3127,10 +2358,7 @@
       "b": "einem Abendgymnasium",
       "c": "einer Hauptschule",
       "d": "einer Privatuniversität",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "cee3275c823eef349b8a7afdc9d84bfd1f55b58b5c73646c289c13f2b4e3a16b"
+      "solution": "b"
     },
     {
       "num": "262",
@@ -3139,10 +2367,7 @@
       "b": "Man darf andere Personen benachteiligen, wenn ausreichende persönliche Gründe hierfür vorliegen.",
       "c": "Niemand darf gegen Personen klagen, wenn sie benachteiligt wurden.",
       "d": "Es ist für alle Gesetz, benachteiligten Gruppen jährlich Geld zu spenden.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "50e0d24468f62efa179802734ed87f9c184bb24939a13e8bab6487ae0c1dd06f"
+      "solution": "a"
     },
     {
       "num": "263",
@@ -3151,10 +2376,7 @@
       "b": "werden wie Erwachsene behandelt.",
       "c": "teilen die Strafe mit ihren Eltern.",
       "d": "werden nicht bestraft.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "092b9aed0107bcaa5159d524f3d838fc3fa5e2bfb1642b07708e9e93bcae66a7"
+      "solution": "a"
     },
     {
       "num": "264",
@@ -3163,10 +2385,7 @@
       "b": "am Maifeiertag",
       "c": "beim Oktoberfest",
       "d": "an Pfingsten",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "05490c1ba342d7d65d20843c42492607cd81cc8aeae66cc91fd62a235b25353a"
+      "solution": "a"
     },
     {
       "num": "265",
@@ -3175,10 +2394,7 @@
       "b": "zum Ordnungsamt",
       "c": "zur Agentur für Arbeit",
       "d": "zum Standesamt",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "0e0ca3c0b46101992bc38f7dd0efdaa9a8c0ef245f752c92503e3663ae160a4d"
+      "solution": "d"
     },
     {
       "num": "266",
@@ -3187,10 +2403,7 @@
       "b": "wenn die Nachbarn schlafen gehen",
       "c": "um 0 Uhr, Mitternacht",
       "d": "um 22 Uhr",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "6227488d25deb95816df5d4c01a0a7392cccd9af11504f56f08b4095134a3797"
+      "solution": "d"
     },
     {
       "num": "267",
@@ -3199,10 +2412,7 @@
       "b": "Sie haben das Recht, die Tochter in die elterliche Wohnung zurückzuholen.",
       "c": "Sie können zur Polizei gehen und die Tochter anzeigen.",
       "d": "Sie suchen einen anderen Mann für die Tochter.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "dfc7a1b3021c5cbb06fd32345b00c695c6b13ae39f3e5e3fe82079604f7097f0"
+      "solution": "a"
     },
     {
       "num": "268",
@@ -3211,10 +2421,7 @@
       "b": "Wenn sie kein Deutsch kann, darf sie keinen Führerschein haben.",
       "c": "Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.",
       "d": "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "73bc94b898e96ac76f1b5d9409641c5ca46ca581a4abf3de7fda122a7931efc2"
+      "solution": "d"
     },
     {
       "num": "269",
@@ -3223,10 +2430,7 @@
       "b": "einen Platz in einem Sportverein.",
       "c": "einen Kindergartenplatz.",
       "d": "einen Ferienpass.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "b318ff6b98e7940086e711b1d408972fda38e2ee343e1a31b657fbb72d16ec64"
+      "solution": "c"
     },
     {
       "num": "270",
@@ -3235,10 +2439,7 @@
       "b": "nur für Jugendliche.",
       "c": "zur Weiterbildung.",
       "d": "nur für Rentner und Rentnerinnen.",
-      "solution": "c",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "9e3c172cc8828f3d39bbcb2d9b611363cce082985a06b4f6a642a4c4650f915a"
+      "solution": "c"
     },
     {
       "num": "271",
@@ -3247,10 +2448,7 @@
       "b": "einen Tannenbaum schmücken",
       "c": "sich mit Masken und Kostümen verkleiden",
       "d": "Kürbisse vor die Tür stellen",
-      "solution": "b",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "d1dfa03fdf28c13e094dd3d056ac1e9aa1a66369da02bfb9e10612a165e147d5"
+      "solution": "b"
     },
     {
       "num": "272",
@@ -3259,10 +2457,7 @@
       "b": "Zwei Frauen leben zusammen",
       "c": "Ein alleinerziehender Vater lebt mit seinen zwei Kindern zusammen.",
       "d": "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "c6b94b50496024085405180021c55841236a381606e53bdc05f41691dd8fb413"
+      "solution": "d"
     },
     {
       "num": "273",
@@ -3271,10 +2466,7 @@
       "b": "zum Gesundheitsamt",
       "c": "zum Einwohnermeldeamt",
       "d": "zum Jugendamt",
-      "solution": "d",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "73406a8d4f9e0ff1dfa4058ab7cf68972bbd3a3976af3d2c5b3af6bb33e49e48"
+      "solution": "d"
     },
     {
       "num": "274",
@@ -3283,10 +2475,7 @@
       "b": "das Briefgeheimnis",
       "c": "die Schweigepflicht",
       "d": "die Meinungsfreiheit",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "5f1bbec06d57732153a553b74ebb1807cd3f38db38a60ffc06844ba29468da57"
+      "solution": "b"
     },
     {
       "num": "275",
@@ -3295,10 +2484,7 @@
       "b": "ein Attest eines Arztes/einer Ärztin",
       "c": "die Einwilligung der Kinder",
       "d": "die Unterstützung eines Anwalts/einer Anwältin",
-      "solution": "d",
-      "image": "-",
-      "category": "Law & Governance",
-      "id": "b42e6568b96fcc103606c5aec7d40fa602b73fd24a7565e4f18eda260d2adff2"
+      "solution": "d"
     },
     {
       "num": "276",
@@ -3307,10 +2493,7 @@
       "b": "Ich muss mir diese Behandlung gefallen lassen.",
       "c": "Ich drohe der Person.",
       "d": "Ich kann mich beim Behördenleiter/bei der Behördenleiterin beschweren.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "f9a01c326bee8488d0819987c2f2bd59f76684d0b3bb001b41d7d48c1c8077a3"
+      "solution": "d"
     },
     {
       "num": "277",
@@ -3319,10 +2502,7 @@
       "b": "zu hohe Gehaltsvorstellungen hat.",
       "c": "keine Erfahrungen in diesem Beruf hat.",
       "d": "Mutter ist.",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "8c83f7711ebbc4f4252b85bb76d027e310b843f91bb5ad09d263f545635fbf4e"
+      "solution": "d"
     },
     {
       "num": "278",
@@ -3331,10 +2511,7 @@
       "b": "keine Erfahrung hat.",
       "c": "zu hohe Gehaltsvorstellungen hat.",
       "d": "kein Englisch spricht.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "e1933f53ae47c90e413a498ae1aa1ea8597fa18c8e5aa819e6b1da886ab92d19"
+      "solution": "a"
     },
     {
       "num": "279",
@@ -3343,10 +2520,7 @@
       "b": "alle Mieter und Mieterinnen im Haus.",
       "c": "Regeln, an die sich alle Bewohner und Bewohnerinnen halten müssen.",
       "d": "die Adresse des nächsten Ordnungsamtes.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "59522ea036d05f0dd5e05e8e9d291763692f80c714ee46cec1330f45d49ed435"
+      "solution": "c"
     },
     {
       "num": "280",
@@ -3355,10 +2529,7 @@
       "b": "den Bescheid wegwerfen.",
       "c": "Einspruch einlegen.",
       "d": "warten, bis ein anderer Bescheid kommt.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "8038419a98934449c06681598ee9a17d0007b8b0341e1a2e9b1a486085c0c00a"
+      "solution": "c"
     },
     {
       "num": "281",
@@ -3367,10 +2538,7 @@
       "b": "Gleichbehandlung",
       "c": "Versammlungsfreiheit",
       "d": "Freizügigkeit",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "db3174f9de5398761c76945e4357e5cd44409d194ada642ba28093c8252501b7"
+      "solution": "b"
     },
     {
       "num": "282",
@@ -3379,10 +2547,7 @@
       "b": "Wahlhelferin/Wahlhelfer",
       "c": "Bibliotheksaufsicht",
       "d": "Lehrerin/Lehrer",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "d0d3f3bf8a1a36cb5e0194744eed6a358f18acd4af897f20168eff7784d5caa8"
+      "solution": "b"
     },
     {
       "num": "283",
@@ -3391,10 +2556,7 @@
       "b": "Ich lege Widerspruch bei der Behörde ein.",
       "c": "Ich schicke die Rechnung an die Behörde zurück.",
       "d": "Ich gehe mit der Rechnung zum Finanzamt.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "6ff848544a4ae69a9ff9fc78105992737cc014ba772d3c50beffd38d573759a2"
+      "solution": "b"
     },
     {
       "num": "284",
@@ -3403,10 +2565,7 @@
       "b": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
       "c": "Kinder lernen in der Schule alles, was im Beruf wichtig ist. Nach der Schule muss man nicht weiter lernen.",
       "d": "Alle müssen früher aufhören zu arbeiten, weil sich alles ändert.",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "3af793ffe70c449055521aa6d58091b586aaf6fd9d18d35bfb6034c8af67b06c"
+      "solution": "b"
     },
     {
       "num": "285",
@@ -3415,10 +2574,7 @@
       "b": "Beiträge zur Arbeitslosenversicherung",
       "c": "Beiträge zur Renten- und Krankenversicherung",
       "d": "Umsatzsteuer",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "af38c2365e5cc4c3fd15688b0bfd5ce80ee5345546af8c6094034595577b92b0"
+      "solution": "d"
     },
     {
       "num": "286",
@@ -3427,10 +2583,7 @@
       "b": "der Betriebsprüfer/die Betriebsprüferin",
       "c": "die Betriebsgruppe",
       "d": "das Betriebsmanagement",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "fb10d469199c19fcef6e207ef247771b3404a6d14750ce8057537947b1173e25"
+      "solution": "a"
     },
     {
       "num": "287",
@@ -3439,10 +2592,7 @@
       "b": "die Arbeitszeit",
       "c": "die Kündigungsfrist",
       "d": "die Versicherungspflicht",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "31d82c2a5fc972dd4f201a260f6c1dd97769c09d6b0d92e9d8baa1742ef89ba5"
+      "solution": "c"
     },
     {
       "num": "288",
@@ -3451,10 +2601,7 @@
       "b": "aus den nationalsozialistischen Verbrechen gegen Juden",
       "c": "aus dem Grundgesetz der Bundesrepublik Deutschland",
       "d": "aus der christlichen Tradition",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "7e37d2303ebdf486b41c04c378c8d662f362a772c896f9c03ec36d446492d9f2"
+      "solution": "b"
     },
     {
       "num": "289",
@@ -3463,10 +2610,7 @@
       "b": "er zu hohe Gehaltsvorstellungen hat.",
       "c": "er eine dunkle Haut hat.",
       "d": "er keine Erfahrungen im Beruf hat.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "1c7411282ce367527a378a965bbbae561f787d19c08a74bbaf61b484308ef05d"
+      "solution": "c"
     },
     {
       "num": "290",
@@ -3475,10 +2619,7 @@
       "b": "den Fernseher reklamieren",
       "c": "das Gerät ungefragt austauschen",
       "d": "die Garantie verlängern",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "43522983dfc32c858f7a27ef08571bb1976d7f68ffa0a4f9e864e6dd40dbc9d5"
+      "solution": "b"
     },
     {
       "num": "291",
@@ -3487,10 +2628,7 @@
       "b": "das für die Statistik in Deutschland wichtig ist.",
       "c": "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche gehört.",
       "d": "die Kirche für die Steuererklärung verantwortlich ist.",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "f765dd435307a8e2b6d768463f13d08b3ec8efad69a517b52ef7a9f47f3361b2"
+      "solution": "a"
     },
     {
       "num": "292",
@@ -3499,10 +2637,7 @@
       "b": "Alle Menschen glauben an Gott.",
       "c": "Jeder kann glauben, was er möchte.",
       "d": "Der Staat entscheidet, an welchen Gott die Menschen glauben.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "a9cb666af7705528f6ecbdbf5be8148999f72f34bbab9099acf2f25735b68467"
+      "solution": "c"
     },
     {
       "num": "293",
@@ -3511,10 +2646,7 @@
       "b": "einen Tannenbaum schmücken",
       "c": "Eier bemalen",
       "d": "Raketen in die Luft schießen",
-      "solution": "c",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "11eae49ed322c89c5ac76cac33127f1abb9aedbb385157a113cc9a4eac1ee34a"
+      "solution": "c"
     },
     {
       "num": "294",
@@ -3523,10 +2655,7 @@
       "b": "deutscher Gedenktag.",
       "c": "internationaler Trauertag.",
       "d": "bayerischer Brauch.",
-      "solution": "a",
-      "image": "-",
-      "category": "Education & Religion",
-      "id": "0491235c6e26fbcff76b8945f81deb7f2e3a69ba436df5d9f0ef8f0caaca9f28"
+      "solution": "a"
     },
     {
       "num": "295",
@@ -3535,10 +2664,7 @@
       "b": "das Christentum",
       "c": "der Buddhismus",
       "d": "der Islam",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "a241a0ca07ead41e2ab566c4ec36993723c980427a4ae48ad798a6c5966a6b89"
+      "solution": "b"
     },
     {
       "num": "296",
@@ -3547,10 +2673,7 @@
       "b": "das Erntedankfest.",
       "c": "die Adventszeit.",
       "d": "Allerheiligen.",
-      "solution": "c",
-      "image": "-",
-      "category": "General",
-      "id": "b0f68edc8733d8d4a978d827db513cdf90aab5d40022846e7714c14d2628ca5f"
+      "solution": "c"
     },
     {
       "num": "297",
@@ -3559,10 +2682,7 @@
       "b": "Polen",
       "c": "Marokko",
       "d": "Türkei",
-      "solution": "d",
-      "image": "-",
-      "category": "General",
-      "id": "9c41c0810829ed422269992dc949ab747bc4ce96b78599e26c9f580d27bd2301"
+      "solution": "d"
     },
     {
       "num": "298",
@@ -3571,10 +2691,7 @@
       "b": "Frankreich, Rumänien, Somalia.",
       "c": "Chile, Ungarn, Simbabwe.",
       "d": "Nordkorea, Mexiko, Ägypten.",
-      "solution": "a",
-      "image": "-",
-      "category": "History & Geography",
-      "id": "d69662f14ccef7fbcb6563957fabcae217a850abd44535375e3fc28329b29d3a"
+      "solution": "a"
     },
     {
       "num": "299",
@@ -3583,10 +2700,7 @@
       "b": "Gastarbeiter/Gastarbeiterinnen",
       "c": "Zeitarbeiter/Zeitarbeiterinnen",
       "d": "Schichtarbeiter/Schichtarbeiterinnen",
-      "solution": "b",
-      "image": "-",
-      "category": "General",
-      "id": "5d31a6d85b34aed0f7ecd753e13be27bba888130a2271d511227fc45f37f0ebe"
+      "solution": "b"
     },
     {
       "num": "300",
@@ -3595,10 +2709,7 @@
       "b": "Spanien",
       "c": "Portugal",
       "d": "Türkei",
-      "solution": "a",
-      "image": "-",
-      "category": "General",
-      "id": "5b1e8d91a69c60e9f1b9fa5e7ff22d598f1963661c697b1b18878914d12e4d5c"
+      "solution": "a"
     }
   ],
   "states": {
@@ -3611,9 +2722,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qbb1.706c4d3c.jpeg",
-        "category": "History & Geography",
-        "id": "80f3803dfec84ae9c8854cebe7dc3912c2871c101ee4bd9c28dc00e42225bd40"
+        "image": "https://foreignvasi.com/qbb1.706c4d3c.jpeg"
       },
       {
         "num": "BB-2",
@@ -3622,10 +2731,7 @@
         "b": "Rhein-Sieg-Kreis",
         "c": "Prignitz",
         "d": "Vogtlandkreis",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "b00fd8c6397202f2f3aa1549b18ae457686df6ede74733ccb227283eb225bfb8"
+        "solution": "c"
       },
       {
         "num": "BB-3",
@@ -3634,10 +2740,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "2d7d0bf0b48dfe0bbf5ef5eeb922d245faf787e032cd6aa6c75700149efe8f57"
+        "solution": "c"
       },
       {
         "num": "BB-4",
@@ -3646,10 +2749,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "d987e359386844c77210991dd5b736361b31fec3a75d7272deedb4e7c30a886f"
+        "solution": "b"
       },
       {
         "num": "BB-5",
@@ -3658,10 +2758,7 @@
         "b": "schwarz-gelb",
         "c": "grün-weiß-rot",
         "d": "blau-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "4968b6a5510bceeec7c5f1907431875083daed550bef327c5c6b35a20d2125ba"
+        "solution": "a"
       },
       {
         "num": "BB-6",
@@ -3670,10 +2767,7 @@
         "b": "bei der Landeszentrale für politische Bildung",
         "c": "bei der Verbraucherzentrale",
         "d": "bei den Kirchen",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "354f6d78d216e24034aaf81d9a82383044468e571cdc678c133eccf58b99ecc1"
+        "solution": "b"
       },
       {
         "num": "BB-7",
@@ -3682,10 +2776,7 @@
         "b": "Frankfurt/Oder",
         "c": "Potsdam",
         "d": "Brandenburg",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "769dfc2a692eccaccf0129d572d1c3eb125ab7652f965c0ad58c78d880817f74"
+        "solution": "c"
       },
       {
         "num": "BB-8",
@@ -3694,10 +2785,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Erster Minister / Erste Ministerin",
         "d": "Premierminister / Premierministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "547d1beea51dc1bc7ef5e42e1e4901d5f245f8e07fa8b809e484af91c488c9ed"
+        "solution": "a"
       },
       {
         "num": "BB-9",
@@ -3706,10 +2794,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "Federal System",
-        "id": "d0015b24def1a6dfa0671d4aacd52d728f84f5bf7d323ff9679d14b95efe10a1"
+        "solution": "c"
       },
       {
         "num": "BB-10",
@@ -3719,9 +2804,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qbb10.7926742d.jpeg",
-        "category": "History & Geography",
-        "id": "86a84b23752c6c8890c4662fba987aee693cff6380a4ef58af810175eceb19bd"
+        "image": "https://foreignvasi.com/qbb10.7926742d.jpeg"
       }
     ],
     "BE": [
@@ -3733,9 +2816,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qbl1.83065446.jpeg",
-        "category": "History & Geography",
-        "id": "f4a62081577688642c89d71f777dfb322488b8550ec983daed79ee33b56e2f43"
+        "image": "https://foreignvasi.com/qbl1.83065446.jpeg"
       },
       {
         "num": "BE-2",
@@ -3744,10 +2825,7 @@
         "b": "Prignitz",
         "c": "Mecklenburgische Seenplatte",
         "d": "Altona",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "ffd628cb6e9b1916b6fe9a0fe7059b7c65effb279b4bece2709848765b01a663"
+        "solution": "a"
       },
       {
         "num": "BE-3",
@@ -3756,10 +2834,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "9fb746ea65f7047c54536fc149ebe45f032eeb0f33e7ce9eb535780757eda8fc"
+        "solution": "c"
       },
       {
         "num": "BE-4",
@@ -3768,10 +2843,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "f69cb6a0d2c52857a9445cb6c0dc6b893d3a7189e68fcc2410e1d889f93e5bdc"
+        "solution": "b"
       },
       {
         "num": "BE-5",
@@ -3780,10 +2852,7 @@
         "b": "schwarz-gold",
         "c": "weiß-rot",
         "d": "blau-weiß-rot",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "1a1ed5753f362791a79021a5c215f2d801c44d62adddf438f735a1086d0ec36b"
+        "solution": "c"
       },
       {
         "num": "BE-6",
@@ -3792,10 +2861,7 @@
         "b": "bei den Kirchen",
         "c": "bei der Verbraucherzentrale",
         "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "3451cd181f59c0930ed9d6b9f682cc76b777d23ebe63cda4199b509eaf1a51d3"
+        "solution": "d"
       },
       {
         "num": "BE-7",
@@ -3804,10 +2870,7 @@
         "b": "Berlin",
         "c": "Hessen",
         "d": "Saarland",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "3bf99f7fa6def86b0dc5c7104a7c16242d81d2ee6e3a04aeb5c933f565e19c0e"
+        "solution": "b"
       },
       {
         "num": "BE-8",
@@ -3816,10 +2879,7 @@
         "b": "Präsident / Präsidentin des Senats",
         "c": "Ministerpräsident / Ministerpräsidentin",
         "d": "Oberbürgermeister / Oberbürgermeisterin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "784341e62278f642c3bf11bfd5728f7adc2cff5388922923ccc7134b13193a6c"
+        "solution": "a"
       },
       {
         "num": "BE-9",
@@ -3828,10 +2888,7 @@
         "b": "Finanzsenator / Finanzsenatorin",
         "c": "Justizsenator / Justizsenatorin",
         "d": "Innensenator / Innensenatorin",
-        "solution": "a",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "0d01fd3abf9f902bd0524eb8a1fcdfa66cafe5b0547598032f69cb9ca753dcd2"
+        "solution": "a"
       },
       {
         "num": "BE-10",
@@ -3841,9 +2898,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qbl10.70634ae6.jpeg",
-        "category": "History & Geography",
-        "id": "7502d511a028e069838392196caca6fa07282cc439ae0a2fb56cfdd4d3c5e73a"
+        "image": "https://foreignvasi.com/qbl10.70634ae6.jpeg"
       }
     ],
     "BW": [
@@ -3855,9 +2910,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qbw1.18061c05.jpeg",
-        "category": "History & Geography",
-        "id": "9ebef355924d52c847342c8a407d76a5b6bc684b3f9f768cce0d9242c9528148"
+        "image": "https://foreignvasi.com/qbw1.18061c05.jpeg"
       },
       {
         "num": "BW-2",
@@ -3866,10 +2919,7 @@
         "b": "Nordfriesland",
         "c": "Altötting",
         "d": "Mecklenburgische Seenplatte",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "9fbb9f27799c0ece46ec85f7e7d9a3bcf37d5853a8c6e321b1817102d7f83492"
+        "solution": "a"
       },
       {
         "num": "BW-3",
@@ -3878,10 +2928,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Premierminister / Premierministerin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "d4673664bb1fffb16315299d10e1a627a2b068696038671f9fba37970ab2fcb4"
+        "solution": "b"
       },
       {
         "num": "BW-4",
@@ -3890,10 +2937,7 @@
         "b": "3",
         "c": "5",
         "d": "4",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "a7069734bd4612f6b57dc06cdb191f72d7a087273841262f5489b457ebb65022"
+        "solution": "c"
       },
       {
         "num": "BW-5",
@@ -3902,10 +2946,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "a5df0bc6f75e50a7882d0c8225f64bd369c2ae47abd1bdde772ee0e441659614"
+        "solution": "c"
       },
       {
         "num": "BW-6",
@@ -3914,10 +2955,7 @@
         "b": "18",
         "c": "20",
         "d": "14",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "d46b0aefce4454fb53756ee6ceecf75cefda6ad5734ccf18b030d13cdac03df3"
+        "solution": "a"
       },
       {
         "num": "BW-7",
@@ -3926,10 +2964,7 @@
         "b": "weiß-blau",
         "c": "blau-weiß-rot",
         "d": "schwarz-gold",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "5b06afcbff26bd6c8da2e12516c14187985815a4c9bcf301c4ee03102ba196e3"
+        "solution": "d"
       },
       {
         "num": "BW-8",
@@ -3938,10 +2973,7 @@
         "b": "beim Ordnungsamt der Gemeinde",
         "c": "bei den Kirchen",
         "d": "bei der Verbraucherzentrale",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "298dbf218f80a9dbf90dd32ddb68947994363a96044a9a8792eda53ad100471c"
+        "solution": "a"
       },
       {
         "num": "BW-9",
@@ -3950,10 +2982,7 @@
         "b": "Stuttgart",
         "c": "Heidelberg",
         "d": "Karlsruhe",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "9e1c4a491553cbd219741b95d8e5650a835f1889ac08923e7454fccd3707c149"
+        "solution": "b"
       },
       {
         "num": "BW-10",
@@ -3963,9 +2992,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qbw8.27ed57e1.jpeg",
-        "category": "History & Geography",
-        "id": "bc2617bb0f19cb384a3e63cc3f09815dcd4ce21e9b4d6fdd81168c73dd3d9d24"
+        "image": "https://foreignvasi.com/qbw8.27ed57e1.jpeg"
       }
     ],
     "BY": [
@@ -3977,9 +3004,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qby1.378f8193.jpeg",
-        "category": "History & Geography",
-        "id": "1b60bdabea631949662b1904deb7e073b99537fb12a2a88f4ab033abf21e66ab"
+        "image": "https://foreignvasi.com/qby1.378f8193.jpeg"
       },
       {
         "num": "BY-2",
@@ -3988,10 +3013,7 @@
         "b": "Prignitz",
         "c": "Nordfriesland",
         "d": "Rhein-Sieg-Kreis",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "1010b08b85e844e6d0aeeccf6c53d8936c4617abbb29b78a019fbcf6532c6a17"
+        "solution": "a"
       },
       {
         "num": "BY-3",
@@ -4000,10 +3022,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "332407612f160ae671eba7a452636180e874829e288cb3847be0291cfd6c9a36"
+        "solution": "c"
       },
       {
         "num": "BY-4",
@@ -4012,10 +3031,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "c8017b52f3059cda9bb8407cd6c0cb65299c386e702e364037966c3b5c6f6f0b"
+        "solution": "c"
       },
       {
         "num": "BY-5",
@@ -4024,10 +3040,7 @@
         "b": "schwarz-gelb",
         "c": "blau-weiß-rot",
         "d": "grün-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "3b271f4708744860fcc0cadeeb8fb3a0baf4f03aab666775d282317c1bf7be33"
+        "solution": "a"
       },
       {
         "num": "BY-6",
@@ -4036,10 +3049,7 @@
         "b": "beim Ordnungsamt der Gemeinde",
         "c": "bei der Landeszentrale für politische Bildung",
         "d": "bei der Verbraucherzentrale",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "2920d4ad1434b02c19146152f1b7bfa6642988f926f271e01ffecaf8cb515cc1"
+        "solution": "c"
       },
       {
         "num": "BY-7",
@@ -4048,10 +3058,7 @@
         "b": "München",
         "c": "Regensburg",
         "d": "Ingolstadt",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "a08d0be8b92c59b1b2c096f4b4b0840d0afa2fecaad49612aa480e1c36e4caff"
+        "solution": "b"
       },
       {
         "num": "BY-8",
@@ -4060,10 +3067,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Premierminister / Premierministerin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "6756e64f165911c90f21fc05acee38ae585594ced870be39db04f070d4edc27a"
+        "solution": "a"
       },
       {
         "num": "BY-9",
@@ -4072,10 +3076,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Finanzminister / Finanzministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "5540d34a6d59921ca8e302392e19c72181f9ca9b33040f54decf06290d48e290"
+        "solution": "a"
       },
       {
         "num": "BY-10",
@@ -4085,9 +3086,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qby10.eaddc2be.jpeg",
-        "category": "History & Geography",
-        "id": "67832bdebe0f0617d12b23fdce8b66e0d52ab65306f103ce00908394751f225a"
+        "image": "https://foreignvasi.com/qby10.eaddc2be.jpeg"
       }
     ],
     "HB": [
@@ -4099,9 +3098,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qbm1.9033f1b7.jpeg",
-        "category": "History & Geography",
-        "id": "8b6289ec89464d8813010136d4cb85e00ee9ee1aa43cad9f56f8013f1c84840e"
+        "image": "https://foreignvasi.com/qbm1.9033f1b7.jpeg"
       },
       {
         "num": "HB-2",
@@ -4110,10 +3107,7 @@
         "b": "Pankow",
         "c": "Babelsberg",
         "d": "Altona",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "6857a5c405e000ce7384d7104764ad7b8c8991c9001fca66501c22ff66fd6afa"
+        "solution": "a"
       },
       {
         "num": "HB-3",
@@ -4122,10 +3116,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "bb5d9631aabf2d7df94a942f2aea1c366afeccae03180326bce178a3372cfc15"
+        "solution": "b"
       },
       {
         "num": "HB-4",
@@ -4134,10 +3125,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "a73505efd5de07dcc1121ee057481ba65711b243a254aec52faa078d5bbab26d"
+        "solution": "b"
       },
       {
         "num": "HB-5",
@@ -4146,10 +3134,7 @@
         "b": "schwarz-gelb",
         "c": "rot-weiß",
         "d": "blau-weiß-rot",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "ff8b4e2fffa7dc7865c5ccd585510942347955b2136a416f8976f5cd3806067c"
+        "solution": "c"
       },
       {
         "num": "HB-6",
@@ -4158,10 +3143,7 @@
         "b": "bei den Kirchen",
         "c": "bei der Verbraucherzentrale",
         "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "f28f273f65747fb9c2e98406303f6dd3f126ce5626010283c08273b633529fb5"
+        "solution": "d"
       },
       {
         "num": "HB-7",
@@ -4170,10 +3152,7 @@
         "b": "Bremen",
         "c": "München",
         "d": "Frankfurt",
-        "solution": "b",
-        "image": "-",
-        "category": "Federal System",
-        "id": "cedf97be2def9231784c8e0641e5ca9980d0ee12f4c7650ffb8d4fbb5db48b98"
+        "solution": "b"
       },
       {
         "num": "HB-8",
@@ -4182,10 +3161,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Regierender Bürgermeister / Regierende Bürgermeisterin",
         "d": "Erster Bürgermeister / Erste Bürgermeisterin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "322fef1a1f7ac44625be2ea593398e2001fe64eeaabbf324efcf9314aaad329d"
+        "solution": "a"
       },
       {
         "num": "HB-9",
@@ -4194,10 +3170,7 @@
         "b": "Senator / Senatorin für Außenbeziehungen",
         "c": "Innensenator / Innensenatorin",
         "d": "Finanzsenator / Finanzsenatorin",
-        "solution": "b",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "adff8fd48a5093f2f0638ad5409060ecb48019c5694e32ad416835923f595c87"
+        "solution": "b"
       },
       {
         "num": "HB-10",
@@ -4207,9 +3180,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qbm10.9f45074b.jpeg",
-        "category": "History & Geography",
-        "id": "a7091b3986633024fd6230966f5a3d8e87e82baca63e1aeb6d96eeeb98146b5f"
+        "image": "https://foreignvasi.com/qbm10.9f45074b.jpeg"
       }
     ],
     "HE": [
@@ -4221,9 +3192,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qhs1.a1d732b7.jpeg",
-        "category": "History & Geography",
-        "id": "c1fa82930e91da8df528e055758d954a93a77fd1b27ea183789cd25820182248"
+        "image": "https://foreignvasi.com/qhs1.a1d732b7.jpeg"
       },
       {
         "num": "HE-2",
@@ -4232,10 +3201,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "f1632f6aaa2de5796e51c50fb9aa851dfe6aef8dc70678e4d4f950505a30a7e9"
+        "solution": "c"
       },
       {
         "num": "HE-3",
@@ -4244,10 +3210,7 @@
         "b": "Prignitz",
         "c": "Ammerland",
         "d": "Altötting",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "40702c21a28ed61b28c0a0d18ee84b5a3b7c038f4250609a513c56175b4eb83b"
+        "solution": "a"
       },
       {
         "num": "HE-4",
@@ -4256,10 +3219,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "d5d968c15226d15a5f56821b4fff20ebf1b9211805f9bfdb764ed345f7795259"
+        "solution": "c"
       },
       {
         "num": "HE-5",
@@ -4268,10 +3228,7 @@
         "b": "schwarz-gold",
         "c": "grün-weiß-rot",
         "d": "blau-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "16e2b245b8149d25410d404013c49bf7801fbd0408691b1d2e2a5a14e268e7bc"
+        "solution": "a"
       },
       {
         "num": "HE-6",
@@ -4280,10 +3237,7 @@
         "b": "bei der Landeszentrale für politische Bildung",
         "c": "bei den Kirchen",
         "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "62c0335cd4af6a2822b3b112bce8db6a08e8aa4958211f1dc7138b0a2be736f5"
+        "solution": "b"
       },
       {
         "num": "HE-7",
@@ -4292,10 +3246,7 @@
         "b": "Darmstadt",
         "c": "Frankfurt",
         "d": "Wiesbaden",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "f86c042d95154309a2c94a06010f117e0dbbc472193acb5141dfd5f6dbfff338"
+        "solution": "d"
       },
       {
         "num": "HE-8",
@@ -4304,10 +3255,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Premierminister / Premierministerin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "24b646958594c54cef26d4f19e69f8cb66ea58dffdc34b6cf82caa42b1709c2d"
+        "solution": "b"
       },
       {
         "num": "HE-9",
@@ -4316,10 +3264,7 @@
         "b": "Finanzminister / Finanzministerin",
         "c": "Justizminister / Justizministerin",
         "d": "Innenminister / Innenministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "15c9db8ae989fdf867c57e682d83ed71149c5f01e01e05238414d688cedf08a8"
+        "solution": "a"
       },
       {
         "num": "HE-10",
@@ -4329,9 +3274,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qhs10.da672a59.jpeg",
-        "category": "History & Geography",
-        "id": "47cdc5bd7dbb83823cf72640bccbed7f4375601f3fe55e75e23d2756dfe2b98e"
+        "image": "https://foreignvasi.com/qhs10.da672a59.jpeg"
       }
     ],
     "HH": [
@@ -4343,9 +3286,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qhb1.ec3ac9e3.jpeg",
-        "category": "History & Geography",
-        "id": "5405c80e194d7866f5e1be8183ac150eaac699299f857396abf6190d78f6535d"
+        "image": "https://foreignvasi.com/qhb1.ec3ac9e3.jpeg"
       },
       {
         "num": "HH-2",
@@ -4354,10 +3295,7 @@
         "b": "Altona",
         "c": "Mecklenburgische Seenplatte",
         "d": "Hemelingen",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "1fe77520f8ef1257710e46e03023c4dca9363a31bcd52a26859762b78ffbf4ab"
+        "solution": "b"
       },
       {
         "num": "HH-3",
@@ -4366,10 +3304,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "a4a4c0a963b2b8771be03a53d8e9f5540e692b6ed7f49c89f882c718d3355398"
+        "solution": "c"
       },
       {
         "num": "HH-4",
@@ -4378,10 +3313,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "b2bbe35f3a86ffd79c291df8e8638b96e2bb42539d58919369cf693628dc90a4"
+        "solution": "b"
       },
       {
         "num": "HH-5",
@@ -4390,10 +3322,7 @@
         "b": "schwarz-gelb",
         "c": "blau-weiß-rot",
         "d": "grün-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "58d6058e8c95eddb6be2c832ab3f73bac09d47093a177ba9baeb938108779fe3"
+        "solution": "a"
       },
       {
         "num": "HH-6",
@@ -4402,10 +3331,7 @@
         "b": "bei der Landeszentrale für politische Bildung",
         "c": "beim Ordnungsamt der Gemeinde",
         "d": "bei den Kirchen",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "104ce800ea023747416bc562f031e76b27df2e96be20d97823d068bbe868201f"
+        "solution": "b"
       },
       {
         "num": "HH-7",
@@ -4414,10 +3340,7 @@
         "b": "Bayern",
         "c": "Thüringen",
         "d": "Hamburg",
-        "solution": "d",
-        "image": "-",
-        "category": "Federal System",
-        "id": "3128c25e35f1c9b90e43e18a663a7003b09ad174e96c5d5f96dc756879449bb5"
+        "solution": "d"
       },
       {
         "num": "HH-8",
@@ -4426,10 +3349,7 @@
         "b": "Oberbürgermeister / Oberbürgermeisterin",
         "c": "Ministerpräsident / Ministerpräsidentin",
         "d": "Regierender Senator / Regierende Senatorin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "6229167263ce95ff29d80774a46f4198da29930f82ca07ae220a98f6f0d50eec"
+        "solution": "a"
       },
       {
         "num": "HH-9",
@@ -4438,10 +3358,7 @@
         "b": "Innensenator / Innensenatorin",
         "c": "Justizsenator / Justizsenatorin",
         "d": "Finanzsenator / Finanzsenatorin",
-        "solution": "a",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "01b8c4306208c395eeacbc07afd6edbedc7fc2f0e5b9a772f22bc30c1e708f6d"
+        "solution": "a"
       },
       {
         "num": "HH-10",
@@ -4451,9 +3368,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qhb10.4c2c3aab.jpeg",
-        "category": "History & Geography",
-        "id": "c4311d842eb9c3ad7d79080cb70e27e0969ea71629f5f61b5b7125eff445764c"
+        "image": "https://foreignvasi.com/qhb10.4c2c3aab.jpeg"
       }
     ],
     "MV": [
@@ -4465,9 +3380,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qmv1.a2812830.jpeg",
-        "category": "History & Geography",
-        "id": "5429a755a25e24ec694b9344e738a62eae9d44298de565b0687b3ad69f6aa9a5"
+        "image": "https://foreignvasi.com/qmv1.a2812830.jpeg"
       },
       {
         "num": "MV-2",
@@ -4476,10 +3389,7 @@
         "b": "Rhein-Sieg-Kreis",
         "c": "Mecklenburgische Seenplatte",
         "d": "Prignitz",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "58e63814024cdde72559a489e7c8fc1d3e036be14b4a416fde8723c9576c511a"
+        "solution": "c"
       },
       {
         "num": "MV-3",
@@ -4488,10 +3398,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "c63280552118a41038a36ef4ba62a7cf6be82dd7321022ce2a0a43cb03883364"
+        "solution": "c"
       },
       {
         "num": "MV-4",
@@ -4500,10 +3407,7 @@
         "b": "16",
         "c": "18",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "0e3a33dd5b4f5128d3e172ed177c84c83cd893a99f0adbcc6e5f132f08a68be8"
+        "solution": "b"
       },
       {
         "num": "MV-5",
@@ -4512,10 +3416,7 @@
         "b": "schwarz-gelb",
         "c": "schwarz-rot-gold",
         "d": "grün-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "bafcdffe2018303412d94cff56eb6fd37120627cbfb0e68486e246313422f358"
+        "solution": "a"
       },
       {
         "num": "MV-6",
@@ -4524,10 +3425,7 @@
         "b": "beim Ordnungsamt der Gemeinde",
         "c": "bei der Landeszentrale für politische Bildung",
         "d": "bei den Kirchen",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "eb0cbb58bde488bd290a7bf85e38aa0b4cfcfd5f216ff24073643269b9c3fce9"
+        "solution": "c"
       },
       {
         "num": "MV-7",
@@ -4536,10 +3434,7 @@
         "b": "Rostock",
         "c": "Greifswald",
         "d": "Schwerin",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "52f89b1758e3b721e807e95a60f2a9da83709eb3c9c857a0f19eae9cb2b61217"
+        "solution": "d"
       },
       {
         "num": "MV-8",
@@ -4548,10 +3443,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Premierminister / Premierministerin",
         "d": "Erster Bürgermeister / Erste Bürgermeisterin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "7c622689440bccb1385e4e56166e7efeca8d763c199850b79f1b3498f5237947"
+        "solution": "b"
       },
       {
         "num": "MV-9",
@@ -4560,10 +3452,7 @@
         "b": "Außenminister / Außenministerin",
         "c": "Innenminister / Innenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "2e04936ed9c832c1367868a4cdb150793379f4b65e7f4f87695f133dad07e81b"
+        "solution": "b"
       },
       {
         "num": "MV-10",
@@ -4573,9 +3462,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qmv10.bc891748.jpeg",
-        "category": "History & Geography",
-        "id": "598ad50189033a84b9e4f15ee76a38e26589f1c0a202bc131cb23c956275a180"
+        "image": "https://foreignvasi.com/qmv10.bc891748.jpeg"
       }
     ],
     "NI": [
@@ -4587,9 +3474,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qns1.fc718c6e.jpeg",
-        "category": "History & Geography",
-        "id": "b6d65725f4b4009a69310803243741ba4446e5a9c014c1294c7de90094626552"
+        "image": "https://foreignvasi.com/qns1.fc718c6e.jpeg"
       },
       {
         "num": "NI-2",
@@ -4598,10 +3483,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "6dd04f1e18d23f157f0849e0be324ccff9f4606b4cddee883003187e550ad718"
+        "solution": "c"
       },
       {
         "num": "NI-3",
@@ -4610,10 +3492,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "5d9921cbe231494c9ae5856a04c4d7863b76e6c0c648ca8edb24344c92da1491"
+        "solution": "c"
       },
       {
         "num": "NI-4",
@@ -4622,10 +3501,7 @@
         "b": "Vogtlandkreis",
         "c": "Nordfriesland",
         "d": "Ammerland",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "3cabc98f4f5a5202eb97066a1ec70c3031bedf6d306873119e83a512f23c882f"
+        "solution": "d"
       },
       {
         "num": "NI-5",
@@ -4634,10 +3510,7 @@
         "b": "bei der Landeszentrale für politische Bildung",
         "c": "beim Ordnungsamt der Gemeinde",
         "d": "bei den Kirchen",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "565b942e1d7d2789069cd72b7a25c3741d72d4537d500307340b3005d1f05cb5"
+        "solution": "b"
       },
       {
         "num": "NI-6",
@@ -4646,10 +3519,7 @@
         "b": "blau-weiß-rot",
         "c": "weiß-blau",
         "d": "schwarz-gelb",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "086ae2f3598b4483411fbaaedbcb4c92e33f4268e471137406546efdd36dcb7a"
+        "solution": "a"
       },
       {
         "num": "NI-7",
@@ -4658,10 +3528,7 @@
         "b": "Hannover",
         "c": "Braunschweig",
         "d": "Osnabrück",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "dde6571b02013f88a2c8fa69240cd3f97512c6dee6928f4ac885e53cc14bb946"
+        "solution": "b"
       },
       {
         "num": "NI-8",
@@ -4671,9 +3538,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qns8.81db6464.jpeg",
-        "category": "History & Geography",
-        "id": "15e40bd50aa0fcf2206193b92790a7b78ca8679dd95fdb7e9d0daf599f27a108"
+        "image": "https://foreignvasi.com/qns8.81db6464.jpeg"
       },
       {
         "num": "NI-9",
@@ -4682,10 +3547,7 @@
         "b": "Premierminister / Premierministerin",
         "c": "Bürgermeister / Bürgermeisterin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "b7e939a6e020518f55203bf40a9a27fa291e65528e242ac43069974a8450bc22"
+        "solution": "a"
       },
       {
         "num": "NI-10",
@@ -4694,10 +3556,7 @@
         "b": "Justizminister / Justizministerin",
         "c": "Finanzminister / Finanzministerin",
         "d": "Außenminister / Außenministerin",
-        "solution": "d",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "5199b0358fca35aee5e88fa15473b906eddfac526532ee78b6dbd6cad375cc93"
+        "solution": "d"
       }
     ],
     "NW": [
@@ -4709,9 +3568,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qnw1.78baa273.jpeg",
-        "category": "History & Geography",
-        "id": "d782e0506f04505662a6d8d793fb6ea0d6e5fc74cbe197ffb6dddbddc13ecda7"
+        "image": "https://foreignvasi.com/qnw1.78baa273.jpeg"
       },
       {
         "num": "NW-2",
@@ -4720,10 +3577,7 @@
         "b": "Nordfriesland",
         "c": "Rhein-Sieg-Kreis",
         "d": "Vogtlandkreis",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "fb1b08a6bd29be2847946287ef1808e71ee1e81ba052d99137dde330e2989e56"
+        "solution": "c"
       },
       {
         "num": "NW-3",
@@ -4732,10 +3586,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "2196c4c863cd38d4da18ac0cbfa4f40d071ee2cc6c4be8bc230eee07caaf7d99"
+        "solution": "c"
       },
       {
         "num": "NW-4",
@@ -4744,10 +3595,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "89efc7b0b84da5e05515db67ae03a2d6cb2377c6a3f906ebe937ddd2b1bd3c81"
+        "solution": "c"
       },
       {
         "num": "NW-5",
@@ -4756,10 +3604,7 @@
         "b": "rot-weiß",
         "c": "grün-weiß-rot",
         "d": "blau-weiß-rot",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "be33e2b058be3e64fc011abf2220cd848fcd09b322e8607bc367de1a1fdeb001"
+        "solution": "c"
       },
       {
         "num": "NW-6",
@@ -4768,10 +3613,7 @@
         "b": "bei der Verbraucherzentrale",
         "c": "bei der Landeszentrale für politische Bildung",
         "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "4280c190555189afe4334aa34bc1d3f87c4e4af6569adf2be5b0b030bd3125b0"
+        "solution": "c"
       },
       {
         "num": "NW-7",
@@ -4780,10 +3622,7 @@
         "b": "Bonn",
         "c": "Köln",
         "d": "Düsseldorf",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "0546ff4f1a42fdd431752ebdeea1305bc82f25f7da7c22ccae71e703778623be"
+        "solution": "d"
       },
       {
         "num": "NW-8",
@@ -4793,9 +3632,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qnw8.f555cf6b.jpeg",
-        "category": "History & Geography",
-        "id": "d730dd3f4c2dc2199e2981bb26f23ef6373cdd08826319e149a7424f78ea5d34"
+        "image": "https://foreignvasi.com/qnw8.f555cf6b.jpeg"
       },
       {
         "num": "NW-9",
@@ -4804,10 +3641,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Erster Minister / Erste Ministerin",
         "d": "Premierminister / Premierministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "d3c675566b161315ae11eb118f88db30f65b2a5af7b375db25bbfa92ecf5ed82"
+        "solution": "a"
       },
       {
         "num": "NW-10",
@@ -4816,10 +3650,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "2c9590c385546b5e61e2df5efb5cee5b12aad114794390b9a5552861620f8834"
+        "solution": "c"
       }
     ],
     "RP": [
@@ -4831,9 +3662,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qrp1.5a74c5da.jpeg",
-        "category": "History & Geography",
-        "id": "d9877f0d8d5a55d848abd22f17504af909fad4ab9d72937d1562c2694b186532"
+        "image": "https://foreignvasi.com/qrp1.5a74c5da.jpeg"
       },
       {
         "num": "RP-2",
@@ -4842,10 +3671,7 @@
         "b": "Altötting",
         "c": "Emsland",
         "d": "Prignitz",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "b0171f1468b34b2140fe7b2a7aea68b84dd9d985c8013486d5b4a1ebccea9e7d"
+        "solution": "a"
       },
       {
         "num": "RP-3",
@@ -4854,10 +3680,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "0a74d8acb491f1edfb03973ae8701840b6847d8cee9d2a2427f820be7d706c02"
+        "solution": "c"
       },
       {
         "num": "RP-4",
@@ -4866,10 +3689,7 @@
         "b": "weiß-rot",
         "c": "grün-weiß-rot",
         "d": "schwarz-gelb",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "4d0ad78a08f6b7bab5d888ec89763f570a0650ec7ad0685b62b032da092803d8"
+        "solution": "a"
       },
       {
         "num": "RP-5",
@@ -4878,10 +3698,7 @@
         "b": "Ludwigshafen",
         "c": "Mainz",
         "d": "Koblenz",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "2289cab2998c91a0f16e0d6bdff37f61936766aead75663fc66beb7cdd4c8b8b"
+        "solution": "c"
       },
       {
         "num": "RP-6",
@@ -4890,10 +3707,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "4801e52cb513a320490de91d991727393e2ef04aaaf0be0e2f1a65bb9beccc3e"
+        "solution": "b"
       },
       {
         "num": "RP-7",
@@ -4902,10 +3716,7 @@
         "b": "bei der Verbraucherzentrale",
         "c": "bei der Landeszentrale für politische Bildung",
         "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "6afba0aa220658d5da987b8627238d9cdcdc2e8b1a2e1ae8982207bf25085ed7"
+        "solution": "c"
       },
       {
         "num": "RP-8",
@@ -4915,9 +3726,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qrp8.528dcff5.jpeg",
-        "category": "History & Geography",
-        "id": "d10be52f8c729eb6a1206313b58f38ab156339d8ea57e01280ce927eae9ca06d"
+        "image": "https://foreignvasi.com/qrp8.528dcff5.jpeg"
       },
       {
         "num": "RP-9",
@@ -4926,10 +3735,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Erster Minister / Erste Ministerin",
         "d": "Premierminister / Premierministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "d98d34e092d595cbac45c505a5733cbe6194149523bcd25099069aaad46048fc"
+        "solution": "a"
       },
       {
         "num": "RP-10",
@@ -4938,10 +3744,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Justizminister / Justizministerin",
         "d": "Finanzminister / Finanzministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "aa363de9123b1106802d092cd995f55f5d83815fe3ca41f0a9f128873275badf"
+        "solution": "a"
       }
     ],
     "SH": [
@@ -4953,9 +3756,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qsh1.c4be2a60.jpeg",
-        "category": "History & Geography",
-        "id": "943ee13e7bd9d7abe9ded3b2ecb9a3e4e9bf96ce2251ae9792ffd7ebeb1ca511"
+        "image": "https://foreignvasi.com/qsh1.c4be2a60.jpeg"
       },
       {
         "num": "SH-2",
@@ -4964,10 +3765,7 @@
         "b": "Mecklenburgische Seenplatte",
         "c": "Rhein-Sieg-Kreis",
         "d": "Ammerland",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "c45c9714c3c72ca9a96a9445eb76dd497506120944ba5b3a8c3580b51eb0038e"
+        "solution": "a"
       },
       {
         "num": "SH-3",
@@ -4976,10 +3774,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "114ec02d94c67b467fc002129b0ecd4c113805f153355786e7f94860c640b2ba"
+        "solution": "c"
       },
       {
         "num": "SH-4",
@@ -4988,10 +3783,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "b47fa844f4f3c655b7c096c1bf6de48c28e45bd78999020d9852ee87b9d88ee0"
+        "solution": "c"
       },
       {
         "num": "SH-5",
@@ -5000,10 +3792,7 @@
         "b": "grün-weiß-rot",
         "c": "blau-weiß-rot",
         "d": "weiß-rot",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "29bce109e869baddf1b67fece130c70470a5ce80845b6cd1cac926c8d7a11599"
+        "solution": "c"
       },
       {
         "num": "SH-6",
@@ -5012,10 +3801,7 @@
         "b": "beim / bei der Landesbeauftragten für politische Bildung",
         "c": "bei den Kirchen",
         "d": "bei der Verbraucherzentrale",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "7be4db33f9d4927bfd4a4954da37225d740939ae34638ae872ea12537c5f8e0f"
+        "solution": "b"
       },
       {
         "num": "SH-7",
@@ -5024,10 +3810,7 @@
         "b": "Kiel",
         "c": "Flensburg",
         "d": "Husum",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "206f5ccc573fcb004247847e5ec287124142687f141c2b254d7e326b3650c403"
+        "solution": "b"
       },
       {
         "num": "SH-8",
@@ -5037,9 +3820,7 @@
         "c": "3",
         "d": "4",
         "solution": "a",
-        "image": "https://foreignvasi.com/qsh8.442d7ed7.jpeg",
-        "category": "History & Geography",
-        "id": "e47db81b742d67b2beec2abd68e1e67649a34b47248ab7277990c1fab131ade4"
+        "image": "https://foreignvasi.com/qsh8.442d7ed7.jpeg"
       },
       {
         "num": "SH-9",
@@ -5048,10 +3829,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Erster Minister / Erste Ministerin",
         "d": "Premierminister / Premierministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "e46e7f8e6b81a66c3e2aa9d9787cca68d3f2fe5a76a92ea6f5bc28254db71b61"
+        "solution": "a"
       },
       {
         "num": "SH-10",
@@ -5060,10 +3838,7 @@
         "b": "Außenminister / Außenministerin",
         "c": "Justizminister / Justizministerin",
         "d": "Finanzminister / Finanzministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "f2546ed3f24b553f7e689027f523311c7bafabae8f7e7b9e78eae6db27129512"
+        "solution": "b"
       }
     ],
     "SL": [
@@ -5075,9 +3850,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qsl1.5d22fa5a.jpeg",
-        "category": "History & Geography",
-        "id": "322fe7eb2aa8df3db763952fb88557a0c410cf97f971889520f37f4d0a753de4"
+        "image": "https://foreignvasi.com/qsl1.5d22fa5a.jpeg"
       },
       {
         "num": "SL-2",
@@ -5086,10 +3859,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "f9472f0a391aee51d78186d4430ad59f4ce31a3f3734bc00f15665cf2ba93719"
+        "solution": "b"
       },
       {
         "num": "SL-3",
@@ -5098,10 +3868,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "113cdac45ce29915b02a1eef82933c17ebb05e51d426a5aa7fdf26db23bd117a"
+        "solution": "c"
       },
       {
         "num": "SL-4",
@@ -5110,10 +3877,7 @@
         "b": "Neunkirchen",
         "c": "Mecklenburgische Seenplatte",
         "d": "Altötting",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "fd56edcef348652fe79d8b44734de2c31c494b45fa822346de01e60fa2885e65"
+        "solution": "b"
       },
       {
         "num": "SL-5",
@@ -5122,10 +3886,7 @@
         "b": "schwarz-rot-gold",
         "c": "schwarz-gelb",
         "d": "weiß-blau",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "5ae1963e12a48fe699108ffe8cfd95f78ec595a891891468d79ff934d46e24a3"
+        "solution": "b"
       },
       {
         "num": "SL-6",
@@ -5134,10 +3895,7 @@
         "b": "bei der Landeszentrale für politische Bildung",
         "c": "bei den Kirchen",
         "d": "bei der Verbraucherzentrale",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "330b9003de60c1cd235c9bf7de4e18b4cda380c689811911681b3571b3f65cf1"
+        "solution": "b"
       },
       {
         "num": "SL-7",
@@ -5146,10 +3904,7 @@
         "b": "Neunkirchen",
         "c": "Völklingen",
         "d": "Homburg",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "9a2e27ebd2d72c6905b374aa8664c5cc2a427a446fcb95fe169417b43f23f99a"
+        "solution": "a"
       },
       {
         "num": "SL-8",
@@ -5159,9 +3914,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qsl8.e724ee61.jpeg",
-        "category": "History & Geography",
-        "id": "63c30b96060def1dbef0b7218b2796a6debccd42afee7edc7013323bf83196ed"
+        "image": "https://foreignvasi.com/qsl8.e724ee61.jpeg"
       },
       {
         "num": "SL-9",
@@ -5170,10 +3923,7 @@
         "b": "Erster Minister / Erste Ministerin",
         "c": "Premierminister / Premierministerin",
         "d": "Ministerpräsident / Ministerpräsidentin",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "09a5ec9f6689bef390f6aaa6f19dd9f9c0146c3479edffcff97222afcaf98750"
+        "solution": "d"
       },
       {
         "num": "SL-10",
@@ -5182,10 +3932,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Finanzminister / Finanzministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "62d5864bc3480df42547a7d47901da5d06676e3310c9eae3f8d1053c2b30ab4c"
+        "solution": "c"
       }
     ],
     "SN": [
@@ -5197,9 +3944,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qss1.71aaeb78.jpeg",
-        "category": "History & Geography",
-        "id": "643531abe126fa26499253c3ac45f5b91a66463e0b98ef7a19e8a84d419cac28"
+        "image": "https://foreignvasi.com/qss1.71aaeb78.jpeg"
       },
       {
         "num": "SN-2",
@@ -5208,10 +3953,7 @@
         "b": "Nordfriesland",
         "c": "Vogtlandkreis",
         "d": "Uckermark",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "70632f8fe7a00ac77741f0b25c5edc44be3908219dca9d7cbf20af17675b68b8"
+        "solution": "c"
       },
       {
         "num": "SN-3",
@@ -5220,10 +3962,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "bc029ba12afb28e112abeb167529405cfe1bc9ea44b4b06fd39e0038323c2df6"
+        "solution": "c"
       },
       {
         "num": "SN-4",
@@ -5232,10 +3971,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "ce57df1f9c0d41c9c6fdb46ddc7dd4624ce0167823f9d638157e521a71b0de62"
+        "solution": "b"
       },
       {
         "num": "SN-5",
@@ -5244,10 +3980,7 @@
         "b": "grün-weiß-rot",
         "c": "blau-weiß-rot",
         "d": "weiß-grün",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "fea0d2a5a61452952611a33ff7a51250777a755112088ca66961a5aaefc0469d"
+        "solution": "d"
       },
       {
         "num": "SN-6",
@@ -5256,10 +3989,7 @@
         "b": "beim Ordnungsamt der Gemeinde",
         "c": "bei den Kirchen",
         "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "3af1156cff1e3e4b3d5cb7bd316cf2badfe6c9e32d4f2b06bc325159a1328396"
+        "solution": "d"
       },
       {
         "num": "SN-7",
@@ -5268,10 +3998,7 @@
         "b": "Zwickau",
         "c": "Leipzig",
         "d": "Chemnitz",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "1674ebb9c8c344b43f94387bbdc5aa15c3dbdb0652a65cf7ffd95c6b3200828e"
+        "solution": "a"
       },
       {
         "num": "SN-8",
@@ -5281,9 +4008,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qss8.6922b0bb.jpeg",
-        "category": "History & Geography",
-        "id": "652a30ee6d9a3d189d4518f5d5756925a6df0218a3e0631f5b517f80b099c97a"
+        "image": "https://foreignvasi.com/qss8.6922b0bb.jpeg"
       },
       {
         "num": "SN-9",
@@ -5292,10 +4017,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Premierminister / Premierministerin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "09e052c7206ca04af7a5a8fb90c62ee87c4ef0972f3420e4d6afd690f8b31bef"
+        "solution": "b"
       },
       {
         "num": "SN-10",
@@ -5304,10 +4026,7 @@
         "b": "Finanzminister / Finanzministerin",
         "c": "Justizminister / Justizministerin",
         "d": "Innenminister / Innenministerin",
-        "solution": "a",
-        "image": "-",
-        "category": "Federal System",
-        "id": "ed3c298856c338d29bec79e6ae88ab4cc231c23445d9ab71bb19dec3caa9e24f"
+        "solution": "a"
       }
     ],
     "ST": [
@@ -5319,9 +4038,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qsa1.1e4245dd.jpeg",
-        "category": "History & Geography",
-        "id": "0ade9b530ede0a6e421d7fd404981a2a68a9741ba37647f5b8d0b2d9e6c0712d"
+        "image": "https://foreignvasi.com/qsa1.1e4245dd.jpeg"
       },
       {
         "num": "ST-2",
@@ -5330,10 +4047,7 @@
         "b": "Ammerland",
         "c": "Börde",
         "d": "Altötting",
-        "solution": "c",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "5ae297b7b49bd54ac134e0ee1e9a75f4f4bd06df7a010309bf166dd329363a3e"
+        "solution": "c"
       },
       {
         "num": "ST-3",
@@ -5342,10 +4056,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "1371dbca792c693fa7a54c8803bd306446aceb46c76dd80dce8a039b794370fe"
+        "solution": "c"
       },
       {
         "num": "ST-4",
@@ -5354,10 +4065,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "08939333280c6656eebdbd21f1157680d57bd23eb99476f20acc7ede1e1a9a7e"
+        "solution": "c"
       },
       {
         "num": "ST-5",
@@ -5366,10 +4074,7 @@
         "b": "grün-weiß-rot",
         "c": "weiß-blau",
         "d": "blau-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "7a050fac70c57dbb4754ee354f906a95a54218762835409cdff1fd99cc6dbb9b"
+        "solution": "a"
       },
       {
         "num": "ST-6",
@@ -5378,10 +4083,7 @@
         "b": "bei den Kirchen",
         "c": "beim Ordnungsamt der Gemeinde",
         "d": "bei der Verbraucherzentrale",
-        "solution": "a",
-        "image": "-",
-        "category": "General",
-        "id": "85ff5098f6acac6c8d1fc6db6a9ef8f5d233d7384042f29c7a2e9fd3478e5c3f"
+        "solution": "a"
       },
       {
         "num": "ST-7",
@@ -5390,10 +4092,7 @@
         "b": "Wittenberg",
         "c": "Halle",
         "d": "Dessau",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "464a76a47a3832a2094dc3ebb7bf896097347f458a60abd6b0e173d898986516"
+        "solution": "a"
       },
       {
         "num": "ST-8",
@@ -5403,9 +4102,7 @@
         "c": "3",
         "d": "4",
         "solution": "c",
-        "image": "https://foreignvasi.com/qsa8.fd6b5f78.jpeg",
-        "category": "History & Geography",
-        "id": "8b083d1ffe15e11bbeee79332e0c656bff2ace18693bc26e9295ffdcf3f31d4d"
+        "image": "https://foreignvasi.com/qsa8.fd6b5f78.jpeg"
       },
       {
         "num": "ST-9",
@@ -5414,10 +4111,7 @@
         "b": "Bürgermeister / Bürgermeisterin",
         "c": "Ministerpräsident / Ministerpräsidentin",
         "d": "Erster Minister / Erste Ministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "2c664fb8f188c67c1fc246936d7189919ad1aec6eda8ea777fa234e0e3302a8b"
+        "solution": "c"
       },
       {
         "num": "ST-10",
@@ -5426,10 +4120,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "Law & Governance",
-        "id": "47394418fef1afcf65320ad82b13a460a55050d9c33e95717a93f31b3e66930f"
+        "solution": "c"
       }
     ],
     "TH": [
@@ -5441,9 +4132,7 @@
         "c": "3",
         "d": "4",
         "solution": "d",
-        "image": "https://foreignvasi.com/qtg1.aca82959.jpeg",
-        "category": "History & Geography",
-        "id": "e0adc12492e2ec06d2e4e360d7265bd08468e7f70b20cc74f314b27b5b4291d9"
+        "image": "https://foreignvasi.com/qtg1.aca82959.jpeg"
       },
       {
         "num": "TH-2",
@@ -5452,10 +4141,7 @@
         "b": "Wartburgkreis",
         "c": "Ammerland",
         "d": "Nordfriesland",
-        "solution": "b",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "6cc9111da8584ff857c0112d39170cf04a35520b42b4a4d3e7570224d484597e"
+        "solution": "b"
       },
       {
         "num": "TH-3",
@@ -5464,10 +4150,7 @@
         "b": "4",
         "c": "5",
         "d": "6",
-        "solution": "c",
-        "image": "-",
-        "category": "Elections",
-        "id": "49d07c2408bd0da3f1cc31145a8534aa6adf84e0d8f6d9eb45c9a239a3c5b64d"
+        "solution": "c"
       },
       {
         "num": "TH-4",
@@ -5476,10 +4159,7 @@
         "b": "18",
         "c": "16",
         "d": "20",
-        "solution": "c",
-        "image": "-",
-        "category": "General",
-        "id": "753293ad2ba8884be87987197cdd7ddb7f5a8ca9766f4e810ba878c83c87eaa1"
+        "solution": "c"
       },
       {
         "num": "TH-5",
@@ -5488,10 +4168,7 @@
         "b": "schwarz-gold",
         "c": "grün-weiß-rot",
         "d": "blau-weiß-rot",
-        "solution": "a",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "d28a7566c4fe1c84a23f9091ede81b442ad92f9e3eb8825d0e89ba85f472f8fa"
+        "solution": "a"
       },
       {
         "num": "TH-6",
@@ -5500,10 +4177,7 @@
         "b": "bei den Kirchen",
         "c": "bei der Verbraucherzentrale",
         "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d",
-        "image": "-",
-        "category": "General",
-        "id": "5417041f62678e60f060defb760a932e0ae9508ea05b9d9c9a1eef35af8a14be"
+        "solution": "d"
       },
       {
         "num": "TH-7",
@@ -5512,10 +4186,7 @@
         "b": "Gera",
         "c": "Eisenach",
         "d": "Erfurt",
-        "solution": "d",
-        "image": "-",
-        "category": "History & Geography",
-        "id": "0bde6a2d4739ea5ec5ba162422ea384fee096e05875ccf768996ebdfde3916a9"
+        "solution": "d"
       },
       {
         "num": "TH-8",
@@ -5525,9 +4196,7 @@
         "c": "3",
         "d": "4",
         "solution": "b",
-        "image": "https://foreignvasi.com/qtg8.56380392.jpeg",
-        "category": "History & Geography",
-        "id": "031966c1d23baddb69afbaddd4c83c6477edc16ae5f52feb4e8c58e676091847"
+        "image": "https://foreignvasi.com/qtg8.56380392.jpeg"
       },
       {
         "num": "TH-9",
@@ -5536,10 +4205,7 @@
         "b": "Ministerpräsident / Ministerpräsidentin",
         "c": "Bürgermeister / Bürgermeisterin",
         "d": "Premierminister / Premierministerin",
-        "solution": "b",
-        "image": "-",
-        "category": "General",
-        "id": "d7ad9c175745b05f202767e26ff0fb1c44e30a522fe1b81f9ff75ced99bf8b18"
+        "solution": "b"
       },
       {
         "num": "TH-10",
@@ -5548,10 +4214,7 @@
         "b": "Innenminister / Innenministerin",
         "c": "Außenminister / Außenministerin",
         "d": "Justizminister / Justizministerin",
-        "solution": "c",
-        "image": "-",
-        "category": "Federal System",
-        "id": "a66477bf5d7fea979df0689bb3a311a954c40a7e8f5e1aeb2cc6217295401747"
+        "solution": "c"
       }
     ]
   }

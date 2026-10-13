@@ -1,7 +1,11 @@
 # LID-sim — Leben in Deutschland Quiz Simulator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+<p align="center">
+  <img src="public/logo.svg" alt="LID-sim Logo" width="128" height="128"><br>
+  <img src="public/badge.svg" alt="LID-sim Version Badge">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python 3.8+"></a>
+</p>
 
 An offline-first, dual-interface simulator for the German naturalization test (**"Leben in Deutschland"** / **"Einbürgerungstest"**).
 
@@ -12,162 +16,155 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 ## Features
 
 - **Dual Interfaces**:
-  - **Terminal REPL (`cli.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, and iTerm2 inline graphics for coats of arms and question illustrations.
-  - **Modern Web Application (`index.html` / `src/`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive design.
-- **Question Sets (Fragensets)**: Group questions by textbook chapters (e.g. *Lehrbuch: Seiten 10–25*) or thematic blocks (*Politik*, *Geschichte*, *Gesellschaft*).
+  - **Terminal REPL (`cli/lid-quiz.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, ordering toggle (numerical vs. textbook page order), and iTerm2 inline graphics for coats of arms and question illustrations.
+  - **Modern Web Application (`src/` / `index.html`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive design.
+- **Unified Semantic Versioning**: Single source of truth (`VERSION` and `version.json`), starting from `1.0.0`.
+- **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) through Git pre-push hook.
+- **Question Sets (Fragensets)**: Group questions by textbook chapters (*Lehrbuch: Seiten 10–25*) or thematic blocks (*Politik*, *Geschichte*, *Gesellschaft*).
 - **Official Exam Simulation (Prüfungssimulation)**: Realistic test mode with 33 randomized questions (30 general + 3 state), 60-minute countdown, passing thresholds (≥15 for integration courses, ≥17 for citizenship), and wrong-answer review.
-- **Complete Offline Support**: Pre-cached illustrations (`Assets/cache/`) and coats of arms (`Assets/coats/`) with automatic fallback to remote mirrors.
-- **Verified Official Questions**: Curated and verified against the official *Bundesamt für Migration und Flüchtlinge* (BAMF) catalog.
+- **Complete Offline Support**: Pre-cached illustrations (`assets/cache/`) and coats of arms (`assets/coats/`) with automatic fallback to remote mirrors.
+- **Verified Official Questions**: Curated and cleaned database (without redundant technical IDs or categories) synchronized with official *Bundesamt für Migration und Flüchtlinge* (BAMF) catalog.
 - **State Selection**: Seamlessly switch between all 16 federal states with state-specific question IDs (`NW-1`, `BY-10`, etc.).
-
----
-
-## Quick Start
-
-### Prerequisites
-
-For the CLI:
-- Python 3.8+
-- The `rich` library:
-  ```bash
-  pip install rich
-  ```
-
-For the Web App:
-- Node.js 18+ (for development & building):
-  ```bash
-  npm install
-  npm run dev
-  ```
-
----
-
-## CLI Usage (`cli.py`)
-
-Run the interactive terminal simulator:
-
-```bash
-python3 cli.py
-```
-
-### Command-line Arguments
-
-| Flag | Argument | Description | Example |
-|---|---|---|---|
-| `-s`, `--state` | `CODE` | Set active Bundesland (default: `NW`) | `python3 cli.py -s BY` |
-| `-g`, `--goto` | `N` | Jump directly to question on start | `python3 cli.py -g 42` or `python3 cli.py -g NW-1` |
-| `--set` | `SET_ID` | Activate a specific question set on start | `python3 cli.py --set book-p10-25` |
-| `--exam` | | Launch directly into 33-question exam simulation | `python3 cli.py --exam` |
-
-### REPL Commands
-
-Once inside the interactive REPL, navigate and answer using quick single-key or short commands:
-
-| Command | Action |
-|---|---|
-| `<Enter>` / `→` | Next question |
-| `←` / `p` | Previous question |
-| `a` / `b` / `c` / `d` | Select an answer option (shows immediate green/red feedback in practice) |
-| `<number>` or `g <num>` | Jump to question by number (e.g. `42`, `150`, or `NW-3`) |
-| `s <CODE>` | Switch active Bundesland (e.g. `s BY`, `s BE`, `s SN`) |
-| `set` | List all available question sets (textbook chapters & themes) |
-| `set <id\|num>` | Activate a question set (e.g. `set 1` or `set book-p10-25`) |
-| `set all` | Return to full catalog (all 310 questions) |
-| `exam` | Start official 33-question simulation exam with 60-min timer and grading |
-| `lands` or `list` | Display table of all 16 Bundesländer with coats of arms |
-| `r` | Reset selected answer for current question |
-| `?` or `help` | Show command reference |
-| `q` or `exit` | Quit the application |
-
-> **iTerm2 Graphics Support**:
-> In iTerm2, official coats of arms and question illustrations render inline using the native iTerm2 image protocol. On other terminals, the CLI gracefully falls back to clean, colorized ANSI panels.
-
----
-
-## Generating / Updating Question Sets (`parse_pdf_sets.py`)
-
-The `parse_pdf_sets.py` script extracts question sets from the **Hueber *Mein Leben in Deutschland – Orientierungskurs* PDF** (not included in this repo — you need your own purchased copy) and converts them into the `sets.json` format.
-
-### Requirements
-
-```bash
-pip install pymupdf
-```
-
-### Usage
-
-```bash
-# Preview generated sets as JSON (stdout)
-python3 parse_pdf_sets.py
-
-# Merge new sets into sets.json (skips IDs already present)
-python3 parse_pdf_sets.py --merge
-
-# Only Lernseite summary sets (one per chapter)
-python3 parse_pdf_sets.py --lernseite-only
-
-# Only per-content-page sets
-python3 parse_pdf_sets.py --content-only
-
-# Use a different PDF path
-python3 parse_pdf_sets.py --pdf /path/to/orientierungskurs.pdf
-```
-
-The PDF must be named `Mein_Leben_in_Deutschland_Orientierungskurs.pdf` in the repo root, or passed via `--pdf`.
-
-### How it works
-
-Two extraction passes:
-
-1. **Lernseite pages** — each chapter summary page contains a `Prüfungsaufgaben` block listing all relevant question numbers for that module. One set per Lernseite.
-2. **Content pages** — question numbers appear as left-margin sidebar annotations (printed at `x < 45 pt` from the page edge). Extracted spatially — no brittle regex on prose text. One set per book page.
-
-After extraction, `--merge` adds only sets whose `id` is not already present in `sets.json`, so hand-crafted entries are never overwritten.
-
----
-
-## Web Application (`src/` / `index.html`)
-
-A modern web application built with React, Vite, Tailwind CSS, and Lucide icons.
-
-### Development & Running Locally
-
-```bash
-npm install
-npm run dev
-```
-
-Build for static hosting (e.g., GitHub Pages or static web servers):
-```bash
-npm run build
-```
-The output is generated in `dist/` with all assets, questions, and sets ready to serve.
-
-### Key Features
-- **Header State Coat & Selector**: Modal to select from all 16 federal states with coats of arms.
-- **Question Sets (Fragensets)**: Group questions by textbook pages or topic modules.
-- **Navigator Bottom Sheet**: Quick jump by number or interactive 310-question grid.
-- **Exam Simulation (Prüfung)**: 33 randomized questions with timer, early submission, and detailed results breakdown.
-- **Dark Mode**: Supports light, dark, and system themes.
-- **Keyboard Navigation**: Arrow keys (`←` / `→`) and numbers `1`–`4` for fast practice.
 
 ---
 
 ## Repository Structure
 
 ```
-├── Assets/
-│   ├── cache/          # Pre-cached question illustrations (42 images)
-│   └── coats/          # PNG coats of arms for all 16 Bundesländer
-├── cli.py              # Interactive Python terminal REPL & exam simulator
-├── parse_pdf_sets.py   # PDF parser: extracts question sets → sets.json
-├── index.html          # Web application HTML entry point
-├── package.json        # Node.js project & Vite build scripts
-├── questions.json      # Official question database (general + 16 states)
-├── sets.json           # Curated question sets (textbook pages & topics)
-├── src/                # Modern React web app source code
-├── LICENSE             # Software and content license information
-└── README.md           # Documentation
+LID-sim/
+├── VERSION                         ← єдина семантична версія ("1.0.0")
+├── version.json                    ← { "version": "1.0.0", "date": "2026-10-13" }
+│
+├── assets/                         ← статичні медіа-ресурси
+│   ├── coats/                      ← PNG гербів 16 федеральних земель (BE.png, BY.png…)
+│   ├── cache/                      ← кешовані зображення до питань (у .gitignore)
+│   └── README.md
+│
+├── data/
+│   ├── questions/
+│   │   ├── questions.json          ← очищена база питань (300 загальних + 160 регіональних)
+│   │   └── README.md
+│   └── sets/
+│       ├── sets.json               ← тематичні та посторінкові сети питань
+│       └── README.md
+│
+├── tools/                          ← утиліти обслуговування (Python)
+│   ├── parse_pdf_sets.py           ← вилучення сетів з PDF підручника
+│   ├── sync_from_pdf.py            ← синхронізація questions.json з офіційним PDF BAMF
+│   ├── requirements.txt            ← pymupdf
+│   └── README.md
+│
+├── materials/                      ← офіційні PDF BAMF та підручники (у .gitignore)
+│   └── README.md
+│
+├── cli/                            ← консольний тренажер
+│   ├── lid-quiz.py                 ← інтерактивний CLI REPL
+│   ├── requirements.txt            ← rich>=13.0
+│   └── README.md
+│
+├── src/                            ← React/Vite web application
+│   ├── App.tsx
+│   ├── data/
+│   ├── types.ts
+│   ├── version.ts                  ← імпортує єдину версію з version.json
+│   └── ...
+│
+├── public/                         ← статичні файли веб-додатку
+│   ├── questions.json              ← symlink → ../data/questions/questions.json
+│   ├── sets.json                   ← symlink → ../data/sets/sets.json
+│   ├── logo.svg                    ← логотип (генерований logogen)
+│   └── badge.svg                   ← бейдж версії (генерований logogen)
+│
+├── .github/
+│   ├── hooks/
+│   │   └── pre-push                ← шаблон git-хука бампу версії та генерації лого
+│   └── workflows/
+│       └── deploy.yml              ← GitHub Pages deploy
+│
+├── Makefile                        ← setup, install-hooks, badge, dev, build
+├── package.json                    ← версія 1.0.0, скрипти збірки
+├── LICENSE                         ← ліцензія MIT
+└── README.md                       ← головна документація
+```
+
+---
+
+## Quick Start
+
+### 1. Setup Environment
+
+```bash
+# Клонування репозиторію
+git clone https://github.com/arkk4/LID-sim.git
+cd LID-sim
+
+# Налаштування symlink у public/ та встановлення pre-push хука
+make setup
+```
+
+### 2. Terminal CLI (`cli/lid-quiz.py`)
+
+Встановлення залежностей:
+```bash
+pip install -r cli/requirements.txt
+```
+
+Запуск тренажера:
+```bash
+python3 cli/lid-quiz.py -s BY
+```
+
+Ключові параметри:
+- `-s CODE` — вибір федеральної землі (наприклад `-s NW`, `-s BY`, `-s BE`).
+- `-g N` — швидкий старт з питання номер `N`.
+- `--set SET_ID` — активація конкретного сету (наприклад `--set book-p14`).
+- `--sort` — сортування питань у сеті чисельно (за замовчуванням — порядок підручника).
+- `--exam` — прямий запуск офіційної 33-хвилинної симуляції екзамену.
+
+Детальніше у [cli/README.md](cli/README.md).
+
+### 3. Web Application (`src/`)
+
+```bash
+# Встановлення npm-пакетів
+npm install
+
+# Запуск dev-сервера
+npm run dev
+
+# Збірка продакшн версії
+npm run build
+```
+
+---
+
+## Maintenance & Tools
+
+Усі інструменти парсингу та синхронізації знаходяться у теці `tools/`:
+
+- **Синхронізація питань з PDF BAMF**:
+  ```bash
+  python3 tools/sync_from_pdf.py --apply --report
+  ```
+- **Парсинг сетів з підручника**:
+  ```bash
+  python3 tools/parse_pdf_sets.py --merge
+  ```
+
+Детальніше у [tools/README.md](tools/README.md).
+
+---
+
+## Versioning & Git Hooks
+
+У репозиторії налаштовано pre-push хук (`.github/hooks/pre-push`):
+- При кожному `git push` у гілку `main` хук запитує нову версію (або залишає поточну).
+- Автоматично оновлює `VERSION`, `version.json` та `package.json`.
+- Запускає `logogen` для синхронної регенерації `public/logo.svg` та `public/badge.svg`.
+
+Вручну згенерувати бейджі можна через:
+```bash
+make badge
 ```
 
 ---

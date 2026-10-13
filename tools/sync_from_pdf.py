@@ -30,9 +30,10 @@ try:
 except ImportError:
     sys.exit("pymupdf not installed. Run: pip install pymupdf")
 
-PDF_PATH  = Path(__file__).parent / "gesamtfragenkatalog-lebenindeutschland.pdf"
-JSON_PATH = Path(__file__).parent / "questions.json"
-REPORT_PATH = Path(__file__).parent / "questions_source_report.txt"
+REPO_ROOT   = Path(__file__).resolve().parent.parent
+PDF_PATH    = REPO_ROOT / "materials" / "gesamtfragenkatalog-lebenindeutschland.pdf"
+JSON_PATH   = REPO_ROOT / "data" / "questions" / "questions.json"
+REPORT_PATH = REPO_ROOT / "data" / "questions" / "sync_report.txt"
 
 
 # ── PDF parsing ──────────────────────────────────────────────────────────────

@@ -1,0 +1,47 @@
+#!/bin/sh
+# Запустити після клону: make install-hooks
+set -e
+
+LOGOGEN="$HOME/git-repos/logogen/logogen.mjs"
+VERSION_FILE="version.json"
+
+# 1. Зчитати поточну версію
+VERSION=$(node -e "console.log(require('./$VERSION_FILE').version)")
+
+# 2. Запитати чи бампити (тільки якщо таргет — main)
+TARGET_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [ "$TARGET_BRANCH" = "main" ]; then
+  echo "Поточна версія: $VERSION"
+  printf "Новий патч? (Enter — залишити, або введи нову версію, наприклад 1.0.1): "
+  read NEW_VERSION < /dev/tty || true
+  if [ -n "$NEW_VERSION" ]; then
+    node -e "
+      const fs = require('fs');
+      const v = JSON.parse(fs.readFileSync('$VERSION_FILE'));
+      v.version = '$NEW_VERSION';
+      v.date = new Date().toISOString().slice(0,10);
+      fs.writeFileSync('$VERSION_FILE', JSON.stringify(v, null, 2) + '\n');
+      fs.writeFileSync('VERSION', '$NEW_VERSION\n');
+      const p = JSON.parse(fs.readFileSync('package.json'));
+      p.version = '$NEW_VERSION';
+      fs.writeFileSync('package.json', JSON.stringify(p, null, 2) + '\n');
+    "
+    VERSION="$NEW_VERSION"
+    git add version.json VERSION package.json
+    echo "✓ Версію оновлено до $VERSION"
+  fi
+fi
+
+# 3. Генерувати logo + badge через logogen
+if [ -f "$LOGOGEN" ]; then
+  node "$LOGOGEN" \
+    --name "LID-sim" --version "v$VERSION" \
+    --out public/logo.svg
+  node "$LOGOGEN" \
+    --badge --name "LID-sim" --version "v$VERSION" \
+    --out public/badge.svg
+  git add public/logo.svg public/badge.svg
+  echo "✓ logo.svg і badge.svg оновлені (v$VERSION)"
+else
+  echo "⚠ logogen не знайдено ($LOGOGEN), пропускаємо"
+fi

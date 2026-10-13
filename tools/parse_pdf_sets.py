@@ -21,8 +21,9 @@ import sys
 import argparse
 from pathlib import Path
 
-PDF_PATH = Path(__file__).parent / "Mein_Leben_in_Deutschland_Orientierungskurs.pdf"
-SETS_PATH = Path(__file__).parent / "sets.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+PDF_PATH = REPO_ROOT / "materials" / "Mein_Leben_in_Deutschland_Orientierungskurs.pdf"
+SETS_PATH = REPO_ROOT / "data" / "sets" / "sets.json"
 
 Q_MIN, Q_MAX = 1, 310
 # Left-margin threshold for sidebar question annotations (points)

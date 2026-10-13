@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="109" height="20" viewBox="0 0 109 20" role="img" aria-label="LID-sim: v1.0.0">
+<title>LID-sim: v1.0.0</title>
+<defs><clipPath id="b1ugrxstc"><rect width="109" height="20" rx="3"/></clipPath><clipPath id="b1ugrxstv"><rect x="61" width="48" height="20"/></clipPath></defs>
+<g clip-path="url(#b1ugrxstc)">
+<rect width="61" height="20" fill="#555555"/>
+<g clip-path="url(#b1ugrxstv)"><g transform="translate(61 -14) scale(0.48)"><rect width="100" height="100" fill="#f4a261"/><circle cx="75.99" cy="2.86" r="35.05" fill="#264653"/><circle cx="83.32" cy="82.18" r="42.15" fill="#2a9d8f"/><circle cx="6.44" cy="14.04" r="42.39" fill="#e76f51"/></g></g>
+</g>
+<g text-anchor="middle" font-size="11" text-rendering="geometricPrecision">
+<g font-family="Verdana, Geneva, 'DejaVu Sans', sans-serif">
+<text x="30.5" y="11" dy="0.35em" fill="#010101" fill-opacity=".3" textLength="49">LID-sim</text>
+<text x="30.5" y="10" dy="0.35em" fill="#fff" textLength="49">LID-sim</text>
+</g>
+<text x="85" y="10" dy="0.35em" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" fill="#111111" stroke="#ffffff" stroke-opacity="0.9" stroke-width="2.2" paint-order="stroke" stroke-linejoin="round" textLength="36">v1.0.0</text>
+</g>
+</svg>
