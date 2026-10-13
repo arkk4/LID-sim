@@ -18,7 +18,7 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 - **Dual Interfaces**:
   - **Terminal REPL (`cli/lid-quiz.py`)**: Keyboard-driven interactive CLI built with `rich`, featuring question sets, exam simulation, question ordering toggle (numerical vs. textbook page order), and iTerm2 inline graphics for coats of arms and illustrations.
   - **Modern Web Application (`src/` / `index.html`)**: Next-generation React + Vite application with dark mode, question sets (thematic & textbook chapters), quick-jump drawer, exam simulation (33 questions, 60 minutes, scoring breakdown), and responsive layout.
-- **Unified Semantic Versioning**: Single source of truth (`VERSION` and `version.json`), starting from `1.0.0`.
+- **Unified Semantic Versioning**: Single source of truth ([`version.json`](version.json)), starting from `1.0.0`.
 - **Dynamic Logo & Badge**: Generated via [logogen](https://github.com/arkk4/logogen) through Git pre-push hook using the app's zinc palette and concentric rings pattern.
 - **Question Sets (Fragensets)**: Group questions by textbook chapters (*Lehrbuch: Seiten 10–25*) or thematic modules (*Politik*, *Geschichte*, *Gesellschaft*).
 - **Official Exam Simulation (Prüfungssimulation)**: Realistic test mode with 33 randomized questions (30 general + 3 state), 60-minute countdown, passing thresholds (≥15 for integration courses, ≥17 for citizenship), and wrong-answer review.
@@ -32,8 +32,7 @@ Includes the complete official catalog of **300 general questions** plus **10 st
 
 ```
 LID-sim/
-├── VERSION                         ← Single semantic version ("1.0.0")
-├── version.json                    ← { "version": "1.0.0", "date": "2026-10-13" }
+├── version.json                    ← Single source of truth: version, app name & logo styling
 │
 ├── assets/                         ← Static media resources
 │   ├── coats/                      ← PNG coats of arms for 16 federal states (BE.png, BY.png…)

@@ -21,13 +21,12 @@ if [ "$TARGET_BRANCH" = "main" ]; then
       v.version = '$NEW_VERSION';
       v.date = new Date().toISOString().slice(0,10);
       fs.writeFileSync('$VERSION_FILE', JSON.stringify(v, null, 2) + '\n');
-      fs.writeFileSync('VERSION', '$NEW_VERSION\n');
       const p = JSON.parse(fs.readFileSync('package.json'));
       p.version = '$NEW_VERSION';
       fs.writeFileSync('package.json', JSON.stringify(p, null, 2) + '\n');
     "
     VERSION="$NEW_VERSION"
-    git add version.json VERSION package.json
+    git add version.json package.json
     echo "✓ Версію оновлено до $VERSION"
   fi
 fi
