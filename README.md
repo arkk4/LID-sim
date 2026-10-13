@@ -155,16 +155,42 @@ For details, refer to [tools/README.md](tools/README.md).
 
 ---
 
-## Versioning & Git Hooks
+## Versioning, Tooling & Automation Architecture
 
-The repository uses a pre-push hook (`.github/hooks/pre-push`):
-- When pushing to `main`, the hook interactively prompts for a new semantic version (or keeps current).
-- Synchronizes `VERSION`, `version.json`, and `package.json`.
-- Invokes `logogen` to generate fresh `public/logo.svg` and `public/badge.svg` using the app's zinc palette and rings layout.
+All project metadata, versioning, and visual branding parameters are centralized in a **single source of truth**: [`version.json`](version.json).
 
-To regenerate the logo and badge manually:
+```json
+{
+  "name": "LID-sim",
+  "version": "1.0.0",
+  "date": "2026-10-13",
+  "codename": "",
+  "logo": {
+    "pattern": "rings",
+    "palette": "#09090b,#27272a,#52525b,#a1a1aa,#fafafa",
+    "shape": "squircle",
+    "font": "sans"
+  }
+}
+```
+
+### Roles of `version.json`, `generate_logo.mjs`, `package.json`, `Makefile`, and Git Hook
+
+To eliminate duplication and maintain clear boundaries, each component has a distinct role:
+
+| Component | Role | What it does |
+|---|---|---|
+| **`version.json`** | **Configuration** (Source of Truth) | Defines app name, version, date, and logo styling parameters (`pattern`, `palette`, `shape`, `font`). |
+| **`tools/generate_logo.mjs`** | **Worker Script** | The single script that reads `version.json` and runs `logogen` to generate `public/logo.svg` and `public/badge.svg`. |
+| **`package.json`** | **Node.js Interface** | Exposes `npm run badge` (delegating to `tools/generate_logo.mjs`) alongside `dev` and `build`. |
+| **`Makefile`** | **Universal CLI Interface** | Language-agnostic shortcuts (`make setup`, `make badge`, `make dev`, `make build`) for developers and CI. |
+| **`.github/hooks/pre-push`** | **Event Trigger** | Git hook that runs on `git push origin main`, interactively prompts for version bump, and executes `generate_logo.mjs`. |
+
+To manually regenerate the logo and badge:
 ```bash
 make badge
+# or:
+npm run badge
 ```
 
 ---

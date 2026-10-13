@@ -48,3 +48,16 @@ python3 tools/sync_from_pdf.py --apply
 # Apply changes and append an entry to data/questions/sync_report.txt
 python3 tools/sync_from_pdf.py --apply --report
 ```
+
+### 3. `generate_logo.mjs`
+Generates `public/logo.svg` and `public/badge.svg` using [logogen](https://github.com/arkk4/logogen).
+Reads the app name, semantic version, and logo styling parameters (`pattern`, `palette`, `shape`, `font`) directly from the single source of truth: `version.json`.
+
+**Usage:**
+```bash
+node tools/generate_logo.mjs
+# or:
+make badge
+# or:
+npm run badge
+```
