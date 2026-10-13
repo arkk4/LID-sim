@@ -35,9 +35,7 @@ QUESTIONS_FILE = os.path.join(REPO_ROOT, "data", "questions", "questions.json")
 SETS_FILE      = os.path.join(REPO_ROOT, "data", "sets", "sets.json")
 COATS_DIR      = os.path.join(REPO_ROOT, "assets", "coats")
 CACHE_DIR      = os.path.join(REPO_ROOT, "assets", "cache")
-LOGO_PNG       = os.path.join(REPO_ROOT, "public", "logo.png")
-LOGO_SVG       = os.path.join(REPO_ROOT, "public", "logo.svg")
-LOGO_FILE      = LOGO_PNG if os.path.exists(LOGO_PNG) else LOGO_SVG
+LOGO_PATH      = os.path.join(REPO_ROOT, "public", "logo.svg")
 
 # Read version from version.json
 _version_file = os.path.join(REPO_ROOT, "version.json")
@@ -86,8 +84,9 @@ def _iterm2(b64: str, name: str, w, h) -> str:
 
 def render_header(state: str, num_str: str, set_title: str = None, exam_info: str = None) -> None:
     """
-    Renders top header with:
-    [Logo] v{VERSION}  [Coat of arms] [{state}]  {num_str}  [Set/Exam info]
+    Renders top header with two stacked lines:
+      Line 1: [Logo] LID-sim v{VERSION}
+      Line 2: [Coat of arms] [{state}] {state_name}   {num_str}  [Set/Exam info]
     """
     extra = ""
     if exam_info:
@@ -95,47 +94,41 @@ def render_header(state: str, num_str: str, set_title: str = None, exam_info: st
     elif set_title:
         extra = f"  [Set: {set_title}]"
 
+    state_name = STATE_NAMES.get(state, state)
     png = os.path.join(COATS_DIR, f"{state}.png")
     has_coat = os.path.exists(png)
-    has_logo = os.path.exists(LOGO_FILE)
+    has_logo = os.path.exists(LOGO_PATH)
 
     if is_iterm2() and (has_logo or has_coat):
-        img_w = 3   # character cells wide
+        img_w = 4   # character cells wide
         img_h = 2   # character cells tall
         seq = []
-        visual_len = 0
 
-        # 1. Logo
+        # ── Line 1: Logo + Version ──
         if has_logo:
-            seq.append(_iterm2(_b64(LOGO_FILE), "logo", img_w, img_h))
+            seq.append(_iterm2(_b64(LOGO_PATH), "logo.svg", img_w, img_h))
             seq.append("\033[1A")
-            visual_len += img_w
+            seq.append(f"  \033[1mLID-sim\033[0m \033[2mv{VERSION}\033[0m\n\n")
+        else:
+            seq.append(f"  \033[1mLID-sim\033[0m \033[2mv{VERSION}\033[0m\n")
 
-        # 2. Version
-        v_tag = f" v{VERSION}  "
-        seq.append(f"\033[1m\033[97m{v_tag}\033[0m")
-        visual_len += len(v_tag)
-
-        # 3. Coat of arms
+        # ── Line 2: Coat of arms + State & details ──
+        state_info = f"[{state}] {state_name}   \033[96m{num_str}{extra}\033[0m"
         if has_coat:
             seq.append(_iterm2(_b64(png), state, img_w, img_h))
             seq.append("\033[1A")
-            visual_len += img_w
-
-        # 4. State & question details
-        state_info = f" [{state}]   {num_str}{extra}"
-        visual_len += len(state_info)
-        cols = term_cols()
-        pad = max(0, cols - visual_len - 1)
-        seq.append(f"\033[1m\033[93m{state_info}{' ' * pad}\033[0m\n\n")
+            seq.append(f"  \033[1m\033[93m{state_info}\033[0m\n\n")
+        else:
+            seq.append(f"  \033[1m\033[93m{state_info}\033[0m\n\n")
 
         sys.stdout.write("".join(seq))
         sys.stdout.flush()
     else:
-        label = f"  LID-sim v{VERSION}   [{state}]   {num_str}{extra}"
-        cols = term_cols()
-        pad  = max(0, cols - len(label) - 1)
-        sys.stdout.write(f"\033[1m\033[93m{label}{' ' * pad}\033[0m\n\n")
+        seq = [
+            f"  \033[1mLID-sim\033[0m \033[2mv{VERSION}\033[0m\n",
+            f"  \033[1m\033[93m[{state}] {state_name}\033[0m   \033[96m{num_str}{extra}\033[0m\n\n",
+        ]
+        sys.stdout.write("".join(seq))
         sys.stdout.flush()
 
 
