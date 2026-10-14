@@ -182,7 +182,7 @@
     },
     {
       "num": "21",
-      "question": "Welches ist das Wappen der Bundesrepublik Deutschland? Bild 1 Bild 2 Bild 3 Bild 4",
+      "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
@@ -1888,7 +1888,7 @@
     },
     {
       "num": "209",
-      "question": "Welches war das Wappen der Deutschen Demokratischen Republik? Bild 1 Bild 2 Bild 3 Bild 4",
+      "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
@@ -2045,7 +2045,7 @@
     },
     {
       "num": "226",
-      "question": "Welche ist die Flagge der Europäischen Union? Bild 1 Bild 2 Bild 3 Bild 4",
+      "question": "Welche ist die Flagge der Europäischen Union?",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
