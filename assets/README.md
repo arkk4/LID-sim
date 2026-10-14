@@ -30,4 +30,4 @@ assets/
 ## Details
 
 - **`coats/`** — High-resolution transparent PNG images of state coats of arms. Rendered in the web header and state switcher, as well as in terminal sessions via the iTerm2 inline graphics protocol.
-- **`cache/`** — Contains local fallback images for questions featuring maps or diagrams (e.g. outline maps for questions 56–99, 148, 160, 212, etc.). Tracked in `.gitignore` to avoid versioning runtime cache files.
+- **`cache/`** — Primary static cache of question illustrations and maps (e.g. outline maps for questions 56–99, 148, 160, 212, etc.) for instant, offline-ready rendering across web and CLI.

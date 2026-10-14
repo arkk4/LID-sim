@@ -6,7 +6,7 @@ import {
   Menu, Settings
 } from 'lucide-react';
 import { BundeslandCode, Question, QuestionSet, ThemeMode } from './types';
-import { BUNDESLAENDER, STATE_COAT_FALLBACKS } from './data/bundeslaender';
+import { BUNDESLAENDER, STATE_COAT_FALLBACKS, getBackupImageUrl } from './data/bundeslaender';
 import { PRESET_QUESTION_SETS } from './data/presetSets';
 import {
   BUILTIN_GENERAL_QUESTIONS,
@@ -14,6 +14,7 @@ import {
   resolveQuestionImageSrc
 } from './data/questionsData';
 import { APP_VERSION_CONFIG } from './version';
+import { cacheQuestionImagesOnDevice } from './utils/mediaCache';
 
 export default function App() {
   // Theme State
@@ -168,6 +169,15 @@ export default function App() {
 
     loadData();
   }, []);
+
+  // Pre-cache question images onto device in background (respects existing origin cache)
+  useEffect(() => {
+    const questionsToCache = [
+      ...catalog.general,
+      ...Object.values(catalog.states).flat()
+    ];
+    cacheQuestionImagesOnDevice(questionsToCache);
+  }, [catalog]);
 
   // Combine Active Pool of Questions for the selected Bundesland
   const allCurrentQuestions = useMemo(() => {
@@ -686,7 +696,14 @@ export default function App() {
                       <img
                         src={resolveQuestionImageSrc(examQuestions[currentIndex].image)!}
                         alt="Abbildung zur Frage"
-                        onClick={() => setZoomedImageSrc(resolveQuestionImageSrc(examQuestions[currentIndex].image)!)}
+                        onClick={(e) => setZoomedImageSrc(e.currentTarget.src)}
+                        onError={(e) => {
+                          const q = examQuestions[currentIndex];
+                          const backup = q.imageBackup || getBackupImageUrl(q.image);
+                          if (backup && e.currentTarget.src !== backup) {
+                            e.currentTarget.src = backup;
+                          }
+                        }}
                         className="max-h-56 max-w-full mx-auto object-contain rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-2 cursor-zoom-in"
                       />
                     </div>
@@ -970,7 +987,13 @@ export default function App() {
                     <img
                       src={resolveQuestionImageSrc(currentQuestion.image)!}
                       alt="Abbildung zur Frage"
-                      onClick={() => setZoomedImageSrc(resolveQuestionImageSrc(currentQuestion.image)!)}
+                      onClick={(e) => setZoomedImageSrc(e.currentTarget.src)}
+                      onError={(e) => {
+                        const backup = currentQuestion.imageBackup || getBackupImageUrl(currentQuestion.image);
+                        if (backup && e.currentTarget.src !== backup) {
+                          e.currentTarget.src = backup;
+                        }
+                      }}
                       className="max-h-56 max-w-full mx-auto object-contain rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-2 cursor-zoom-in"
                     />
                   </div>

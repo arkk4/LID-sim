@@ -18,9 +18,6 @@ dist/
 materials/*.pdf
 materials/*.PDF
 
-# Кешовані зображення питань
-assets/cache/
-
 # Службові файли та бекапи
 *.bak
 data/questions/sync_report.txt

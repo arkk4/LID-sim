@@ -64,6 +64,20 @@ export const LOCAL_IMAGE_CACHE: Record<string, string> = {
   "https://foreignvasi.com/qtg8.56380392.jpeg": "assets/cache/qtg8.56380392_137308b1.jpeg"
 };
 
+// Reverse map: local cached asset path -> origin backup URL
+export const ORIGIN_IMAGE_MAP: Record<string, string> = Object.fromEntries(
+  Object.entries(LOCAL_IMAGE_CACHE).map(([origin, local]) => [local, origin])
+);
+
+export function getBackupImageUrl(imagePath?: string): string | null {
+  if (!imagePath) return null;
+  const trimmed = imagePath.trim();
+  if (ORIGIN_IMAGE_MAP[trimmed]) return ORIGIN_IMAGE_MAP[trimmed];
+  // If it's already an origin URL
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed;
+  return null;
+}
+
 // Fallback high-resolution coats from official Wikimedia Commons if local file isn't present
 export const STATE_COAT_FALLBACKS: Record<BundeslandCode, string> = {
   BW: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Grosses_Landeswappen_Baden-W%C3%BCrttemberg.svg/200px-Grosses_Landeswappen_Baden-W%C3%BCrttemberg.svg.png',

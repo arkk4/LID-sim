@@ -193,7 +193,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Pfarramt",
     c: "Auswärtiges Amt",
     d: "Finanzamt des Bundes",
-    image: "https://foreignvasi.com/q26.48d9065a.png",
+    image: "assets/cache/q26.48d9065a_8ee72f39.png", imageBackup: "https://foreignvasi.com/q26.48d9065a.png",
     solution: "a"
   },
   {
@@ -203,7 +203,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "der Adler",
     c: "der Bär",
     d: "das Pferd",
-    image: "https://foreignvasi.com/q29.31824d77.png",
+    image: "assets/cache/q29.31824d77_b7a12172.png", imageBackup: "https://foreignvasi.com/q29.31824d77.png",
     solution: "b"
   },
   {
@@ -231,7 +231,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "mindestens 18 Jahre alt ist und die deutsche Staatsangehörigkeit besitzt.",
     c: "Grundbesitz hat.",
     d: "seit mindestens 10 Jahren im Land lebt.",
-    image: "https://foreignvasi.com/q35.e7713f5f.png",
+    image: "assets/cache/q35.e7713f5f_b8d41ec2.png", imageBackup: "https://foreignvasi.com/q35.e7713f5f.png",
     solution: "b"
   },
   {
@@ -250,7 +250,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "die Provinzen des Kaiserreichs",
     c: "die Besatzungszonen nach 1945",
     d: "die Landkreise",
-    image: "https://foreignvasi.com/q56-q99.42b88c95.png",
+    image: "assets/cache/q56-q99.42b88c95_cf274881.png", imageBackup: "https://foreignvasi.com/q56-q99.42b88c95.png",
     solution: "a"
   },
   {
@@ -260,7 +260,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Schloss Bellevue in Berlin",
     c: "die Paulskirche in Frankfurt",
     d: "das Bundeskanzleramt",
-    image: "https://foreignvasi.com/q62.28bca79d.png",
+    image: "assets/cache/q62.28bca79d_3e205fa2.png", imageBackup: "https://foreignvasi.com/q62.28bca79d.png",
     solution: "a"
   },
   {
@@ -315,7 +315,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Gewerbegebiet",
     c: "Naturschutzgebiet",
     d: "Verkehrsberuhigter Bereich",
-    image: "https://foreignvasi.com/q148.197dc41c.png",
+    image: "assets/cache/q148.197dc41c_45564593.png", imageBackup: "https://foreignvasi.com/q148.197dc41c.png",
     solution: "a"
   },
   {
@@ -334,7 +334,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "1953",
     c: "1961",
     d: "1989",
-    image: "https://foreignvasi.com/q160.5e16bedb.png",
+    image: "assets/cache/q160.5e16bedb_d37855ef.png", imageBackup: "https://foreignvasi.com/q160.5e16bedb.png",
     solution: "c"
   },
   {
@@ -362,7 +362,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Ein Bundesadler mit Olivenzweig",
     c: "Drei gekreuzte Schwerter",
     d: "Ein roter Stern",
-    image: "https://foreignvasi.com/q212.75bffc4d.png",
+    image: "assets/cache/q212.75bffc4d_445d1c5c.png", imageBackup: "https://foreignvasi.com/q212.75bffc4d.png",
     solution: "a"
   },
   {
@@ -390,7 +390,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Nur Jungen müssen die Schule besuchen.",
     c: "Kinder dürfen nur zu Hause unterrichtet werden.",
     d: "Eltern entscheiden allein über den Schulbesuch.",
-    image: "https://foreignvasi.com/q279.1a549501.png",
+    image: "assets/cache/q279.1a549501_98e31742.png", imageBackup: "https://foreignvasi.com/q279.1a549501.png",
     solution: "a"
   },
   {
@@ -400,7 +400,7 @@ export const BUILTIN_GENERAL_QUESTIONS: Question[] = [
     b: "Nur Männer dürfen Verträge unterschreiben.",
     c: "Frauen müssen immer die Erlaubnis ihres Ehemanns einholen.",
     d: "Männer haben mehr Wahlstimmen als Frauen.",
-    image: "https://foreignvasi.com/q287.838640b1.png",
+    image: "assets/cache/q287.838640b1_b6b2faac.png", imageBackup: "https://foreignvasi.com/q287.838640b1.png",
     solution: "a"
   },
   {
@@ -424,7 +424,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "Der Berliner Bär",
       c: "Die bayerischen Rauten",
       d: "Der hessische Löwe",
-      image: "https://foreignvasi.com/qnw1.78baa273.jpeg",
+      image: "assets/cache/qnw1.78baa273_0ad61019.jpeg", imageBackup: "https://foreignvasi.com/qnw1.78baa273.jpeg",
       solution: "a"
     },
     {
@@ -488,7 +488,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "im Westen",
       c: "im Südosten",
       d: "im äußersten Norden",
-      image: "https://foreignvasi.com/qnw8.f555cf6b.jpeg",
+      image: "assets/cache/qnw8.f555cf6b_84aabd71.jpeg", imageBackup: "https://foreignvasi.com/qnw8.f555cf6b.jpeg",
       solution: "b"
     },
     {
@@ -518,7 +518,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "Der rote Adler",
       c: "Das Sachsenross",
       d: "Der Schlüssel",
-      image: "https://foreignvasi.com/qby1.378f8193.jpeg",
+      image: "assets/cache/qby1.378f8193_50574801.jpeg", imageBackup: "https://foreignvasi.com/qby1.378f8193.jpeg",
       solution: "a"
     },
     {
@@ -600,7 +600,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "im Nordwesten",
       c: "im Zentrum",
       d: "im Norden",
-      image: "https://foreignvasi.com/qby10.eaddc2be.jpeg",
+      image: "assets/cache/qby10.eaddc2be_d5a1ef6c.jpeg", imageBackup: "https://foreignvasi.com/qby10.eaddc2be.jpeg",
       solution: "a"
     }
   ],
@@ -612,7 +612,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "der Löwe",
       c: "der Adler",
       d: "das Pferd",
-      image: "https://foreignvasi.com/qbl1.83065446.jpeg",
+      image: "assets/cache/qbl1.83065446_04e52625.jpeg", imageBackup: "https://foreignvasi.com/qbl1.83065446.jpeg",
       solution: "a"
     },
     {
@@ -694,7 +694,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "im Südwesten",
       c: "im Westen",
       d: "an der Nordseeküste",
-      image: "https://foreignvasi.com/qbl10.70634ae6.jpeg",
+      image: "assets/cache/qbl10.70634ae6_f19876a9.jpeg", imageBackup: "https://foreignvasi.com/qbl10.70634ae6.jpeg",
       solution: "a"
     }
   ],
@@ -706,7 +706,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "Der Sachsenadler",
       c: "Der Bremer Schlüssel",
       d: "Das Rautenwappen",
-      image: "https://foreignvasi.com/qbw1.18061c05.jpeg",
+      image: "assets/cache/qbw1.18061c05_1fa9a987.jpeg", imageBackup: "https://foreignvasi.com/qbw1.18061c05.jpeg",
       solution: "a"
     },
     {
@@ -770,7 +770,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
       b: "im Nordosten",
       c: "im Nordwesten",
       d: "im Osten",
-      image: "https://foreignvasi.com/qbw8.27ed57e1.jpeg",
+      image: "assets/cache/qbw8.27ed57e1_2e27e839.jpeg", imageBackup: "https://foreignvasi.com/qbw8.27ed57e1.jpeg",
       solution: "a"
     },
     {
@@ -793,7 +793,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     }
   ],
   BB: [
-    { num: "BB-1", question: "Welches Tier ist das Wappentier von Brandenburg?", a: "der rote Märkische Adler", b: "der Bär", c: "das Pferd", d: "der Löwe", image: "https://foreignvasi.com/qbb1.706c4d3c.jpeg", solution: "a" },
+    { num: "BB-1", question: "Welches Tier ist das Wappentier von Brandenburg?", a: "der rote Märkische Adler", b: "der Bär", c: "das Pferd", d: "der Löwe", image: "assets/cache/qbb1.706c4d3c_8a564f22.jpeg", imageBackup: "https://foreignvasi.com/qbb1.706c4d3c.jpeg", solution: "a" },
     { num: "BB-2", question: "Welches ist die Landeshauptstadt von Brandenburg?", a: "Cottbus", b: "Potsdam", c: "Frankfurt (Oder)", d: "Brandenburg an der Havel", solution: "b" },
     { num: "BB-3", question: "Wo befindet sich der Landtag von Brandenburg?", a: "im Potsdamer Stadtschloss", b: "in Cottbus", c: "in Oranienburg", d: "in Jüterbog", solution: "a" },
     { num: "BB-4", question: "An welchen ausländischen Staat grenzt Brandenburg im Osten?", a: "Polen", b: "Tschechien", c: "Dänemark", d: "Österreich", solution: "a" },
@@ -802,10 +802,10 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "BB-7", question: "Wer wählt den Ministerpräsidenten von Brandenburg?", a: "der Landtag", b: "der Bundestag", c: "das Volk direkt", d: "der Bundeskanzler", solution: "a" },
     { num: "BB-8", question: "Welches berühmte Schloss von Friedrich dem Großen liegt in Potsdam?", a: "Schloss Sanssouci", b: "Schloss Neuschwanstein", c: "Schloss Charlottenburg", d: "Schloss Heidelberg", solution: "a" },
     { num: "BB-9", question: "Welcher Fluss bildet die östliche Grenze Brandenburgs zu Polen?", a: "die Oder", b: "die Elbe", c: "die Spree", d: "die Havel", solution: "a" },
-    { num: "BB-10", question: "Wo liegt Brandenburg auf dieser Deutschlandkarte?", a: "im Osten (um Berlin herum)", b: "im Südwesten", c: "an der Nordsee", d: "an der Alpenkante", image: "https://foreignvasi.com/qbb10.7926742d.jpeg", solution: "a" }
+    { num: "BB-10", question: "Wo liegt Brandenburg auf dieser Deutschlandkarte?", a: "im Osten (um Berlin herum)", b: "im Südwesten", c: "an der Nordsee", d: "an der Alpenkante", image: "assets/cache/qbb10.7926742d_62588638.jpeg", imageBackup: "https://foreignvasi.com/qbb10.7926742d.jpeg", solution: "a" }
   ],
   HB: [
-    { num: "HB-1", question: "Welches Symbol ist auf dem Wappen der Freien Hansestadt Bremen abgebildet?", a: "der Bremer Schlüssel", b: "das Schwert", c: "die Krone", d: "das Hufeisen", image: "https://foreignvasi.com/qhb1.ec3ac9e3.jpeg", solution: "a" },
+    { num: "HB-1", question: "Welches Symbol ist auf dem Wappen der Freien Hansestadt Bremen abgebildet?", a: "der Bremer Schlüssel", b: "das Schwert", c: "die Krone", d: "das Hufeisen", image: "assets/cache/qhb1.ec3ac9e3_171cb0f4.jpeg", imageBackup: "https://foreignvasi.com/qhb1.ec3ac9e3.jpeg", solution: "a" },
     { num: "HB-2", question: "Welche zwei Städte bilden das Bundesland Bremen?", a: "Bremen und Bremerhaven", b: "Bremen und Hamburg", c: "Bremen und Oldenburg", d: "Bremen und Delmenhorst", solution: "a" },
     { num: "HB-3", question: "Wie heißt das Landesparlament von Bremen?", a: "Bürgerschaft", b: "Landtag", c: "Abgeordnetenhaus", d: "Rat", solution: "a" },
     { num: "HB-4", question: "Wie heißt der Regierungschef von Bremen?", a: "Präsident des Senats und Bürgermeister", b: "Ministerpräsident", c: "Regierender Stadtgraf", d: "Kanzler", solution: "a" },
@@ -814,7 +814,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "HB-7", question: "Welche berühmte Märchenskulptur steht neben dem Bremer Rathaus?", a: "die Bremer Stadtmusikanten", b: "Rumpelstilzchen", c: "die Loreley", d: "die Sieben Schwaben", solution: "a" },
     { num: "HB-8", question: "Welche Farben hat die Flagge von Bremen ('Speckflagge')?", a: "rot-weiß", b: "blau-gelb", c: "schwarz-rot", d: "grün-weiß", solution: "a" },
     { num: "HB-9", question: "Ab welchem Alter darf man bei Wahlen zur Bremischen Bürgerschaft wählen?", a: "ab 16 Jahren", b: "ab 18 Jahren", c: "ab 21 Jahren", d: "ab 25 Jahren", solution: "a" },
-    { num: "HB-10", question: "Wo liegt das Land Bremen auf dieser Deutschlandkarte?", a: "im Nordwesten", b: "im Südosten", c: "im Süden", d: "im Osten", image: "https://foreignvasi.com/qhb10.4c2c3aab.jpeg", solution: "a" }
+    { num: "HB-10", question: "Wo liegt das Land Bremen auf dieser Deutschlandkarte?", a: "im Nordwesten", b: "im Südosten", c: "im Süden", d: "im Osten", image: "assets/cache/qhb10.4c2c3aab_7bc94689.jpeg", imageBackup: "https://foreignvasi.com/qhb10.4c2c3aab.jpeg", solution: "a" }
   ],
   HH: [
     { num: "HH-1", question: "Welches Symbol ist auf dem Wappen der Freien und Hansestadt Hamburg zu sehen?", a: "eine weiße Burg mit drei Türmen auf rotem Grund", b: "ein Löwe", c: "ein Bär", d: "ein Schlüssel", solution: "a" },
@@ -829,7 +829,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "HH-10", question: "Welche Art von Bundesland ist Hamburg?", a: "ein Stadtstaat", b: "ein Flächenland", c: "eine Kolonie", d: "ein Freistaat ohne Parlament", solution: "a" }
   ],
   HE: [
-    { num: "HE-1", question: "Welches Tier ist auf dem Landeswappen von Hessen abgebildet?", a: "der bunte gestreifte Löwe", b: "der Adler", c: "das Pferd", d: "der Bär", image: "https://foreignvasi.com/qhs1.a1d732b7.jpeg", solution: "a" },
+    { num: "HE-1", question: "Welches Tier ist auf dem Landeswappen von Hessen abgebildet?", a: "der bunte gestreifte Löwe", b: "der Adler", c: "das Pferd", d: "der Bär", image: "assets/cache/qhs1.a1d732b7_bf2b842b.jpeg", imageBackup: "https://foreignvasi.com/qhs1.a1d732b7.jpeg", solution: "a" },
     { num: "HE-2", question: "Welches ist die Landeshauptstadt von Hessen?", a: "Wiesbaden", b: "Frankfurt am Main", c: "Kassel", d: "Darmstadt", solution: "a" },
     { num: "HE-3", question: "Wo hat der Hessische Landtag seinen Sitz?", a: "im Stadtschloss in Wiesbaden", b: "im Römer in Frankfurt", c: "in Kassel", d: "in Marburg", solution: "a" },
     { num: "HE-4", question: "Welche Stadt in Hessen ist der wichtigste Finanzplatz und Sitz der Europäischen Zentralbank?", a: "Frankfurt am Main", b: "Wiesbaden", c: "Offenbach", d: "Fulda", solution: "a" },
@@ -838,10 +838,10 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "HE-7", question: "Welches bekannte Gebirge liegt in Hessen (mit der Wasserkuppe)?", a: "die Rhön", b: "der Schwarzwald", c: "die Alpen", d: "das Erzgebirge", solution: "a" },
     { num: "HE-8", question: "Welcher Fluss fließt bei Wiesbaden und Frankfurt in den Rhein?", a: "der Main", b: "die Elbe", c: "die Donau", d: "die Weser", solution: "a" },
     { num: "HE-9", question: "Ab welchem Alter darf man bei den Landtagswahlen in Hessen wählen?", a: "ab 18 Jahren", b: "ab 16 Jahren", c: "ab 21 Jahren", d: "ab 25 Jahren", solution: "a" },
-    { num: "HE-10", question: "Wo liegt Hessen auf dieser Deutschlandkarte?", a: "in der Mitte / im Westen", b: "an der Ostseeküste", c: "im tiefen Süden", d: "an der Grenze zu Polen", image: "https://foreignvasi.com/qhs10.da672a59.jpeg", solution: "a" }
+    { num: "HE-10", question: "Wo liegt Hessen auf dieser Deutschlandkarte?", a: "in der Mitte / im Westen", b: "an der Ostseeküste", c: "im tiefen Süden", d: "an der Grenze zu Polen", image: "assets/cache/qhs10.da672a59_fcc2e569.jpeg", imageBackup: "https://foreignvasi.com/qhs10.da672a59.jpeg", solution: "a" }
   ],
   MV: [
-    { num: "MV-1", question: "Welches Wappentier steht u. a. auf dem Wappen von Mecklenburg-Vorpommern?", a: "der Stierkopf und der Pommersche Greif", b: "der Bär", c: "das Pferd", d: "der Bergische Löwe", image: "https://foreignvasi.com/qmv1.a2812830.jpeg", solution: "a" },
+    { num: "MV-1", question: "Welches Wappentier steht u. a. auf dem Wappen von Mecklenburg-Vorpommern?", a: "der Stierkopf und der Pommersche Greif", b: "der Bär", c: "das Pferd", d: "der Bergische Löwe", image: "assets/cache/qmv1.a2812830_8d04b022.jpeg", imageBackup: "https://foreignvasi.com/qmv1.a2812830.jpeg", solution: "a" },
     { num: "MV-2", question: "Welches ist die Landeshauptstadt von Mecklenburg-Vorpommern?", a: "Schwerin", b: "Rostock", c: "Stralsund", d: "Greifswald", solution: "a" },
     { num: "MV-3", question: "Wo hat der Landtag von Mecklenburg-Vorpommern seinen Sitz?", a: "im Schweriner Schloss", b: "im Rathaus Rostock", c: "in Stralsund", d: "in Neubrandenburg", solution: "a" },
     { num: "MV-4", question: "An welches Meer grenzt Mecklenburg-Vorpommern?", a: "an die Ostsee", b: "an die Nordsee", c: "an das Mittelmeer", d: "an das Schwarze Meer", solution: "a" },
@@ -850,7 +850,7 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "MV-7", question: "An welchen Staat grenzt Mecklenburg-Vorpommern im Osten?", a: "Polen", b: "Dänemark", c: "Schweden", d: "Tschechien", solution: "a" },
     { num: "MV-8", question: "Welche Farben hat die Landesflagge von Mecklenburg-Vorpommern?", a: "blau-weiß-gelb-rot", b: "schwarz-rot-gold", c: "grün-weiß", d: "rot-weiß", solution: "a" },
     { num: "MV-9", question: "Wie heißt der größte See, der vollständig in Deutschland liegt (in MV)?", a: "die Müritz", b: "der Bodensee", c: "der Chiemsee", d: "der Starnberger See", solution: "a" },
-    { num: "MV-10", question: "Wo liegt Mecklenburg-Vorpommern auf dieser Deutschlandkarte?", a: "im Nordosten an der Ostseeküste", b: "im Südwesten", c: "im Zentrum", d: "an der niederländischen Grenze", image: "https://foreignvasi.com/qmv10.bc891748.jpeg", solution: "a" }
+    { num: "MV-10", question: "Wo liegt Mecklenburg-Vorpommern auf dieser Deutschlandkarte?", a: "im Nordosten an der Ostseeküste", b: "im Südwesten", c: "im Zentrum", d: "an der niederländischen Grenze", image: "assets/cache/qmv10.bc891748_620d812e.jpeg", imageBackup: "https://foreignvasi.com/qmv10.bc891748.jpeg", solution: "a" }
   ],
   NI: [
     { num: "NI-1", question: "Welches Wappentier ist das Symbol des Landes Niedersachsen?", a: "das weiße Sachsenross", b: "der Löwe", c: "der Bär", d: "der Hirsch", solution: "a" },
@@ -860,79 +860,79 @@ export const BUILTIN_STATE_QUESTIONS: Record<BundeslandCode, Question[]> = {
     { num: "NI-5", question: "An welchen Nachbarstaat grenzt Niedersachsen im Westen?", a: "an die Niederlande", b: "an Frankreich", c: "an Dänemark", d: "an Polen", solution: "a" },
     { num: "NI-6", question: "Welche Farben hat die Landesflagge von Niedersachsen?", a: "schwarz-rot-gold mit dem Landeswappen", b: "rot-weiß", c: "grün-weiß-rot", d: "blau-weiß", solution: "a" },
     { num: "NI-7", question: "Welches bekannte Mittelgebirge liegt zum Teil in Niedersachsen?", a: "der Harz", b: "der Schwarzwald", c: "das Erzgebirge", d: "die Eifel", solution: "a" },
-    { num: "NI-8", question: "Wo liegt Niedersachsen auf dieser Deutschlandkarte?", a: "im Nordwesten", b: "im Südosten", c: "im Südwesten", d: "im äußersten Osten", image: "https://foreignvasi.com/qns8.81db6464.jpeg", solution: "a" },
+    { num: "NI-8", question: "Wo liegt Niedersachsen auf dieser Deutschlandkarte?", a: "im Nordwesten", b: "im Südosten", c: "im Südwesten", d: "im äußersten Osten", image: "assets/cache/qns8.81db6464_0faf3411.jpeg", imageBackup: "https://foreignvasi.com/qns8.81db6464.jpeg", solution: "a" },
     { num: "NI-9", question: "Welche Inseln liegen vor der niedersächsischen Küste?", a: "die Ostfriesischen Inseln", b: "die Nordfriesischen Inseln", c: "Rügen und Usedom", d: "die Balearen", solution: "a" },
     { num: "NI-10", question: "Wer wählt die Ministerpräsidentin / den Ministerpräsidenten von Niedersachsen?", a: "der Niedersächsische Landtag", b: "das Volk in Direktwahl", c: "die Bundeskanzlerin", d: "der Bundesrat", solution: "a" }
   ],
   RP: [
-    { num: "RP-1", question: "Welche Symbole enthält das Wappen von Rheinland-Pfalz?", a: "das Trierer Kreuz, das Mainzer Rad und den Pfälzer Löwen", b: "drei Rauten", c: "das Sachsenross", d: "den Berliner Bären", image: "https://foreignvasi.com/qrp1.5a74c5da.jpeg", solution: "a" },
+    { num: "RP-1", question: "Welche Symbole enthält das Wappen von Rheinland-Pfalz?", a: "das Trierer Kreuz, das Mainzer Rad und den Pfälzer Löwen", b: "drei Rauten", c: "das Sachsenross", d: "den Berliner Bären", image: "assets/cache/qrp1.5a74c5da_8838e716.jpeg", imageBackup: "https://foreignvasi.com/qrp1.5a74c5da.jpeg", solution: "a" },
     { num: "RP-2", question: "Welches ist die Landeshauptstadt von Rheinland-Pfalz?", a: "Mainz", b: "Koblenz", c: "Trier", d: "Ludwigshafen", solution: "a" },
     { num: "RP-3", question: "Wo tagt der Landtag von Rheinland-Pfalz?", a: "im Deutschhaus in Mainz", b: "im Schloss Koblenz", c: "in Trier", d: "in Speyer", solution: "a" },
     { num: "RP-4", question: "An welche ausländischen Staaten grenzt Rheinland-Pfalz?", a: "Belgien, Frankreich und Luxemburg", b: "Polen und Tschechien", c: "Österreich und die Schweiz", d: "die Niederlande und Dänemark", solution: "a" },
     { num: "RP-5", question: "Welche beiden großen Flüsse fließen bei Koblenz (am Deutschen Eck) zusammen?", a: "Rhein und Mosel", b: "Donau und Inn", c: "Elbe und Saale", d: "Main und Neckar", solution: "a" },
     { num: "RP-6", question: "Welche Stadt in Rheinland-Pfalz gilt als älteste Stadt Deutschlands mit römischen Baudenkmälern?", a: "Trier", b: "Kaiserslautern", c: "Worms", d: "Neustadt", solution: "a" },
     { num: "RP-7", question: "Welche Farben hat die Landesflagge von Rheinland-Pfalz?", a: "schwarz-rot-gold mit dem Landeswappen", b: "rot-weiß", c: "blau-weiß", d: "grün-weiß", solution: "a" },
-    { num: "RP-8", question: "Wo liegt Rheinland-Pfalz auf dieser Deutschlandkarte?", a: "im Südwesten", b: "im Nordosten", c: "an der Ostsee", d: "im tiefen Süden", image: "https://foreignvasi.com/qrp8.528dcff5.jpeg", solution: "a" },
+    { num: "RP-8", question: "Wo liegt Rheinland-Pfalz auf dieser Deutschlandkarte?", a: "im Südwesten", b: "im Nordosten", c: "an der Ostsee", d: "im tiefen Süden", image: "assets/cache/qrp8.528dcff5_03af2bff.jpeg", imageBackup: "https://foreignvasi.com/qrp8.528dcff5.jpeg", solution: "a" },
     { num: "RP-9", question: "Wer wählt den Ministerpräsidenten von Rheinland-Pfalz?", a: "der Landtag", b: "das Volk direkt", c: "der Bundeskanzler", d: "der Bundespräsident", solution: "a" },
     { num: "RP-10", question: "Für welchen Wirtschaftszweig ist Rheinland-Pfalz besonders berühmt?", a: "Weinbau (z. B. an Mosel, Rhein, Pfalz)", b: "Steinkohlebergbau", c: "Fischfang auf Hochsee", d: "Erdölförderung", solution: "a" }
   ],
   SL: [
-    { num: "SL-1", question: "Welches ist das Landeswappen des Saarlandes?", a: "Ein viergeteiltes Schild mit Nassau-Saarbrücker Löwen, lothringischem Adler und Pfälzer Löwen", b: "Der Bremer Schlüssel", c: "Der Rote Adler", d: "Das Rautenwappen", image: "https://foreignvasi.com/qsl1.5d22fa5a.jpeg", solution: "a" },
+    { num: "SL-1", question: "Welches ist das Landeswappen des Saarlandes?", a: "Ein viergeteiltes Schild mit Nassau-Saarbrücker Löwen, lothringischem Adler und Pfälzer Löwen", b: "Der Bremer Schlüssel", c: "Der Rote Adler", d: "Das Rautenwappen", image: "assets/cache/qsl1.5d22fa5a_ebe8f28a.jpeg", imageBackup: "https://foreignvasi.com/qsl1.5d22fa5a.jpeg", solution: "a" },
     { num: "SL-2", question: "Welches ist die Landeshauptstadt des Saarlandes?", a: "Saarbrücken", b: "Neunkirchen", c: "Homburg", d: "Saarlouis", solution: "a" },
     { num: "SL-3", question: "Wo befindet sich der Landtag des Saarlandes?", a: "in Saarbrücken", b: "in Völklingen", c: "in Homburg", d: "in Merzig", solution: "a" },
     { num: "SL-4", question: "An welche ausländischen Staaten grenzt das Saarland?", a: "Frankreich und Luxemburg", b: "Belgien und die Niederlande", c: "Österreich und die Schweiz", d: "Polen", solution: "a" },
     { num: "SL-5", question: "In welchem Jahr trat das Saarland der Bundesrepublik Deutschland bei ('Kleine Wiedervereinigung')?", a: "1957", b: "1949", c: "1990", d: "1963", solution: "a" },
     { num: "SL-6", question: "Welcher Fluss gibt dem Saarland seinen Namen?", a: "die Saar", b: "die Mosel", c: "die Nahe", d: "die Ruhr", solution: "a" },
     { num: "SL-7", question: "Welches bekannte UNESCO-Weltkulturerbe liegt im Saarland?", a: "die Völklinger Hütte", b: "Kölner Dom", c: "Zeche Zollverein", d: "Schloss Sanssouci", solution: "a" },
-    { num: "SL-8", question: "Wo liegt das Saarland auf dieser Deutschlandkarte?", a: "im Südwesten an der Grenze zu Frankreich", b: "im Nordosten", c: "im Zentrum", d: "an der Nordsee", image: "https://foreignvasi.com/qsl8.e724ee61.jpeg", solution: "a" },
+    { num: "SL-8", question: "Wo liegt das Saarland auf dieser Deutschlandkarte?", a: "im Südwesten an der Grenze zu Frankreich", b: "im Nordosten", c: "im Zentrum", d: "an der Nordsee", image: "assets/cache/qsl8.e724ee61_14574367.jpeg", imageBackup: "https://foreignvasi.com/qsl8.e724ee61.jpeg", solution: "a" },
     { num: "SL-9", question: "Welche Farben hat die Landesflagge des Saarlandes?", a: "schwarz-rot-gold mit dem Landeswappen", b: "blau-weiß-rot", c: "rot-weiß", d: "schwarz-gelb", solution: "a" },
     { num: "SL-10", question: "Wer wählt den Ministerpräsidenten des Saarlandes?", a: "der Landtag des Saarlandes", b: "der Bundeskanzler", c: "das Volk in Direktwahl", d: "der französische Präsident", solution: "a" }
   ],
   SN: [
-    { num: "SN-1", question: "Welches ist das Landeswappen des Freistaates Sachsen?", a: "Neunmal von Schwarz und Gold geteilt mit grünem Rautenkranz", b: "Der Bayerische Löwe", c: "Das Westfalenpferd", d: "Der Brandenburger Adler", image: "https://foreignvasi.com/qss1.71aaeb78.jpeg", solution: "a" },
+    { num: "SN-1", question: "Welches ist das Landeswappen des Freistaates Sachsen?", a: "Neunmal von Schwarz und Gold geteilt mit grünem Rautenkranz", b: "Der Bayerische Löwe", c: "Das Westfalenpferd", d: "Der Brandenburger Adler", image: "assets/cache/qss1.71aaeb78_2f962ad8.jpeg", imageBackup: "https://foreignvasi.com/qss1.71aaeb78.jpeg", solution: "a" },
     { num: "SN-2", question: "Welches ist die Landeshauptstadt von Sachsen?", a: "Dresden", b: "Leipzig", c: "Chemnitz", d: "Zwickau", solution: "a" },
     { num: "SN-3", question: "Wo hat der Sächsische Landtag seinen Sitz?", a: "am Elbufer in Dresden", b: "in Leipzig", c: "in Chemnitz", d: "in Meißen", solution: "a" },
     { num: "SN-4", question: "An welche ausländischen Staaten grenzt der Freistaat Sachsen?", a: "Polen und Tschechien", b: "Österreich und die Schweiz", c: "Frankreich und Belgien", d: "die Niederlande", solution: "a" },
     { num: "SN-5", question: "Welche slawische Minderheit lebt im Freistaat Sachsen?", a: "die Sorben", b: "die Friesen", c: "die Dänen", d: "die Kaschuben", solution: "a" },
     { num: "SN-6", question: "Welche Farben hat die Landesflagge von Sachsen?", a: "weiß-grün", b: "schwarz-gelb", c: "rot-weiß", d: "blau-gelb", solution: "a" },
     { num: "SN-7", question: "Welcher Fluss fließt durch Dresden und Meißen?", a: "die Elbe", b: "die Spree", c: "die Oder", d: "die Mulde", solution: "a" },
-    { num: "SN-8", question: "Wo liegt Sachsen auf dieser Deutschlandkarte?", a: "im Osten", b: "im Nordwesten", c: "im Südwesten", d: "an der Nordsee", image: "https://foreignvasi.com/qss8.6922b0bb.jpeg", solution: "a" },
+    { num: "SN-8", question: "Wo liegt Sachsen auf dieser Deutschlandkarte?", a: "im Osten", b: "im Nordwesten", c: "im Südwesten", d: "an der Nordsee", image: "assets/cache/qss8.6922b0bb_8dbc0c84.jpeg", imageBackup: "https://foreignvasi.com/qss8.6922b0bb.jpeg", solution: "a" },
     { num: "SN-9", question: "In welcher sächsischen Stadt begannen im Herbst 1989 die Montagsdemonstrationen?", a: "Leipzig", b: "Dresden", c: "Görlitz", d: "Plauen", solution: "a" },
     { num: "SN-10", question: "Wer wählt den Ministerpräsidenten von Sachsen?", a: "der Sächsische Landtag", b: "das Volk direkt", c: "die Bundesregierung", d: "der Bundesrat", solution: "a" }
   ],
   ST: [
-    { num: "ST-1", question: "Welche Symbole zeigt das Landeswappen von Sachsen-Anhalt?", a: "Den sächsischen Rautenkranz oben und den preußischen Bären unten auf einer Zinnenmauer", b: "Das Bremer Roland-Symbol", c: "Drei Hirschstangen", d: "Das Holstentor", image: "https://foreignvasi.com/qsa1.1e4245dd.jpeg", solution: "a" },
+    { num: "ST-1", question: "Welche Symbole zeigt das Landeswappen von Sachsen-Anhalt?", a: "Den sächsischen Rautenkranz oben und den preußischen Bären unten auf einer Zinnenmauer", b: "Das Bremer Roland-Symbol", c: "Drei Hirschstangen", d: "Das Holstentor", image: "assets/cache/qsa1.1e4245dd_ed965317.jpeg", imageBackup: "https://foreignvasi.com/qsa1.1e4245dd.jpeg", solution: "a" },
     { num: "ST-2", question: "Welches ist die Landeshauptstadt von Sachsen-Anhalt?", a: "Magdeburg", b: "Halle (Saale)", c: "Dessau-Roßlau", d: "Wittenberg", solution: "a" },
     { num: "ST-3", question: "Wo tagt der Landtag von Sachsen-Anhalt?", a: "am Domplatz in Magdeburg", b: "in Halle", c: "in Naumburg", d: "in Quedlinburg", solution: "a" },
     { num: "ST-4", question: "Welche Stadt in Sachsen-Anhalt ist als Lutherstadt und Wirkungsort der Reformation weltbekannt?", a: "Lutherstadt Wittenberg", b: "Stendal", c: "Halberstadt", d: "Bitterfeld", solution: "a" },
     { num: "ST-5", question: "Welcher bekannte Fluss fließt durch Magdeburg?", a: "die Elbe", b: "der Rhein", c: "die Weser", d: "die Donau", solution: "a" },
     { num: "ST-6", question: "Welche Farben hat die Landesflagge von Sachsen-Anhalt?", a: "gelb-schwarz", b: "rot-weiß", c: "grün-weiß", d: "blau-weiß", solution: "a" },
     { num: "ST-7", question: "Welcher berühmte Berg im Harz liegt in Sachsen-Anhalt?", a: "der Brocken", b: "die Zugspitze", c: "der Feldberg", d: "der Große Arber", solution: "a" },
-    { num: "ST-8", question: "Wo liegt Sachsen-Anhalt auf dieser Deutschlandkarte?", a: "im östlichen Mitteldeutschland", b: "im tiefen Süden", c: "an der dänischen Grenze", d: "am Rhein", image: "https://foreignvasi.com/qsa8.fd6b5f78.jpeg", solution: "a" },
+    { num: "ST-8", question: "Wo liegt Sachsen-Anhalt auf dieser Deutschlandkarte?", a: "im östlichen Mitteldeutschland", b: "im tiefen Süden", c: "an der dänischen Grenze", d: "am Rhein", image: "assets/cache/qsa8.fd6b5f78_1b422ab8.jpeg", imageBackup: "https://foreignvasi.com/qsa8.fd6b5f78.jpeg", solution: "a" },
     { num: "ST-9", question: "Wer wählt den Ministerpräsidenten von Sachsen-Anhalt?", a: "der Landtag", b: "das Volk in Direktwahl", c: "der Bundeskanzler", d: "der Bundespräsident", solution: "a" },
     { num: "ST-10", question: "Welche bekannte Kunst- und Architekturschule hatte in Dessau (Sachsen-Anhalt) ihren weltberühmten Sitz?", a: "das Bauhaus", b: "die Romantik-Schule", c: "der Blaue Reiter", d: "die Wiener Werkstätte", solution: "a" }
   ],
   SH: [
-    { num: "SH-1", question: "Welche beiden Symbole zeigt das Landeswappen von Schleswig-Holstein?", a: "die zwei Schleswigschen Löwen und das Holsteiner Nesselblatt", b: "das Ross und das Rad", c: "den Bären und den Adler", d: "den Schlüssel", image: "https://foreignvasi.com/qsh1.c4be2a60.jpeg", solution: "a" },
+    { num: "SH-1", question: "Welche beiden Symbole zeigt das Landeswappen von Schleswig-Holstein?", a: "die zwei Schleswigschen Löwen und das Holsteiner Nesselblatt", b: "das Ross und das Rad", c: "den Bären und den Adler", d: "den Schlüssel", image: "assets/cache/qsh1.c4be2a60_e876ee99.jpeg", imageBackup: "https://foreignvasi.com/qsh1.c4be2a60.jpeg", solution: "a" },
     { num: "SH-2", question: "Welches ist die Landeshauptstadt von Schleswig-Holstein?", a: "Kiel", b: "Lübeck", c: "Flensburg", d: "Neumünster", solution: "a" },
     { num: "SH-3", question: "Wo tagt der Schleswig-Holsteinische Landtag?", a: "im Landeshaus an der Kieler Förde", b: "im Holstentor in Lübeck", c: "in Flensburg", d: "in Rendsburg", solution: "a" },
     { num: "SH-4", question: "An welchen ausländischen Staat grenzt Schleswig-Holstein im Norden?", a: "Dänemark", b: "Schweden", c: "Niederlande", d: "Polen", solution: "a" },
     { num: "SH-5", question: "An welche beiden Meere grenzt Schleswig-Holstein ('Land zwischen den Meeren')?", a: "Nordsee und Ostsee", b: "Mittelmeer und Atlantik", c: "Schwarzes Meer und Kaspisches Meer", d: "Nordpolarmeer und Pazifik", solution: "a" },
     { num: "SH-6", question: "Welche anerkannten Minderheiten leben in Schleswig-Holstein?", a: "die dänische Minderheit und die friesische Volksgruppe", b: "die Sorben", c: "die Basken", d: "die Katalanen", solution: "a" },
     { num: "SH-7", question: "Welche Farben hat die Landesflagge von Schleswig-Holstein?", a: "blau-weiß-rot", b: "schwarz-rot-gold", c: "grün-weiß", d: "gelb-schwarz", solution: "a" },
-    { num: "SH-8", question: "Wo liegt Schleswig-Holstein auf dieser Deutschlandkarte?", a: "im äußersten Norden", b: "im tiefen Süden", c: "im Südwesten", d: "im Zentrum", image: "https://foreignvasi.com/qsh8.442d7ed7.jpeg", solution: "a" },
+    { num: "SH-8", question: "Wo liegt Schleswig-Holstein auf dieser Deutschlandkarte?", a: "im äußersten Norden", b: "im tiefen Süden", c: "im Südwesten", d: "im Zentrum", image: "assets/cache/qsh8.442d7ed7_3ab52e41.jpeg", imageBackup: "https://foreignvasi.com/qsh8.442d7ed7.jpeg", solution: "a" },
     { num: "SH-9", question: "Welche berühmte Wasserstraße verbindet Nord- und Ostsee quer durch Schleswig-Holstein?", a: "der Nord-Ostsee-Kanal", b: "der Mittellandkanal", c: "der Suezkanal", d: "der Rhein-Main-Donau-Kanal", solution: "a" },
     { num: "SH-10", question: "Welche Partei vertritt im Schleswig-Holsteinischen Landtag die dänische und friesische Minderheit?", a: "SSW (Südschleswigscher Wählerverband)", b: "CDU", c: "SPD", d: "FDP", solution: "a" }
   ],
   TH: [
-    { num: "TH-1", question: "Welches Wappentier zeigt das Landeswappen des Freistaats Thüringen?", a: "den achtfach rot-weiß gestreiften bunten Löwen umgeben von acht silbernen Sternen", b: "den Adler", c: "das Pferd", d: "den Bären", image: "https://foreignvasi.com/qtg1.aca82959.jpeg", solution: "a" },
+    { num: "TH-1", question: "Welches Wappentier zeigt das Landeswappen des Freistaats Thüringen?", a: "den achtfach rot-weiß gestreiften bunten Löwen umgeben von acht silbernen Sternen", b: "den Adler", c: "das Pferd", d: "den Bären", image: "assets/cache/qtg1.aca82959_6e014456.jpeg", imageBackup: "https://foreignvasi.com/qtg1.aca82959.jpeg", solution: "a" },
     { num: "TH-2", question: "Welches ist die Landeshauptstadt von Thüringen?", a: "Erfurt", b: "Jena", c: "Weimar", d: "Gera", solution: "a" },
     { num: "TH-3", question: "Wo tagt der Thüringer Landtag?", a: "in Erfurt", b: "in Weimar", c: "in Eisenach", d: "in Gotha", solution: "a" },
     { num: "TH-4", question: "Welche Stadt in Thüringen ist eng mit Goethe, Schiller und der Weimarer Republik verbunden?", a: "Weimar", b: "Suhl", c: "Nordhausen", d: "Altenburg", solution: "a" },
     { num: "TH-5", question: "Welche berühmte Burg liegt bei Eisenach (wo Luther die Bibel übersetzte)?", a: "die Wartburg", b: "die Festung Ehrenbreitstein", c: "Schloss Neuschwanstein", d: "Burg Hohenzollern", solution: "a" },
     { num: "TH-6", question: "Welches bekannte Mittelgebirge prägt den Süden Thüringens ('Grünes Herz Deutschlands')?", a: "der Thüringer Wald", b: "der Schwarzwald", c: "der Taunus", d: "das Fichtelgebirge", solution: "a" },
     { num: "TH-7", question: "Welche Farben hat die Landesflagge von Thüringen?", a: "weiß-rot", b: "schwarz-gelb", c: "grün-weiß", d: "blau-weiß", solution: "a" },
-    { num: "TH-8", question: "Wo liegt Thüringen auf dieser Deutschlandkarte?", a: "im geographischen Zentrum Deutschlands", b: "an der Nordseeküste", c: "an der Grenze zu Frankreich", d: "an den Alpen", image: "https://foreignvasi.com/qtg8.56380392.jpeg", solution: "a" },
+    { num: "TH-8", question: "Wo liegt Thüringen auf dieser Deutschlandkarte?", a: "im geographischen Zentrum Deutschlands", b: "an der Nordseeküste", c: "an der Grenze zu Frankreich", d: "an den Alpen", image: "assets/cache/qtg8.56380392_137308b1.jpeg", imageBackup: "https://foreignvasi.com/qtg8.56380392.jpeg", solution: "a" },
     { num: "TH-9", question: "Wer wählt die Ministerpräsidentin / den Ministerpräsidenten von Thüringen?", a: "der Thüringer Landtag", b: "das Volk in Direktwahl", c: "der Bundeskanzler", d: "der Bundespräsident", solution: "a" },
     { num: "TH-10", question: "Welcher berühmte Höhenwanderweg führt über den Kamm des Thüringer Waldes?", a: "der Rennsteig", b: "der Rothaarsteig", c: "der Westweg", d: "der Jakobsweg", solution: "a" }
   ]
@@ -1017,18 +1017,18 @@ export function resolveQuestionImageSrc(imageRaw?: string): string | null {
   if (!imageRaw || imageRaw === '-' || imageRaw.trim() === '') return null;
   const trimmed = imageRaw.trim();
 
-  // 1. Check local cache mapping
+  // 1. Local asset reference (primary source)
+  if (trimmed.startsWith('assets/') || trimmed.startsWith('/assets/')) {
+    return trimmed.startsWith('/') ? trimmed.slice(1) : trimmed;
+  }
+
+  // 2. Check local cache mapping (fallback for legacy origin URLs)
   if (LOCAL_IMAGE_CACHE[trimmed]) {
     return LOCAL_IMAGE_CACHE[trimmed];
   }
 
-  // 2. HTTP/HTTPS url
+  // 3. HTTP/HTTPS url
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
-    return trimmed;
-  }
-
-  // 3. Local asset reference
-  if (trimmed.startsWith('assets/') || trimmed.startsWith('/assets/')) {
     return trimmed;
   }
 

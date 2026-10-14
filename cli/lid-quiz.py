@@ -189,7 +189,13 @@ def show_question_image(url: str, url_map: dict) -> None:
     if not is_iterm2():
         console.print(f"  [dim][image: {url[:70]}][/dim]")
         return
-    local = url_map.get(url)
+    local = None
+    if url.startswith("assets/"):
+        candidate = os.path.join(REPO_ROOT, url)
+        if os.path.exists(candidate):
+            local = candidate
+    if not local:
+        local = url_map.get(url)
     if not local or not os.path.exists(local):
         console.print(f"  [dim][image not cached][/dim]")
         return
@@ -376,8 +382,11 @@ def _collect_urls(raw: dict) -> set:
         all_q.extend(qs)
     for q in all_q:
         img = str(q.get("image", "") or "").strip()
-        if img and img != "-" and img.startswith("http"):
+        backup = str(q.get("imageBackup", "") or "").strip()
+        if img and img != "-":
             urls.add(img)
+        if backup and backup != "-":
+            urls.add(backup)
     return urls
 
 
@@ -392,11 +401,16 @@ def download_images(raw: dict) -> dict:
     missing = []
 
     for url in urls:
-        p = _cache_path(url)
-        if os.path.exists(p):
-            url_map[url] = p
+        if url.startswith("assets/"):
+            p = os.path.join(REPO_ROOT, url)
+            if os.path.exists(p):
+                url_map[url] = p
         else:
-            missing.append(url)
+            p = _cache_path(url)
+            if os.path.exists(p):
+                url_map[url] = p
+            else:
+                missing.append(url)
 
     if missing:
         with Progress(
@@ -417,7 +431,7 @@ def download_images(raw: dict) -> dict:
 
     for url in urls:
         if url not in url_map:
-            p = _cache_path(url)
+            p = os.path.join(REPO_ROOT, url) if url.startswith("assets/") else _cache_path(url)
             if os.path.exists(p):
                 url_map[url] = p
 

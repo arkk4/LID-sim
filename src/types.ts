@@ -18,6 +18,7 @@ export interface Question {
   d: string;
   solution: 'a' | 'b' | 'c' | 'd';
   image?: string;
+  imageBackup?: string;
   translationUk?: {
     question?: string;
     a?: string;
