@@ -68,7 +68,7 @@ console.log('Generating logo and badge...');
 execFileSync('node', [resolve(__dirname, 'generate_logo.mjs')], { stdio: 'inherit' });
 
 // 4. Git add and commit
-execFileSync('git', ['add', 'version.json', 'package.json', 'public/logo.svg', 'public/badge.svg'], {
+execFileSync('git', ['add', 'version.json', 'package.json', 'public/logo.svg', 'public/logo.png', 'public/badge.svg'], {
   cwd: repoRoot,
   stdio: 'inherit',
 });

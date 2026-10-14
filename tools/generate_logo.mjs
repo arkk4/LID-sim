@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
  * tools/generate_logo.mjs
- * 
- * Single source worker for generating public/logo.svg and public/badge.svg.
+ *
+ * Single source worker for generating public/logo.svg, public/logo.png and public/badge.svg.
  * Reads configuration directly from version.json.
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { homedir } from 'node:os';
 import { execFileSync } from 'node:child_process';
 
 const repoRoot = resolve(import.meta.dirname, '..');
@@ -34,7 +33,8 @@ const palette = Array.isArray(config.logo?.palette)
 const shape = config.logo?.shape || 'squircle';
 const font = config.logo?.font || 'sans';
 
-const logoOut = resolve(repoRoot, 'public/logo.svg');
+const logoSvg  = resolve(repoRoot, 'public/logo.svg');
+const logoPng  = resolve(repoRoot, 'public/logo.png');
 const badgeOut = resolve(repoRoot, 'public/badge.svg');
 
 // 1. Generate logo.svg
@@ -46,10 +46,13 @@ execFileSync('node', [
   '--palette', palette,
   '--shape', shape,
   '--font', font,
-  '--out', logoOut,
+  '--out', logoSvg,
 ], { stdio: 'inherit' });
 
-// 2. Generate badge.svg
+// 2. Rasterize logo.svg → logo.png (128×128, crisp for favicon & in-app use)
+execFileSync('rsvg-convert', ['-w', '128', '-h', '128', '-f', 'png', logoSvg, '-o', logoPng]);
+
+// 3. Generate badge.svg
 execFileSync('node', [
   logogenPath,
   '--badge',
@@ -61,4 +64,4 @@ execFileSync('node', [
   '--out', badgeOut,
 ], { stdio: 'inherit' });
 
-console.log(`✓ Generated public/logo.svg and public/badge.svg (${name} ${version})`);
+console.log(`✓ Generated public/logo.svg + logo.png + badge.svg (${name} ${version})`);

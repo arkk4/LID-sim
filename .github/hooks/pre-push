@@ -16,7 +16,7 @@ if [ "$TARGET_BRANCH" = "main" ]; then
   fi
 
   # 2. Check if version files or branding assets have uncommitted changes
-  DIRTY=$(git status --porcelain version.json package.json public/logo.svg public/badge.svg)
+  DIRTY=$(git status --porcelain version.json package.json public/logo.svg public/logo.png public/badge.svg)
   if [ -n "$DIRTY" ]; then
     echo "❌ [pre-push] Detected uncommitted version or asset changes:"
     echo "$DIRTY"
