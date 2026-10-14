@@ -120,11 +120,11 @@
     {
       "num": "14",
       "question": "Meinungsfreiheit in Deutschland heißt, dass ich …",
-      "a": "meine Meinung in Leserbriefen äußern kann.",
-      "b": "Passanten auf der Straße beschimpfen darf.",
-      "c": "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche.",
-      "d": "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
-      "solution": "a"
+      "a": "Passanten auf der Straße beschimpfen darf.",
+      "b": "meine Meinung in Leserbriefen äußern kann.",
+      "c": "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
+      "d": "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche.",
+      "solution": "b"
     },
     {
       "num": "15",
@@ -182,7 +182,7 @@
     },
     {
       "num": "21",
-      "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
+      "question": "Welches ist das Wappen der Bundesrepublik Deutschland? Bild 1 Bild 2 Bild 3 Bild 4",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
@@ -1888,7 +1888,7 @@
     },
     {
       "num": "209",
-      "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
+      "question": "Welches war das Wappen der Deutschen Demokratischen Republik? Bild 1 Bild 2 Bild 3 Bild 4",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
@@ -2045,7 +2045,7 @@
     },
     {
       "num": "226",
-      "question": "Welche ist die Flagge der Europäischen Union?",
+      "question": "Welche ist die Flagge der Europäischen Union? Bild 1 Bild 2 Bild 3 Bild 4",
       "a": "Bild 1",
       "b": "Bild 2",
       "c": "Bild 3",
@@ -2739,11 +2739,11 @@
       {
         "num": "BB-2",
         "question": "Welches ist ein Landkreis in Brandenburg?",
-        "a": "Amberg-Sulzbach",
+        "a": "Prignitz",
         "b": "Rhein-Sieg-Kreis",
-        "c": "Prignitz",
-        "d": "Vogtlandkreis",
-        "solution": "c"
+        "c": "Vogtlandkreis",
+        "d": "Amberg-Sulzbach",
+        "solution": "a"
       },
       {
         "num": "BB-3",
@@ -2766,47 +2766,47 @@
       {
         "num": "BB-5",
         "question": "Welche Farben hat die Landesflagge von Brandenburg?",
-        "a": "rot-weiß",
-        "b": "schwarz-gelb",
+        "a": "blau-weiß-rot",
+        "b": "rot-weiß",
         "c": "grün-weiß-rot",
-        "d": "blau-weiß-rot",
-        "solution": "a"
+        "d": "schwarz-gelb",
+        "solution": "b"
       },
       {
         "num": "BB-6",
         "question": "Wo können Sie sich in Brandenburg über politische Themen informieren?",
-        "a": "beim Ordnungsamt der Gemeinde",
-        "b": "bei der Landeszentrale für politische Bildung",
-        "c": "bei der Verbraucherzentrale",
-        "d": "bei den Kirchen",
-        "solution": "b"
+        "a": "bei den Kirchen",
+        "b": "beim Ordnungsamt der Gemeinde",
+        "c": "bei der Landeszentrale für politische Bildung",
+        "d": "bei der Verbraucherzentrale",
+        "solution": "c"
       },
       {
         "num": "BB-7",
-        "question": "Die Landeshauptstadt von Brandenburg heißt ...",
-        "a": "Cottbus",
-        "b": "Frankfurt/Oder",
-        "c": "Potsdam",
-        "d": "Brandenburg",
-        "solution": "c"
+        "question": "Die Landeshauptstadt von Brandenburg heißt …",
+        "a": "Potsdam",
+        "b": "Cottbus",
+        "c": "Brandenburg",
+        "d": "Frankfurt/Oder",
+        "solution": "a"
       },
       {
         "num": "BB-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Brandenburg?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Erster Minister / Erste Ministerin",
-        "d": "Premierminister / Premierministerin",
-        "solution": "a"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "BB-9",
         "question": "Welchen Minister / welche Ministerin hat Brandenburg nicht?",
-        "a": "Finanzminister / Finanzministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "c"
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       },
       {
         "num": "BB-10",
@@ -2835,11 +2835,11 @@
       {
         "num": "BE-2",
         "question": "Welches ist ein Bezirk von Berlin?",
-        "a": "Pankow",
+        "a": "Altona",
         "b": "Prignitz",
-        "c": "Mecklenburgische Seenplatte",
-        "d": "Altona",
-        "solution": "a"
+        "c": "Pankow",
+        "d": "Mecklenburgische Seenplatte",
+        "solution": "c"
       },
       {
         "num": "BE-3",
@@ -2862,11 +2862,11 @@
       {
         "num": "BE-5",
         "question": "Welche Farben hat die Landesflagge von Berlin?",
-        "a": "grün-weiß-rot",
-        "b": "schwarz-gold",
-        "c": "weiß-rot",
-        "d": "blau-weiß-rot",
-        "solution": "c"
+        "a": "blau-weiß-rot",
+        "b": "weiß-rot",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gold",
+        "solution": "b"
       },
       {
         "num": "BE-6",
@@ -2880,29 +2880,29 @@
       {
         "num": "BE-7",
         "question": "Welches Bundesland ist ein Stadtstaat?",
-        "a": "Brandenburg",
-        "b": "Berlin",
-        "c": "Hessen",
-        "d": "Saarland",
-        "solution": "b"
+        "a": "Berlin",
+        "b": "Saarland",
+        "c": "Brandenburg",
+        "d": "Hessen",
+        "solution": "a"
       },
       {
         "num": "BE-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin des Stadtstaates Berlin?",
-        "a": "Regierender Bürgermeister / Regierende Bürgermeisterin",
-        "b": "Präsident / Präsidentin des Senats",
-        "c": "Ministerpräsident / Ministerpräsidentin",
-        "d": "Oberbürgermeister / Oberbürgermeisterin",
-        "solution": "a"
+        "a": "Ministerpräsident / Ministerpräsidentin",
+        "b": "Oberbürgermeister / Oberbürgermeisterin",
+        "c": "Präsident / Präsidentin des Senats",
+        "d": "Regierender Bürgermeister / Regierende Bürgermeisterin",
+        "solution": "d"
       },
       {
         "num": "BE-9",
         "question": "Welchen Senator / welche Senatorin hat Berlin nicht?",
-        "a": "Senator / Senatorin für Außenbeziehungen",
-        "b": "Finanzsenator / Finanzsenatorin",
-        "c": "Justizsenator / Justizsenatorin",
-        "d": "Innensenator / Innensenatorin",
-        "solution": "a"
+        "a": "Finanzsenator / Finanzsenatorin",
+        "b": "Innensenator / Innensenatorin",
+        "c": "Senator / Senatorin für Außenbeziehungen",
+        "d": "Justizsenator / Justizsenatorin",
+        "solution": "c"
       },
       {
         "num": "BE-10",
@@ -2931,73 +2931,73 @@
       {
         "num": "BW-2",
         "question": "Welches ist ein Landkreis in Baden-Württemberg?",
-        "a": "Neckar-Odenwald-Kreis",
-        "b": "Nordfriesland",
-        "c": "Altötting",
-        "d": "Mecklenburgische Seenplatte",
-        "solution": "a"
+        "a": "Mecklenburgische Seenplatte",
+        "b": "Neckar-Odenwald-Kreis",
+        "c": "Nordfriesland",
+        "d": "Altötting",
+        "solution": "b"
       },
       {
         "num": "BW-3",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Baden-Württemberg?",
-        "a": "Bürgermeister / Bürgermeisterin",
-        "b": "Ministerpräsident / Ministerpräsidentin",
-        "c": "Premierminister / Premierministerin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "b"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "BW-4",
         "question": "Für wie viele Jahre wird der Landtag in Baden-Württemberg gewählt?",
-        "a": "6",
-        "b": "3",
+        "a": "3",
+        "b": "4",
         "c": "5",
-        "d": "4",
+        "d": "6",
         "solution": "c"
       },
       {
         "num": "BW-5",
         "question": "Welchen Minister / welche Ministerin hat Baden-Württemberg nicht?",
         "a": "Finanzminister / Finanzministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "c"
+        "b": "Justizminister / Justizministerin",
+        "c": "Innenminister / Innenministerin",
+        "d": "Außenminister / Außenministerin",
+        "solution": "d"
       },
       {
         "num": "BW-6",
         "question": "Ab welchem Alter darf man in Baden-Württemberg bei Kommunalwahlen wählen?",
-        "a": "16",
-        "b": "18",
-        "c": "20",
-        "d": "14",
-        "solution": "a"
+        "a": "14",
+        "b": "16",
+        "c": "18",
+        "d": "20",
+        "solution": "b"
       },
       {
         "num": "BW-7",
         "question": "Welche Farben hat die Landesflagge von Baden-Württemberg?",
-        "a": "grün-weiß-rot",
-        "b": "weiß-blau",
-        "c": "blau-weiß-rot",
-        "d": "schwarz-gold",
-        "solution": "d"
+        "a": "blau-weiß-rot",
+        "b": "schwarz-gold",
+        "c": "weiß-blau",
+        "d": "grün-weiß-rot",
+        "solution": "b"
       },
       {
         "num": "BW-8",
         "question": "Wo können Sie sich in Baden-Württemberg über politische Themen informieren?",
-        "a": "bei der Landeszentrale für politische Bildung",
-        "b": "beim Ordnungsamt der Gemeinde",
-        "c": "bei den Kirchen",
-        "d": "bei der Verbraucherzentrale",
-        "solution": "a"
+        "a": "beim Ordnungsamt der Gemeinde",
+        "b": "bei der Verbraucherzentrale",
+        "c": "bei der Landeszentrale für politische Bildung",
+        "d": "bei den Kirchen",
+        "solution": "c"
       },
       {
         "num": "BW-9",
-        "question": "Die Landeshauptstadt von Baden-Württemberg heißt ...",
-        "a": "Mannheim",
+        "question": "Die Landeshauptstadt von Baden-Württemberg heißt …",
+        "a": "Heidelberg",
         "b": "Stuttgart",
-        "c": "Heidelberg",
-        "d": "Karlsruhe",
+        "c": "Karlsruhe",
+        "d": "Mannheim",
         "solution": "b"
       },
       {
@@ -3027,11 +3027,11 @@
       {
         "num": "BY-2",
         "question": "Welches ist ein Landkreis in Bayern?",
-        "a": "Altötting",
-        "b": "Prignitz",
+        "a": "Prignitz",
+        "b": "Rhein-Sieg-Kreis",
         "c": "Nordfriesland",
-        "d": "Rhein-Sieg-Kreis",
-        "solution": "a"
+        "d": "Altötting",
+        "solution": "d"
       },
       {
         "num": "BY-3",
@@ -3054,47 +3054,47 @@
       {
         "num": "BY-5",
         "question": "Welche Farben hat die Landesflagge von Bayern?",
-        "a": "weiß-blau",
-        "b": "schwarz-gelb",
-        "c": "blau-weiß-rot",
-        "d": "grün-weiß-rot",
-        "solution": "a"
+        "a": "blau-weiß-rot",
+        "b": "weiß-blau",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gelb",
+        "solution": "b"
       },
       {
         "num": "BY-6",
         "question": "Wo können Sie sich in Bayern über politische Themen informieren?",
-        "a": "bei den Kirchen",
-        "b": "beim Ordnungsamt der Gemeinde",
-        "c": "bei der Landeszentrale für politische Bildung",
-        "d": "bei der Verbraucherzentrale",
-        "solution": "c"
+        "a": "beim Ordnungsamt der Gemeinde",
+        "b": "bei der Landeszentrale für politische Bildung",
+        "c": "bei der Verbraucherzentrale",
+        "d": "bei den Kirchen",
+        "solution": "b"
       },
       {
         "num": "BY-7",
-        "question": "Die Landeshauptstadt von Bayern heißt ...",
-        "a": "Nürnberg",
-        "b": "München",
-        "c": "Regensburg",
-        "d": "Ingolstadt",
-        "solution": "b"
+        "question": "Die Landeshauptstadt von Bayern heißt …",
+        "a": "Ingolstadt",
+        "b": "Regensburg",
+        "c": "Nürnberg",
+        "d": "München",
+        "solution": "d"
       },
       {
         "num": "BY-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Bayern?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Premierminister / Premierministerin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "a"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "BY-9",
         "question": "Welchen Minister / welche Ministerin hat Bayern nicht?",
-        "a": "Außenminister / Außenministerin",
-        "b": "Innenminister / Innenministerin",
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
         "c": "Finanzminister / Finanzministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "a"
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       },
       {
         "num": "BY-10",
@@ -3123,11 +3123,11 @@
       {
         "num": "HB-2",
         "question": "Welches ist ein Stadtteil von Bremen?",
-        "a": "Hemelingen",
-        "b": "Pankow",
-        "c": "Babelsberg",
-        "d": "Altona",
-        "solution": "a"
+        "a": "Altona",
+        "b": "Hemelingen",
+        "c": "Pankow",
+        "d": "Babelsberg",
+        "solution": "b"
       },
       {
         "num": "HB-3",
@@ -3150,47 +3150,47 @@
       {
         "num": "HB-5",
         "question": "Welche Farben hat die Landesflagge von Bremen?",
-        "a": "grün-weiß-rot",
-        "b": "schwarz-gelb",
-        "c": "rot-weiß",
-        "d": "blau-weiß-rot",
-        "solution": "c"
+        "a": "blau-weiß-rot",
+        "b": "rot-weiß",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gold",
+        "solution": "b"
       },
       {
         "num": "HB-6",
         "question": "Wo können Sie sich in Bremen über politische Themen informieren?",
         "a": "beim Ordnungsamt der Gemeinde",
-        "b": "bei den Kirchen",
-        "c": "bei der Verbraucherzentrale",
-        "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d"
+        "b": "bei der Landeszentrale für politische Bildung",
+        "c": "bei den Kirchen",
+        "d": "bei der Verbraucherzentrale",
+        "solution": "b"
       },
       {
         "num": "HB-7",
         "question": "Was ist ein deutscher Stadtstaat?",
-        "a": "Erfurt",
-        "b": "Bremen",
-        "c": "München",
-        "d": "Frankfurt",
-        "solution": "b"
+        "a": "Bremen",
+        "b": "München",
+        "c": "Frankfurt",
+        "d": "Erfurt",
+        "solution": "a"
       },
       {
         "num": "HB-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin des Stadtstaates Bremen?",
-        "a": "Präsident / Präsidentin des Senats",
-        "b": "Ministerpräsident / Ministerpräsidentin",
-        "c": "Regierender Bürgermeister / Regierende Bürgermeisterin",
-        "d": "Erster Bürgermeister / Erste Bürgermeisterin",
-        "solution": "a"
+        "a": "Ministerpräsident / Ministerpräsidentin",
+        "b": "Erster Bürgermeister / Erste Bürgermeisterin",
+        "c": "Präsident / Präsidentin des Senats",
+        "d": "Regierender Bürgermeister / Regierende Bürgermeisterin",
+        "solution": "c"
       },
       {
         "num": "HB-9",
         "question": "Welchen Senator / welche Senatorin hat Bremen nicht?",
-        "a": "Justizsenator / Justizsenatorin",
-        "b": "Senator / Senatorin für Außenbeziehungen",
-        "c": "Innensenator / Innensenatorin",
-        "d": "Finanzsenator / Finanzsenatorin",
-        "solution": "b"
+        "a": "Senator / Senatorin für Außenbeziehungen",
+        "b": "Finanzsenator / Finanzsenatorin",
+        "c": "Justizsenator / Justizsenatorin",
+        "d": "Innensenator / Innensenatorin",
+        "solution": "a"
       },
       {
         "num": "HB-10",
@@ -3228,11 +3228,11 @@
       {
         "num": "HE-3",
         "question": "Welches ist ein Landkreis in Hessen?",
-        "a": "Main-Taunus-Kreis",
-        "b": "Prignitz",
-        "c": "Ammerland",
-        "d": "Altötting",
-        "solution": "a"
+        "a": "Ammerland",
+        "b": "Altötting",
+        "c": "Prignitz",
+        "d": "Main-Taunus-Kreis",
+        "solution": "d"
       },
       {
         "num": "HE-4",
@@ -3246,24 +3246,24 @@
       {
         "num": "HE-5",
         "question": "Welche Farben hat die Landesflagge von Hessen?",
-        "a": "rot-weiß",
-        "b": "schwarz-gold",
-        "c": "grün-weiß-rot",
-        "d": "blau-weiß-rot",
-        "solution": "a"
+        "a": "blau-weiß-rot",
+        "b": "rot-weiß",
+        "c": "schwarz-gold",
+        "d": "grün-weiß-rot",
+        "solution": "b"
       },
       {
         "num": "HE-6",
         "question": "Wo können Sie sich in Hessen über politische Themen informieren?",
-        "a": "bei der Verbraucherzentrale",
-        "b": "bei der Landeszentrale für politische Bildung",
-        "c": "bei den Kirchen",
-        "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "b"
+        "a": "bei der Landeszentrale für politische Bildung",
+        "b": "bei der Verbraucherzentrale",
+        "c": "beim Ordnungsamt der Gemeinde",
+        "d": "bei den Kirchen",
+        "solution": "a"
       },
       {
         "num": "HE-7",
-        "question": "Die Landeshauptstadt von Hessen heißt ...",
+        "question": "Die Landeshauptstadt von Hessen heißt …",
         "a": "Kassel",
         "b": "Darmstadt",
         "c": "Frankfurt",
@@ -3273,20 +3273,20 @@
       {
         "num": "HE-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Hessen?",
-        "a": "Bürgermeister / Bürgermeisterin",
-        "b": "Ministerpräsident / Ministerpräsidentin",
-        "c": "Premierminister / Premierministerin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "b"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "HE-9",
         "question": "Welchen Minister / welche Ministerin hat Hessen nicht?",
-        "a": "Außenminister / Außenministerin",
-        "b": "Finanzminister / Finanzministerin",
-        "c": "Justizminister / Justizministerin",
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
         "d": "Innenminister / Innenministerin",
-        "solution": "a"
+        "solution": "b"
       },
       {
         "num": "HE-10",
@@ -3315,11 +3315,11 @@
       {
         "num": "HH-2",
         "question": "Welches ist ein Bezirk von Hamburg?",
-        "a": "Pankow",
-        "b": "Altona",
-        "c": "Mecklenburgische Seenplatte",
-        "d": "Hemelingen",
-        "solution": "b"
+        "a": "Altona",
+        "b": "Hemelingen",
+        "c": "Pankow",
+        "d": "Mecklenburgische Seenplatte",
+        "solution": "a"
       },
       {
         "num": "HH-3",
@@ -3342,47 +3342,47 @@
       {
         "num": "HH-5",
         "question": "Welche Farben hat die Landesflagge von Hamburg?",
-        "a": "weiß-rot",
-        "b": "schwarz-gelb",
-        "c": "blau-weiß-rot",
-        "d": "grün-weiß-rot",
-        "solution": "a"
+        "a": "blau-weiß-rot",
+        "b": "weiß-rot",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gelb",
+        "solution": "b"
       },
       {
         "num": "HH-6",
         "question": "Wo können Sie sich in Hamburg über politische Themen informieren?",
-        "a": "bei der Verbraucherzentrale",
-        "b": "bei der Landeszentrale für politische Bildung",
-        "c": "beim Ordnungsamt der Gemeinde",
-        "d": "bei den Kirchen",
-        "solution": "b"
+        "a": "beim Ordnungsamt der Gemeinde",
+        "b": "bei der Verbraucherzentrale",
+        "c": "bei den Kirchen",
+        "d": "bei der Landeszentrale für politische Bildung",
+        "solution": "d"
       },
       {
         "num": "HH-7",
         "question": "Welches Bundesland ist ein Stadtstaat?",
-        "a": "Sachsen",
-        "b": "Bayern",
-        "c": "Thüringen",
-        "d": "Hamburg",
-        "solution": "d"
+        "a": "Hamburg",
+        "b": "Sachsen",
+        "c": "Bayern",
+        "d": "Thüringen",
+        "solution": "a"
       },
       {
         "num": "HH-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin des Stadtstaates Hamburg?",
-        "a": "Erster Bürgermeister / Erste Bürgermeisterin",
-        "b": "Oberbürgermeister / Oberbürgermeisterin",
-        "c": "Ministerpräsident / Ministerpräsidentin",
-        "d": "Regierender Senator / Regierende Senatorin",
-        "solution": "a"
+        "a": "Ministerpräsident / Ministerpräsidentin",
+        "b": "Erster Bürgermeister / Erste Bürgermeisterin",
+        "c": "Regierender Senator / Regierende Senatorin",
+        "d": "Oberbürgermeister / Oberbürgermeisterin",
+        "solution": "b"
       },
       {
         "num": "HH-9",
         "question": "Welchen Senator / welche Senatorin hat Hamburg nicht?",
-        "a": "Senator / Senatorin für Außenbeziehungen",
-        "b": "Innensenator / Innensenatorin",
-        "c": "Justizsenator / Justizsenatorin",
-        "d": "Finanzsenator / Finanzsenatorin",
-        "solution": "a"
+        "a": "Justizsenator / Justizsenatorin",
+        "b": "Senator / Senatorin für Außenbeziehungen",
+        "c": "Finanzsenator / Finanzsenatorin",
+        "d": "Innensenator / Innensenatorin",
+        "solution": "b"
       },
       {
         "num": "HH-10",
@@ -3411,11 +3411,11 @@
       {
         "num": "MV-2",
         "question": "Welches ist ein Landkreis in Mecklenburg-Vorpommern?",
-        "a": "Vogtlandkreis",
-        "b": "Rhein-Sieg-Kreis",
-        "c": "Mecklenburgische Seenplatte",
-        "d": "Prignitz",
-        "solution": "c"
+        "a": "Prignitz",
+        "b": "Mecklenburgische Seenplatte",
+        "c": "Vogtlandkreis",
+        "d": "Rhein-Sieg-Kreis",
+        "solution": "b"
       },
       {
         "num": "MV-3",
@@ -3438,46 +3438,46 @@
       {
         "num": "MV-5",
         "question": "Welche Farben hat die Landesflagge von Mecklenburg-Vorpommern?",
-        "a": "blau-weiß-gelb-rot",
-        "b": "schwarz-gelb",
-        "c": "schwarz-rot-gold",
-        "d": "grün-weiß-rot",
-        "solution": "a"
+        "a": "schwarz-rot-gold",
+        "b": "blau-weiß-gelb-rot",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gelb",
+        "solution": "b"
       },
       {
         "num": "MV-6",
         "question": "Wo können Sie sich in Mecklenburg-Vorpommern über politische Themen informieren?",
-        "a": "bei der Verbraucherzentrale",
-        "b": "beim Ordnungsamt der Gemeinde",
-        "c": "bei der Landeszentrale für politische Bildung",
-        "d": "bei den Kirchen",
-        "solution": "c"
+        "a": "bei der Landeszentrale für politische Bildung",
+        "b": "bei den Kirchen",
+        "c": "beim Ordnungsamt der Gemeinde",
+        "d": "bei der Verbraucherzentrale",
+        "solution": "a"
       },
       {
         "num": "MV-7",
-        "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt ...",
-        "a": "Wismar",
-        "b": "Rostock",
-        "c": "Greifswald",
-        "d": "Schwerin",
-        "solution": "d"
+        "question": "Die Landeshauptstadt von Mecklenburg-Vorpommern heißt …",
+        "a": "Greifswald",
+        "b": "Schwerin",
+        "c": "Rostock",
+        "d": "Wismar",
+        "solution": "b"
       },
       {
         "num": "MV-8",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Mecklenburg-Vorpommern?",
-        "a": "Bürgermeister / Bürgermeisterin",
-        "b": "Ministerpräsident / Ministerpräsidentin",
-        "c": "Premierminister / Premierministerin",
-        "d": "Erster Bürgermeister / Erste Bürgermeisterin",
-        "solution": "b"
+        "a": "Erster Bürgermeister / Erste Bürgermeisterin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "MV-9",
         "question": "Welchen Minister / welche Ministerin hat Mecklenburg-Vorpommern nicht?",
-        "a": "Finanzsenator / Finanzsenatorin",
+        "a": "Justizminister / Justizministerin",
         "b": "Außenminister / Außenministerin",
-        "c": "Innenminister / Innenministerin",
-        "d": "Justizminister / Justizministerin",
+        "c": "Finanzministerin/Finanzminister",
+        "d": "Innenminister / Innenministerin",
         "solution": "b"
       },
       {
@@ -3517,46 +3517,46 @@
         "num": "NI-3",
         "question": "Ab welchem Alter darf man in Niedersachsen bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "NI-4",
         "question": "Welches ist ein Landkreis in Niedersachsen?",
-        "a": "Rhein-Sieg-Kreis",
-        "b": "Vogtlandkreis",
+        "a": "Ammerland",
+        "b": "Rhein-Sieg-Kreis",
         "c": "Nordfriesland",
-        "d": "Ammerland",
-        "solution": "d"
+        "d": "Vogtlandkreis",
+        "solution": "a"
       },
       {
         "num": "NI-5",
         "question": "Wo können Sie sich in Niedersachsen über politische Themen informieren?",
-        "a": "bei der Verbraucherzentrale",
-        "b": "bei der Landeszentrale für politische Bildung",
-        "c": "beim Ordnungsamt der Gemeinde",
+        "a": "bei der Landeszentrale für politische Bildung",
+        "b": "beim Ordnungsamt der Gemeinde",
+        "c": "bei der Verbraucherzentrale",
         "d": "bei den Kirchen",
-        "solution": "b"
+        "solution": "a"
       },
       {
         "num": "NI-6",
         "question": "Welche Farben hat die Landesflagge von Niedersachsen?",
-        "a": "schwarz-rot-gold",
-        "b": "blau-weiß-rot",
-        "c": "weiß-blau",
-        "d": "schwarz-gelb",
-        "solution": "a"
+        "a": "weiß-blau",
+        "b": "schwarz-rot-gold",
+        "c": "schwarz-gelb",
+        "d": "blau-weiß-rot",
+        "solution": "b"
       },
       {
         "num": "NI-7",
         "question": "Die Landeshauptstadt von Niedersachsen heißt …",
-        "a": "Wolfsburg",
-        "b": "Hannover",
-        "c": "Braunschweig",
+        "a": "Hannover",
+        "b": "Braunschweig",
+        "c": "Wolfsburg",
         "d": "Osnabrück",
-        "solution": "b"
+        "solution": "a"
       },
       {
         "num": "NI-8",
@@ -3572,20 +3572,20 @@
       {
         "num": "NI-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Niedersachsen?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
+        "a": "Erster Minister / Erste Ministerin",
         "b": "Premierminister / Premierministerin",
         "c": "Bürgermeister / Bürgermeisterin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "a"
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "NI-10",
         "question": "Welchen Minister / welche Ministerin hat Niedersachsen nicht?",
-        "a": "Innenminister / Innenministerin",
-        "b": "Justizminister / Justizministerin",
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
         "c": "Finanzminister / Finanzministerin",
-        "d": "Außenminister / Außenministerin",
-        "solution": "d"
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ],
     "NW": [
@@ -3604,10 +3604,10 @@
         "num": "NW-2",
         "question": "Welches ist ein Landkreis in Nordrhein-Westfalen?",
         "a": "Ammerland",
-        "b": "Nordfriesland",
-        "c": "Rhein-Sieg-Kreis",
+        "b": "Rhein-Sieg-Kreis",
+        "c": "Nordfriesland",
         "d": "Vogtlandkreis",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "NW-3",
@@ -3622,37 +3622,37 @@
         "num": "NW-4",
         "question": "Ab welchem Alter darf man in Nordrhein-Westfalen bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "NW-5",
         "question": "Welche Farben hat die Landesflagge von Nordrhein-Westfalen?",
-        "a": "schwarz-gold",
-        "b": "rot-weiß",
-        "c": "grün-weiß-rot",
+        "a": "rot-weiß",
+        "b": "grün-weiß-rot",
+        "c": "schwarz-gold",
         "d": "blau-weiß-rot",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "NW-6",
         "question": "Wo können Sie sich in Nordrhein-Westfalen über politische Themen informieren?",
         "a": "bei den Kirchen",
-        "b": "bei der Verbraucherzentrale",
-        "c": "bei der Landeszentrale für politische Bildung",
-        "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "c"
+        "b": "beim Ordnungsamt der Gemeinde",
+        "c": "bei der Verbraucherzentrale",
+        "d": "bei der Landeszentrale für politische Bildung",
+        "solution": "d"
       },
       {
         "num": "NW-7",
         "question": "Die Landeshauptstadt von Nordrhein-Westfalen heißt …",
-        "a": "Dortmund",
+        "a": "Köln",
         "b": "Bonn",
-        "c": "Köln",
-        "d": "Düsseldorf",
-        "solution": "d"
+        "c": "Düsseldorf",
+        "d": "Dortmund",
+        "solution": "c"
       },
       {
         "num": "NW-8",
@@ -3668,20 +3668,20 @@
       {
         "num": "NW-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Nordrhein-Westfalen?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Erster Minister / Erste Ministerin",
-        "d": "Premierminister / Premierministerin",
-        "solution": "a"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "NW-10",
         "question": "Welchen Minister / welche Ministerin hat Nordrhein-Westfalen nicht?",
-        "a": "Finanzminister / Finanzministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "c"
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ],
     "RP": [
@@ -3717,38 +3717,38 @@
       {
         "num": "RP-4",
         "question": "Welche Farben hat die Landesflagge von Rheinland-Pfalz?",
-        "a": "schwarz-rot-gold",
-        "b": "weiß-rot",
-        "c": "grün-weiß-rot",
-        "d": "schwarz-gelb",
-        "solution": "a"
+        "a": "weiß-rot",
+        "b": "schwarz-rot-gold",
+        "c": "schwarz-gelb",
+        "d": "grün-weiß-rot",
+        "solution": "b"
       },
       {
         "num": "RP-5",
         "question": "Die Landeshauptstadt von Rheinland-Pfalz heißt …",
-        "a": "Kaiserslautern",
-        "b": "Ludwigshafen",
-        "c": "Mainz",
+        "a": "Mainz",
+        "b": "Kaiserslautern",
+        "c": "Ludwigshafen",
         "d": "Koblenz",
-        "solution": "c"
+        "solution": "a"
       },
       {
         "num": "RP-6",
         "question": "Ab welchem Alter darf man in Rheinland-Pfalz bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "b"
+        "solution": "c"
       },
       {
         "num": "RP-7",
         "question": "Wo können Sie sich in Rheinland-Pfalz über politische Themen informieren?",
         "a": "bei den Kirchen",
         "b": "bei der Verbraucherzentrale",
-        "c": "bei der Landeszentrale für politische Bildung",
-        "d": "beim Ordnungsamt der Gemeinde",
-        "solution": "c"
+        "c": "beim Ordnungsamt der Gemeinde",
+        "d": "bei der Landeszentrale für politische Bildung",
+        "solution": "d"
       },
       {
         "num": "RP-8",
@@ -3764,20 +3764,20 @@
       {
         "num": "RP-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Rheinland-Pfalz?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Erster Minister / Erste Ministerin",
-        "d": "Premierminister / Premierministerin",
-        "solution": "a"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "RP-10",
         "question": "Welchen Minister / welche Ministerin hat Rheinland-Pfalz nicht?",
-        "a": "Außenminister / Außenministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Justizminister / Justizministerin",
-        "d": "Finanzminister / Finanzministerin",
-        "solution": "a"
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ],
     "SH": [
@@ -3795,11 +3795,11 @@
       {
         "num": "SH-2",
         "question": "Welches ist ein Landkreis in Schleswig-Holstein?",
-        "a": "Nordfriesland",
+        "a": "Ammerland",
         "b": "Mecklenburgische Seenplatte",
-        "c": "Rhein-Sieg-Kreis",
-        "d": "Ammerland",
-        "solution": "a"
+        "c": "Nordfriesland",
+        "d": "Rhein-Sieg-Kreis",
+        "solution": "c"
       },
       {
         "num": "SH-3",
@@ -3814,37 +3814,37 @@
         "num": "SH-4",
         "question": "Ab welchem Alter darf man in Schleswig-Holstein bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "SH-5",
         "question": "Welche Farben hat die Landesflagge von Schleswig-Holstein?",
         "a": "weiß-blau",
-        "b": "grün-weiß-rot",
-        "c": "blau-weiß-rot",
-        "d": "weiß-rot",
-        "solution": "c"
+        "b": "blau-weiß-rot",
+        "c": "weiß-rot",
+        "d": "grün-weiß-rot",
+        "solution": "b"
       },
       {
         "num": "SH-6",
         "question": "Wo können Sie sich in Schleswig-Holstein über politische Themen informieren?",
-        "a": "beim Ordnungsamt der Gemeinde",
-        "b": "beim / bei der Landesbeauftragten für politische Bildung",
-        "c": "bei den Kirchen",
-        "d": "bei der Verbraucherzentrale",
-        "solution": "b"
+        "a": "bei der Verbraucherzentrale",
+        "b": "beim Ordnungsamt der Gemeinde",
+        "c": "beim / bei der Landesbeauftragten für politische Bildung",
+        "d": "bei den Kirchen",
+        "solution": "c"
       },
       {
         "num": "SH-7",
         "question": "Die Landeshauptstadt von Schleswig-Holstein heißt …",
-        "a": "Lübeck",
-        "b": "Kiel",
-        "c": "Flensburg",
-        "d": "Husum",
-        "solution": "b"
+        "a": "Husum",
+        "b": "Flensburg",
+        "c": "Lübeck",
+        "d": "Kiel",
+        "solution": "d"
       },
       {
         "num": "SH-8",
@@ -3860,19 +3860,19 @@
       {
         "num": "SH-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Schleswig-Holstein?",
-        "a": "Ministerpräsident / Ministerpräsidentin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Erster Minister / Erste Ministerin",
-        "d": "Premierminister / Premierministerin",
-        "solution": "a"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "SH-10",
         "question": "Welchen Minister / welche Ministerin hat Schleswig-Holstein nicht?",
-        "a": "Innenminister / Innenministerin",
+        "a": "Justizminister / Justizministerin",
         "b": "Außenminister / Außenministerin",
-        "c": "Justizminister / Justizministerin",
-        "d": "Finanzminister / Finanzministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
         "solution": "b"
       }
     ],
@@ -3892,10 +3892,10 @@
         "num": "SL-2",
         "question": "Ab welchem Alter darf man im Saarland bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "b"
+        "solution": "c"
       },
       {
         "num": "SL-3",
@@ -3909,38 +3909,38 @@
       {
         "num": "SL-4",
         "question": "Welches ist ein Landkreis im Saarland?",
-        "a": "Rhein-Sieg-Kreis",
-        "b": "Neunkirchen",
-        "c": "Mecklenburgische Seenplatte",
-        "d": "Altötting",
-        "solution": "b"
+        "a": "Mecklenburgische Seenplatte",
+        "b": "Altötting",
+        "c": "Neunkirchen",
+        "d": "Rhein-Sieg-Kreis",
+        "solution": "c"
       },
       {
         "num": "SL-5",
         "question": "Welche Farben hat die Landesflagge des Saarlandes?",
-        "a": "grün-weiß-rot",
+        "a": "weiß-blau",
         "b": "schwarz-rot-gold",
         "c": "schwarz-gelb",
-        "d": "weiß-blau",
+        "d": "grün-weiß-rot",
         "solution": "b"
       },
       {
         "num": "SL-6",
         "question": "Wo können Sie sich im Saarland über politische Themen informieren?",
-        "a": "beim Ordnungsamt der Gemeinde",
+        "a": "bei den Kirchen",
         "b": "bei der Landeszentrale für politische Bildung",
-        "c": "bei den Kirchen",
-        "d": "bei der Verbraucherzentrale",
+        "c": "bei der Verbraucherzentrale",
+        "d": "beim Ordnungsamt der Gemeinde",
         "solution": "b"
       },
       {
         "num": "SL-7",
         "question": "Die Landeshauptstadt des Saarlandes heißt …",
-        "a": "Saarbrücken",
-        "b": "Neunkirchen",
-        "c": "Völklingen",
-        "d": "Homburg",
-        "solution": "a"
+        "a": "Neunkirchen",
+        "b": "Homburg",
+        "c": "Saarbrücken",
+        "d": "Völklingen",
+        "solution": "c"
       },
       {
         "num": "SL-8",
@@ -3956,9 +3956,9 @@
       {
         "num": "SL-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin des Saarlandes?",
-        "a": "Bürgermeister / Bürgermeisterin",
-        "b": "Erster Minister / Erste Ministerin",
-        "c": "Premierminister / Premierministerin",
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
         "d": "Ministerpräsident / Ministerpräsidentin",
         "solution": "d"
       },
@@ -3966,10 +3966,10 @@
         "num": "SL-10",
         "question": "Welchen Minister / welche Ministerin hat das Saarland nicht?",
         "a": "Justizminister / Justizministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Finanzminister / Finanzministerin",
-        "solution": "c"
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ],
     "SN": [
@@ -3987,11 +3987,11 @@
       {
         "num": "SN-2",
         "question": "Welches ist ein Landkreis in Sachsen?",
-        "a": "Altötting",
-        "b": "Nordfriesland",
-        "c": "Vogtlandkreis",
-        "d": "Uckermark",
-        "solution": "c"
+        "a": "Vogtlandkreis",
+        "b": "Altötting",
+        "c": "Uckermark",
+        "d": "Nordfriesland",
+        "solution": "a"
       },
       {
         "num": "SN-3",
@@ -4006,37 +4006,37 @@
         "num": "SN-4",
         "question": "Ab welchem Alter darf man in Sachsen bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "b"
+        "solution": "c"
       },
       {
         "num": "SN-5",
         "question": "Welche Farben hat die Landesflagge von Sachsen?",
-        "a": "schwarz-gelb",
-        "b": "grün-weiß-rot",
-        "c": "blau-weiß-rot",
-        "d": "weiß-grün",
-        "solution": "d"
+        "a": "blau-weiß-rot",
+        "b": "weiß-grün",
+        "c": "grün-weiß-rot",
+        "d": "schwarz-gelb",
+        "solution": "b"
       },
       {
         "num": "SN-6",
         "question": "Wo können Sie sich in Sachsen über politische Themen informieren?",
-        "a": "bei der Verbraucherzentrale",
+        "a": "bei der Landeszentrale für politische Bildung",
         "b": "beim Ordnungsamt der Gemeinde",
         "c": "bei den Kirchen",
-        "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d"
+        "d": "bei der Verbraucherzentrale",
+        "solution": "a"
       },
       {
         "num": "SN-7",
         "question": "Die Landeshauptstadt von Sachsen heißt …",
-        "a": "Dresden",
-        "b": "Zwickau",
-        "c": "Leipzig",
-        "d": "Chemnitz",
-        "solution": "a"
+        "a": "Leipzig",
+        "b": "Dresden",
+        "c": "Chemnitz",
+        "d": "Zwickau",
+        "solution": "b"
       },
       {
         "num": "SN-8",
@@ -4052,20 +4052,20 @@
       {
         "num": "SN-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Sachsen?",
-        "a": "Bürgermeister / Bürgermeisterin",
-        "b": "Ministerpräsident / Ministerpräsidentin",
-        "c": "Premierminister / Premierministerin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "b"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "SN-10",
         "question": "Welchen Minister / welche Ministerin hat Sachsen nicht?",
-        "a": "Außenminister / Außenministerin",
-        "b": "Finanzminister / Finanzministerin",
-        "c": "Justizminister / Justizministerin",
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
         "d": "Innenminister / Innenministerin",
-        "solution": "a"
+        "solution": "b"
       }
     ],
     "ST": [
@@ -4083,11 +4083,11 @@
       {
         "num": "ST-2",
         "question": "Welches ist ein Landkreis in Sachsen-Anhalt?",
-        "a": "Uckermark",
-        "b": "Ammerland",
-        "c": "Börde",
-        "d": "Altötting",
-        "solution": "c"
+        "a": "Ammerland",
+        "b": "Altötting",
+        "c": "Uckermark",
+        "d": "Börde",
+        "solution": "d"
       },
       {
         "num": "ST-3",
@@ -4102,37 +4102,37 @@
         "num": "ST-4",
         "question": "Ab welchem Alter darf man in Sachsen-Anhalt bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "ST-5",
         "question": "Welche Farben hat die Landesflagge von Sachsen-Anhalt?",
-        "a": "gelb-schwarz",
-        "b": "grün-weiß-rot",
-        "c": "weiß-blau",
-        "d": "blau-weiß-rot",
-        "solution": "a"
+        "a": "blau-weiß-rot",
+        "b": "gelb-schwarz",
+        "c": "grün-weiß-rot",
+        "d": "weiß-rot",
+        "solution": "b"
       },
       {
         "num": "ST-6",
         "question": "Wo können Sie sich in Sachsen-Anhalt über politische Themen informieren?",
-        "a": "bei der Landeszentrale für politische Bildung",
-        "b": "bei den Kirchen",
+        "a": "bei den Kirchen",
+        "b": "bei der Landeszentrale für politische Bildung",
         "c": "beim Ordnungsamt der Gemeinde",
         "d": "bei der Verbraucherzentrale",
-        "solution": "a"
+        "solution": "b"
       },
       {
         "num": "ST-7",
         "question": "Die Landeshauptstadt von Sachsen-Anhalt heißt …",
-        "a": "Magdeburg",
-        "b": "Wittenberg",
-        "c": "Halle",
-        "d": "Dessau",
-        "solution": "a"
+        "a": "Halle",
+        "b": "Dessau",
+        "c": "Magdeburg",
+        "d": "Wittenberg",
+        "solution": "c"
       },
       {
         "num": "ST-8",
@@ -4148,20 +4148,20 @@
       {
         "num": "ST-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Sachsen-Anhalt?",
-        "a": "Premierminister / Premierministerin",
-        "b": "Bürgermeister / Bürgermeisterin",
-        "c": "Ministerpräsident / Ministerpräsidentin",
-        "d": "Erster Minister / Erste Ministerin",
-        "solution": "c"
+        "a": "Erster Minister / Erste Ministerin",
+        "b": "Premierminister / Premierministerin",
+        "c": "Bürgermeister / Bürgermeisterin",
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "ST-10",
         "question": "Welchen Minister / welche Ministerin hat Sachsen-Anhalt nicht?",
-        "a": "Finanzminister / Finanzministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "c"
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ],
     "TH": [
@@ -4179,11 +4179,11 @@
       {
         "num": "TH-2",
         "question": "Welches ist ein Landkreis in Thüringen?",
-        "a": "Altötting",
-        "b": "Wartburgkreis",
-        "c": "Ammerland",
-        "d": "Nordfriesland",
-        "solution": "b"
+        "a": "Ammerland",
+        "b": "Altötting",
+        "c": "Nordfriesland",
+        "d": "Wartburgkreis",
+        "solution": "d"
       },
       {
         "num": "TH-3",
@@ -4198,37 +4198,37 @@
         "num": "TH-4",
         "question": "Ab welchem Alter darf man in Thüringen bei Kommunalwahlen wählen?",
         "a": "14",
-        "b": "18",
-        "c": "16",
+        "b": "16",
+        "c": "18",
         "d": "20",
-        "solution": "c"
+        "solution": "b"
       },
       {
         "num": "TH-5",
         "question": "Welche Farben hat die Landesflagge von Thüringen?",
-        "a": "weiß-rot",
-        "b": "schwarz-gold",
+        "a": "blau-weiß-rot",
+        "b": "weiß-rot",
         "c": "grün-weiß-rot",
-        "d": "blau-weiß-rot",
-        "solution": "a"
+        "d": "schwarz-gold",
+        "solution": "b"
       },
       {
         "num": "TH-6",
         "question": "Wo können Sie sich in Thüringen über politische Themen informieren?",
-        "a": "beim Ordnungsamt der Gemeinde",
-        "b": "bei den Kirchen",
-        "c": "bei der Verbraucherzentrale",
-        "d": "bei der Landeszentrale für politische Bildung",
-        "solution": "d"
+        "a": "bei den Kirchen",
+        "b": "bei der Verbraucherzentrale",
+        "c": "bei der Landeszentrale für politische Bildung",
+        "d": "beim Ordnungsamt der Gemeinde",
+        "solution": "c"
       },
       {
         "num": "TH-7",
         "question": "Die Landeshauptstadt von Thüringen heißt …",
-        "a": "Jena",
-        "b": "Gera",
-        "c": "Eisenach",
-        "d": "Erfurt",
-        "solution": "d"
+        "a": "Eisenach",
+        "b": "Erfurt",
+        "c": "Gera",
+        "d": "Jena",
+        "solution": "b"
       },
       {
         "num": "TH-8",
@@ -4245,19 +4245,19 @@
         "num": "TH-9",
         "question": "Wie nennt man den Regierungschef / die Regierungschefin in Thüringen?",
         "a": "Erster Minister / Erste Ministerin",
-        "b": "Ministerpräsident / Ministerpräsidentin",
+        "b": "Premierminister / Premierministerin",
         "c": "Bürgermeister / Bürgermeisterin",
-        "d": "Premierminister / Premierministerin",
-        "solution": "b"
+        "d": "Ministerpräsident / Ministerpräsidentin",
+        "solution": "d"
       },
       {
         "num": "TH-10",
         "question": "Welchen Minister / welche Ministerin hat Thüringen nicht?",
-        "a": "Finanzminister / Finanzministerin",
-        "b": "Innenminister / Innenministerin",
-        "c": "Außenminister / Außenministerin",
-        "d": "Justizminister / Justizministerin",
-        "solution": "c"
+        "a": "Justizminister / Justizministerin",
+        "b": "Außenminister / Außenministerin",
+        "c": "Finanzminister / Finanzministerin",
+        "d": "Innenminister / Innenministerin",
+        "solution": "b"
       }
     ]
   }

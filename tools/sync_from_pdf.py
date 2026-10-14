@@ -99,6 +99,8 @@ def extract_general_questions(pdf_path: Path) -> dict:
     current_q_lines = []
     answer_lines = []
     in_answers = False
+    # Counts bare checkboxes seen before their text lines (Q14-style batched layout)
+    pending_checkboxes = 0
 
     # "Aufgabe N" pattern (used in this PDF instead of bare numbers)
     AUFGABE   = re.compile(r"^\s*Aufgabe\s+(\d{1,3})\s*$")
@@ -124,6 +126,7 @@ def extract_general_questions(pdf_path: Path) -> dict:
                 current_q_lines = []
                 answer_lines = []
                 in_answers = False
+                pending_checkboxes = 0
                 i += 1
                 continue
         if current_num is not None:
@@ -133,22 +136,35 @@ def extract_general_questions(pdf_path: Path) -> dict:
                 after_cb = CHECKBOX.sub("", stripped).strip()
                 if after_cb:
                     answer_lines.append(after_cb)
+                    pending_checkboxes = 0
                 else:
-                    # Checkbox alone — text is on the next non-empty line
-                    j = i + 1
-                    while j < len(lines) and not lines[j].strip():
-                        j += 1
-                    if j < len(lines):
-                        next_s = lines[j].strip()
-                        if (not CHECKBOX.match(next_s)
-                                and not re.match(r"^Seite\s+\d+", next_s)
-                                and not AUFGABE.match(next_s)):
-                            answer_lines.append(next_s)
-                            i = j
-            elif in_answers and answer_lines and not CHECKBOX.match(stripped) and stripped:
+                    # Bare checkbox — if already in batched mode, just count it;
+                    # otherwise peek at next non-empty line.
+                    if pending_checkboxes > 0:
+                        pending_checkboxes += 1
+                    else:
+                        j = i + 1
+                        while j < len(lines) and not lines[j].strip():
+                            j += 1
+                        if j < len(lines):
+                            next_s = lines[j].strip()
+                            if (not CHECKBOX.match(next_s)
+                                    and not re.match(r"^Seite\s+\d+", next_s)
+                                    and not AUFGABE.match(next_s)):
+                                answer_lines.append(next_s)
+                                i = j
+                                pending_checkboxes = 0
+                            else:
+                                # Next is also a checkbox: batched layout, count it
+                                pending_checkboxes += 1
+            elif in_answers and stripped:
                 if re.match(r"^Seite\s+\d+\s+von\s+\d+", stripped):
                     pass
-                else:
+                elif pending_checkboxes > 0:
+                    # Text line for a pending bare checkbox
+                    answer_lines.append(stripped)
+                    pending_checkboxes -= 1
+                elif answer_lines:
                     answer_lines[-1] += " " + stripped
             elif not in_answers and stripped and not re.match(r"^Seite\s+\d+", stripped):
                 current_q_lines.append(stripped)
