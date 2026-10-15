@@ -16,6 +16,25 @@ import {
 import { APP_VERSION_CONFIG } from './version';
 import { cacheQuestionImagesOnDevice } from './utils/mediaCache';
 
+// Splits "Question text? © Author/Source" into question + copyright credit
+const splitCopyright = (text: string): { text: string; credit: string | null } => {
+  const raw = text || '';
+  const idx = raw.indexOf('©');
+  if (idx === -1) return { text: raw.trim(), credit: null };
+  return {
+    text: raw.slice(0, idx).trim(),
+    credit: raw.slice(idx).trim()
+  };
+};
+
+// Small credit line shown under an image
+const ImageCredit = ({ credit }: { credit: string | null }) =>
+  credit ? (
+    <p className="mt-1.5 text-[10px] leading-tight text-zinc-400 dark:text-zinc-500 text-center">
+      {credit}
+    </p>
+  ) : null;
+
 export default function App() {
   // Theme State
   const [theme, setTheme] = useState<ThemeMode>(() => {
@@ -225,6 +244,7 @@ export default function App() {
   }, [allCurrentQuestions, activeSet, sortNumerically]);
 
   const currentQuestion = displayedQuestions[currentIndex] || displayedQuestions[0];
+  const currentParsed = splitCopyright(currentQuestion?.question || '');
 
   // Exam Countdown Timer
   useEffect(() => {
@@ -546,6 +566,9 @@ export default function App() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Parsed question text / copyright for the active exam question
+  const examParsed = splitCopyright(examQuestions[currentIndex]?.question || '');
+
   return (
     <div className="min-h-[100dvh] bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors">
       {/* 1. TOP HEADER */}
@@ -690,8 +713,8 @@ export default function App() {
                     </span>
                   </div>
 
-                  {/* Optional Image */}
-                  {resolveQuestionImageSrc(examQuestions[currentIndex].image) && (
+                  {/* Optional Image + copyright credit */}
+                  {resolveQuestionImageSrc(examQuestions[currentIndex].image) ? (
                     <div className="mb-4 text-center">
                       <img
                         src={resolveQuestionImageSrc(examQuestions[currentIndex].image)!}
@@ -706,11 +729,16 @@ export default function App() {
                         }}
                         className="max-h-56 max-w-full mx-auto object-contain rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-2 cursor-zoom-in"
                       />
+                      <ImageCredit credit={examParsed.credit} />
                     </div>
+                  ) : (
+                    examParsed.credit && (
+                      <p className="mb-4 text-[10px] text-zinc-400 dark:text-zinc-500">{examParsed.credit}</p>
+                    )
                   )}
 
                   <h2 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-white leading-snug mb-5">
-                    {examQuestions[currentIndex].question}
+                    {examParsed.text}
                   </h2>
 
                   {/* 4 Options */}
@@ -904,6 +932,7 @@ export default function App() {
                   .map((q, idx) => {
                     const userPick = examAnswers[q.num];
                     const isCorrect = userPick === q.solution;
+                    const parsed = splitCopyright(q.question);
 
                     return (
                       <div
@@ -922,7 +951,10 @@ export default function App() {
                           </span>
                         </div>
 
-                        <p className="text-sm font-semibold mb-3 text-zinc-900 dark:text-white">{q.question}</p>
+                        <p className="text-sm font-semibold mb-3 text-zinc-900 dark:text-white">{parsed.text}</p>
+                        {parsed.credit && (
+                          <p className="text-[10px] text-zinc-400 dark:text-zinc-500 -mt-2 mb-3">{parsed.credit}</p>
+                        )}
 
                         <div className="space-y-1.5 text-xs">
                           {(['a', 'b', 'c', 'd'] as const).map((lettr) => {
@@ -981,8 +1013,8 @@ export default function App() {
                   </span>
                 </div>
 
-                {/* Question Image if present */}
-                {resolveQuestionImageSrc(currentQuestion.image) && (
+                {/* Question Image + copyright credit */}
+                {resolveQuestionImageSrc(currentQuestion.image) ? (
                   <div className="mb-4 text-center">
                     <img
                       src={resolveQuestionImageSrc(currentQuestion.image)!}
@@ -996,12 +1028,17 @@ export default function App() {
                       }}
                       className="max-h-56 max-w-full mx-auto object-contain rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-2 cursor-zoom-in"
                     />
+                    <ImageCredit credit={currentParsed.credit} />
                   </div>
+                ) : (
+                  currentParsed.credit && (
+                    <p className="mb-4 text-[10px] text-zinc-400 dark:text-zinc-500">{currentParsed.credit}</p>
+                  )
                 )}
 
                 {/* German Question Text */}
                 <h1 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-white leading-snug mb-5">
-                  {currentQuestion.question}
+                  {currentParsed.text}
                 </h1>
 
                 {/* 4 Options */}
