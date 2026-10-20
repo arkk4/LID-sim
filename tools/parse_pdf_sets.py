@@ -36,7 +36,7 @@ Q_MIN, Q_MAX = 1, 310
 # Left-margin threshold for sidebar question annotations (points)
 SIDEBAR_X_MAX = 45.0
 # Tolerance for the right edge of the sidebar column (points)
-X1_TOL = 6.0
+X1_TOL = 2.0
 # Exclude bottom-of-page book-page-number text
 SIDEBAR_Y_MAX = 740.0
 # Header zone for chapter title
@@ -90,6 +90,10 @@ def get_sidebar_questions(page):
             for span in line["spans"]:
                 text = span["text"].strip()
                 if not text or not re.match(r'^[\d,\s]+$', text):
+                    continue
+                # Line numbers in reading texts (5, 10, 15...) are black body text (Klein-Regular, color=0);
+                # sidebar question annotations are gray marginalia (Klein-Medium, color!=0).
+                if span.get("font") == "Klein-Regular" or span.get("color") == 0:
                     continue
                 x0, y0, x1, _ = span["bbox"]
                 if y0 < SIDEBAR_Y_MAX:
