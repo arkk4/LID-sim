@@ -33,10 +33,9 @@ PDF_PATH = REPO_ROOT / "materials" / "Mein_Leben_in_Deutschland_Orientierungskur
 SETS_PATH = REPO_ROOT / "data" / "sets" / "sets.json"
 
 Q_MIN, Q_MAX = 1, 310
-# Left-margin threshold for sidebar question annotations (points)
-SIDEBAR_X_MAX = 45.0
-# Tolerance for the right edge of the sidebar column (points)
-X1_TOL = 2.0
+# Left-margin bounding box for sidebar question annotations (points)
+SIDEBAR_X_MAX = 60.0
+SIDEBAR_X1_MAX = 68.0
 # Exclude bottom-of-page book-page-number text
 SIDEBAR_Y_MAX = 740.0
 # Header zone for chapter title
@@ -78,11 +77,11 @@ def get_chapter_title(page):
 def get_sidebar_questions(page):
     """Return question numbers from left-margin sidebar annotations, top-to-bottom.
 
-    Sidebar lines are right-aligned, so x0 varies per line. A numeric-only span counts
-    as sidebar if its left edge is in the margin OR its right edge matches the
-    sidebar's right edge (taken from the spans that are unambiguously in the margin).
+    Sidebar question annotations are gray marginalia (Klein-Medium, color != 0)
+    located in the left margin area (x0 < 60.0, x1 <= 68.0, y0 < SIDEBAR_Y_MAX).
+    This handles both multi-question lines and single-question pages uniformly.
     """
-    spans = []  # (x0, x1, y0, text)
+    spans = []  # (y0, text)
     for b in page.get_text("dict")["blocks"]:
         if b.get("type") != 0:
             continue
@@ -93,38 +92,31 @@ def get_sidebar_questions(page):
                     continue
                 # Line numbers in reading texts (5, 10, 15...) are black body text (Klein-Regular, color=0);
                 # sidebar question annotations are gray marginalia (Klein-Medium, color!=0).
-                if span.get("font") == "Klein-Regular" or span.get("color") == 0:
+                if span.get("font") != "Klein-Medium" or span.get("color") == 0:
                     continue
                 x0, y0, x1, _ = span["bbox"]
-                if y0 < SIDEBAR_Y_MAX:
-                    spans.append((x0, x1, y0, text))
+                if x0 < SIDEBAR_X_MAX and x1 <= SIDEBAR_X1_MAX and y0 < SIDEBAR_Y_MAX:
+                    spans.append((y0, text))
 
-    # Anchors: spans that are definitely in the sidebar (left edge within margin)
-    anchors = [s for s in spans if s[0] < SIDEBAR_X_MAX]
-    if not anchors:
-        return []
-    sidebar_x1 = max(s[1] for s in anchors) + X1_TOL
-
+    spans.sort(key=lambda t: t[0])  # top-to-bottom order
     seen = set()
-    qs = []  # list of (y0, question_str)
-    for x0, x1, y0, text in spans:
-        # Right edge outside the sidebar column → body text, not sidebar
-        if x0 >= SIDEBAR_X_MAX and x1 > sidebar_x1:
-            continue
+    qs = []
+    for _, text in spans:
         for tok in re.findall(r'\d+', text):
             n = int(tok)
             if Q_MIN <= n <= Q_MAX and str(n) not in seen:
                 seen.add(str(n))
-                qs.append((y0, str(n)))
-    qs.sort(key=lambda t: t[0])  # stable: keeps text order within the same y0
-    return [q for _, q in qs]
+                qs.append(str(n))
+    return qs
 
 
 def extract_lernseite_sets(doc):
     sets = []
     for i, page in enumerate(doc):
         text = page.get_text()
-        m = re.search(r'Prüfungsaufgaben[^\d]*([\d,\s\n]+)', text)
+        # Lernseite question list header: e.g. "prüfungsaufgaben:", "!rüfungsaufgaben:", "prüfungsaufga2en"
+        # followed directly by question numbers.
+        m = re.search(r'(?:[Pp!][rüü]{1,2}f[%u]ngs[a-z0-9\-%/]+)\s*[:\s]\s*([0-9,\s\n]+)', text)
         if not m:
             continue
 
@@ -160,7 +152,7 @@ def extract_content_page_sets(doc):
         text = page.get_text()
 
         # Skip Lernseite summary pages
-        if 'Prüfungsaufgaben' in text:
+        if 'Lernseite' in text:
             continue
 
         qs = get_sidebar_questions(page)
