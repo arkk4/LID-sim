@@ -298,12 +298,40 @@ export default function App() {
     }
   };
 
+  // Build a virtual QuestionSet for all state questions of a given land code.
+  const buildStateSet = (code: string): QuestionSet => {
+    const stateKey = code.toUpperCase();
+    const stateQs = catalog.states[stateKey] || [];
+    return {
+      id: `__state-${stateKey}`,
+      title: `Landesfragen ${stateKey}`,
+      description: `Alle ${stateQs.length} Fragen für ${stateKey}`,
+      questionNumbers: stateQs.map((q) => q.num),
+    };
+  };
+
   // Jump from Navigator Sheet (font-size 16px prevents iOS auto-zoom)
   const handleJumpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setJumpError(null);
     const raw = jumpQuery.trim();
     if (!raw) return;
+
+    // "R" or bare land code → state-block mode (same as quick jump)
+    if (/^r$/i.test(raw)) {
+      handleSelectSet(buildStateSet(selectedState));
+      setJumpQuery('');
+      setIsNavigatorOpen(false);
+      return;
+    }
+    const bareCode = raw.toUpperCase();
+    if (BUNDESLAENDER.some((b) => b.code === bareCode)) {
+      handleSelectState(bareCode as BundeslandCode);
+      handleSelectSet(buildStateSet(bareCode));
+      setJumpQuery('');
+      setIsNavigatorOpen(false);
+      return;
+    }
 
     const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
     const searchClean = clean(raw);
@@ -334,6 +362,21 @@ export default function App() {
     setQuickJumpError(null);
     const raw = quickJumpInput.trim();
     if (!raw) return;
+
+    // 0a. "R" → all state questions for selectedState
+    if (/^r$/i.test(raw)) {
+      handleSelectSet(buildStateSet(selectedState));
+      setQuickJumpInput('');
+      return;
+    }
+    // 0b. Bare Bundesland code (e.g. "NW") → switch state + all its state questions
+    const bareCode = raw.toUpperCase();
+    if (BUNDESLAENDER.some((b) => b.code === bareCode)) {
+      handleSelectState(bareCode as BundeslandCode);
+      handleSelectSet(buildStateSet(bareCode));
+      setQuickJumpInput('');
+      return;
+    }
 
     const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
     const searchClean = clean(raw);
