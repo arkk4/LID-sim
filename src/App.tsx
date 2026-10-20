@@ -8,13 +8,10 @@ import {
 import { BundeslandCode, Question, QuestionSet, ThemeMode } from './types';
 import { BUNDESLAENDER, STATE_COAT_FALLBACKS, getBackupImageUrl } from './data/bundeslaender';
 import { PRESET_QUESTION_SETS } from './data/presetSets';
-import {
-  BUILTIN_GENERAL_QUESTIONS,
-  BUILTIN_STATE_QUESTIONS,
-  resolveQuestionImageSrc
-} from './data/questionsData';
+import { resolveQuestionImageSrc } from './data/questionsData';
 import { APP_VERSION_CONFIG } from './version';
-import { cacheQuestionImagesOnDevice } from './utils/mediaCache';
+import { cacheQuestionImagesOnDevice, preloadUpcomingImages } from './utils/mediaCache';
+import { markImageLoadStart, markImageLoadEnd } from './utils/mediaProfiler';
 
 // Splits "Question text? © Author/Source" into question + copyright credit
 const splitCopyright = (text: string): { text: string; credit: string | null } => {
@@ -46,18 +43,19 @@ export default function App() {
     localStorage.getItem('lid_sort_numerically') === 'true'
   );
 
-  // Selected Federal State
+  // Selected Federal State (cached in localStorage with validation)
   const [selectedState, setSelectedState] = useState<BundeslandCode>(() => {
-    return (localStorage.getItem('lid_selected_state') as BundeslandCode) || 'NW';
+    const saved = localStorage.getItem('lid_selected_state') as BundeslandCode;
+    return saved && BUNDESLAENDER.some((b) => b.code === saved) ? saved : 'NW';
   });
 
-  // Database of Questions
+  // Database of Questions (loaded dynamically from questions.json)
   const [catalog, setCatalog] = useState<{
     general: Question[];
     states: Record<string, Question[]>;
   }>({
-    general: BUILTIN_GENERAL_QUESTIONS,
-    states: BUILTIN_STATE_QUESTIONS
+    general: [],
+    states: {}
   });
 
   // Available Question Sets (from sets.json or presets)
@@ -157,7 +155,7 @@ export default function App() {
             general.sort((a, b) => parseInt(a.num, 10) - parseInt(b.num, 10));
             setCatalog({
               general,
-              states: Object.keys(states).length > 0 ? states : BUILTIN_STATE_QUESTIONS
+              states: Object.keys(states).length > 0 ? states : {}
             });
           }
         }
@@ -202,7 +200,7 @@ export default function App() {
   const allCurrentQuestions = useMemo(() => {
     const general = catalog.general;
     const stateKey = selectedState.toUpperCase();
-    const stateList = catalog.states[stateKey] || BUILTIN_STATE_QUESTIONS[selectedState] || [];
+    const stateList = catalog.states[stateKey] || [];
 
     const sortedState = [...stateList].sort((a, b) => {
       const getSubNum = (item: Question) => {
@@ -245,6 +243,19 @@ export default function App() {
 
   const currentQuestion = displayedQuestions[currentIndex] || displayedQuestions[0];
   const currentParsed = splitCopyright(currentQuestion?.question || '');
+
+  // Track image load timing when question changes
+  useEffect(() => {
+    const src = resolveQuestionImageSrc(currentQuestion?.image);
+    if (src) {
+      markImageLoadStart(src);
+    }
+  }, [currentQuestion?.num, currentQuestion?.image]);
+
+  // Preload upcoming images into browser memory to eliminate SW cold-start delays
+  useEffect(() => {
+    preloadUpcomingImages(displayedQuestions, currentIndex);
+  }, [displayedQuestions, currentIndex]);
 
   // Exam Countdown Timer
   useEffect(() => {
@@ -473,7 +484,7 @@ export default function App() {
     const generalPool = [...catalog.general];
     const stateKey = selectedState.toUpperCase();
     const regionalPool = [
-      ...(catalog.states[stateKey] || BUILTIN_STATE_QUESTIONS[selectedState] || [])
+      ...(catalog.states[stateKey] || [])
     ];
 
     const shuffle = <T,>(arr: T[]) => {
@@ -568,6 +579,18 @@ export default function App() {
 
   // Parsed question text / copyright for the active exam question
   const examParsed = splitCopyright(examQuestions[currentIndex]?.question || '');
+
+  // Loading state while questions.json is fetched on first mount
+  if (catalog.general.length === 0) {
+    return (
+      <div className="min-h-[100dvh] bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col items-center justify-center p-4">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+          <p className="text-sm text-zinc-500 font-medium">Fragenkatalog wird geladen…</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-[100dvh] bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors">
@@ -1017,9 +1040,15 @@ export default function App() {
                 {resolveQuestionImageSrc(currentQuestion.image) ? (
                   <div className="mb-4 text-center">
                     <img
+                      key={currentQuestion.num}
                       src={resolveQuestionImageSrc(currentQuestion.image)!}
                       alt="Abbildung zur Frage"
+                      loading="eager"
+                      decoding="async"
                       onClick={(e) => setZoomedImageSrc(e.currentTarget.src)}
+                      onLoad={(e) => {
+                        markImageLoadEnd(e.currentTarget.src, currentQuestion.num);
+                      }}
                       onError={(e) => {
                         const backup = currentQuestion.imageBackup || getBackupImageUrl(currentQuestion.image);
                         if (backup && e.currentTarget.src !== backup) {
