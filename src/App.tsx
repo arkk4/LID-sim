@@ -3,8 +3,9 @@ import {
   Sun, Moon, GraduationCap, ChevronLeft, ChevronRight,
   X, RotateCcw, Check, Award, XCircle, MapPin,
   ListFilter, Search, ArrowRight, Clock, HelpCircle, Layers,
-  Menu, Settings
+  Menu, Settings, Users
 } from 'lucide-react';
+import { MultiplayerScreen } from './multiplayer/MultiplayerScreen';
 import { BundeslandCode, Question, QuestionSet, ThemeMode } from './types';
 import { BUNDESLAENDER, STATE_COAT_FALLBACKS, getBackupImageUrl } from './data/bundeslaender';
 import { PRESET_QUESTION_SETS } from './data/presetSets';
@@ -98,6 +99,11 @@ export default function App() {
   const [isExamSubmitted, setIsExamSubmitted] = useState(false);
   const [isExamExitPromptOpen, setIsExamExitPromptOpen] = useState(false);
   const [filterExamReview, setFilterExamReview] = useState<'all' | 'wrong'>('all');
+
+  // Multiplayer Mode (auto-activate when shared link/QR contains ?room=XXXX)
+  const [isMultiplayerMode, setIsMultiplayerMode] = useState(() => {
+    return new URLSearchParams(window.location.search).has('room');
+  });
 
   // Apply Theme to DOM
   useEffect(() => {
@@ -637,7 +643,22 @@ export default function App() {
 
   return (
     <div className="min-h-[100dvh] bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors">
-      {/* 1. TOP HEADER */}
+      {/* MULTIPLAYER MODE - full-screen bypass */}
+      {isMultiplayerMode && (
+        <MultiplayerScreen
+          catalog={catalog}
+          selectedState={selectedState}
+          onExit={() => {
+            if (window.location.search.includes('room=')) {
+              window.history.replaceState({}, '', window.location.pathname);
+            }
+            setIsMultiplayerMode(false);
+          }}
+        />
+      )}
+      {isMultiplayerMode ? null : (
+      <>
+
       <header className="sticky top-0 z-30 w-full bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors">
         {/* Active Set Sub-header banner if a question set is chosen */}
         {activeSet && !isExamMode && (
@@ -1472,17 +1493,30 @@ export default function App() {
               {/* Exam Mode */}
               <section>
                 <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-2">Modus</p>
-                <button
-                  onClick={() => { setIsMenuOpen(false); handleStartExam(); }}
-                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
-                >
-                  <GraduationCap className="w-5 h-5 text-zinc-500 flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="font-semibold text-xs text-zinc-900 dark:text-white">Prüfungssimulation starten</div>
-                    <div className="text-[11px] text-zinc-500">33 Fragen, 60 Minuten</div>
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-zinc-400 flex-shrink-0" />
-                </button>
+                <div className="space-y-1.5">
+                  <button
+                    onClick={() => { setIsMenuOpen(false); handleStartExam(); }}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
+                  >
+                    <GraduationCap className="w-5 h-5 text-zinc-500 flex-shrink-0" />
+                    <div className="flex-1">
+                      <div className="font-semibold text-xs text-zinc-900 dark:text-white">Prüfungssimulation starten</div>
+                      <div className="text-[11px] text-zinc-500">33 Fragen, 60 Minuten</div>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-zinc-400 flex-shrink-0" />
+                  </button>
+                  <button
+                    onClick={() => { setIsMenuOpen(false); setIsMultiplayerMode(true); }}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-left"
+                  >
+                    <Users className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                    <div className="flex-1">
+                      <div className="font-semibold text-xs text-zinc-900 dark:text-white">Mehrspielermodus</div>
+                      <div className="text-[11px] text-zinc-500">Bis zu 30 Teilnehmer, P2P</div>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-zinc-400 flex-shrink-0" />
+                  </button>
+                </div>
               </section>
 
               {/* Theme */}
@@ -1689,6 +1723,8 @@ export default function App() {
             </button>
           </div>
         </div>
+      )}
+      </> /* end isMultiplayerMode ? null : <> ... </> */
       )}
     </div>
   );
