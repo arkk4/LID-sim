@@ -33,6 +33,10 @@ jobs:
 
       - name: Build Vite application
         run: npm run build
+        env:
+          VITE_TURN_SERVER: ${{ secrets.VITE_TURN_SERVER }}
+          VITE_TURN_USER: ${{ secrets.VITE_TURN_USER }}
+          VITE_TURN_PASS: ${{ secrets.VITE_TURN_PASS }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
