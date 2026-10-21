@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="109" height="20" viewBox="0 0 109 20" role="img" aria-label="LID-sim: v1.3.4">
-<title>LID-sim: v1.3.4</title>
-<defs><clipPath id="b19s9a33c"><rect width="109" height="20" rx="3"/></clipPath><clipPath id="b19s9a33v"><rect x="61" width="48" height="20"/></clipPath></defs>
-<g clip-path="url(#b19s9a33c)">
+<svg xmlns="http://www.w3.org/2000/svg" width="109" height="20" viewBox="0 0 109 20" role="img" aria-label="LID-sim: v1.4.0">
+<title>LID-sim: v1.4.0</title>
+<defs><clipPath id="b1fv5vg6c"><rect width="109" height="20" rx="3"/></clipPath><clipPath id="b1fv5vg6v"><rect x="61" width="48" height="20"/></clipPath></defs>
+<g clip-path="url(#b1fv5vg6c)">
 <rect width="61" height="20" fill="#555555"/>
-<g clip-path="url(#b19s9a33v)"><g transform="translate(61 -14) scale(0.48)"><rect width="100" height="100" fill="#6ab0a3"/><circle cx="64.29" cy="35.6" r="72" fill="#508aaa"/><circle cx="64.29" cy="35.6" r="55" fill="#add3cc"/><circle cx="64.29" cy="35.6" r="38" fill="#52708b"/><circle cx="64.29" cy="35.6" r="21" fill="#171c27"/></g></g>
+<g clip-path="url(#b1fv5vg6v)"><g transform="translate(61 -14) scale(0.48)"><rect width="100" height="100" fill="#6ab0a3"/><circle cx="51.76" cy="27.24" r="72" fill="#508aaa"/><circle cx="51.76" cy="27.24" r="55" fill="#add3cc"/><circle cx="51.76" cy="27.24" r="38" fill="#52708b"/><circle cx="51.76" cy="27.24" r="21" fill="#171c27"/></g></g>
 </g>
 <g text-anchor="middle" font-size="11" text-rendering="geometricPrecision">
 <g font-family="Verdana, Geneva, 'DejaVu Sans', sans-serif">
 <text x="30.5" y="11" dy="0.35em" fill="#010101" fill-opacity=".3" textLength="49">LID-sim</text>
 <text x="30.5" y="10" dy="0.35em" fill="#fff" textLength="49">LID-sim</text>
 </g>
-<text x="85" y="10" dy="0.35em" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" fill="#ffffff" stroke="#000000" stroke-opacity="0.9" stroke-width="2.2" paint-order="stroke" stroke-linejoin="round" textLength="36">v1.3.4</text>
+<text x="85" y="10" dy="0.35em" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" fill="#ffffff" stroke="#000000" stroke-opacity="0.9" stroke-width="2.2" paint-order="stroke" stroke-linejoin="round" textLength="36">v1.4.0</text>
 </g>
 </svg>
