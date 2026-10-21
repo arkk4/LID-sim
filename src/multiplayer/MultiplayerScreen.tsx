@@ -33,17 +33,20 @@ function buildExamQuestions(
 
 // ─── JOIN SCREEN (CLIENT ENTRY) ───────────────────────────────────────────────
 
-function JoinScreen({ onJoin }: { onJoin: (code: string, name: string) => void }) {
-  const [code, setCode] = useState('');
+function JoinScreen({ onJoin, initialCode = '' }: { onJoin: (code: string, name: string) => void; initialCode?: string }) {
+  const [code, setCode] = useState(() => {
+    const url = new URL(window.location.href);
+    return (url.searchParams.get('room') || initialCode).toUpperCase();
+  });
   const [name, setName] = useState(() => localStorage.getItem('lid_mp_name') || '');
   const [err, setErr] = useState<string | null>(null);
 
-  // Pre-fill code from URL ?room=XXXX
+  // Pre-fill code from URL ?room=XXXX or prop
   useEffect(() => {
     const url = new URL(window.location.href);
-    const r = url.searchParams.get('room');
+    const r = url.searchParams.get('room') || initialCode;
     if (r) setCode(r.toUpperCase());
-  }, []);
+  }, [initialCode]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -406,7 +409,6 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
     const url = new URL(window.location.href);
     const r = url.searchParams.get('room');
     if (r) {
-      setJoinCode(r.toUpperCase());
       setRole('client');
     }
   }, []);
@@ -465,10 +467,10 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
   if (role === 'client') {
     // Not yet connected: show join form
     if (!client.connected && !client.error) {
-      if (!joinCode) {
+      if (!joinCode || !playerName) {
         return (
           <div className="flex-1 flex flex-col">
-            <ScreenHeader title="Spiel beitreten" onBack={() => setRole('choose')} />
+            <ScreenHeader title="Spiel beitreten" onBack={() => { setJoinCode(''); setRole('choose'); }} />
             <JoinScreen onJoin={handleJoin} />
           </div>
         );
@@ -476,7 +478,7 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
       // Connecting…
       return (
         <div className="flex-1 flex flex-col">
-          <ScreenHeader title="Verbinde…" onBack={() => setRole('choose')} />
+          <ScreenHeader title="Verbinde…" onBack={() => { setJoinCode(''); setRole('choose'); }} />
           <div className="flex-1 flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
           </div>
@@ -491,7 +493,7 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
         <div className="flex-1 flex flex-col">
           <ScreenHeader
             title={isHostDisconnect ? 'Host getrennt' : isRejected ? 'Spiel läuft bereits' : 'Verbindungsfehler'}
-            onBack={() => setRole('choose')}
+            onBack={() => { setJoinCode(''); setRole('choose'); }}
           />
           <div className="flex-1 flex flex-col items-center justify-center p-6 gap-4 text-center">
             <WifiOff className={`w-10 h-10 ${isRejected ? 'text-amber-500' : 'text-rose-500'}`} />
@@ -504,7 +506,7 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
                 {client.scores.map((s, i) => `${i + 1}. ${s.name} (${s.score})`).join(' · ')}
               </div>
             )}
-            <button onClick={() => setRole('choose')}
+            <button onClick={() => { setJoinCode(''); setRole('choose'); }}
               className="px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-bold cursor-pointer">
               Zurück
             </button>

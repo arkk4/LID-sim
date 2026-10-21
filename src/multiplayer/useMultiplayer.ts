@@ -370,7 +370,11 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     const peer = new Peer(undefined as unknown as string, {
       host: '0.peerjs.com', port: 443, secure: true, path: '/'
     });
-    peerRef.current = peer;
+    const connectTimer = setTimeout(() => {
+      setError('Verbindung fehlgeschlagen (Zeitüberschreitung). Host ist möglicherweise offline.');
+      setErrorKind('generic');
+      peer.destroy();
+    }, 15000);
 
     peer.on('open', (id) => {
       setMyPeerId(id);
@@ -378,8 +382,15 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
       connRef.current = conn;
 
       conn.on('open', () => {
+        clearTimeout(connectTimer);
         setConnected(true);
         conn.send({ type: 'JOIN', name: playerName } satisfies ClientMsg);
+      });
+
+      conn.on('error', (err) => {
+        clearTimeout(connectTimer);
+        setError('Verbindungsfehler: ' + String((err as Error)?.message || err));
+        setErrorKind('generic');
       });
 
       conn.on('data', (data) => {
@@ -389,6 +400,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
           return;
         }
         if (msg.type === 'REJECTED') {
+          clearTimeout(connectTimer);
           peer.destroy();
           setError('Das Spiel hat bereits begonnen. Bitte warte auf die nächste Runde.');
           setErrorKind('rejected');
@@ -428,6 +440,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
           setPhase('finished');
         }
         if (msg.type === 'KICK') {
+          clearTimeout(connectTimer);
           peer.destroy();
           setError('Sie wurden aus dem Spiel entfernt.');
           setErrorKind('generic');
@@ -435,15 +448,27 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
       });
 
       conn.on('close', () => {
+        clearTimeout(connectTimer);
         setConnected(false);
         setError('Verbindung zum Host wurde getrennt.');
         setErrorKind('host_disconnected');
       });
     });
 
-    peer.on('error', (err) => { setError(String(err)); setErrorKind('generic'); });
+    peer.on('error', (err) => {
+      clearTimeout(connectTimer);
+      const isPeerUnavailable = (err as { type?: string }).type === 'peer-unavailable';
+      const message = isPeerUnavailable
+        ? 'Raum nicht gefunden oder Host ist offline. Bitte Raumcode überprüfen.'
+        : String((err as Error)?.message || err);
+      setError(message);
+      setErrorKind('generic');
+    });
 
-    return () => peer.destroy();
+    return () => {
+      clearTimeout(connectTimer);
+      peer.destroy();
+    };
   }, [roomCode, playerName]);
 
   const sendAnswer = useCallback((letter: 'a' | 'b' | 'c' | 'd') => {
