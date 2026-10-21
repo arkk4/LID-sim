@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import { ArrowLeft, Check, ChevronRight, Clock, Copy, GraduationCap, Square, Users, Wifi, WifiOff, X } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Clock, Copy, GraduationCap, Info, Square, Users, Wifi, WifiOff, X } from 'lucide-react';
 import { Question, BundeslandCode } from '../types';
 import { RoomMode } from './types';
 import {
@@ -729,10 +729,26 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
     if (client.error) {
       const isHostDisconnect = client.errorKind === 'host_disconnected';
       const isRejected = client.errorKind === 'rejected';
+      const isBlocked = client.errorKind === 'webrtc_blocked';
+      const isTimeout = client.errorKind === 'timeout';
+      const isNotFound = client.errorKind === 'peer_unavailable';
+
+      const errorTitle = isHostDisconnect
+        ? 'Host getrennt'
+        : isRejected
+        ? 'Spiel läuft bereits'
+        : isBlocked
+        ? 'Netzwerk blockiert Verbindung'
+        : isTimeout
+        ? 'Zeitüberschreitung'
+        : isNotFound
+        ? 'Raum nicht gefunden'
+        : 'Verbindungsfehler';
+
       return (
         <div className="flex-1 flex flex-col">
           <ScreenHeader
-            title={isHostDisconnect ? 'Host getrennt' : isRejected ? 'Spiel läuft bereits' : 'Verbindungsfehler'}
+            title={errorTitle}
             onBack={() => { setJoinCode(''); setRole('choose'); }}
           />
           <div className="flex-1 flex flex-col items-center justify-center p-6 gap-4 text-center">
@@ -740,16 +756,34 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
             <p className={`text-sm font-semibold ${isRejected ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400'}`}>
               {client.error}
             </p>
+            {client.errorTip && (
+              <div className="w-full max-w-sm p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/50 text-left flex gap-3 text-xs text-blue-900 dark:text-blue-200">
+                <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{client.errorTip}</span>
+              </div>
+            )}
             {isHostDisconnect && client.scores.length > 0 && (
               <div className="mt-2 text-xs text-zinc-500">
                 Letzter Stand:{' '}
                 {client.scores.map((s, i) => `${i + 1}. ${s.name} (${s.score})`).join(' · ')}
               </div>
             )}
-            <button onClick={() => { setJoinCode(''); setRole('choose'); }}
-              className="px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-bold cursor-pointer">
-              Zurück
-            </button>
+            <div className="flex items-center gap-2">
+              {!isRejected && (
+                <button
+                  onClick={() => client.retryConnect()}
+                  className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold cursor-pointer hover:bg-blue-500 transition-colors"
+                >
+                  Erneut versuchen
+                </button>
+              )}
+              <button
+                onClick={() => { setJoinCode(''); setRole('choose'); }}
+                className="px-4 py-2 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-bold cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                Zurück
+              </button>
+            </div>
           </div>
         </div>
       );
@@ -798,6 +832,26 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
           <div className="flex-1 flex flex-col items-center justify-center p-6 gap-4 text-center">
             <WifiOff className="w-10 h-10 text-rose-500" />
             <p className="text-sm font-semibold text-rose-600 dark:text-rose-400">{host.error}</p>
+            <div className="w-full max-w-sm p-3.5 rounded-xl bg-amber-50/70 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-900/50 text-left flex gap-3 text-xs text-amber-900 dark:text-amber-200">
+              <Info className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+              <span className="leading-relaxed">
+                Tipp: Wenn du die App zum Teilen des Links verlassen hast, halte sie im Vordergrund. Du kannst versuchen, die Verbindung wiederherzustellen, ohne den Raum neu erstellen zu müssen.
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => host.reconnectHost()}
+                className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold cursor-pointer hover:bg-blue-500 transition-colors"
+              >
+                Verbindung wiederherstellen
+              </button>
+              <button
+                onClick={onExit}
+                className="px-4 py-2 rounded-xl bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-bold cursor-pointer hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors"
+              >
+                Beenden
+              </button>
+            </div>
           </div>
         </div>
       );

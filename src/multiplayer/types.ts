@@ -52,3 +52,13 @@ export type ClientMsg =
   | { type: 'JOIN'; name: string }
   | { type: 'ANSWER'; letter: 'a' | 'b' | 'c' | 'd'; questionIndex: number }
   | { type: 'PONG' };
+
+export type ClientErrorKind =
+  | 'host_disconnected'
+  | 'rejected'
+  | 'timeout'
+  | 'webrtc_blocked'
+  | 'peer_unavailable'
+  | 'generic';
+
+

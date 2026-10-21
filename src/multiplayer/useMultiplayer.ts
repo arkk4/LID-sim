@@ -1,10 +1,33 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Peer, { DataConnection } from 'peerjs';
 import { Question } from '../types';
-import { ClientMsg, HostMsg, Player, RoomMode, RoomPhase, RoomState } from './types';
+import { ClientErrorKind, ClientMsg, HostMsg, Player, RoomMode, RoomPhase, RoomState } from './types';
 
-const PING_INTERVAL_MS = 8_000;   // host pings every 8s (3G-friendly)
-const PING_TIMEOUT_MS  = 30_000;  // drop if no PONG within 30s (covers ~3G RTT)
+const PING_INTERVAL_MS = 8_000;       // host pings every 8s (3G-friendly)
+const PING_TIMEOUT_MS  = 30_000;      // drop if no PONG within 30s in active game (covers ~3G RTT)
+const LOBBY_PING_TIMEOUT_MS = 60_000; // in lobby, give 60s timeout so backgrounded host/clients aren't dropped
+
+// STUN and TURN configuration (including TCP port 443 fallback for strict firewalls / AP isolation)
+export const DEFAULT_ICE_SERVERS: RTCIceServer[] = [
+  { urls: 'stun:stun.l.google.com:19302' },
+  { urls: 'stun:stun1.l.google.com:19302' },
+  { urls: 'stun:openrelay.metered.ca:80' },
+  {
+    urls: 'turn:openrelay.metered.ca:80',
+    username: 'openrelayproject',
+    credential: 'openrelayproject',
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:443',
+    username: 'openrelayproject',
+    credential: 'openrelayproject',
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:443?transport=tcp',
+    username: 'openrelayproject',
+    credential: 'openrelayproject',
+  },
+];
 
 // Generate a short, human-readable room code (4 uppercase alphanumeric chars)
 function genRoomCode(): string {
@@ -259,8 +282,11 @@ export function useMultiplayerHost({
     const code = genRoomCode();
     setRoomCode(code);
     const peer = new Peer(`lid-${code}`, {
-      // ponytail: using public PeerJS cloud; replace host/path for self-hosted
-      host: '0.peerjs.com', port: 443, secure: true, path: '/'
+      // ponytail: using public PeerJS cloud with OpenRelay TURN fallback for strict NAT/firewalls
+      host: '0.peerjs.com', port: 443, secure: true, path: '/',
+      config: {
+        iceServers: DEFAULT_ICE_SERVERS,
+      },
     });
     peerRef.current = peer;
 
@@ -295,11 +321,12 @@ export function useMultiplayerHost({
 
     const pingInterval = setInterval(() => {
       const now = Date.now();
+      const timeout = phaseRef.current === 'lobby' ? LOBBY_PING_TIMEOUT_MS : PING_TIMEOUT_MS;
       connsRef.current.forEach((conn, id) => {
         if (!conn.open) return;
         // Drop if overdue
         const last = lastPong.get(id) ?? now; // grace: treat new conn as just-ponged
-        if (now - last > PING_TIMEOUT_MS) {
+        if (now - last > timeout) {
           conn.close();
           removePeer(id);
           return;
@@ -308,7 +335,55 @@ export function useMultiplayerHost({
       });
     }, PING_INTERVAL_MS);
 
-    peer.on('error', (err) => setError(String(err)));
+    // Auto-reconnect host when returning from background (e.g. sharing room link in messenger)
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        // 1. Give all connected clients a fresh grace period for ping/pong so they aren't pruned immediately
+        const now = Date.now();
+        connsRef.current.forEach((_, id) => {
+          lastPong.set(id, now);
+        });
+        // 2. Reconnect host peer to signaling server if it was disconnected
+        if (peerRef.current && !peerRef.current.destroyed && peerRef.current.disconnected) {
+          try {
+            peerRef.current.reconnect();
+          } catch {
+            // ignore
+          }
+        }
+        if (phaseRef.current === 'lobby') {
+          setError(null);
+        }
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    peer.on('error', (err: any) => {
+      const type = err?.type;
+      // In lobby, backgrounding app often closes signaling socket or causes transient network errors
+      if (phaseRef.current === 'lobby' && (type === 'socket-closed' || type === 'socket-error' || type === 'network')) {
+        if (peer.disconnected && !peer.destroyed) {
+          try {
+            peer.reconnect();
+          } catch {
+            // ignore
+          }
+        }
+        return;
+      }
+      setError(String(err?.message || err));
+    });
+
+    peer.on('disconnected', () => {
+      if (phaseRef.current === 'lobby' && !peer.destroyed) {
+        try {
+          peer.reconnect();
+        } catch {
+          // ignore
+        }
+      }
+    });
+
     peer.on('connection', (conn) => {
       connsRef.current.set(conn.peer, conn);
       lastPong.set(conn.peer, Date.now()); // initialise on connect
@@ -326,6 +401,7 @@ export function useMultiplayerHost({
     });
 
     return () => {
+      document.removeEventListener('visibilitychange', handleVisibility);
       clearInterval(pingInterval);
       if (timerRef.current) clearTimeout(timerRef.current);
       peer.destroy();
@@ -382,6 +458,19 @@ export function useMultiplayerHost({
     }
   }, [questions, broadcast]);
 
+  const reconnectHost = useCallback(() => {
+    setError(null);
+    if (peerRef.current && !peerRef.current.destroyed) {
+      if (peerRef.current.disconnected) {
+        try {
+          peerRef.current.reconnect();
+        } catch {
+          // ignore
+        }
+      }
+    }
+  }, []);
+
   return {
     roomCode,
     phase,
@@ -394,6 +483,7 @@ export function useMultiplayerHost({
     hostSubmitAnswer,
     hostAnswers: playersRef.current.get('host')?.answers || {},
     error,
+    reconnectHost,
     startGame,
     hostForceNext,
     hostEndEarly,
@@ -410,7 +500,14 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
 
   const [connected, setConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [errorKind, setErrorKind] = useState<'host_disconnected' | 'rejected' | 'generic' | null>(null);
+  const [errorKind, setErrorKind] = useState<ClientErrorKind | null>(null);
+  const [errorTip, setErrorTip] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  const retryConnect = useCallback(() => {
+    setRetryCount((c) => c + 1);
+  }, []);
+
   const [roomState, setRoomState] = useState<RoomState | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
@@ -434,6 +531,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     // Always reset when deps change — MUST be before the early-return guard so that
     // clearing joinCode (going back) wipes the stale error immediately.
     setError(null);
+    setErrorTip(null);
     setErrorKind(null);
     setConnected(false);
     setHostSilent(false);
@@ -459,6 +557,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
       setHostSilent(false);
       if (phaseRef.current === 'finished') return;
       setError('Verbindung zum Host wurde getrennt.');
+      setErrorTip('Keine Antwort mehr vom Host. Möglicherweise hat der Host das Spiel beendet oder die Internetverbindung ist unterbrochen.');
       setErrorKind('host_disconnected');
       peer.destroy();
     };
@@ -478,20 +577,54 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     };
 
     const peer = new Peer(undefined as unknown as string, {
-      host: '0.peerjs.com', port: 443, secure: true, path: '/'
+      host: '0.peerjs.com',
+      port: 443,
+      secure: true,
+      path: '/',
+      config: {
+        iceServers: DEFAULT_ICE_SERVERS,
+      },
     });
+
+    // 30s connection timeout: allows time for STUN/TURN allocation and mobile host app switching
     const connectTimer = setTimeout(() => {
       if (cancelled) return;
-      setError('Verbindung fehlgeschlagen (Zeitüberschreitung). Host ist möglicherweise offline.');
-      setErrorKind('generic');
+      setError('Verbindung fehlgeschlagen (Zeitüberschreitung).');
+      setErrorTip('Möglicherweise blockiert das lokale WLAN (Client-Isolation / Firewall) direkte Verbindungen oder der Host hat die App gewechselt. Versuche mobile Daten (Hotspot/LTE) oder starte die Verbindung neu.');
+      setErrorKind('timeout');
       peer.destroy();
-    }, 15000);
+    }, 30000);
 
     peer.on('open', (id) => {
       if (cancelled) return;
       setMyPeerId(id);
       const conn = peer.connect(`lid-${roomCode}`, { reliable: true });
       connRef.current = conn;
+
+      // Listen for ICE connection failure (indicates Wi-Fi client isolation or UDP blocked)
+      // ponytail: peerConnection may not be set immediately — retry once after 200ms, but guard against double-listener
+      let iceListenerAdded = false;
+      const checkIceFailure = () => {
+        if (iceListenerAdded) return;
+        const pc = conn.peerConnection;
+        if (pc) {
+          iceListenerAdded = true;
+          pc.addEventListener('iceconnectionstatechange', () => {
+            if (pc.iceConnectionState === 'failed') {
+              clearTimeout(connectTimer);
+              clearWatchdogs();
+              if (cancelled || phaseRef.current === 'finished') return;
+              setConnected(false);
+              setError('Verbindung durch lokales Netzwerk blockiert (ICE-Fehler).');
+              setErrorTip('In vielen öffentlichen oder geschützten WLANs (Schule, Hotel, Gast-WLAN) sind P2P-Verbindungen blockiert (AP-Isolation/UDP). Bitte teste mobile Daten (LTE/5G) oder einen Hotspot.');
+              setErrorKind('webrtc_blocked');
+              peer.destroy();
+            }
+          });
+        }
+      };
+      checkIceFailure();
+      setTimeout(checkIceFailure, 200);
 
       conn.on('open', () => {
         clearTimeout(connectTimer);
@@ -505,6 +638,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
         clearTimeout(connectTimer);
         if (cancelled) return;
         setError('Verbindungsfehler: ' + String((err as Error)?.message || err));
+        setErrorTip('Direkte Verbindung zum Host konnte nicht aufgebaut werden. Versuche es erneut oder prüfe die Internetverbindung.');
         setErrorKind('generic');
       });
 
@@ -519,7 +653,8 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
         if (msg.type === 'REJECTED') {
           clearTimeout(connectTimer);
           peer.destroy();
-          setError('Das Spiel hat bereits begonnen. Bitte warte auf die nächste Runde.');
+          setError('Das Spiel hat bereits begonnen.');
+          setErrorTip('Neue Spieler können nur in der Lobby beitreten, bevor der Spielleiter die Fragen startet.');
           setErrorKind('rejected');
           return;
         }
@@ -561,6 +696,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
           clearTimeout(connectTimer);
           peer.destroy();
           setError('Sie wurden aus dem Spiel entfernt.');
+          setErrorTip('Der Spielleiter hat Sie aus dem Raum entfernt.');
           setErrorKind('generic');
         }
         if (msg.type === 'PLAYER_LIST') {
@@ -577,6 +713,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
         // If we're already on the finished screen, keep it — don't overlay an error
         if (phaseRef.current === 'finished') return;
         setError('Verbindung zum Host wurde getrennt.');
+        setErrorTip('Der Host hat das Spiel beendet, die App geschlossen oder das Netzwerk verloren.');
         setErrorKind('host_disconnected');
       });
     });
@@ -585,11 +722,15 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
       clearTimeout(connectTimer);
       if (cancelled || phaseRef.current === 'finished') return;
       const isPeerUnavailable = (err as { type?: string }).type === 'peer-unavailable';
-      const message = isPeerUnavailable
-        ? 'Raum nicht gefunden oder Host ist offline. Bitte Raumcode überprüfen.'
-        : String((err as Error)?.message || err);
-      setError(message);
-      setErrorKind('generic');
+      if (isPeerUnavailable) {
+        setError('Raum nicht gefunden oder Host ist offline.');
+        setErrorTip('Überprüfe den 4-stelligen Raumcode. Der Host muss das Spiel im Vordergrund geöffnet haben.');
+        setErrorKind('peer_unavailable');
+      } else {
+        setError(String((err as Error)?.message || err));
+        setErrorTip('Fehler beim Verbindungsaufbau zum PeerJS-Signaldienst. Prüfe deine Internetverbindung.');
+        setErrorKind('generic');
+      }
     });
 
     return () => {
@@ -598,7 +739,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
       clearWatchdogs();
       peer.destroy();
     };
-  }, [roomCode, playerName]);
+  }, [roomCode, playerName, retryCount]);
 
   const sendAnswer = useCallback((letter: 'a' | 'b' | 'c' | 'd') => {
     if (myAnswer !== null || phase !== 'question') return;
@@ -615,6 +756,8 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     connected,
     error,
     errorKind,
+    errorTip,
+    retryConnect,
     roomState,
     currentQuestion,
     allQuestions,
