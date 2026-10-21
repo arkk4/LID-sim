@@ -4,7 +4,7 @@ import { ArrowLeft, Check, ChevronRight, Clock, Copy, GraduationCap, Square, Use
 import { Question, BundeslandCode } from '../types';
 import { RoomMode } from './types';
 import {
-  Leaderboard, PlayerAvatar, PlayerChip, QuestionCard, useCountdown,
+  ExitConfirmModal, Leaderboard, PlayerAvatar, PlayerChip, QuestionCard, useCountdown,
 } from './MultiComponents';
 import { useMultiplayerHost, useMultiplayerClient } from './useMultiplayer';
 
@@ -109,6 +109,74 @@ function JoinScreen({ onJoin, initialCode = '' }: { onJoin: (code: string, name:
           Beitreten
         </button>
       </form>
+    </div>
+  );
+}
+
+// ─── MODE VISUAL PREVIEW ─────────────────────────────────────────────────────
+
+function ModeVisualPreview({ mode, compact }: { mode: RoomMode; compact?: boolean }) {
+  if (mode === 'sofort') {
+    return (
+      <div className={`${compact ? 'mt-2 p-2 rounded-xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/60' : 'mt-3 p-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200/80 dark:border-zinc-800/80'} space-y-1`}>
+        <div className="flex items-center justify-between text-[10px] font-medium text-zinc-400 mb-0.5 px-0.5">
+          <span className="uppercase tracking-wider font-semibold">Vorschau nach Antwort</span>
+          <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-[10px]">
+            Sofort aufgelöst
+          </span>
+        </div>
+        <div className={compact ? 'grid grid-cols-2 gap-1.5' : 'space-y-1.5'}>
+          {/* Wrong answer chosen */}
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-rose-300 dark:border-rose-900/60 bg-rose-50/80 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 text-xs min-w-0">
+            <span className="w-4 h-4 rounded bg-rose-500 text-white font-bold flex items-center justify-center text-[9px] shrink-0">
+              A
+            </span>
+            <span className="flex-1 truncate line-through opacity-75 text-[11px]">Ihre Wahl</span>
+            <span className="flex items-center gap-0.5 text-[10px] font-semibold text-rose-600 dark:text-rose-400 shrink-0">
+              <X className="w-3 h-3" /> {!compact && 'Falsch'}
+            </span>
+          </div>
+          {/* Correct answer revealed */}
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-emerald-400 dark:border-emerald-700 bg-emerald-50/90 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-100 text-xs ring-1 ring-emerald-500/20 min-w-0">
+            <span className="w-4 h-4 rounded bg-emerald-500 text-white font-bold flex items-center justify-center text-[9px] shrink-0">
+              B
+            </span>
+            <span className="flex-1 truncate font-medium text-[11px]">Lösung</span>
+            <span className="flex items-center gap-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 shrink-0">
+              <Check className="w-3 h-3" /> {!compact && 'Richtig'}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${compact ? 'mt-2 p-2 rounded-xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/60' : 'mt-3 p-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200/80 dark:border-zinc-800/80'} space-y-1`}>
+      <div className="flex items-center justify-between text-[10px] font-medium text-zinc-400 mb-0.5 px-0.5">
+        <span className="uppercase tracking-wider font-semibold">Vorschau nach Antwort</span>
+        <span className="text-zinc-500 dark:text-zinc-400 font-medium text-[10px]">Keine Auflösung</span>
+      </div>
+      <div className={compact ? 'grid grid-cols-2 gap-1.5' : 'space-y-1.5'}>
+        {/* Selected answer - neutral exam style */}
+        <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-zinc-900 dark:border-white bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white text-xs ring-1 ring-zinc-900/20 dark:ring-white/20 font-medium min-w-0">
+          <span className="w-4 h-4 rounded bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold flex items-center justify-center text-[9px] shrink-0">
+            A
+          </span>
+          <span className="flex-1 truncate text-[11px]">Ihre Wahl</span>
+          <span className="text-[10px] font-medium text-zinc-500 dark:text-zinc-400 shrink-0">
+            Gespeichert
+          </span>
+        </div>
+        {/* Other unselected option */}
+        <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/40 text-zinc-400 dark:text-zinc-500 text-xs min-w-0">
+          <span className="w-4 h-4 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 font-bold flex items-center justify-center text-[9px] shrink-0">
+            B
+          </span>
+          <span className="flex-1 truncate text-[11px]">Weitere Option…</span>
+          <span className="text-[10px] opacity-0 shrink-0">—</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -262,6 +330,7 @@ function HostLobbyScreen({
               </button>
             ))}
           </div>
+          <ModeVisualPreview mode={mode} compact />
         </div>
 
         {/* Timer */}
@@ -312,12 +381,14 @@ function HostLobbyScreen({
 // ─── CLIENT WAITING SCREEN ───────────────────────────────────────────────────
 
 function ClientWaitingScreen({
-  name, roomCode, players, hostSilent,
+  name, roomCode, players, hostSilent, mode, secondsPerQuestion,
 }: {
   name: string;
   roomCode: string;
   players: { id: string; name: string }[];
   hostSilent: boolean;
+  mode?: RoomMode;
+  secondsPerQuestion?: number;
 }) {
   return (
     <div className="flex-1 flex flex-col items-center justify-center p-6 gap-4 text-center">
@@ -332,10 +403,37 @@ function ClientWaitingScreen({
         <p className="font-bold text-zinc-900 dark:text-white">{name}</p>
         <p className="text-xs text-zinc-500 mt-0.5">Raum: {roomCode}</p>
       </div>
+
       <div className="flex items-center gap-2 text-sm text-zinc-500">
         <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
         Warten auf Spielstart…
       </div>
+
+      {mode && (
+        <div className="w-full max-w-xs p-3.5 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-left shadow-xs">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1.5">
+            Gewählter Spielmodus
+          </p>
+          <div className="flex items-center justify-between text-xs font-semibold text-zinc-900 dark:text-white">
+            <span>
+              {mode === 'sofort' ? 'Sofortige Auswertung' : 'Abschlussauswertung'}
+            </span>
+            {secondsPerQuestion && (
+              <span className="flex items-center gap-1 font-mono text-[11px] text-zinc-500 font-normal">
+                <Clock className="w-3.5 h-3.5 text-zinc-400" />
+                {secondsPerQuestion} Sek.
+              </span>
+            )}
+          </div>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+            {mode === 'sofort'
+              ? 'Antwort wird nach jeder Frage aufgedeckt.'
+              : 'Ergebnis und Auswertung werden erst am Ende gezeigt.'}
+          </p>
+          <ModeVisualPreview mode={mode} />
+        </div>
+      )}
+
       {players.length > 0 && (
         <div className="w-full max-w-xs">
           <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-2 flex items-center justify-center gap-1">
@@ -356,15 +454,17 @@ function ClientWaitingScreen({
 // ─── HOST GAME VIEW ───────────────────────────────────────────────────────────
 
 function HostGameView({
-  host, questions, mode, secondsPerQuestion,
+  host, questions, mode, secondsPerQuestion, onRequestEnd, onExit,
 }: {
   host: ReturnType<typeof useMultiplayerHost>;
   questions: Question[];
   mode: RoomMode;
   secondsPerQuestion: number;
+  onRequestEnd: () => void;
+  onExit: () => void;
 }) {
   const { phase, questionIndex, currentQuestion, answeredCount, totalPlayers,
-    revealLetter, hostAnswer, hostSubmitAnswer, hostForceNext, hostEndEarly, buildScores } = host;
+    revealLetter, hostAnswer, hostSubmitAnswer, hostForceNext, buildScores } = host;
 
   const secondsLeft = useCountdown(
     secondsPerQuestion,
@@ -381,7 +481,7 @@ function HostGameView({
           totalQuestions={questions.length}
           questions={questions}
           myAnswers={host.hostAnswers}
-          onClose={() => window.location.reload()}
+          onClose={onExit}
         />
       </div>
     );
@@ -393,9 +493,7 @@ function HostGameView({
     <div className="flex-1 p-4 overflow-y-auto">
       <div className="flex justify-end mb-2">
         <button
-          onClick={() => {
-            if (window.confirm('Sitzung jetzt beenden und Endergebnis anzeigen?')) hostEndEarly();
-          }}
+          onClick={onRequestEnd}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-300 dark:border-rose-800 text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 cursor-pointer transition-colors"
         >
           <Square className="w-3.5 h-3.5 fill-current" />
@@ -424,10 +522,12 @@ function HostGameView({
 // ─── CLIENT GAME VIEW ─────────────────────────────────────────────────────────
 
 function ClientGameView({
-  client, playerName,
+  client, playerName, roomCode, onExit,
 }: {
   client: ReturnType<typeof useMultiplayerClient>;
   playerName: string;
+  roomCode: string;
+  onExit: () => void;
 }) {
   const { phase, questionIndex, currentQuestion, myAnswer, revealLetter,
     answeredCount, totalPlayers, scores, timeLimit, sendAnswer, myPeerId,
@@ -444,7 +544,7 @@ function ClientGameView({
           totalQuestions={33}
           questions={allQuestions}
           myAnswers={myAnswers}
-          onClose={() => window.location.reload()}
+          onClose={onExit}
         />
       </div>
     );
@@ -454,9 +554,11 @@ function ClientGameView({
     return (
       <ClientWaitingScreen
         name={playerName}
-        roomCode={client.roomState?.roomCode ?? ''}
+        roomCode={client.roomState?.roomCode || roomCode}
         players={lobbyPlayers}
         hostSilent={hostSilent}
+        mode={client.roomState?.mode}
+        secondsPerQuestion={client.roomState?.secondsPerQuestion}
       />
     );
   }
@@ -513,11 +615,20 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
     [role] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
-  const host = useMultiplayerHost({ questions, mode, secondsPerQuestion, hostName });
+  const host = useMultiplayerHost({
+    questions,
+    mode,
+    secondsPerQuestion,
+    hostName,
+    enabled: role === 'host',
+  });
   const client = useMultiplayerClient(
     role === 'client' ? joinCode : '',
     role === 'client' ? playerName : '',
   );
+
+  const [isHostExitModalOpen, setIsHostExitModalOpen] = useState(false);
+  const [isClientExitModalOpen, setIsClientExitModalOpen] = useState(false);
 
   // Auto-enter client from URL param
   useEffect(() => {
@@ -580,6 +691,20 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
 
   // ── Client flow ──
   if (role === 'client') {
+    // If the game has already finished, stay on the results screen even if host disconnects!
+    if (client.phase === 'finished') {
+      return (
+        <div className="flex-1 flex flex-col">
+          <ScreenHeader
+            title={`Raum: ${joinCode}`}
+            subtitle="Spiel beendet"
+            onBack={onExit}
+          />
+          <ClientGameView client={client} playerName={playerName} roomCode={joinCode} onExit={onExit} />
+        </div>
+      );
+    }
+
     // Not yet connected: show join form
     if (!client.connected && !client.error) {
       if (!joinCode || !playerName) {
@@ -630,14 +755,36 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
       );
     }
 
+    const isClientPlaying = client.phase === 'question' || client.phase === 'reveal';
+
     return (
       <div className="flex-1 flex flex-col">
         <ScreenHeader
           title={`Raum: ${joinCode}`}
           subtitle={`${client.answeredCount} / ${client.totalPlayers} geantwortet`}
-          onBack={() => setRole('choose')}
+          onBack={() => {
+            if (isClientPlaying) {
+              setIsClientExitModalOpen(true);
+            } else {
+              setJoinCode('');
+              setRole('choose');
+            }
+          }}
         />
-        <ClientGameView client={client} playerName={playerName} />
+        <ClientGameView client={client} playerName={playerName} roomCode={joinCode} onExit={onExit} />
+
+        <ExitConfirmModal
+          isOpen={isClientExitModalOpen}
+          title="Spiel verlassen?"
+          description="Möchten Sie das laufende Mehrspielerspiel wirklich verlassen und zur Übungsansicht zurückkehren?"
+          confirmLabel="Im Spiel bleiben"
+          onConfirm={() => setIsClientExitModalOpen(false)}
+          cancelLabel="Spiel verlassen"
+          onCancel={() => {
+            setIsClientExitModalOpen(false);
+            onExit();
+          }}
+        />
       </div>
     );
   }
@@ -659,7 +806,7 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
     if (!gameStarted) {
       return (
         <div className="flex-1 flex flex-col">
-          <ScreenHeader title="Spielleiter" onBack={onExit} />
+          <ScreenHeader title="Spielleiter" onBack={() => setRole('choose')} />
           <HostLobbyScreen
             roomCode={host.roomCode || '…'}
             players={host.playerList.map((p) => ({ id: p.id, name: p.name, score: p.score }))}
@@ -677,14 +824,49 @@ export function MultiplayerScreen({ catalog, selectedState, onExit }: Multiplaye
       );
     }
 
+    const isHostPlaying = host.phase === 'question' || host.phase === 'reveal';
+
     return (
       <div className="flex-1 flex flex-col">
         <ScreenHeader
           title={`Raum: ${host.roomCode}`}
           subtitle={`${host.answeredCount} / ${host.totalPlayers} geantwortet`}
-          onBack={onExit}
+          onBack={() => {
+            if (isHostPlaying) {
+              setIsHostExitModalOpen(true);
+            } else {
+              onExit();
+            }
+          }}
         />
-        <HostGameView host={host} questions={questions} mode={mode} secondsPerQuestion={secondsPerQuestion} />
+        <HostGameView
+          host={host}
+          questions={questions}
+          mode={mode}
+          secondsPerQuestion={secondsPerQuestion}
+          onRequestEnd={() => setIsHostExitModalOpen(true)}
+          onExit={onExit}
+        />
+
+        <ExitConfirmModal
+          isOpen={isHostExitModalOpen}
+          title="Sitzung beenden?"
+          description="Möchten Sie die Sitzung jetzt beenden und das Endergebnis für alle anzeigen, weiterspielen oder den Raum verlassen?"
+          confirmLabel="Sitzung beenden & Ergebnis anzeigen"
+          onConfirm={() => {
+            setIsHostExitModalOpen(false);
+            host.hostEndEarly();
+          }}
+          cancelLabel="Weiterspielen"
+          onCancel={() => setIsHostExitModalOpen(false)}
+          alternateAction={{
+            label: 'Raum schließen & zum Üben zurückkehren',
+            onClick: () => {
+              setIsHostExitModalOpen(false);
+              onExit();
+            },
+          }}
+        />
       </div>
     );
   }

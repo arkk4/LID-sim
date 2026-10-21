@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from 'boring-avatars';
-import { Award, Check, ChevronRight, Clock, Trophy, Users, X, XCircle } from 'lucide-react';
+import { Award, Check, ChevronRight, Clock, HelpCircle, Trophy, Users, X, XCircle } from 'lucide-react';
 import { Question } from '../types';
 import { RoomMode, RoomPhase } from './types';
 import { resolveQuestionImageSrc } from '../data/questionsData';
@@ -124,10 +124,14 @@ export function QuestionCard({
   isHost, onHostNext, phase,
 }: QuestionCardProps) {
   const [zoomedImg, setZoomedImg] = useState<string | null>(null);
+  const [activeImgSrc, setActiveImgSrc] = useState<string | null>(() => resolveQuestionImageSrc(question.image));
+  useEffect(() => {
+    setActiveImgSrc(resolveQuestionImageSrc(question.image));
+  }, [question.image]);
+
   const hasAnswered = myAnswer !== null;
   const isRevealing = phase === 'reveal';
   const parsed = splitCopyright(question.question);
-  const imgSrc = resolveQuestionImageSrc(question.image);
 
   return (
     <div className="space-y-3 w-full max-w-lg mx-auto">
@@ -152,16 +156,16 @@ export function QuestionCard({
 
       {/* Question text & optional Image */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 shadow-xs space-y-3">
-        {imgSrc && (
+        {activeImgSrc && (
           <div className="text-center">
             <img
-              src={imgSrc}
+              src={activeImgSrc}
               alt="Abbildung zur Frage"
-              onClick={() => setZoomedImg(imgSrc)}
-              onError={(e) => {
+              onClick={() => setZoomedImg(activeImgSrc)}
+              onError={() => {
                 const backup = question.imageBackup || getBackupImageUrl(question.image);
-                if (backup && e.currentTarget.src !== backup) {
-                  e.currentTarget.src = backup;
+                if (backup && backup !== activeImgSrc) {
+                  setActiveImgSrc(backup);
                 }
               }}
               className="max-h-52 max-w-full mx-auto object-contain rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white p-2 cursor-zoom-in"
@@ -173,7 +177,7 @@ export function QuestionCard({
             )}
           </div>
         )}
-        {!imgSrc && parsed.credit && (
+        {!activeImgSrc && parsed.credit && (
           <p className="text-[10px] text-zinc-400 dark:text-zinc-500">{parsed.credit}</p>
         )}
         <h2 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-white leading-snug">
@@ -197,7 +201,7 @@ export function QuestionCard({
               selected={isSelected && !isRevealing}
               correct={isCorrect}
               wrong={isWrong}
-              disabled={hasAnswered || isRevealing || phase !== 'question'}
+              disabled={hasAnswered || isRevealing || phase !== 'question' || secondsLeft <= 0}
               onClick={() => onAnswer(letter)}
             />
           );
@@ -534,17 +538,100 @@ export function PlayerChip({ name, isHost, onRemove }: { name: string; isHost?: 
 
 // ─── TIMER HOOK ───────────────────────────────────────────────────────────────
 
-/** Simple countdown that resets when `key` changes */
+/** Countdown based on target end time (immune to background-tab throttling) */
 export function useCountdown(seconds: number, key: number, running: boolean) {
   const [left, setLeft] = useState(seconds);
-  useEffect(() => { setLeft(seconds); }, [key, seconds]);
 
   useEffect(() => {
-    if (!running) return;
-    if (left <= 0) return;
-    const t = setInterval(() => setLeft((s) => Math.max(0, s - 1)), 1000);
+    setLeft(seconds);
+    if (!running || seconds <= 0) return;
+
+    const end = Date.now() + seconds * 1000;
+    const update = () => {
+      const rem = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+      setLeft(rem);
+    };
+
+    update();
+    const t = setInterval(update, 250);
     return () => clearInterval(t);
-  }, [running, left]);
+  }, [key, seconds, running]);
 
   return left;
 }
+
+// ─── EXIT CONFIRMATION MODAL ─────────────────────────────────────────────────
+
+export function ExitConfirmModal({
+  isOpen,
+  title,
+  description,
+  confirmLabel,
+  onConfirm,
+  cancelLabel = 'Abbrechen',
+  onCancel,
+  alternateAction,
+}: {
+  isOpen: boolean;
+  title: string;
+  description: React.ReactNode;
+  confirmLabel: string;
+  onConfirm: () => void;
+  cancelLabel?: string;
+  onCancel: () => void;
+  alternateAction?: {
+    label: string;
+    onClick: () => void;
+  };
+}) {
+  if (!isOpen) return null;
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
+      onClick={onCancel}
+    >
+      <div
+        className="w-full max-w-sm bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-2xl p-5 text-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 mx-auto flex items-center justify-center mb-3">
+          <HelpCircle className="w-6 h-6" />
+        </div>
+
+        <h3 className="font-bold text-base mb-1 text-zinc-900 dark:text-white">
+          {title}
+        </h3>
+
+        <div className="text-xs text-zinc-500 dark:text-zinc-400 mb-5 leading-relaxed">
+          {description}
+        </div>
+
+        <div className="space-y-2">
+          <button
+            onClick={onConfirm}
+            className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold cursor-pointer active:scale-95 transition-transform"
+          >
+            {confirmLabel}
+          </button>
+
+          <button
+            onClick={onCancel}
+            className="w-full py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-700 text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
+          >
+            {cancelLabel}
+          </button>
+
+          {alternateAction && (
+            <button
+              onClick={alternateAction.onClick}
+              className="w-full py-2 rounded-xl text-xs font-medium text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
+            >
+              {alternateAction.label}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
