@@ -23,3 +23,7 @@ materials/*.PDF
 data/questions/sync_report.txt
 questions_source_report.txt
 index.old.html
+
+# Внутрішня документація та секрети
+TURN_SERVER.md
+docs/internal/

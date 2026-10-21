@@ -7,27 +7,49 @@ const PING_INTERVAL_MS = 8_000;       // host pings every 8s (3G-friendly)
 const PING_TIMEOUT_MS  = 30_000;      // drop if no PONG within 30s in active game (covers ~3G RTT)
 const LOBBY_PING_TIMEOUT_MS = 60_000; // in lobby, give 60s timeout so backgrounded host/clients aren't dropped
 
-// STUN and TURN configuration (including TCP port 443 fallback for strict firewalls / AP isolation)
-export const DEFAULT_ICE_SERVERS: RTCIceServer[] = [
-  { urls: 'stun:stun.l.google.com:19302' },
-  { urls: 'stun:stun1.l.google.com:19302' },
-  { urls: 'stun:openrelay.metered.ca:80' },
-  {
-    urls: 'turn:openrelay.metered.ca:80',
-    username: 'openrelayproject',
-    credential: 'openrelayproject',
-  },
-  {
-    urls: 'turn:openrelay.metered.ca:443',
-    username: 'openrelayproject',
-    credential: 'openrelayproject',
-  },
-  {
-    urls: 'turn:openrelay.metered.ca:443?transport=tcp',
-    username: 'openrelayproject',
-    credential: 'openrelayproject',
-  },
-];
+// STUN and TURN configuration:
+// Google STUN is always included (works out of the box for all forks and direct P2P).
+// If dedicated TURN server credentials are provided via Vite env variables, we add them
+// for relaying through strict firewalls and AP client isolation (UDP 3478 + TCP 443 fallback).
+function buildIceServers(): RTCIceServer[] {
+  const servers: RTCIceServer[] = [
+    { urls: 'stun:stun.l.google.com:19302' },
+    { urls: 'stun:stun1.l.google.com:19302' },
+  ];
+
+  const turnServer = import.meta.env.VITE_TURN_SERVER;
+  const username = import.meta.env.VITE_TURN_USER;
+  const credential = import.meta.env.VITE_TURN_PASS;
+
+  if (turnServer && username && credential) {
+    servers.push(
+      {
+        urls: `turn:${turnServer}:3478`,
+        username,
+        credential,
+      },
+      {
+        urls: `turn:${turnServer}:3478?transport=tcp`,
+        username,
+        credential,
+      },
+      {
+        urls: `turn:${turnServer}:443?transport=tcp`,
+        username,
+        credential,
+      },
+      {
+        urls: `turn:${turnServer}:443`,
+        username,
+        credential,
+      },
+    );
+  }
+
+  return servers;
+}
+
+export const DEFAULT_ICE_SERVERS: RTCIceServer[] = buildIceServers();
 
 // Generate a short, human-readable room code (4 uppercase alphanumeric chars)
 function genRoomCode(): string {
