@@ -44,7 +44,9 @@ export type HostMsg =
   | { type: 'FINISH'; scores: RoomState['scores'] }
   | { type: 'KICK' }
   | { type: 'PING' }
-  | { type: 'REJECTED'; reason: 'game_in_progress' };
+  | { type: 'REJECTED'; reason: 'game_in_progress' }
+  // Sent from host during lobby whenever player list changes
+  | { type: 'PLAYER_LIST'; players: { id: string; name: string }[] };
 
 export type ClientMsg =
   | { type: 'JOIN'; name: string }

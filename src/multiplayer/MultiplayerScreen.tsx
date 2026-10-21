@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import { ArrowLeft, ChevronRight, Clock, Copy, GraduationCap, Users, Wifi, WifiOff } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Clock, Copy, GraduationCap, Square, Users, Wifi, WifiOff, X } from 'lucide-react';
 import { Question, BundeslandCode } from '../types';
 import { RoomMode } from './types';
 import {
@@ -132,9 +132,61 @@ function HostLobbyScreen({
 }) {
   const joinUrl = `${window.location.origin}${window.location.pathname}?room=${roomCode}`;
 
-  const copyLink = () => navigator.clipboard.writeText(joinUrl).catch(() => {});
+  const [copied, setCopied] = useState(false);
+  const [qrExpanded, setQrExpanded] = useState(false);
+
+  const copyLink = async () => {
+    let ok = false;
+    // Prefer Clipboard API (Chrome, modern Safari)
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(joinUrl); ok = true; } catch { /* fall through */ }
+    }
+    // Fallback: textarea + execCommand (iOS Safari, older browsers)
+    if (!ok) {
+      try {
+        const el = Object.assign(document.createElement('textarea'), {
+          value: joinUrl,
+          style: 'position:fixed;opacity:0;top:0;left:0',
+        });
+        document.body.appendChild(el);
+        el.focus(); el.select();
+        // eslint-disable-next-line deprecation/deprecation
+        ok = document.execCommand('copy');
+        document.body.removeChild(el);
+      } catch { /* ignore */ }
+    }
+    if (ok) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
+    <>
+    {/* QR fullscreen overlay */}
+    {qrExpanded && (
+      <div
+        className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm"
+        onClick={() => setQrExpanded(false)}
+      >
+        <div
+          className="bg-white dark:bg-zinc-900 rounded-3xl p-8 flex flex-col items-center gap-4 shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400">Raumcode scannen</p>
+          <div className="text-3xl font-mono font-black tracking-[0.2em] text-zinc-900 dark:text-white">{roomCode}</div>
+          <QRCodeSVG value={joinUrl} size={240} bgColor="transparent"
+            fgColor="currentColor" className="text-zinc-900 dark:text-white" />
+          <button
+            onClick={() => setQrExpanded(false)}
+            className="mt-1 flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-xs font-semibold text-zinc-600 dark:text-zinc-300 cursor-pointer"
+          >
+            <X className="w-3.5 h-3.5" /> Schließen
+          </button>
+        </div>
+      </div>
+    )}
+
     <div className="flex-1 flex flex-col p-4 gap-4 max-w-lg mx-auto w-full">
       {/* Room code */}
       <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 text-center">
@@ -143,15 +195,27 @@ function HostLobbyScreen({
           {roomCode}
         </div>
         <div className="flex justify-center mb-3">
-          <QRCodeSVG value={joinUrl} size={120} bgColor="transparent"
-            fgColor="currentColor" className="rounded-xl text-zinc-900 dark:text-white" />
+          <button
+            onClick={() => setQrExpanded(true)}
+            className="cursor-zoom-in rounded-xl transition-transform hover:scale-105 active:scale-95"
+            title="QR-Code vergrößern"
+          >
+            <QRCodeSVG value={joinUrl} size={120} bgColor="transparent"
+              fgColor="currentColor" className="rounded-xl text-zinc-900 dark:text-white" />
+          </button>
         </div>
         <button
           onClick={copyLink}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
+          // onTouchStart noop: makes iOS Safari fire :active / Tailwind active: variants
+          onTouchStart={() => {}}
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium cursor-pointer transition-all active:scale-95 ${
+            copied
+              ? 'border-emerald-400 dark:border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400'
+              : 'border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:bg-zinc-100 dark:active:bg-zinc-800'
+          }`}
         >
-          <Copy className="w-3.5 h-3.5" />
-          Link kopieren
+          {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? 'Kopiert!' : 'Link kopieren'}
         </button>
       </div>
 
@@ -241,14 +305,28 @@ function HostLobbyScreen({
         Spiel starten ({players.length} Teilnehmer)
       </button>
     </div>
+    </>
   );
 }
 
 // ─── CLIENT WAITING SCREEN ───────────────────────────────────────────────────
 
-function ClientWaitingScreen({ name, roomCode }: { name: string; roomCode: string }) {
+function ClientWaitingScreen({
+  name, roomCode, players, hostSilent,
+}: {
+  name: string;
+  roomCode: string;
+  players: { id: string; name: string }[];
+  hostSilent: boolean;
+}) {
   return (
     <div className="flex-1 flex flex-col items-center justify-center p-6 gap-4 text-center">
+      {hostSilent && (
+        <div className="w-full max-w-xs flex items-center gap-2 px-3 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300 text-xs font-semibold">
+          <WifiOff className="w-4 h-4 shrink-0" />
+          Host kurz nicht erreichbar… warte auf Wiederverbindung
+        </div>
+      )}
       <PlayerAvatar name={name} size={64} />
       <div>
         <p className="font-bold text-zinc-900 dark:text-white">{name}</p>
@@ -258,6 +336,19 @@ function ClientWaitingScreen({ name, roomCode }: { name: string; roomCode: strin
         <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
         Warten auf Spielstart…
       </div>
+      {players.length > 0 && (
+        <div className="w-full max-w-xs">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-2 flex items-center justify-center gap-1">
+            <Users className="w-3.5 h-3.5" />
+            Im Raum ({players.length})
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {players.map((p) => (
+              <PlayerChip key={p.id} name={p.name} isHost={p.id === 'host'} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -273,7 +364,7 @@ function HostGameView({
   secondsPerQuestion: number;
 }) {
   const { phase, questionIndex, currentQuestion, answeredCount, totalPlayers,
-    revealLetter, hostAnswer, hostSubmitAnswer, hostForceNext, buildScores } = host;
+    revealLetter, hostAnswer, hostSubmitAnswer, hostForceNext, hostEndEarly, buildScores } = host;
 
   const secondsLeft = useCountdown(
     secondsPerQuestion,
@@ -300,6 +391,17 @@ function HostGameView({
 
   return (
     <div className="flex-1 p-4 overflow-y-auto">
+      <div className="flex justify-end mb-2">
+        <button
+          onClick={() => {
+            if (window.confirm('Sitzung jetzt beenden und Endergebnis anzeigen?')) hostEndEarly();
+          }}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-300 dark:border-rose-800 text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 cursor-pointer transition-colors"
+        >
+          <Square className="w-3.5 h-3.5 fill-current" />
+          Sitzung beenden
+        </button>
+      </div>
       <QuestionCard
         question={currentQuestion}
         questionIndex={questionIndex}
@@ -329,7 +431,7 @@ function ClientGameView({
 }) {
   const { phase, questionIndex, currentQuestion, myAnswer, revealLetter,
     answeredCount, totalPlayers, scores, timeLimit, sendAnswer, myPeerId,
-    allQuestions, myAnswers } = client;
+    allQuestions, myAnswers, lobbyPlayers, hostSilent } = client;
 
   const secondsLeft = useCountdown(timeLimit, questionIndex, phase === 'question');
 
@@ -349,13 +451,26 @@ function ClientGameView({
   }
 
   if (phase === 'lobby') {
-    return <ClientWaitingScreen name={playerName} roomCode={client.roomState?.roomCode ?? ''} />;
+    return (
+      <ClientWaitingScreen
+        name={playerName}
+        roomCode={client.roomState?.roomCode ?? ''}
+        players={lobbyPlayers}
+        hostSilent={hostSilent}
+      />
+    );
   }
 
   if (!currentQuestion) return null;
 
   return (
     <div className="flex-1 p-4 overflow-y-auto">
+      {hostSilent && (
+        <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-300 text-xs font-semibold mb-3">
+          <WifiOff className="w-4 h-4 shrink-0" />
+          Host kurz nicht erreichbar… warte auf Wiederverbindung
+        </div>
+      )}
       <QuestionCard
         question={currentQuestion}
         questionIndex={questionIndex}

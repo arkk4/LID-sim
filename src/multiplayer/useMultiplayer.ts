@@ -3,8 +3,8 @@ import Peer, { DataConnection } from 'peerjs';
 import { Question } from '../types';
 import { ClientMsg, HostMsg, Player, RoomMode, RoomPhase, RoomState } from './types';
 
-const PING_INTERVAL_MS = 5_000;   // host pings every 5s
-const PING_TIMEOUT_MS  = 15_000;  // drop if no PONG within 15s
+const PING_INTERVAL_MS = 8_000;   // host pings every 8s (3G-friendly)
+const PING_TIMEOUT_MS  = 30_000;  // drop if no PONG within 30s (covers ~3G RTT)
 
 // Generate a short, human-readable room code (4 uppercase alphanumeric chars)
 function genRoomCode(): string {
@@ -72,6 +72,13 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
       if (conn.open) conn.send(msg);
     });
   }, []);
+
+  // Broadcast current player list to all clients (lobby only)
+  const broadcastPlayerList = useCallback(() => {
+    if (phaseRef.current !== 'lobby') return;
+    const players = [...playersRef.current.values()].map(({ id, name }) => ({ id, name }));
+    broadcast({ type: 'PLAYER_LIST', players });
+  }, [broadcast]);
 
   const buildScores = useCallback(() =>
     [...playersRef.current.values()]
@@ -176,6 +183,8 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
         };
         conn.send({ type: 'STATE', state } satisfies HostMsg);
       }
+      // Notify all waiting clients of the updated player list
+      broadcastPlayerList();
       broadcast({
         type: 'ANSWER_COUNT',
         count: answeredCountRef.current,
@@ -208,7 +217,7 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
         revealOrAdvanceRef.current(curIdx);
       }
     }
-  }, [questions, roomCode, buildScores, broadcast, refreshPlayers]);
+  }, [questions, roomCode, buildScores, broadcast, refreshPlayers, broadcastPlayerList]);
 
   const handleClientMsgRef = useRef(handleClientMsg);
   handleClientMsgRef.current = handleClientMsg;
@@ -258,7 +267,11 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
         lastPong.delete(conn.peer);
         playersRef.current.delete(conn.peer);
         refreshPlayers();
-        if (phaseRef.current === 'question') {
+        if (phaseRef.current === 'lobby') {
+          // Update waiting clients
+          const players = [...playersRef.current.values()].map(({ id, name }) => ({ id, name }));
+          broadcast({ type: 'PLAYER_LIST', players });
+        } else if (phaseRef.current === 'question') {
           const curIdx = questionIndexRef.current;
           const count = [...playersRef.current.values()].filter(
             (p) => p.answers[curIdx] != null
@@ -296,6 +309,16 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
       advanceQuestion(questionIndexRef.current + 1);
     }
   }, [revealOrAdvance, advanceQuestion]);
+
+  // End session early – shows final leaderboard to all
+  const hostEndEarly = useCallback(() => {
+    if (phaseRef.current === 'finished') return;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    phaseRef.current = 'finished';
+    setPhase('finished');
+    const scores = buildScores();
+    broadcast({ type: 'FINISH', scores });
+  }, [buildScores, broadcast]);
 
   // Host submits their own answer
   const hostSubmitAnswer = useCallback((letter: 'a' | 'b' | 'c' | 'd') => {
@@ -336,6 +359,7 @@ export function useMultiplayerHost({ questions, mode, secondsPerQuestion, hostNa
     error,
     startGame,
     hostForceNext,
+    hostEndEarly,
     buildScores,
     totalPlayers: playerList.length,
   };
@@ -363,20 +387,72 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
   const [phase, setPhase] = useState<RoomPhase>('lobby');
   const [questionIndex, setQuestionIndex] = useState(0);
   const [myPeerId, setMyPeerId] = useState<string>('');
+  const [lobbyPlayers, setLobbyPlayers] = useState<{ id: string; name: string }[]>([]);
+  // True while host is silent (missed ≥1 ping cycle) but not yet timed out
+  const [hostSilent, setHostSilent] = useState(false);
 
   useEffect(() => {
+    // Always reset when deps change — MUST be before the early-return guard so that
+    // clearing joinCode (going back) wipes the stale error immediately.
+    setError(null);
+    setErrorKind(null);
+    setConnected(false);
+    setHostSilent(false);
+    setPhase('lobby');
+    setLobbyPlayers([]);
+    setScores([]);
+
     if (!roomCode || !playerName) return;
+
+    let cancelled = false;
+    let silenceTimer: ReturnType<typeof setTimeout> | null = null;
+    let errorTimer:   ReturnType<typeof setTimeout> | null = null;
+
+    const clearWatchdogs = () => {
+      if (silenceTimer) { clearTimeout(silenceTimer); silenceTimer = null; }
+      if (errorTimer)   { clearTimeout(errorTimer);   errorTimer   = null; }
+    };
+
+    const fireDisconnect = () => {
+      if (cancelled) return;
+      clearWatchdogs();
+      setConnected(false);
+      setHostSilent(false);
+      setPhase((prev) => {
+        if (prev === 'finished') return prev;
+        setError('Verbindung zum Host wurde getrennt.');
+        setErrorKind('host_disconnected');
+        return prev;
+      });
+      peer.destroy();
+    };
+
+    // Called on every received PING — resets both tiers
+    const resetWatchdog = () => {
+      if (cancelled) return;
+      clearWatchdogs();
+      setHostSilent(false);
+      // Tier 1: after one missed ping cycle → show "host silent" banner
+      silenceTimer = setTimeout(() => {
+        if (cancelled) return;
+        setHostSilent(true);
+        // Tier 2: after full timeout with no ping → error
+        errorTimer = setTimeout(fireDisconnect, PING_TIMEOUT_MS);
+      }, PING_INTERVAL_MS);
+    };
 
     const peer = new Peer(undefined as unknown as string, {
       host: '0.peerjs.com', port: 443, secure: true, path: '/'
     });
     const connectTimer = setTimeout(() => {
+      if (cancelled) return;
       setError('Verbindung fehlgeschlagen (Zeitüberschreitung). Host ist möglicherweise offline.');
       setErrorKind('generic');
       peer.destroy();
     }, 15000);
 
     peer.on('open', (id) => {
+      if (cancelled) return;
       setMyPeerId(id);
       const conn = peer.connect(`lid-${roomCode}`, { reliable: true });
       connRef.current = conn;
@@ -385,18 +461,23 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
         clearTimeout(connectTimer);
         setConnected(true);
         conn.send({ type: 'JOIN', name: playerName } satisfies ClientMsg);
+        // Start initial watchdog — first PING may be up to PING_INTERVAL_MS away
+        resetWatchdog();
       });
 
       conn.on('error', (err) => {
         clearTimeout(connectTimer);
+        if (cancelled) return;
         setError('Verbindungsfehler: ' + String((err as Error)?.message || err));
         setErrorKind('generic');
       });
 
       conn.on('data', (data) => {
+        if (cancelled) return;
         const msg = data as HostMsg;
         if (msg.type === 'PING') {
           conn.send({ type: 'PONG' } satisfies ClientMsg);
+          resetWatchdog();
           return;
         }
         if (msg.type === 'REJECTED') {
@@ -445,18 +526,30 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
           setError('Sie wurden aus dem Spiel entfernt.');
           setErrorKind('generic');
         }
+        if (msg.type === 'PLAYER_LIST') {
+          setLobbyPlayers(msg.players);
+        }
       });
 
       conn.on('close', () => {
         clearTimeout(connectTimer);
+        clearWatchdogs();
+        if (cancelled) return;
         setConnected(false);
-        setError('Verbindung zum Host wurde getrennt.');
-        setErrorKind('host_disconnected');
+        setHostSilent(false);
+        // If we're already on the finished screen, keep it — don't overlay an error
+        setPhase((prev) => {
+          if (prev === 'finished') return prev;
+          setError('Verbindung zum Host wurde getrennt.');
+          setErrorKind('host_disconnected');
+          return prev;
+        });
       });
     });
 
     peer.on('error', (err) => {
       clearTimeout(connectTimer);
+      if (cancelled) return;
       const isPeerUnavailable = (err as { type?: string }).type === 'peer-unavailable';
       const message = isPeerUnavailable
         ? 'Raum nicht gefunden oder Host ist offline. Bitte Raumcode überprüfen.'
@@ -466,7 +559,9 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     });
 
     return () => {
+      cancelled = true;
       clearTimeout(connectTimer);
+      clearWatchdogs();
       peer.destroy();
     };
   }, [roomCode, playerName]);
@@ -500,5 +595,7 @@ export function useMultiplayerClient(roomCode: string, playerName: string) {
     questionIndex,
     sendAnswer,
     myPeerId,
+    lobbyPlayers,
+    hostSilent,
   };
 }
